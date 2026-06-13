@@ -7,7 +7,7 @@ sys.stdout.reconfigure(encoding='utf-8')
 workspace_dir = r"c:\Users\sai\OneDrive\Desktop\Aptitude"
 
 expected_files = [
-    "aptitude_placement.html",
+    "index.html",
     "averages_ratio_proportion_study_guide.html",
     "mixtures_alligations_study_guide.html",
     "number_systems_simplification_study_guide.html",
@@ -69,7 +69,7 @@ for filename in expected_files:
         all_passed = False
 
     # Check sidebars and titles
-    if "sidebar" not in content and filename != "aptitude_placement.html":
+    if "sidebar" not in content and filename != "index.html":
         print(f"❌ {filename}: Missing sidebar navigation structure")
         all_passed = False
 

@@ -8,7 +8,7 @@ workspace_dir = r"c:\Users\sai\OneDrive\Desktop\Aptitude"
 
 # Map of markdown filenames to HTML filenames
 link_mappings = {
-    "Aptitude_Placement_Mastery_Guide.md": "aptitude_placement.html",
+    "Aptitude_Placement_Mastery_Guide.md": "index.html",
     "averages_ratio_proportion_study_guide.md": "averages_ratio_proportion_study_guide.html",
     "mixtures_alligations_study_guide.md": "mixtures_alligations_study_guide.html",
     "number_systems_simplification_study_guide.md": "number_systems_simplification_study_guide.html",
@@ -22,7 +22,7 @@ link_mappings = {
 
 # Sidebar items configuration
 study_guides = [
-    {"name": "Home Dashboard", "link": "aptitude_placement.html", "emoji": "🏠"},
+    {"name": "Home Dashboard", "link": "index.html", "emoji": "🏠"},
     {"name": "Number Systems", "link": "number_systems_simplification_study_guide.html", "emoji": "🔢"},
     {"name": "Percentages", "link": "percentages_study_guide.html", "emoji": "📈"},
     {"name": "Profit & Loss", "link": "profit_loss_discount_study_guide.html", "emoji": "💰"},
@@ -759,7 +759,7 @@ def compile_study_guide(filename):
 </head>
 <body>
     <aside class="sidebar">
-        <a href="aptitude_placement.html" class="sidebar-brand">
+        <a href="index.html" class="sidebar-brand">
             🎓 Aptitude Mastery
         </a>
         <hr style="margin: 12px 0;" />
@@ -785,7 +785,7 @@ def compile_flagship_dashboard():
     filename = "Aptitude_Placement_Mastery_Guide.md"
     print(f"Compiling flagship dashboard: {filename}")
     md_path = os.path.join(workspace_dir, filename)
-    html_name = "aptitude_placement.html"
+    html_name = "index.html"
     html_path = os.path.join(workspace_dir, html_name)
     
     with open(md_path, "r", encoding="utf-8") as f:
@@ -1267,7 +1267,7 @@ def compile_flagship_dashboard():
 </head>
 <body>
     <header class="navbar">
-        <a href="aptitude_placement.html" class="navbar-brand">
+        <a href="index.html" class="navbar-brand">
             🎓 Aptitude Placement Mastery Portal
         </a>
     </header>
