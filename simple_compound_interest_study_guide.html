@@ -1,0 +1,1697 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Compound Interest Study Guide | Learning Portal</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=JetBrains+Mono&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #f8fafc;
+            --text-color: #1e293b;
+            --sidebar-bg: #ffffff;
+            --border-color: #e2e8f0;
+            --primary-color: #2563eb;
+            --primary-light: #eff6ff;
+            --code-bg: #f1f5f9;
+            --details-bg: #ffffff;
+            
+            --note-border: #3b82f6;
+            --note-bg: rgba(59, 130, 246, 0.05);
+            --tip-border: #10b981;
+            --tip-bg: rgba(16, 185, 129, 0.05);
+            --warning-border: #f59e0b;
+            --warning-bg: rgba(245, 158, 11, 0.05);
+            --important-border: #8b5cf6;
+            --important-bg: rgba(139, 92, 246, 0.05);
+        }
+        
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        
+        body {
+            font-family: 'Outfit', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            display: flex;
+        }
+        
+        /* Sticky Sidebar Layout */
+        .sidebar {
+            width: 280px;
+            background-color: var(--sidebar-bg);
+            border-right: 1px solid var(--border-color);
+            height: 100vh;
+            position: sticky;
+            top: 0;
+            padding: 24px;
+            overflow-y: auto;
+            display: flex;
+            flex-direction: flex-start;
+            flex-flow: column;
+            gap: 24px;
+        }
+        
+        .sidebar-brand {
+            font-weight: 700;
+            font-size: 1.25rem;
+            color: var(--primary-color);
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            text-decoration: none;
+            transition: opacity 0.2s ease;
+        }
+        
+        .sidebar-brand:hover {
+            opacity: 0.85;
+            text-decoration: none;
+        }
+        
+        .sidebar-section-title {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: #64748b;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+        
+        .quick-nav-list, .toc-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+        
+        .quick-nav-list a, .toc-list a {
+            color: #475569;
+            text-decoration: none;
+            font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 12px;
+            border-radius: 6px;
+            transition: all 0.2s ease;
+        }
+        
+        .quick-nav-list a:hover, .toc-list a:hover {
+            background-color: #f1f5f9;
+            color: var(--primary-color);
+        }
+        
+        .quick-nav-list a.active {
+            background-color: var(--primary-light);
+            color: var(--primary-color);
+            font-weight: 500;
+        }
+        
+        .toc-list a {
+            font-size: 0.85rem;
+            padding: 4px 8px;
+            border-left: 2px solid transparent;
+            border-radius: 0;
+        }
+        
+        .toc-list a:hover {
+            background-color: transparent;
+            border-left-color: var(--primary-color);
+            padding-left: 12px;
+        }
+        
+        /* Main Container */
+        .container {
+            flex: 1;
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 0 40px;
+        }
+        
+        h1, h2, h3, h4 {
+            color: #0f172a;
+            margin-top: 1.5em;
+            margin-bottom: 0.5em;
+            font-weight: 600;
+        }
+        
+        h1 {
+            font-size: 2.25rem;
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 12px;
+        }
+        
+        h2 {
+            font-size: 1.6rem;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 8px;
+            margin-top: 2em;
+        }
+        
+        h3 {
+            font-size: 1.25rem;
+        }
+        
+        a {
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+        
+        a:hover {
+            text-decoration: underline;
+        }
+        
+        hr {
+            border: 0;
+            height: 1px;
+            background: var(--border-color);
+            margin: 30px 0;
+        }
+        
+        img {
+            border-radius: 4px;
+        }
+        
+        /* Shields badges top */
+        div[align="left"] {
+            display: flex;
+            gap: 8px;
+            margin: 20px 0;
+            flex-wrap: wrap;
+        }
+        
+        /* Alerts styling */
+        .alert {
+            display: flex;
+            border-left: 4px solid;
+            padding: 16px;
+            border-radius: 6px;
+            margin: 20px 0;
+        }
+        
+        .alert-icon {
+            font-size: 1.25rem;
+            margin-right: 12px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .alert-content {
+            flex: 1;
+        }
+        
+        .alert-note {
+            border-left-color: var(--note-border);
+            background-color: var(--note-bg);
+        }
+        
+        .alert-tip {
+            border-left-color: var(--tip-border);
+            background-color: var(--tip-bg);
+        }
+        
+        .alert-warning {
+            border-left-color: var(--warning-border);
+            background-color: var(--warning-bg);
+        }
+        
+        .alert-important {
+            border-left-color: var(--important-border);
+            background-color: var(--important-bg);
+        }
+        
+        /* Tables styling */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            font-size: 0.9rem;
+        }
+        
+        th, td {
+            padding: 12px 16px;
+            border: 1px solid var(--border-color);
+            text-align: left;
+        }
+        
+        th {
+            background-color: #f1f5f9;
+            color: #0f172a;
+            font-weight: 500;
+        }
+        
+        tr:nth-child(even) {
+            background-color: rgba(0, 0, 0, 0.01);
+        }
+        
+        /* Code blocks */
+        pre {
+            background-color: var(--code-bg);
+            padding: 16px;
+            border-radius: 8px;
+            overflow-x: auto;
+            border: 1px solid var(--border-color);
+            margin: 20px 0;
+        }
+        
+        code {
+            font-family: 'JetBrains Mono', monospace;
+            background-color: var(--code-bg);
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-size: 0.85rem;
+            color: #0f172a;
+        }
+        
+        pre code {
+            padding: 0;
+            background-color: transparent;
+            font-size: 0.8rem;
+        }
+        
+        /* details / summary styling */
+        details {
+            background-color: var(--details-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            margin: 12px 0;
+            padding: 14px 18px;
+            transition: all 0.3s ease;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.02);
+        }
+        
+        details[open] {
+            border-color: var(--primary-color);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+        }
+        
+        summary {
+            font-weight: 500;
+            cursor: pointer;
+            outline: none;
+            color: #0f172a;
+            user-select: none;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        summary:hover {
+            color: var(--primary-color);
+        }
+        
+        details > div, details > ul, details > p, details > pre {
+            margin-top: 12px;
+            padding-top: 12px;
+            border-top: 1px solid var(--border-color);
+        }
+        
+        ul, ol {
+            padding-left: 20px;
+            margin: 12px 0;
+        }
+        
+        li {
+            margin-bottom: 6px;
+        }
+        
+        /* Responsive design */
+        @media (max-width: 1024px) {
+            body {
+                flex-direction: column;
+            }
+            .sidebar {
+                width: 100%;
+                height: auto;
+                position: relative;
+                border-right: none;
+                border-bottom: 1px solid var(--border-color);
+                padding: 16px;
+            }
+            .container {
+                padding: 0 20px;
+                margin: 20px auto;
+            }
+        }
+    </style>
+</head>
+<body>
+    <aside class="sidebar">
+        <a href="aptitude_placement.html" class="sidebar-brand">
+            🎓 Aptitude Mastery
+        </a>
+        <hr style="margin: 12px 0;" />
+        <div class="sidebar-section-title">Table of Contents</div>
+        <ul class="toc-list"><li><a href="#the-ultimate-placement-focused-study-guide">The Ultimate PlacementFocused Study Guide</a></li><li><a href="#rank--importance">Rank & Importance</a></li><li><a href="#concept-overview">Concept Overview</a></li><li><a href="#core-concepts-to-master">Core Concepts to Master</a></li><li><a href="#important-formula-sheet">Important Formula Sheet</a></li><li><a href="#shortcut-techniques--time-saving-tricks">Shortcut Techniques & TimeSaving Tricks</a></li><li><a href="#most-frequently-asked-question-patterns">Most Frequently Asked Question Patterns</a></li><li><a href="#placement--interview-relevance">Placement & Interview Relevance</a></li><li><a href="#beginner--advanced-roadmap">Beginner  Advanced Roadmap</a></li><li><a href="#difficulty-breakdown">Difficulty Breakdown</a></li><li><a href="#mastery-plan">Mastery Plan</a></li><li><a href="#common-traps--mistakes">Common Traps & Mistakes</a></li><li><a href="#practice-section">Practice Section</a></li><li><a href="#detailed-solutions">Detailed Solutions</a></li><li><a href="#best-resources">Best Resources</a></li><li><a href="#final-verdict">Final Verdict</a></li></ul>
+        <hr style="margin: 12px 0;" />
+        <div class="sidebar-section-title">Topic Guides</div>
+        <ul class="quick-nav-list"><li><a href="aptitude_placement.html" ><span class="nav-emoji">🏠</span> Home Dashboard</a></li><li><a href="number_systems_simplification_study_guide.html" ><span class="nav-emoji">🔢</span> Number Systems</a></li><li><a href="percentages_study_guide.html" ><span class="nav-emoji">📈</span> Percentages</a></li><li><a href="profit_loss_discount_study_guide.html" ><span class="nav-emoji">💰</span> Profit & Loss</a></li><li><a href="simple_compound_interest_study_guide.html" class="active"><span class="nav-emoji">💸</span> SI & CI</a></li><li><a href="time_work_study_guide.html" ><span class="nav-emoji">⚙️</span> Time & Work</a></li><li><a href="time_speed_distance_study_guide.html" ><span class="nav-emoji">⏳</span> Speed & Distance</a></li><li><a href="averages_ratio_proportion_study_guide.html" ><span class="nav-emoji">📊</span> Averages & Ratio</a></li><li><a href="mixtures_alligations_study_guide.html" ><span class="nav-emoji">⚖️</span> Mixtures & Alligation</a></li><li><a href="probability_study_guide.html" ><span class="nav-emoji">🎲</span> Probability</a></li></ul>
+    </aside>
+    <main class="container">
+        <h1>Simple & Compound Interest</h1>
+<h2 id="the-ultimate-placement-focused-study-guide">The Ultimate Placement-Focused Study Guide</h2>
+
+<div align="left">
+  <img src="https://img.shields.io/badge/Rank-%234-blue?style=for-the-badge" alt="Rank" />
+  <img src="https://img.shields.io/badge/Importance-★★★★☆-orange?style=for-the-badge" alt="Importance" />
+  <img src="https://img.shields.io/badge/Difficulty-Medium-orange?style=for-the-badge" alt="Difficulty" />
+  <img src="https://img.shields.io/badge/Focus-Placements-blueviolet?style=for-the-badge" alt="Focus" />
+</div>
+
+
+
+<hr />
+
+<h2 id="rank--importance">🥇 Rank & Importance</h2>
+
+<h3>Rank Among All Aptitude Topics</h3>
+
+<strong>#4 — Where Time Meets Money</strong>
+
+Simple & Compound Interest is the financial cousin of percentages — same underlying math, but with the dimension of time added. If percentages taught you how to compare numbers at a single point in time, SI/CI teaches you how money grows (or shrinks) across time. It appears in virtually every placement test, almost always as 2–5 questions, with moderate difficulty. The topic connects directly to Percentages (already mastered) and provides the foundation for more advanced financial reasoning in product company interviews.
+
+<table><thead><tr><th>Rank</th><th>Topic</th><th>Relevance</th></tr></thead><tbody><tr><td>1</td><td>Number Systems & Simplification</td><td>Foundation</td></tr><tr><td>2</td><td>Percentages</td><td>Core tool</td></tr><tr><td>3</td><td>Profit, Loss & Discount</td><td>Business application</td></tr><tr><td>4</td><td><strong>Simple & Compound Interest</strong></td><td>Time-based financial math</td></tr><tr><td>5</td><td>Averages & Ratio</td><td>Often combined</td></tr><tr><td>6</td><td>Time, Speed & Distance</td><td>Different domain</td></tr><tr><td>7</td><td>Time & Work</td><td>Work-cost connection</td></tr><tr><td>8</td><td>Simple & Compound Interest</td><td>Different dimension</td></tr><tr><td>9</td><td>Permutations & Combinations</td><td>Pure math</td></tr><tr><td>10</td><td>Probability</td><td>Often combined with P&L</td></tr></tbody></table>
+<h3>Why It Matters in Placements</h3>
+<ul><li><strong>Universal appearance</strong>: Every aptitude test has 2–5 SI/CI questions without exception</li><li><strong>Percentage application</strong>: SI/CI is percentages applied over time — your percentage skills directly transfer here</li><li><strong>Financial literacy signal</strong>: Banks, finance companies, and product companies use SI/CI to test numerical reasoning</li><li><strong>Speed-based</strong>: Once the formulas are internalized, SI/CI questions are among the fastest to solve</li><li><strong>Real-world relevance</strong>: The compound interest vs. simple interest distinction is one of the most practical concepts in personal finance</li></ul>
+
+<h3>Expected Weightage</h3>
+
+<table><thead><tr><th>Company Type</th><th>Questions (out of ~25)</th><th>Difficulty Spread</th></tr></thead><tbody><tr><td>TCS Ninja / NQT</td><td>2–4</td><td>Easy–Medium</td></tr><tr><td>Accenture</td><td>2–4</td><td>Easy–Medium</td></tr><tr><td>Cognizant</td><td>2–3</td><td>Easy–Medium</td></tr><tr><td>Infosys</td><td>2–4</td><td>Easy–Medium</td></tr><tr><td>Deloitte</td><td>2–4</td><td>Medium</td></tr><tr><td>Wipro</td><td>2–3</td><td>Easy–Medium</td></tr><tr><td>Goldman Sachs</td><td>3–5</td><td>Medium–Hard</td></tr><tr><td>Amazon</td><td>2–4</td><td>Medium–Hard</td></tr><tr><td>Microsoft</td><td>2–3</td><td>Hard</td></tr><tr><td>Google</td><td>1–2</td><td>Hard</td></tr></tbody></table>
+<h3>Importance Rating: ★★★★☆</h3>
+
+<hr />
+
+<h2 id="concept-overview">📖 Concept Overview</h2>
+
+<h3>What Is Simple & Compound Interest?</h3>
+
+Both concepts describe how money grows over time when interest is applied. The difference lies in whether interest is calculated only on the original principal (SI) or on the accumulated amount (CI).
+
+<strong>Simple Interest (SI)</strong>: Interest is always calculated on the original principal. The interest amount is the same every year.
+
+<strong>Compound Interest (CI)</strong>: Interest is calculated on the accumulated amount (principal + previously earned interest). Each period's interest becomes part of the principal for the next period.
+
+The key insight: <strong>CI always grows faster than SI over multiple periods, and the gap widens with time.</strong>
+
+<h3>Complete Subtopic Map</h3>
+
+<pre><code class="language-">SIMPLE & COMPOUND INTEREST
+├── Simple Interest (SI) — Basic Formula
+├── Compound Interest (CI) — Basic Formula
+├── SI vs CI Comparison
+├── Rate Conversion (Annual, Half-yearly, Quarterly, Monthly)
+├── Population/Growth Problems (CI Application)
+├── Depreciation (CI Application)
+├── Installments (Equated Monthly Installments)
+├── Present Worth / True Discount
+├── Finding Principal, Rate, or Time
+├── Amount Under SI
+├── Amount Under CI
+├── Effective Annual Rate
+├── Fractional Periods (Partial Year)
+├── Doubling and Tripling Time
+├── Rule of 72 and Rule of 69
+├── Mixture of SI and CI
+├── Difference Between CI and SI
+└── CI with Varying Rates</code></pre>
+
+<h3>Where Each Concept Is Used</h3>
+
+<table><thead><tr><th>Subtopic</th><th>Used In</th></tr></thead><tbody><tr><td>Basic SI formula</td><td>Every SI question</td></tr><tr><td>Basic CI formula</td><td>Every CI question</td></tr><tr><td>SI vs CI comparison</td><td>"Which is better?" questions</td></tr><tr><td>Rate conversion</td><td>Annual vs quarterly vs monthly</td></tr><tr><td>Population/growth</td><td>CI application</td></tr><tr><td>Depreciation</td><td>CI application (negative growth)</td></tr><tr><td>Installments</td><td>EMI problems, loan questions</td></tr><tr><td>Present worth</td><td>Discounting future payments</td></tr><tr><td>Doubling time</td><td>Investment growth questions</td></tr><tr><td>Difference SI-CI</td><td>Asked directly in many tests</td></tr></tbody></table>
+<hr />
+
+<h2 id="core-concepts-to-master">🎯 Core Concepts to Master</h2>
+
+<hr />
+
+<h3>1. Simple Interest (SI)</h3>
+
+<strong>Definition</strong>: Interest calculated only on the original principal amount, at a fixed rate per year.
+
+<strong>Formula</strong>:
+
+<pre><code class="language-">SI = (P × R × T) / 100</code></pre>
+
+Where:
+<ul><li>P = Principal (initial amount)</li><li>R = Rate of interest per year (%)</li><li>T = Time (in years)</li></ul>
+
+<strong>Amount (A)</strong>:
+
+<pre><code class="language-">A = P + SI = P + (P × R × T) / 100 = P × (1 + RT/100)</code></pre>
+
+<div class="alert alert-note"><span class="alert-icon">ℹ️</span><div class="alert-content"><strong>Intuition</strong>
+Simple interest is linear growth. Think of it like renting money — you pay a fixed rental rate on the original amount, year after year, without compounding the rent.</div></div>
+
+<strong>Example</strong>: P = ₹10,000, R = 8% per annum, T = 3 years.
+SI = (10000 × 8 × 3) / 100 = ₹2,400
+Amount = 10000 + 2400 = ₹12,400
+
+<strong>Shortcuts</strong>:
+<ul><li>SI for T years = SI for 1 year × T</li><li>SI for 1 year at R% = P × R/100</li><li>When T is in months: T = months/12</li><li>When T is in days: T = days/365 (or 360 for some banks)</li></ul>
+
+<div class="alert alert-warning"><span class="alert-icon">⚠️</span><div class="alert-content"><strong>Common Mistakes to Avoid</strong>
+Using T in years without checking the time unit. 6 months = 0.5 years, not 6.</div></div>
+
+<hr />
+
+<h3>2. Compound Interest (CI)</h3>
+
+<strong>Definition</strong>: Interest calculated on the accumulated principal (principal + previously earned interest) each period.
+
+<strong>Formula</strong>:
+
+<pre><code class="language-">A = P × (1 + R/100)^T
+CI = A - P</code></pre>
+
+Where A = Amount after T years.
+
+<div class="alert alert-note"><span class="alert-icon">ℹ️</span><div class="alert-content"><strong>Intuition</strong>
+Compound interest is exponential growth. Think of it like a snowball rolling down a hill — each year the snowball (principal + interest) gets bigger, so the next year's growth is on a larger base. The snowball grows faster and faster.</div></div>
+
+<strong>Compounding Frequency</strong>:
+When interest is compounded more than once a year, adjust both rate and time:
+
+<pre><code class="language-">A = P × (1 + R/n)^(nT)</code></pre>
+
+Where n = number of compounding periods per year:
+<ul><li>Annually: n = 1</li><li>Semi-annually (half-yearly): n = 2</li><li>Quarterly: n = 4</li><li>Monthly: n = 12</li><li>Daily: n = 365</li></ul>
+
+<strong>Example</strong>: P = ₹10,000, R = 8% p.a., compounded quarterly, T = 1 year.
+n = 4, R/n = 2% per quarter, nT = 4 quarters.
+A = 10000 × (1.02)^4 = 10000 × 1.08243 = ₹10,824.32
+CI = ₹824.32 (vs. SI of ₹800 for the same period)
+
+<strong>Example (Annual Compounding, 2 years)</strong>:
+P = 10000, R = 10%, T = 2 years
+Year 1: SI = 1000, Amount = 11000
+Year 2: SI on 11000 = 1100, Amount = 12100
+CI = 12100 - 10000 = ₹2,100
+SI for 2 years = 2000
+
+<strong>Shortcut — The CI Formula for 2 Years</strong>:
+CI = P × [(1 + R/100)² - 1] = P × [2R/100 + R²/10000]
+
+<div class="alert alert-warning"><span class="alert-icon">⚠️</span><div class="alert-content"><strong>Common Mistakes to Avoid</strong>
+Using SI formula for CI problems or vice versa. Always check which one is asked.</div></div>
+
+<hr />
+
+<h3>3. SI vs CI — The Key Difference</h3>
+
+<strong>Simple Interest</strong>: Grows linearly. SI = P × R × T / 100
+<strong>Compound Interest</strong>: Grows exponentially. CI accumulates faster over time.
+
+<strong>Critical Comparison Table</strong>:
+
+<table><thead><tr><th>Time</th><th>SI Multiplier</th><th>CI Multiplier</th><th>CI Advantage</th></tr></thead><tbody><tr><td>1 year</td><td>1 + R/100</td><td>1 + R/100</td><td>Equal</td></tr><tr><td>2 years</td><td>1 + 2R/100</td><td>1 + 2R/100 + R²/10000</td><td>CI > SI</td></tr><tr><td>3 years</td><td>1 + 3R/100</td><td>(1 + R/100)³</td><td>CI > SI</td></tr></tbody></table>
+<strong>The Gap Widens</strong>: For the same principal and rate, CI always produces more interest than SI after the first year. The difference grows larger with time.
+
+<strong>When to Use Which</strong>:
+<ul><li>Banks typically use SI for short-term loans (up to 1 year)</li><li>Investments and long-term deposits use CI</li><li>Exams usually ask CI for growth/depreciation, SI for installment problems</li></ul>
+
+<strong>Formula for Difference Between CI and SI for 2 Years</strong>:
+<pre><code class="language-">CI - SI = P × (R²/10000)</code></pre>
+
+For 3 years:
+<pre><code class="language-">CI - SI = P × [3R²/10000 + R³/1000000]</code></pre>
+
+<div class="alert alert-warning"><span class="alert-icon">⚠️</span><div class="alert-content"><strong>Common Mistakes to Avoid</strong>
+Thinking CI is always double SI. It's only more by a growing margin, not by a fixed ratio.</div></div>
+
+<hr />
+
+<h3>4. Rate Conversion (Compounding Frequency)</h3>
+
+<strong>Concept</strong>: When compounding is not annual, convert the rate appropriately.
+
+<strong>Example</strong>: 12% per annum, compounded half-yearly, for 1 year.
+<ul><li>Actual rate per half-year = 12/2 = 6%</li><li>Number of periods = 2</li><li>A = P × (1 + 6/100)² = P × (1.06)²</li></ul>
+
+<strong>Annual Equivalent Rate</strong> (Effective Rate):
+For 12% p.a. compounded half-yearly:
+Effective annual rate = (1 + 6/100)² - 1 = 0.1236 = <strong>12.36%</strong>
+
+<strong>The More Compounding, The Higher the Effective Rate</strong>:
+
+<table><thead><tr><th>Rate</th><th>Compounding</th><th>Effective Rate</th></tr></thead><tbody><tr><td>10%</td><td>Annual</td><td>10.00%</td></tr><tr><td>10%</td><td>Semi-annual</td><td>10.25%</td></tr><tr><td>10%</td><td>Quarterly</td><td>10.38%</td></tr><tr><td>10%</td><td>Monthly</td><td>10.47%</td></tr><tr><td>10%</td><td>Daily</td><td>10.52%</td></tr></tbody></table>
+<strong>Shortcut for Effective Annual Rate</strong>:
+<ul><li>Semi-annual: Effective = R + R²/100</li><li>Quarterly: Effective = R + 3R²/400 (approximately)</li><li>Monthly: Effective = R + R²/83 (approximately)</li></ul>
+
+<div class="alert alert-warning"><span class="alert-icon">⚠️</span><div class="alert-content"><strong>Common Mistakes to Avoid</strong>
+Using the nominal rate (12%) directly in CI calculations when compounding is half-yearly. Always divide R by n and multiply nT by n.</div></div>
+
+<hr />
+
+<h3>5. Population/Growth Problems (CI Application)</h3>
+
+<strong>Concept</strong>: CI formula applied to population, bacteria, or any quantity growing at a fixed percentage rate.
+
+<strong>Formula</strong>:
+<pre><code class="language-">P_n = P_0 × (1 + r/100)^n</code></pre>
+
+Where P₀ = initial population, P_n = population after n years.
+
+<strong>Example</strong>: Population of a town is 20,000, growing at 5% per year. What will it be after 3 years?
+P = 20000 × (1.05)³ = 20000 × 1.157625 = <strong>23,152</strong>
+
+<strong>Finding Growth Rate from Population Data</strong>:
+<pre><code class="language-">r = [(P_n / P_0)^(1/n) - 1] × 100</code></pre>
+
+<strong>Example</strong>: Population grew from 8,000 to 9,800 in 2 years. Find rate.
+9800/8000 = 1.225 = (1 + r/100)²
+1 + r/100 = √1.225 = 1.1068
+r = 10.68%
+
+<strong>Depreciation (Reverse Growth)</strong>:
+<pre><code class="language-">P_n = P_0 × (1 - r/100)^n</code></pre>
+<div class="alert alert-warning"><span class="alert-icon">⚠️</span><div class="alert-content"><strong>Common Mistakes to Avoid</strong>
+Using simple interest formula for population growth. Population grows on accumulated population (like compound interest), not on the original.</div></div>
+
+<hr />
+
+<h3>6. Depreciation</h3>
+
+<strong>Concept</strong>: Value decreases by a fixed percentage each year (opposite of CI growth).
+
+<strong>Formula</strong>:
+<pre><code class="language-">Value after n years = P × (1 - r/100)^n</code></pre>
+
+<strong>Example</strong>: A machine worth ₹1,00,000 depreciates at 10% per year. Value after 3 years.
+= 100000 × (0.90)³ = 100000 × 0.729 = <strong>₹72,900</strong>
+
+<strong>Finding Original Value from Depreciated Value</strong>:
+<pre><code class="language-">P = P_n / (1 - r/100)^n</code></pre>
+
+<strong>Common in Product Companies</strong>: Computer equipment, vehicles, machinery — all depreciate. Goldman Sachs and Amazon ask depreciation in DI/quant sections.
+
+<div class="alert alert-warning"><span class="alert-icon">⚠️</span><div class="alert-content"><strong>Common Mistakes to Avoid</strong>
+Using subtraction (P - r% of P) for each year instead of multiplication by (1 - r/100)^n. Subtraction gives the wrong answer after the first year.</div></div>
+
+<hr />
+
+<h3>7. Installments (EMI / Equated Installments)</h3>
+
+<strong>Concept</strong>: When a loan is repaid in equal installments, each installment is partly principal and partly interest.
+
+<strong>SI-Based Installment Formula</strong>:
+For a loan of P at rate R% for T years, paid in n equal annual installments:
+<pre><code class="language-">Each Installment = [P × (1 + RT/100)] / n</code></pre>
+
+<strong>The Unitary Method for Installments</strong>:
+In installment problems, each rupee of the installment works at the given rate. The total amount (principal + interest) is distributed across installments.
+
+<strong>For SI-Based Installments</strong>:
+<pre><code class="language-">If P is borrowed at R% SI for T years, and repaid in T equal annual installments:
+Each installment = P × (1 + RT/100) / T</code></pre>
+
+<strong>For CI-Based Installments</strong> (more complex):
+The present value of all installments equals the principal:
+<pre><code class="language-">P = I₁/(1+R/100) + I₂/(1+R/100)² + ... + Iₙ/(1+R/100)ⁿ</code></pre>
+When installments are equal (I = x):
+<pre><code class="language-">P = x × [(1+R/100)^n - 1] / [R/100 × (1+R/100)^n]</code></pre>
+
+<strong>Example (SI Installment)</strong>:
+Borrow ₹1,000 at 10% SI for 2 years. Repay in 2 equal annual installments.
+Total amount = 1000 × (1 + 10×2/100) = 1000 × 1.20 = ₹1,200
+Each installment = 1200/2 = <strong>₹600</strong>
+
+<strong>Example (CI Installment)</strong>:
+Borrow ₹1,000 at 10% CI. Repay in 2 equal annual installments.
+Present value of installments = 1000
+x/(1.10) + x/(1.10)² = 1000
+x × (0.9091 + 0.8264) = 1000
+x × 1.7355 = 1000 → x = <strong>₹576.19</strong>
+
+<div class="alert alert-warning"><span class="alert-icon">⚠️</span><div class="alert-content"><strong>Common Mistakes to Avoid</strong>
+Using SI installment formula when CI is applied. The formula is different.</div></div>
+
+<hr />
+
+<h3>8. Present Worth / True Discount</h3>
+
+<strong>Concept</strong>: The present value of a future sum, discounted at a given rate.
+
+<strong>Formula</strong>:
+<pre><code class="language-">Present Worth (PW) = A / (1 + R×T/100)    [for SI]
+Present Worth (PW) = A / (1 + R/100)^T     [for CI]</code></pre>
+
+<strong>True Discount</strong>: The difference between the future value (A) and the present worth (PW).
+<pre><code class="language-">TD = A - PW</code></pre>
+
+<strong>Banker's Discount / Commercial Discount</strong>: Discount calculated on the face value (not on present worth). Used in banking.
+<pre><code class="language-">Banker's Discount = (A × R × T) / 100    [using SI formula on A]</code></pre>
+
+<strong>Difference Between True Discount and Banker's Discount</strong>:
+Banker's Discount > True Discount (for the same face value and rate).
+
+<div class="alert alert-warning"><span class="alert-icon">⚠️</span><div class="alert-content"><strong>Common Mistakes to Avoid</strong>
+Confusing true discount with banker's discount. True discount is on PW; banker's discount is on face value.</div></div>
+
+<hr />
+
+<h3>9. Doubling and Tripling Time</h3>
+
+<strong>The Rule of 72</strong> (for CI):
+<pre><code class="language-">Time to double ≈ 72 / R</code></pre>
+This works well for rates between 6% and 15%.
+
+<strong>Example</strong>: At 8% CI, time to double = 72/8 = <strong>9 years</strong>
+
+<strong>The Rule of 69</strong> (more accurate):
+<pre><code class="language-">Time to double ≈ 69 + 0.35/R</code></pre>
+Or: T = 0.35 × ln(2) / ln(1 + R/100)
+
+<strong>For Exact Doubling</strong>:
+<pre><code class="language-">At R% CI: T = log₂(2) / log(1 + R/100) = 1 / log(1 + R/100) in base 10</code></pre>
+
+<strong>Tripling Time</strong> (Rule of 115):
+<pre><code class="language-">Time to triple ≈ 115 / R</code></pre>
+
+<strong>SI Doubling</strong>: T = 100/R years. At 10% SI, doubles in exactly 10 years.
+<strong>CI Doubling</strong>: T = log(2)/log(1+R/100). At 10% CI, doubles in approximately 7.27 years.
+
+<strong>The Contrast</strong>: At 10% per year:
+<ul><li>SI: 10 years to double</li><li>CI: ~7.27 years to double</li></ul>
+
+This is the most important practical difference between SI and CI.
+
+<div class="alert alert-warning"><span class="alert-icon">⚠️</span><div class="alert-content"><strong>Common Mistakes to Avoid</strong>
+Applying the Rule of 72 to SI (it's only for CI). Rule of 72 assumes compounding.</div></div>
+
+<hr />
+
+<h3>10. Difference Between CI and SI for Multiple Years</h3>
+
+<strong>For 2 Years</strong>:
+<pre><code class="language-">CI - SI = P × (R² / 10000)</code></pre>
+
+<strong>For 3 Years</strong>:
+<pre><code class="language-">CI - SI = P × [3R²/10000 + R³/1000000]</code></pre>
+
+<strong>Example</strong>: P=10,000, R=10%, for 2 years.
+CI - SI = 10000 × (10²/10000) = 10000 × 0.01 = <strong>₹100</strong>
+
+<strong>Verification</strong>:
+SI = 10000 × 10 × 2/100 = ₹2,000
+CI = 10000[(1.10)² - 1] = 10000[1.21 - 1] = ₹2,100
+Difference = ₹100 ✓
+
+<strong>Commonly Asked Question</strong>: "The difference between CI and SI on a sum at 10% per annum for 2 years is ₹31. Find the principal."
+31 = P × (10²/10000) = P × 0.01 → P = <strong>₹3,100</strong>
+
+<hr />
+
+<h3>11. Fractional Periods in CI</h3>
+
+<strong>Concept</strong>: When time is not a complete number of years, use fractional exponents.
+
+<strong>Example</strong>: P = ₹10,000, R = 10% CI, T = 1.5 years.
+A = 10000 × (1.10)^1.5 = 10000 × √(1.10)³ = 10000 × 1.1537 = <strong>₹11,537</strong>
+
+<strong>For 2 years 6 months</strong>: T = 2.5 years
+A = P × (1 + R/100)^2 × √(1 + R/100)
+
+<strong>Common Trick</strong>: Sometimes exam questions ask for interest for 1.5 years at CI. Always use fractional exponent, not simple average.
+
+<div class="alert alert-warning"><span class="alert-icon">⚠️</span><div class="alert-content"><strong>Common Mistakes to Avoid</strong>
+Calculating CI for 1 year + CI for half year separately and adding. CI for 1.5 years ≠ CI(1 yr) + SI(0.5 yr). Must use: A = P × (1+R/100)^1.5</div></div>
+
+<hr />
+
+<h3>12. CI with Varying Rates</h3>
+
+<strong>Concept</strong>: When different rates apply in different years.
+
+<strong>Formula</strong>:
+<pre><code class="language-">A = P × (1 + R₁/100) × (1 + R₂/100) × (1 + R₃/100) × ...</code></pre>
+
+<strong>Example</strong>: P=10,000. 10% for 1st year, 20% for 2nd year, 30% for 3rd year.
+A = 10000 × 1.10 × 1.20 × 1.30 = <strong>₹17,160</strong>
+CI = 10000[(1.10×1.20×1.30) - 1] = ₹7,160
+
+<strong>Comparison with Uniform Rate</strong>: At uniform 20% for 3 years:
+A = 10000 × (1.20)³ = 10000 × 1.728 = ₹17,280
+At varying rates (10%, 20%, 30%), A = ₹17,160 (slightly less, because arithmetic mean of rates ≠ geometric mean)
+
+<strong>Common in Product Companies</strong>: Investment return questions with changing market conditions.
+
+<hr />
+
+<h2 id="important-formula-sheet">🧠 Important Formula Sheet</h2>
+
+<h3>Simple Interest</h3>
+
+<table><thead><tr><th>Formula</th><th>When to Use</th></tr></thead><tbody><tr><td>SI = P × R × T / 100</td><td>Finding simple interest</td></tr><tr><td>A = P(1 + RT/100)</td><td>Amount under SI</td></tr><tr><td>P = SI × 100 / (R × T)</td><td>Finding principal</td></tr><tr><td>R = SI × 100 / (P × T)</td><td>Finding rate</td></tr><tr><td>T = SI × 100 / (P × R)</td><td>Finding time</td></tr><tr><td>SI for T years = SI_annual × T</td><td>Annual interest × years</td></tr></tbody></table>
+<h3>Compound Interest</h3>
+
+<table><thead><tr><th>Formula</th><th>When to Use</th></tr></thead><tbody><tr><td>A = P(1 + R/100)^T</td><td>Amount under CI (annual)</td></tr><tr><td>A = P(1 + R/n)^(nT)</td><td>CI with n compounding periods/year</td></tr><tr><td>CI = P[(1+R/100)^T - 1]</td><td>Finding CI amount (not total amount)</td></tr><tr><td>Effective annual rate = (1+R/n)^n - 1</td><td>Effective rate comparison</td></tr><tr><td>PW = A / (1+R/100)^T</td><td>Present worth of future sum</td></tr></tbody></table>
+<h3>Key Comparison Formulas</h3>
+
+<table><thead><tr><th>Formula</th><th>When to Use</th></tr></thead><tbody><tr><td>CI - SI (2 years) = P × R²/10000</td><td>Difference for 2 years</td></tr><tr><td>CI - SI (3 years) = P × [3R²/10000 + R³/1000000]</td><td>Difference for 3 years</td></tr><tr><td>Rule of 72: T_doubling ≈ 72/R</td><td>Approximate doubling time (CI)</td></tr><tr><td>Rule of 69: T_doubling ≈ 69.3/R + 0.35</td><td>More accurate doubling time</td></tr><tr><td>SI doubles at 100/R years</td><td>SI doubling time</td></tr><tr><td>Depreciation: V_n = P(1 - r/100)^n</td><td>Value after n years of depreciation</td></tr><tr><td>Growth: P_n = P_0(1 + r/100)^n</td><td>Population/value growth</td></tr></tbody></table>
+<h3>Installment Formulas</h3>
+
+<table><thead><tr><th>Formula</th><th>When to Use</th></tr></thead><tbody><tr><td>SI Installment = P(1 + RT/100) / T</td><td>Equal annual installments at SI</td></tr><tr><td>CI Installment: P = x[(1+R)^n - 1]/[R(1+R)^n]</td><td>EMI formula (equal annual, CI)</td></tr></tbody></table>
+<h3>Discount Formulas</h3>
+
+<table><thead><tr><th>Formula</th><th>When to Use</th></tr></thead><tbody><tr><td>True Discount = A - A/(1+RT/100)</td><td>True discount (SI)</td></tr><tr><td>Banker's Discount = (A × R × T)/100</td><td>Discount on face value</td></tr><tr><td>Present Worth = A / (1 + RT/100)</td><td>PW under SI</td></tr></tbody></table>
+<h3>Memory Tricks</h3>
+
+<strong>Rule of 72 Memory</strong>: "Divide 72 by the rate, get the years to double. Divide 115 by the rate, get the years to triple."
+
+<strong>CI vs SI for 2 Years</strong>: The difference is always P × (R²/10000). For P=10000, R=10%: difference = 100. For R=5%: difference = 25. Notice it's proportional to R².
+
+<strong>SI → CI Bridge</strong>: For 2 years, CI - SI = P(R²/10000). This is the extra "interest on interest" for the second year.
+
+<strong>The n=2 CI Formula</strong>: (1 + R/100)² = 1 + 2R/100 + R²/10000. The "extra" R²/10000 is the second-year compound.
+
+<hr />
+
+<h2 id="shortcut-techniques--time-saving-tricks">⚡ Shortcut Techniques & Time-Saving Tricks</h2>
+
+<h3>1. The Rule of 72 (Instant)</h3>
+
+For any rate R% compound interest, years to double ≈ 72/R.
+
+<table><thead><tr><th>Rate</th><th>Years to Double</th></tr></thead><tbody><tr><td>6%</td><td>12 years</td></tr><tr><td>8%</td><td>9 years</td></tr><tr><td>9%</td><td>8 years</td></tr><tr><td>12%</td><td>6 years</td></tr><tr><td>15%</td><td>4.8 years</td></tr><tr><td>18%</td><td>4 years</td></tr></tbody></table>
+<strong>Example</strong>: At 12% CI, ₹5,000 doubles to ₹10,000 in approximately <strong>6 years</strong>.
+
+<h3>2. SI = CI Only in Year 1</h3>
+
+SI = CI for the first year at any rate. After that, CI > SI.
+
+<div class="alert alert-tip"><span class="alert-icon">💡</span><div class="alert-content"><strong>Shortcut Method</strong>
+If a question asks for SI and CI "in the first year" or "for 1 year," they're the same. Save calculation time by recognizing this.</div></div>
+
+<h3>3. CI - SI for 2 Years = PR²/10000</h3>
+
+This formula is asked in almost every test. Learn it cold.
+
+<strong>Fast calculation</strong>:
+<ul><li>P = 10,000, R = 10% → difference = 10000 × 100/10000 = <strong>₹100</strong></li><li>P = 5,000, R = 5% → difference = 5000 × 25/10000 = <strong>₹12.50</strong></li><li>P = 8,000, R = 12% → difference = 8000 × 144/10000 = <strong>₹115.20</strong></li></ul>
+
+<h3>4. The Fractional Year Trick</h3>
+
+For CI at R% for a fractional year (e.g., 1.5 years):
+A = P × (1 + R/100) × √(1 + R/100)
+
+<strong>Example</strong>: P=10000, R=10%, T=1.5 years
+A = 10000 × 1.10 × √1.10 = 10000 × 1.10 × 1.0488 = <strong>₹11,537</strong>
+
+<h3>5. Approximate CI for Small Rates</h3>
+
+For R ≤ 10% and T ≤ 3 years, use binomial approximation:
+(1 + R/100)^T ≈ 1 + TR/100 + T(T-1)R²/20000
+
+<strong>Example</strong>: At 10% for 2 years: ≈ 1 + 0.20 + 0.01 = 1.21 exactly (this approximation is exact for R=10%, T=2)
+At 8% for 2 years: ≈ 1 + 0.16 + 0.008 = 1.168 (actual: 1.1664, close)
+
+<h3>6. Compare SI vs CI Without Full Calculation</h3>
+
+<strong>For 2 years</strong>: SI amount = 1 + 2R/100; CI amount = 1 + 2R/100 + R²/10000
+CI wins by R²/10000 (as percentage of principal).
+
+<strong>Quick comparison</strong>:
+<ul><li>At 10%: CI is 1% more than SI after 2 years</li><li>At 20%: CI is 4% more than SI after 2 years</li><li>At 5%: CI is only 0.25% more after 2 years</li></ul>
+
+<h3>7. Installment Fast Method (SI)</h3>
+
+For SI installment problems, the total amount with interest = sum of all installments.
+
+<strong>Example</strong>: P=5000, R=10%, T=2 years, 2 installments.
+Total amount = 5000 × 1.20 = 6000
+Each installment = 6000/2 = <strong>₹3,000</strong>
+
+<h3>8. The CI Growth Rate from Ratio</h3>
+
+If amount becomes x times in n years at R% CI:
+x = (1 + R/100)^n
+R = (x^(1/n) - 1) × 100
+
+<strong>Example</strong>: Amount becomes 8 times in 3 years.
+8 = (1 + R/100)³
+1 + R/100 = 2 → R = <strong>100%</strong>
+
+<hr />
+
+<h2 id="most-frequently-asked-question-patterns">🔥 Most Frequently Asked Question Patterns</h2>
+
+<h3>Pattern 1: Find SI / CI Amount</h3>
+<strong>Concept</strong>: Basic formula application
+<strong>Difficulty</strong>: Easy
+<strong>Approach</strong>: Plug into SI = P×R×T/100 or A = P(1+R/100)^T
+<strong>Fastest</strong>: SI multiplier table
+<strong>Companies</strong>: All companies
+
+<h3>Pattern 2: Find Principal / Rate / Time</h3>
+<strong>Concept</strong>: Rearranging SI/CI formula
+<strong>Difficulty</strong>: Easy
+<strong>Approach</strong>: Isolate the unknown variable
+<strong>Fastest</strong>: Cross-multiply and solve
+<strong>Companies</strong>: All companies
+
+<h3>Pattern 3: SI vs CI Comparison</h3>
+<strong>Concept</strong>: Difference or comparison over time
+<strong>Difficulty</strong>: Medium
+<strong>Approach</strong>: CI - SI for 2 years = PR²/10000
+<strong>Fastest</strong>: Direct formula
+<strong>Companies</strong>: TCS, Infosys, Amazon, Goldman
+
+<h3>Pattern 4: Amount at CI with Compounding Frequency</h3>
+<strong>Concept</strong>: n compounding periods
+<strong>Difficulty</strong>: Medium
+<strong>Approach</strong>: A = P(1 + R/n)^(nT)
+<strong>Fastest</strong>: Divide rate by n, multiply time by n
+<strong>Companies</strong>: Infosys, Deloitte, Goldman
+
+<h3>Pattern 5: Installment Problems (SI)</h3>
+<strong>Concept</strong>: Equal annual payments
+<strong>Difficulty</strong>: Medium
+<strong>Approach</strong>: Total amount with interest / number of installments
+<strong>Fastest</strong>: SI installment formula
+<strong>Companies</strong>: TCS, Infosys, Cognizant
+
+<h3>Pattern 6: Doubling / Tripling Time</h3>
+<strong>Concept</strong>: Rule of 72 or exact formula
+<strong>Difficulty</strong>: Easy–Medium
+<strong>Approach</strong>: Rule of 72 for approximation; exact formula for precision
+<strong>Fastest</strong>: Rule of 72
+<strong>Companies</strong>: TCS, Infosys, Deloitte
+
+<h3>Pattern 7: Population / Growth (CI Application)</h3>
+<strong>Concept</strong>: CI for non-financial growth
+<strong>Difficulty</strong>: Medium
+<strong>Approach</strong>: P_n = P_0(1 + r/100)^n
+<strong>Fastest</strong>: Compound multiplier method
+<strong>Companies</strong>: Infosys, Deloitte, Goldman
+
+<h3>Pattern 8: Depreciation</h3>
+<strong>Concept</strong>: Negative growth
+<strong>Difficulty</strong>: Medium
+<strong>Approach</strong>: Value_n = P(1 - r/100)^n
+<strong>Fastest</strong>: Depreciation multiplier
+<strong>Companies</strong>: Deloitte, Goldman, Amazon
+
+<h3>Pattern 9: Present Worth / True Discount</h3>
+<strong>Concept</strong>: Discounting future payments
+<strong>Difficulty</strong>: Medium
+<strong>Approach</strong>: PW = A / (1 + RT/100) for SI; A/(1+R/100)^T for CI
+<strong>Fastest</strong>: Direct formula
+<strong>Companies</strong>: Goldman, Amazon, Deloitte
+
+<h3>Pattern 10: CI with Varying Rates</h3>
+<strong>Concept</strong>: Different rates each year
+<strong>Difficulty</strong>: Medium–Hard
+<strong>Approach</strong>: Multiply individual multipliers: A = P × ∏(1 + R_i/100)
+<strong>Fastest</strong>: Chain multiplication
+<strong>Companies</strong>: Goldman, Amazon, Microsoft
+
+<h3>Pattern 11: Find Rate Given Amount and Time</h3>
+<strong>Concept</strong>: Rearranging CI formula
+<strong>Difficulty</strong>: Medium
+<strong>Approach</strong>: A/P = (1 + R/100)^T; use trial or log
+<strong>Fastest</strong>: For 2 years: R = √(A/P × 10000) - 100
+<strong>Fastest</strong>: For 3 years: R = ³√(A/P) - 1 × 100
+<strong>Companies</strong>: Infosys, Amazon, Goldman
+
+<h3>Pattern 12: EMI / Loan Installment (CI)</h3>
+<strong>Concept</strong>: Equal payments covering interest + principal
+<strong>Difficulty</strong>: Hard
+<strong>Approach</strong>: Present value of annuity formula
+<strong>Fastest</strong>: Formula approach
+<strong>Companies</strong>: Amazon, Goldman, Microsoft
+
+<h3>Pattern 13: Fractional Year in CI</h3>
+<strong>Concept</strong>: Non-integer time period
+<strong>Difficulty</strong>: Medium
+<strong>Approach</strong>: A = P × (1 + R/100)^fractional part
+<strong>Fastest</strong>: Fractional exponent method
+<strong>Companies</strong>: Infosys, Amazon, Deloitte
+
+<h3>Pattern 14: Effective Annual Rate</h3>
+<strong>Concept</strong>: Converting nominal to effective rate
+<strong>Difficulty</strong>: Medium
+<strong>Approach</strong>: (1 + R/n)^n - 1
+<strong>Fastest</strong>: Formula
+<strong>Companies</strong>: Goldman Sachs, Amazon (finance roles)
+
+<h3>Pattern 15: SI-CI Difference Over 3 Years</h3>
+<strong>Concept</strong>: Difference for 3 years
+<strong>Difficulty</strong>: Medium
+<strong>Approach</strong>: CI - SI = P[3R²/10000 + R³/1000000]
+<strong>Fastest</strong>: Direct formula
+<strong>Companies</strong>: Infosys, Amazon, Goldman
+
+<h3>Pattern 16: Find P Given CI - SI Difference</h3>
+<strong>Concept</strong>: Using difference formula backward
+<strong>Difficulty</strong>: Easy–Medium
+<strong>Approach</strong>: P = Difference × 10000 / R² (for 2 years)
+<strong>Fastest</strong>: P = diff × 10000 / R²
+<strong>Companies</strong>: TCS, Infosys, Cognizant
+
+<h3>Pattern 17: Mixed SI and CI (Same Principal)</h3>
+<strong>Concept</strong>: SI for part, CI for part
+<strong>Difficulty</strong>: Medium
+<strong>Approach</strong>: Calculate separately, add interests
+<strong>Fastest</strong>: Separate calculation
+<strong>Companies</strong>: Infosys, Deloitte, Amazon
+
+<h3>Pattern 18: Partial Period Before First Compounding</h3>
+<strong>Concept</strong>: Interest for partial first period
+<strong>Difficulty</strong>: Hard
+<strong>Approach</strong>: Use fractional exponent or prorate
+<strong>Fastest</strong>: A = P(1 + R/100)^whole × (1 + R × fraction/100)
+<strong>Companies</strong>: Goldman, Amazon
+
+<h3>Pattern 19: CI Growth Rate from Two Data Points</h3>
+<strong>Concept</strong>: Find rate given initial and final values
+<strong>Difficulty</strong>: Medium
+<strong>Approach</strong>: (Final/Initial)^(1/n) - 1 × 100 = r
+<strong>Fastest</strong>: nth root method
+<strong>Companies</strong>: Infosys, Deloitte, Goldman
+
+<h3>Pattern 20: CI Interest for Fractional Year Only</h3>
+<strong>Concept</strong>: Interest for 1.5 years specifically
+<strong>Difficulty</strong>: Medium
+<strong>Approach</strong>: A = P(1+R/100)^fraction
+<strong>Fastest</strong>: √(1+R/100) for 0.5 year
+<strong>Companies</strong>: All companies
+
+<hr />
+
+<h2 id="placement--interview-relevance">💼 Placement & Interview Relevance</h2>
+
+<h3>Service-Based Companies</h3>
+
+<table><thead><tr><th>Company</th><th>Frequency</th><th>Difficulty</th><th>Focus Areas</th></tr></thead><tbody><tr><td>TCS NQT/Ninja</td><td>Medium (2-4 Qs)</td><td>Easy–Medium</td><td>Basic SI/CI, difference formulas</td></tr><tr><td>Infosys</td><td>Medium (2-4 Qs)</td><td>Easy–Medium</td><td>CI growth, installment, population</td></tr><tr><td>Cognizant</td><td>Low (2-3 Qs)</td><td>Easy</td><td>Basic SI/CI</td></tr><tr><td>Accenture</td><td>Low (2-3 Qs)</td><td>Easy</td><td>Basic SI/CI</td></tr><tr><td>Wipro</td><td>Low (2-3 Qs)</td><td>Easy–Medium</td><td>Basic formulas</td></tr></tbody></table>
+<h3>Product-Based Companies</h3>
+
+<table><thead><tr><th>Company</th><th>Frequency</th><th>Difficulty</th><th>Focus Areas</th></tr></thead><tbody><tr><td>Amazon</td><td>Medium (2-4 Qs)</td><td>Medium–Hard</td><td>Investment growth, depreciation, varying rates</td></tr><tr><td>Goldman Sachs</td><td>High (3-5 Qs)</td><td>Medium–Hard</td><td>EMI, present worth, effective rate</td></tr><tr><td>Microsoft</td><td>Medium (2-3 Qs)</td><td>Hard</td><td>Complex CI, fractional periods</td></tr><tr><td>Google</td><td>Low (1-2 Qs)</td><td>Hard</td><td>Growth rate, compound problems</td></tr><tr><td>Adobe</td><td>Low (2-3 Qs)</td><td>Medium–Hard</td><td>Basic CI, depreciation</td></tr></tbody></table>
+<h3>Difficulty Variation</h3>
+<ul><li>Service-based: 80% Easy, 20% Medium</li><li>Product-based: 20% Medium, 60% Hard, 20% Very Hard</li><li>Finance companies: Present worth, EMI, effective annual rate are standard</li></ul>
+
+<h3>Typical Questions Per Test</h3>
+<ul><li>TCS NQT: 2-4 questions</li><li>Infosys: 2-4 questions</li><li>Amazon: 2-4 questions</li><li>Goldman Sachs: 3-5 questions (often combined with DI)</li><li>Google: 1-2 questions (usually in mixed quant)</li></ul>
+
+<hr />
+
+<h2 id="beginner--advanced-roadmap">🚀 Beginner → Advanced Roadmap</h2>
+
+<h3>Phase 1: Fundamentals (Days 1-2)</h3>
+<ol><li>Learn SI formula: SI = P×R×T/100</li><li>Learn CI formula: A = P(1+R/100)^T</li><li>Distinguish SI from CI clearly</li><li>Learn difference formula for 2 years: CI - SI = PR²/10000</li><li>Learn Rule of 72 for doubling time</li><li>Practice: 40 basic SI/CI questions</li><li>Target: Solve basic SI and CI questions in under 30 seconds</li></ol>
+
+<h3>Phase 2: Intermediate Concepts (Days 3-5)</h3>
+<ol><li>Compounding frequency (n periods per year)</li><li>Effective annual rate</li><li>Population/growth problems</li><li>Depreciation problems</li><li>SI installment formula</li><li>Practice: 50 intermediate questions</li><li>Target: Solve compound period questions in under 45 seconds</li></ol>
+
+<h3>Phase 3: Advanced Concepts (Days 6-9)</h3>
+<ol><li>CI installment (present value of annuity)</li><li>True discount and present worth</li><li>Fractional period CI</li><li>Varying rates in CI</li><li>Three-year CI - SI difference formula</li><li>Practice: 50 advanced questions</li><li>Target: Solve fractional period and varying rate problems in under 60 seconds</li></ol>
+
+<h3>Phase 4: Placement-Level Practice (Days 10-14)</h3>
+<ol><li>Solve 200+ previous year questions (TCS, Infosys, Cognizant)</li><li>Focus on SI-CI difference questions (most frequently asked)</li><li>Take timed section tests</li><li>Review errors</li><li>Target: 85%+ accuracy, 1 question per 50 seconds</li></ol>
+
+<h3>Phase 5: Product-Based Level (Days 15-20)</h3>
+<ol><li>Solve Goldman Sachs and Amazon-specific SI/CI problems</li><li>Practice EMI and present worth questions</li><li>Handle multi-step problems combining growth and depreciation</li><li>Practice effective rate comparisons</li><li>Target: 75%+ accuracy at hard level</li></ol>
+
+<hr />
+
+<h2 id="difficulty-breakdown">📊 Difficulty Breakdown</h2>
+
+<h3>Easy</h3>
+<table><thead><tr><th>Subtopic</th><th>Why Easy</th></tr></thead><tbody><tr><td>Basic SI formula</td><td>Direct substitution</td></tr><tr><td>Basic CI formula (1 year)</td><td>SI = CI in year 1</td></tr><tr><td>Finding P, R, or T</td><td>Direct rearrangement</td></tr><tr><td>Rule of 72</td><td>Division only</td></tr><tr><td>SI for partial year</td><td>T in years (decimal)</td></tr><tr><td>CI - SI for 2 years (direct)</td><td>Formula plug-in</td></tr></tbody></table>
+<h3>Medium</h3>
+<table><thead><tr><th>Subtopic</th><th>Why Medium</th></tr></thead><tbody><tr><td>CI for 2+ years</td><td>Power calculation</td></tr><tr><td>Compounding frequency</td><td>Rate and time adjustment</td></tr><tr><td>Effective annual rate</td><td>Conversion formula</td></tr><tr><td>Population growth</td><td>CI formula application</td></tr><tr><td>Depreciation</td><td>(1 - r/100)^n</td></tr><tr><td>SI installments</td><td>Total amount method</td></tr><tr><td>Fractional year CI</td><td>Fractional exponent</td></tr><tr><td>Varying rates</td><td>Multi-mplier chain</td></tr></tbody></table>
+<h3>Hard</h3>
+<table><thead><tr><th>Subtopic</th><th>Why Hard</th></tr></thead><tbody><tr><td>CI installments (EMI)</td><td>Present value of annuity formula</td></tr><tr><td>Present worth (CI basis)</td><td>Discounting future value</td></tr><tr><td>True discount vs banker's discount</td><td>Conceptual distinction</td></tr><tr><td>Finding rate from amount (3+ years)</td><td>Root extraction</td></tr><tr><td>Fractional year with CI</td><td>√(1+R/100) type calculation</td></tr><tr><td>Three-year SI-CI difference</td><td>Complex formula</td></tr><tr><td>Partial period + full period</td><td>Multiple steps</td></tr></tbody></table>
+<h3>Very Hard</h3>
+<table><thead><tr><th>Subtopic</th><th>Why Very Hard</th></tr></thead><tbody><tr><td>CI installments with multiple years</td><td>Log equation solving</td></tr><tr><td>Present value of irregular installments</td><td>Sum of geometric series</td></tr><tr><td>Growth rate with changing base</td><td>Recursive growth</td></tr><tr><td>Compound period with fractional</td><td>n-th root + fractional</td></tr><tr><td>Multi-step financial planning</td><td>Multiple formula chain</td></tr></tbody></table>
+<hr />
+
+<h2 id="mastery-plan">🎓 Mastery Plan</h2>
+
+<h3>Questions for Basic Understanding</h3>
+<strong>Minimum: 70 questions</strong> (Easy–Medium mix)
+<ul><li>30 basic SI questions</li><li>25 basic CI questions</li><li>15 SI-CI comparison questions</li></ul>
+
+<h3>Questions for Placement Readiness</h3>
+<strong>Additional: 150 questions</strong> (Medium difficulty)
+<ul><li>Target: 85% accuracy</li><li>Time: Under 50 seconds per question</li><li>Focus: TCS NQT, Infosys, Cognizant patterns</li><li>Priority: SI-CI difference, basic CI growth</li></ul>
+
+<h3>Questions for Product Company Readiness</h3>
+<strong>Additional: 130 questions</strong> (Hard–Very Hard)
+<ul><li>Target: 70% accuracy</li><li>Focus: Goldman Sachs, Amazon, Microsoft patterns</li><li>Priority: Installments, present worth, effective rate, varying CI</li></ul>
+
+<h3>Time Required for Mastery</h3>
+<table><thead><tr><th>Level</th><th>Time</th><th>Daily Commitment</th></tr></thead><tbody><tr><td>Basic (70 Qs)</td><td>3 days</td><td>1 hour/day</td></tr><tr><td>Placement (220 Qs)</td><td>2 weeks</td><td>1.5 hours/day</td></tr><tr><td>Product (350 Qs)</td><td>3 weeks</td><td>1.5-2 hours/day</td></tr><tr><td><strong>Total</strong></td><td><strong>~4.5 weeks</strong></td><td>—</td></tr></tbody></table>
+<hr />
+
+<h2 id="common-traps--mistakes">❌ Common Traps & Mistakes</h2>
+
+<h3>Mistake 1: Confusing SI with CI</h3>
+<strong>Error</strong>: Using SI formula for a CI problem, or vice versa.
+<strong>Fix</strong>: Check if interest is on original principal (SI) or accumulated amount (CI). SI always gives the same yearly interest; CI grows.
+
+<h3>Mistake 2: Wrong Time Unit for T</h3>
+<strong>Error</strong>: Using T = 6 for 6 months, giving T = 6 in the SI formula.
+<strong>Fix</strong>: T always in years. 6 months = 0.5 years. 3 months = 0.25 years.
+
+<h3>Mistake 3: Wrong Compounding Rate Adjustment</h3>
+<strong>Error</strong>: Using R = 12% directly when compounding is quarterly. A = P(1+0.12)^4 (wrong!)
+<strong>Fix</strong>: Divide rate by n, multiply time by n. A = P(1+0.03)^4.
+
+<h3>Mistake 4: Applying Rule of 72 to SI</h3>
+<strong>Error</strong>: Saying money doubles in 72/R years under SI.
+<strong>Fix</strong>: Rule of 72 is only for CI. SI doubles in exactly 100/R years.
+
+<h3>Mistake 5: Adding SI for Each Year in CI Calculation</h3>
+<strong>Error</strong>: For CI, calculating interest as SI each year and adding.
+<strong>Fix</strong>: Year 1: interest on P. Year 2: interest on P + Year 1 interest. Not the same as SI.
+
+<h3>Mistake 6: Using SI Installment Formula for CI Installment Problems</h3>
+<strong>Error</strong>: Using Total Amount / n for CI-based installments.
+<strong>Fix</strong>: CI installment problems require present value calculation. SI installment = Total Amount/n. CI installment = PV of annuity.
+
+<h3>Mistake 7: Forgetting That CI-CSI Difference Formula Is for 2 Years Only</h3>
+<strong>Error</strong>: Using P×R²/10000 for 3 years.
+<strong>Fix</strong>: For 3 years: P[3R²/10000 + R³/1000000]. The formula changes with time.
+
+<h3>Mistake 8: Ignoring Fractional Years in CI</h3>
+<strong>Error</strong>: Treating 1.5 years as 1 year + 6 months simple interest.
+<strong>Fix</strong>: Use A = P(1+R/100)^1.5 or A = P(1+R/100) × √(1+R/100).
+
+<h3>Mistake 9: Not Adjusting for Depreciation Correctly</h3>
+<strong>Error</strong>: Subtracting depreciation each year (P - r% of P) instead of multiplying.
+<strong>Fix</strong>: Value after n years = P × (1 - r/100)^n. Multiplication, not subtraction.
+
+<h3>Mistake 10: Mixing Up True Discount and Banker's Discount</h3>
+<strong>Error</strong>: Using true discount formula for banker's discount or vice versa.
+<strong>Fix</strong>: True discount is on present worth. Banker's discount is on face value (simple interest on A).
+
+<hr />
+
+<h2 id="practice-section">📝 Practice Section</h2>
+
+<h3>🔰 Easy Questions (1-20)</h3>
+<ol><li>Find the simple interest on ₹5,000 at 8% per annum for 3 years.</li></ol>
+   <details>
+   <summary>🔍 View Solution</summary>
+
+   SI = P×R×T/100 = 5000×8×3/100 = 1200 × 3 = ₹1,200
+   </details>
+<ol><li>Find the compound interest on ₹10,000 at 10% per annum for 2 years.</li></ol>
+   <details>
+   <summary>🔍 View Solution</summary>
+
+   A = 10000×(1.10)² = 10000×1.21 = ₹12,100. CI = 12100-10000 = ₹2,100
+   </details>
+<ol><li>The SI on a sum at 5% per annum for 3 years is ₹450. Find the sum.</li></ol>
+   <details>
+   <summary>🔍 View Solution</summary>
+
+   SI = 450, R=5%, T=3. P = 450×100/(5×3) = 45000/15 = ₹3,000
+   </details>
+<ol><li>At what rate per annum will ₹2,000 become ₹2,400 in 4 years under SI?</li></ol>
+   <details>
+   <summary>🔍 View Solution</summary>
+
+   SI = 2400-2000 = 400. R = 400×100/(2000×4) = 40000/8000 = 5%
+   </details>
+<ol><li>Find the amount if ₹8,000 is invested at 6% CI for 2 years.</li></ol>
+   <details>
+   <summary>🔍 View Solution</summary>
+
+   A = 8000×(1.06)² = 8000×1.1236 = ₹8,988.80
+   </details>
+<ol><li>The difference between CI and SI on a sum at 10% per annum for 2 years is ₹50. Find the sum.</li></ol>
+   <details>
+   <summary>🔍 View Solution</summary>
+
+   Difference = P×R²/10000. 50 = P×100/10000 = P×0.01 → P = ₹5,000
+   </details>
+<ol><li>In how many years will ₹1,000 become ₹2,000 at 10% SI?</li></ol>
+   <details>
+   <summary>🔍 View Solution</summary>
+
+   SI to double: 1000 at 10% SI. 1000×10×T/100 = 1000 → T = 10 years
+   </details>
+<ol><li>Using the Rule of 72, how long will ₹5,000 take to double at 9% CI?</li></ol>
+   <details>
+   <summary>🔍 View Solution</summary>
+
+   Rule of 72: 72/9 = 8 years
+   </details>
+<ol><li>Find the CI on ₹20,000 at 12% per annum for 1 year.</li></ol>
+   <details>
+   <summary>🔍 View Solution</summary>
+
+   CI for 1 year = SI for 1 year (same). 20000×12/100 = ₹2,400
+   </details>
+<ol><li>A sum becomes 3 times itself in 5 years at SI. Find the rate.</li></ol>
+   <details>
+   <summary>🔍 View Solution</summary>
+
+   3P = P + SI_5yr → SI_5yr = 2P = P×R×5/100 → R = 40%
+   </details>
+<ol><li>The CI on a sum at 8% for 2 years is ₹832. Find the principal.</li></ol>
+   <details>
+   <summary>🔍 View Solution</summary>
+
+   CI for 2yr = 832. CI = P[(1+R/100)²-1] = P[2R/100+R²/10000]
+   We need R. Using CI-SI diff = P×R²/10000. But we don't know SI.
+   CI - SI = P×R²/10000 → SI = CI - P×R²/10000.
+   But also: CI - SI = P×R²/10000 = 832 - SI.
+   And SI = P×R×2/100 = P×R/50.
+   832 - P×R/50 = P×R²/10000 → 832 = P×R/50 + P×R²/10000
+   Try R=8%: 832 = P×8/50 + P×64/10000 = 0.16P + 0.0064P = 0.1664P → P = 5000.
+   CI = 832, check: 5000×0.08×2 = 800 (SI), diff = 32. But diff formula gives 5000×64/10000 = 32.
+   So if SI=800, diff=32, CI=832. But diff given is 832 itself.
+   So CI - SI = 832 = P×R²/10000.
+   Try R=10%: P = 832×10000/100 = 83,200 (too large).
+   Try R=20%: P = 832×10000/400 = 20,800.
+   But CI at 20% for 2yr on 20800 = 20800×(1.2)²-20800 = 20800×1.44-20800 = 29952-20800 = 9152. SI = 20800×20×2/100 = 8320. Diff = 832. ✓ P = ₹20,800, R = 20%.
+   </details>
+<ol><li>Find the SI on ₹1,200 at 7.5% per annum for 2.5 years.</li></ol>
+   <details>
+   <summary>🔍 View Solution</summary>
+
+   T = 2.5 years. SI = 1200×7.5×2.5/100 = 1200×18.75/100 = ₹225
+   </details>
+<ol><li>At what rate will ₹1,000 amount to ₹1,500 in 5 years under CI?</li></ol>
+   <details>
+   <summary>🔍 View Solution</summary>
+
+   A = P(1+R/100)^5 = 1500, P=1000. (1+R/100)^5 = 1.5
+   (1+R/100) = 1.5^(1/5) = 1.0845 → R = <strong>8.45%</strong>
+   </details>
+<ol><li>Find the amount: Principal ₹6,000, Rate 10% CI, Time 3 years.</li></ol>
+   <details>
+   <summary>🔍 View Solution</summary>
+
+   A = 6000×(1.10)³ = 6000×1.331 = ₹7,986
+   </details>
+<ol><li>A sum of ₹3,000 is invested at 8% SI. In how many years will it become ₹3,720?</li></ol>
+   <details>
+   <summary>🔍 View Solution</summary>
+
+   SI = 3720-3000 = 720. 720 = 3000×8×T/100 → 72000 = 24000T → T = 3 years
+   </details>
+<ol><li>Find the SI on ₹15,000 at 6% for 4 months.</li></ol>
+   <details>
+   <summary>🔍 View Solution</summary>
+
+   T = 4/12 = 1/3 year. SI = 15000×6×(1/3)/100 = 15000×2/100 = ₹300
+   </details>
+<ol><li>The amount after 2 years at SI is ₹5,200. The rate is 10%. Find the principal.</li></ol>
+   <details>
+   <summary>🔍 View Solution</summary>
+
+   A = P(1+0.10×2/100)? No, SI: A = P(1+10×2/100) = P×1.20 = 5200 → P = ₹4,333.33
+   </details>
+<ol><li>Find the CI on ₹1,00,000 at 5% for 2 years compounded half-yearly.</li></ol>
+   <details>
+   <summary>🔍 View Solution</summary>
+
+   Half-yearly: n=2, R/n=5%, nT=4. A = 100000×(1.05)^4 = 100000×1.2155 = ₹1,21,550. CI = ₹21,550
+   </details>
+<ol><li>A machine depreciates at 10% per year. Its value is ₹40,000. What will it be after 2 years?</li></ol>
+   <details>
+   <summary>🔍 View Solution</summary>
+
+   Value = 40000×(0.90)² = 40000×0.81 = ₹32,400
+   </details>
+<ol><li>Find the rate at which SI and CI amounts are equal for 1 year at the same rate.</li></ol>
+   <details>
+   <summary>🔍 View Solution</summary>
+
+   SI = CI for 1 year at any rate (equal). So rate can be any %. The question likely asks: find the rate such that amounts are equal for 1 year. Answer: <strong>any rate</strong> — SI = CI in year 1.
+
+   ---
+   </details>
+
+
+<hr />
+
+<h3>🔶 Medium Questions (1-20)</h3>
+<ol><li>The difference between CI and SI on a sum for 2 years at 5% per annum is ₹50. Find the sum.</li></ol>
+   <details>
+   <summary>🔍 View Solution</summary>
+
+   Difference = P×R²/10000 = P×25/10000 = P/400 = 50 → P = ₹20,000
+   </details>
+<ol><li>A sum of ₹5,000 is invested at 12% CI. In how many years will it become ₹7,000?</li></ol>
+   <details>
+   <summary>🔍 View Solution</summary>
+
+   7000 = 5000×(1.12)^n. (1.12)^n = 1.4
+   n×log(1.12) = log(1.4) → n = 0.1461/0.0492 ≈ 2.97 ≈ <strong>3 years</strong>
+   </details>
+<ol><li>Find the effective annual rate for 12% per annum compounded quarterly.</li></ol>
+   <details>
+   <summary>🔍 View Solution</summary>
+
+   Effective = (1+0.12/4)^4 - 1 = (1.03)^4 - 1 = 1.1255 - 1 = <em></em>12.55%
+   </details>
+<ol><li>A population of 20,000 grows at 5% per year. What will it be after 3 years?</li></ol>
+   <details>
+   <summary>🔍 View Solution</summary>
+
+   A = 20000×(1.05)³ = 20000×1.157625 = <strong>23,153</strong>
+   </details>
+<ol><li>Find the CI on ₹25,000 at 10% for 1.5 years.</li></ol>
+   <details>
+   <summary>🔍 View Solution</summary>
+
+   A = 25000×(1.10)^1.5 = 25000×1.10×√1.10 = 25000×1.10×1.0488 = <em></em>₹28,842
+   </details>
+<ol><li>A sum of ₹8,000 becomes ₹9,800 in 2 years under CI. Find the rate.</li></ol>
+   <details>
+   <summary>🔍 View Solution</summary>
+
+   9800 = 8000×(1+R/100)². 9800/8000 = 1.225 = (1+R/100)²
+   1+R/100 = √1.225 = 1.1068 → R = <strong>10.68%</strong>
+   </details>
+<ol><li>At what rate per annum will ₹1,000 become ₹1,331 in 3 years under CI?</li></ol>
+   <details>
+   <summary>🔍 View Solution</summary>
+
+   1331 = 1000×(1+R/100)³. (1+R/100)³ = 1.331 = (1.1)³ → R = <em></em>10%
+   </details>
+<ol><li>The CI on a sum at 10% for 3 years is ₹3,310. Find the principal.</li></ol>
+   <details>
+   <summary>🔍 View Solution</summary>
+
+   CI = P[(1.10)³-1] = P[1.331-1] = 0.331P = 3310 → P = <em></em>₹10,000
+   </details>
+<ol><li>A machine worth ₹1,00,000 depreciates at 20% per year. After how many years will its value be less than ₹50,000?</li></ol>
+   <details>
+   <summary>🔍 View Solution</summary>
+
+   After 1 year: 100000×0.80 = 80000. After 2 years: 80000×0.80 = 64000.
+   After 3 years: 64000×0.80 = 51200. Still above 50000.
+   After 4 years: 51200×0.80 = 40960 < 50000.
+   Answer: <strong>4 years</strong>
+   </details>
+<ol><li>₹5,000 is invested at 8% SI for 3 years and ₹5,000 at 8% CI for 3 years. Find the difference between the amounts.</li></ol>
+   <details>
+   <summary>🔍 View Solution</summary>
+
+   SI: A = 5000(1+0.08×3) = 5000×1.24 = 6200.
+   CI: A = 5000×(1.08)³ = 5000×1.259712 = 6298.56.
+   Difference = <strong>₹98.56</strong>
+   </details>
+<ol><li>Find the present worth of ₹5,000 due in 2 years at 10% SI.</li></ol>
+   <details>
+   <summary>🔍 View Solution</summary>
+
+   PW = A/(1+RT/100) = 5000/(1+10×2/100) = 5000/1.20 = <em></em>₹4,166.67
+   </details>
+<ol><li>A sum at 15% CI becomes ₹5,000 in 2 years. What was the sum?</li></ol>
+   <details>
+   <summary>🔍 View Solution</summary>
+
+   A = 5000 = P(1+0.15)² = P×1.3225 → P = <em></em>₹3,781.50
+   </details>
+<ol><li>The amount at CI is ₹6,610 and the rate is 10% for 2 years. Find the principal.</li></ol>
+   <details>
+   <summary>🔍 View Solution</summary>
+
+   A = 6610, R=10%, T=2. A = P(1.10)² = P×1.21 → P = 6610/1.21 = <em></em>₹5,462.81
+   </details>
+<ol><li>At what rate will ₹800 become ₹1,000 in 2 years under CI?</li></ol>
+   <details>
+   <summary>🔍 View Solution</summary>
+
+   1000 = 800×(1+R/100)². 1000/800 = 1.25 = (1+R/100)²
+   1+R/100 = √1.25 = 1.1180 → R = <strong>11.8%</strong>
+   </details>
+<ol><li>A man borrowed ₹5,000 at 10% SI and repaid it in 2 equal annual installments. Find each installment.</li></ol>
+   <details>
+   <summary>🔍 View Solution</summary>
+
+   Total amount with SI = 5000(1+0.10×2) = 5000×1.20 = 6000.
+   Each installment = 6000/2 = <strong>₹3,000</strong>
+   </details>
+<ol><li>The population of a town was 1,00,000 two years ago and is now 1,21,000. Find the rate of growth.</li></ol>
+   <details>
+   <summary>🔍 View Solution</summary>
+
+   Was 100000, now 121000 in 2 years. A/P = 1.21 = (1+r/100)²
+   1+r/100 = √1.21 = 1.1 → r = <strong>10%</strong>
+   </details>
+<ol><li>Find the CI on ₹50,000 at 12% for 1 year compounded monthly.</li></ol>
+   <details>
+   <summary>🔍 View Solution</summary>
+
+   Monthly: n=12, R/n=1%, nT=12. A = 50000×(1.01)^12 = 50000×1.1268 = <em></em>₹56,340
+   </details>
+<ol><li>A sum of ₹3,000 is invested at 10% CI. In how many years will it become ₹3,993?</li></ol>
+   <details>
+   <summary>🔍 View Solution</summary>
+
+   3993 = 3000×(1.10)^n. (1.10)^n = 1.331 = (1.10)³ → n = <em></em>3 years
+   </details>
+<ol><li>The difference between CI and SI for 3 years at 10% per annum is ₹310. Find the sum.</li></ol>
+   <details>
+   <summary>🔍 View Solution</summary>
+
+   CI-SI for 3 years = P[3R²/10000 + R³/1000000]
+   = 20000[300/10000 + 1000/1000000] = 20000[0.03 + 0.001] = 20000×0.031 = 620? No.
+   At R=10%, 3R²/10000 = 300/10000 = 0.03. R³/1000000 = 1000/1000000 = 0.001.
+   CI - SI = P × [0.03 + 0.001] = P × 0.031.
+   310 = P × 0.031 → P = <strong>₹10,000</strong>
+   </details>
+<ol><li>An article costs ₹50,000. Its value depreciates by 20% in the first year and 10% in the second year. What is its value after 2 years?</li></ol>
+   <details>
+   <summary>🔍 View Solution</summary>
+
+   After year 1: 50000×0.80 = 40000. After year 2: 40000×0.90 = <em></em>₹36,000
+
+   ---
+   </details>
+
+
+<hr />
+
+<h3>🔴 Hard Questions (1-20)</h3>
+<ol><li>The CI on a sum at a certain rate for 2 years is ₹1,102 and the SI is ₹1,000. Find the rate and the sum.</li></ol>
+   <details>
+   <summary>🔍 View Solution</summary>
+
+   CI = P[(1+R/100)²-1] = P[2R/100+R²/10000] = 1102
+   SI = P×2R/100 = 1000 → P×2R/100 = 1000 → PR = 50000
+   From CI formula: P[2R+R²/100]/100 = 1102
+   P(2R + R²/100) = 110200
+   Divide by PR=50000: (2R + R²/100)/R = 110200/50000 = 2.204
+   2 + R/100 = 2.204 → R = <strong>20.4%</strong>
+   P = 50000/20.4 = <strong>₹2,451</strong> (approx) — verify: SI = 2451×0.204×2 = 999.9 ≈ 1000 ✓
+   CI = 2451[(1.204)²-1] = 2451×[1.4496-1] = 2451×0.4496 = 1102 ✓
+   </details>
+<ol><li>A sum of ₹10,000 is invested at 10% for 3 years. The rate changes to 15% for the next 2 years. Find the final amount.</li></ol>
+   <details>
+   <summary>🔍 View Solution</summary>
+
+   After 3 years at 10%: 10000×(1.10)³ = 13310.
+   After additional 2 years at 15%: A = 13310×(1.15)² = 13310×1.3225 = <strong>₹17,600</strong>
+   </details>
+<ol><li>At what rate per annum will ₹1,000 become ₹1,000,000 in 30 years under CI? (Approximate)</li></ol>
+   <details>
+   <summary>🔍 View Solution</summary>
+
+   A = 1000×(1+R/100)^30 = 1000000. (1+R/100)^30 = 1000.
+   1+R/100 = 1000^(1/30) = 10^(3/30) = 10^0.1 = 1.2589.
+   R = <strong>25.89%</strong> (Rule of 72 gives 72/30 = 2.4% too slow. Actual requires higher rate.)
+   </details>
+<ol><li>The CI on a sum for 3 years at 10% is ₹3,310. Find the SI for the same period.</li></ol>
+   <details>
+   <summary>🔍 View Solution</summary>
+
+   CI = 3310 = P[(1.10)³-1] = P×0.331 → P = 10000.
+   SI = P×R×T/100 = 10000×10×3/100 = <strong>₹3,000</strong>
+   </details>
+<ol><li>A man borrows ₹20,000 at 10% CI. He pays back ₹6,000 at the end of 1 year and ₹12,000 at the end of 2 years. How much should he pay at the end of 3 years to clear the debt?</li></ol>
+   <details>
+   <summary>🔍 View Solution</summary>
+
+   After 1 year: 20000×1.10 = 22000. Pays 6000 → balance = 16000.
+   After 2 years: 16000×1.10 = 17600. Pays 12000 → balance = 5600.
+   After 3 years: 5600×1.10 = <strong>₹6,160</strong>
+   </details>
+<ol><li>The population of a village is 10,000 and it grows at 5% per year. In what year will it exceed 20,000?</li></ol>
+   <details>
+   <summary>🔍 View Solution</summary>
+
+   10000×(1.05)^n > 20000. (1.05)^n > 2. n×log(1.05) > log(2)
+   n > 0.3010/0.0212 = 14.2. After <strong>15 years</strong> (year 2025)
+   </details>
+<ol><li>Find the present worth of ₹10,000 payable after 3 years at 10% CI.</li></ol>
+   <details>
+   <summary>🔍 View Solution</summary>
+
+   PW = 10000/(1.10)³ = 10000/1.331 = <em></em>₹7,513.15
+   </details>
+<ol><li>A machine depreciates at 10% per year. After how many full years will its value become less than half of its original value?</li></ol>
+   <details>
+   <summary>🔍 View Solution</summary>
+
+   Value < 0.5P: P×(0.90)^n < 0.5. (0.90)^n < 0.5.
+   n×log(0.90) < log(0.5). n×(-0.0458) < -0.3010. n > 6.57.
+   After <strong>7 full years</strong>
+   </details>
+<ol><li>The CI on a sum at 8% for 2 years is ₹832. Find the SI on the same sum for 3 years.</li></ol>
+   <details>
+   <summary>🔍 View Solution</summary>
+
+   CI-SI for 2yr = P×R²/10000 = 832. SI = P×R×2/100 = 2PR/100.
+   From CI = P[2R/100 + R²/10000] = 832, and PR/50 = SI.
+   832 - SI = 832 - 2PR/100 = P×R²/10000.
+   So 832 = 2PR/100 + PR²/10000.
+   And PR/50 = SI, but we need R. From CI-SI = PR²/10000 = 832? No, that was for 2 years.
+   Try R=8%: 832 = P×64/10000 → P = 832×10000/64 = <strong>₹130,000</strong>
+   Check: SI = 130000×8×2/100 = 20800. CI = 130000×(1.08)²-130000 = 130000×0.1664 = 21632.
+   Difference = 832. ✓
+   SI for 3 years = 130000×8×3/100 = <strong>₹31,200</strong>
+   </details>
+<ol><li>A sum of ₹50,000 is invested at 12% CI. The rate is changed to 8% after 2 years. Find the total amount after 4 years.</li></ol>
+   <details>
+   <summary>🔍 View Solution</summary>
+
+   After 2 years at 12%: 50000×(1.12)² = 50000×1.2544 = 62720.
+   After 2 more at 8%: 62720×(1.08)² = 62720×1.1664 = <strong>₹73,165</strong>
+   </details>
+<ol><li>Find the rate at which CI and SI are equal for 2 years on a sum.</li></ol>
+   <details>
+   <summary>🔍 View Solution</summary>
+
+   SI = CI for 2 years when: P×R×2/100 = P[(1+R/100)²-1]
+   2R/100 = 2R/100 + R²/10000 → 0 = R²/10000 → R = 0%.
+   So CI and SI are equal for 2 years only at <strong>0% interest</strong> — a trick question. Or: the question may mean find R such that amounts are equal: P(1+2R/100) = P(1+R/100)². 1+2R/100 = 1+2R/100+R²/10000 → R²=0 → R=0.
+   </details>
+<ol><li>A sum doubles in 10 years under SI. In how many years will it become 8 times at the same rate?</li></ol>
+   <details>
+   <summary>🔍 View Solution</summary>
+
+   Doubles in 10 years → 100/R = 10 → R = 10% SI.
+   8 times = 8P. SI for n years = P×10×n/100 = 8P → n = 80 years.
+   Or: at SI, 8 times in 80 years.
+   </details>
+<ol><li>The effective annual rate is 21% for a certain nominal rate compounded yearly. What is the nominal rate?</li></ol>
+   <details>
+   <summary>🔍 View Solution</summary>
+
+   Effective annual = 21% = (1+R)^1 - 1? No, if compounded yearly, nominal = effective = 21%.
+   The question likely means nominal rate R, compounded more frequently, gives 21% effective.
+   (1+R/n)^n - 1 = 0.21. Try n=2 (half-yearly): (1+R/2)² = 1.21 → 1+R/2 = √1.21 = 1.1 → R = 20%.
+   Answer: <strong>20% nominal</strong>
+   </details>
+<ol><li>A person invests ₹X at 10% CI and another ₹X at 10% SI. After 5 years, the CI investment is ₹3,000 more than the SI investment. Find X.</li></ol>
+   <details>
+   <summary>🔍 View Solution</summary>
+
+   CI investment after 5 years: X×(1.10)^5 = X×1.61051.
+   SI investment after 5 years: X×(1+0.10×5) = X×1.50.
+   Difference = X×0.11051 = 3000 → X = <strong>₹27,150</strong>
+   </details>
+<ol><li>₹5,000 is borrowed at 10% CI. It is repaid in 2 equal annual installments. Find the value of each installment.</li></ol>
+   <details>
+   <summary>🔍 View Solution</summary>
+
+   Let each installment = x.
+   x/(1.10) + x/(1.10)² = 5000.
+   x(0.9091 + 0.8264) = 5000.
+   x×1.7355 = 5000 → x = <strong>₹2,880.40</strong>
+   </details>
+<ol><li>A sum of ₹4,000 is invested at 20% CI for 1.5 years. Find the amount.</li></ol>
+   <details>
+   <summary>🔍 View Solution</summary>
+
+   A = 4000×(1.20)^1.5 = 4000×1.20×√1.20 = 4000×1.20×1.0954 = <em></em>₹5,258
+   </details>
+<ol><li>The difference between the amounts under CI and SI for 3 years at 10% per annum on a sum is ₹1,310. Find the sum.</li></ol>
+   <details>
+   <summary>🔍 View Solution</summary>
+
+   CI-SI for 3 years = P[3R²/10000 + R³/1000000] = 1310.
+   Try R=10%: P[0.03 + 0.001] = P×0.031 = 1310 → P = <strong>₹42,258</strong> (not round).
+   Try R=20%: P[0.12 + 0.008] = P×0.128 = 1310 → P = <strong>₹10,234</strong>.
+   Try R=5%: P[0.0075 + 0.000125] = P×0.007625 = 1310 → P = <strong>₹171,803</strong>.
+   Given the structure, likely R=10% and P=10000 but diff=310.
+   1310 at 10%? P = 1310/0.031 = <strong>₹42,258</strong>.
+   At 12%: P = 1310/[3×144/10000 + 1728/1000000] = 1310/[0.0432 + 0.001728] = 1310/0.044928 = <strong>₹29,160</strong>.
+   Without R given, the problem is underdetermined.
+   </details>
+<ol><li>Find the rate at which a sum will become 27 times itself in 6 years under CI.</li></ol>
+   <details>
+   <summary>🔍 View Solution</summary>
+
+   27 = (1+R/100)^6. (1+R/100) = 27^(1/6) = (3³)^(1/6) = 3^(1/2) = √3 = 1.732. R = <em></em>73.2%
+   </details>
+<ol><li>A bank offers 12% per annum compounded quarterly. Another offers 12.5% per annum compounded annually. Which is better and by how much on ₹10,000 for 1 year?</li></ol>
+   <details>
+   <summary>🔍 View Solution</summary>
+
+   Bank A: 12% quarterly = (1.03)^4 - 1 = 12.55%. Bank B: 12.5% annual.
+   Bank B is better by 0.05% on ₹10,000 = <strong>₹5</strong> in one year.
+   </details>
+<ol><li>A sum of ₹10,000 is invested at 10% CI. In how many years will the interest earned equal the original principal?</li></ol>
+   <details>
+   <summary>🔍 View Solution</summary>
+
+   Interest = P. A = 2P = P(1.10)^n. 2 = (1.10)^n.
+   n = log(2)/log(1.10) = 0.3010/0.0414 = <strong>7.27 years</strong> ≈ 7 years and 3 months.
+
+   ---
+   </details>
+
+
+<hr />
+
+<h3>🏆 Product-Based Company Level Questions (1-10)</h3>
+<ol><li>An investor puts ₹50,000 into a fund that grows at 15% per year. After 3 years, she withdraws ₹20,000. What will be the amount in the account after 5 years from the start?</li></ol>
+   <details>
+   <summary>🔍 View Solution</summary>
+
+   After 3 years: 50000×(1.15)³ = 50000×1.520875 = 76043.75.
+   Withdraw 20000 → remaining = 56043.75.
+   After 2 more years (5 total): 56043.75×(1.15)² = 56043.75×1.3225 = <strong>₹74,118</strong>
+   </details>
+<ol><li>A company takes a loan of ₹10,00,000 at 12% per annum compounded half-yearly. It repays ₹3,00,000 at the end of 1 year and ₹5,00,000 at the end of 2 years. What should be the final payment at the end of 3 years to clear the loan?</li></ol>
+   <details>
+   <summary>🔍 View Solution</summary>
+
+   After 1 year (6 months: n=2, R/n=6%, nT=2): A = 1000000×(1.06)² = 1000000×1.1236 = 1123600.
+   Pays 300000 → balance = 823600.
+   After 2 years (total, i.e., 1 more year of compounding): 823600×(1.06)² = 823600×1.1236 = 925372.
+   Pays 500000 → balance = 425372.
+   After 3 years: 425372×(1.06)² = 425372×1.1236 = <strong>₹477,936</strong>
+   </details>
+<ol><li>A machine costs ₹2,00,000 and depreciates at 20% per year for the first 3 years and 10% per year thereafter. Find its value after 5 years.</li></ol>
+   <details>
+   <summary>🔍 View Solution</summary>
+
+   After first 3 years at 20%: 200000×(0.80)³ = 200000×0.512 = 102400.
+   After 2 more years at 10%: 102400×(0.90)² = 102400×0.81 = <strong>₹82,944</strong>
+   </details>
+<ol><li>The CI on a sum for 2 years at R% is ₹2,500 and the SI on the same sum for the same period is ₹2,000. Find the sum and the rate.</li></ol>
+   <details>
+   <summary>🔍 View Solution</summary>
+
+   CI = 2500, SI = 2000. Difference = 500 = P×R²/10000.
+   Also: SI = P×2R/100 = 2000 → P×R = 100000.
+   From P×R²/10000 = 500: (P×R)×R/10000 = 500 → 100000×R/10000 = 500 → R = <strong>50%</strong>.
+   P = 100000/50 = <strong>₹2,000</strong>.
+   Check: SI = 2000×2×50/100 = 2000. ✓
+   CI = 2000[(1.5)²-1] = 2000×[2.25-1] = 2500. ✓
+   </details>
+<ol><li>An amount at 10% CI becomes ₹12,100 in 2 years. In how many years will it become ₹26,620?</li></ol>
+   <details>
+   <summary>🔍 View Solution</summary>
+
+   12100 = P×(1.10)² → P = 10000.
+   Find n where 10000×(1.10)^n = 26620.
+   (1.10)^n = 2.662. n×log(1.10) = log(2.662).
+   n = 0.4253/0.0414 = <strong>10.27 years</strong> (approximately 10 years)
+   </details>
+<ol><li>A sum of ₹1,00,000 is invested. The rate of interest is 10% for the first 2 years, 20% for the next 2 years, and 5% for the remaining 1 year. Find the final amount.</li></ol>
+   <details>
+   <summary>🔍 View Solution</summary>
+
+   After 2 years at 10%: 100000×(1.10)² = 121000.
+   After 2 more at 20%: 121000×(1.20)² = 121000×1.44 = 174240.
+   After 1 more at 5%: 174240×1.05 = <strong>₹1,82,952</strong>
+   </details>
+<ol><li>Two banks: Bank A offers 12% CI compounded quarterly. Bank B offers 12% CI compounded monthly. Which is better for ₹1,00,000 over 1 year, and by how much?</li></ol>
+   <details>
+   <summary>🔍 View Solution</summary>
+
+   Bank A (quarterly): (1+0.12/4)^4 - 1 = (1.03)^4 - 1 = 0.1255 = 12.55%.
+   Bank B (monthly): (1+0.125/12)^12 - 1 = (1.010417)^12 - 1 ≈ 0.1322 = 13.22%.
+   Bank B is better by 0.67% on ₹1,00,000 for 1 year = <strong>₹670</strong> more.
+   </details>
+<ol><li>A sum of ₹50,000 is invested at 8% CI. After how many years will the interest earned exceed the principal?</li></ol>
+   <details>
+   <summary>🔍 View Solution</summary>
+
+   Need CI > P: P(1.08)^n > 2P. (1.08)^n > 2.
+   n > log(2)/log(1.08) = 0.3010/0.0334 = <strong>9 years</strong>.
+   </details>
+<ol><li>The population of a city was 20,00,000 in 2020 and grows at 8% per year. The government imposes a restriction and the growth rate halves after 2023. What will be the population in 2026?</li></ol>
+   <details>
+   <summary>🔍 View Solution</summary>
+
+   2020-2023: 3 years at 8%. 2023-2026: 3 years at 4%.
+   After 3 years: 20,00,000×(1.08)³ = 20,00,000×1.2597 = 25,19,400.
+   After 3 more: 25,19,400×(1.04)³ = 25,19,400×1.1249 = <strong>28,34,000</strong> (approx).
+   </details>
+<ol><li>A sum of ₹5,00,000 grows at 12% per annum under CI. The inflation rate is 6% per annum. What is the real rate of return after 3 years?</li></ol>
+   <details>
+   <summary>🔍 View Solution</summary>
+
+   Nominal return = 12%, inflation = 6%.
+   Real rate = [(1+0.12)/(1+0.06)] - 1 = 1.12/1.06 - 1 = 0.0566 = <strong>5.66%</strong>.
+   After 3 years real: P×(1.0566)³ = P×1.18. So ₹5,00,000 grows to ₹5,90,000 in real terms.
+
+   ---
+   </details>
+
+
+<hr />
+
+<h2 id="detailed-solutions">📝 Detailed Solutions</h2>
+
+<div class="alert alert-note"><span class="alert-icon">ℹ️</span><div class="alert-content">All detailed solutions have been inlined directly under the questions in the <strong>Practice Section</strong> above for interactive study.</div></div>
+
+<h2 id="best-resources">📚 Best Resources</h2>
+
+<h3>YouTube Channels (Ranked Best to Worst)</h3>
+
+<table><thead><tr><th>Rank</th><th>Channel</th><th>Why It's Best</th></tr></thead><tbody><tr><td>1</td><td><strong>Aditya Ranjan (RBE)</strong></td><td>Hindi, fast CI methods, Rule of 72 tricks</td></tr><tr><td>2</td><td><strong>Waji Academy</strong></td><td>English, clean SI/CI explanations</td></tr><tr><td>3</td><td><strong>Gagan Matta</strong></td><td>Shortcuts, installment formula</td></tr><tr><td>4</td><td><strong>Dear Sir</strong></td><td>Strong foundation</td></tr><tr><td>5</td><td><strong>Amar Sir</strong></td><td>Previous year questions</td></tr><tr><td>6</td><td><strong>Khan Academy</strong></td><td>Conceptual depth</td></tr></tbody></table>
+<h3>Websites</h3>
+
+<table><thead><tr><th>Rank</th><th>Website</th><th>Best For</th></tr></thead><tbody><tr><td>1</td><td><strong>IndiaBix.com</strong></td><td>SI/CI practice questions</td></tr><tr><td>2</td><td><strong>Testbook.com</strong></td><td>Mock tests</td></tr><tr><td>3</td><td><strong>GeeksforGeeks</strong></td><td>Advanced SI/CI, formulas</td></tr><tr><td>4</td><td><strong>M4Maths.com</strong></td><td>TCS NQT archives</td></tr><tr><td>5</td><td><strong>Investopedia.com</strong></td><td>Understanding financial concepts</td></tr></tbody></table>
+<h3>Books</h3>
+
+<table><thead><tr><th>Rank</th><th>Book</th><th>Best For</th></tr></thead><tbody><tr><td>1</td><td><strong>Quantum CAT by Sarvesh Verma</strong></td><td>Complete SI/CI coverage</td></tr><tr><td>2</td><td><strong>Arun Sharma (TMH)</strong></td><td>Systematic approach</td></tr><tr><td>3</td><td><strong>RS Agarwal</strong></td><td>Basic to medium</td></tr><tr><td>4</td><td><strong>Fast Track Objective Arithmetic</strong></td><td>Quick revision</td></tr><tr><td>5</td><td><strong>NCERT Class 8-10</strong></td><td>Foundation</td></tr></tbody></table>
+<h3>Practice Platforms</h3>
+
+<table><thead><tr><th>Rank</th><th>Platform</th><th>Best For</th></tr></thead><tbody><tr><td>1</td><td><strong>IndiaBix</strong></td><td>Real exam patterns</td></tr><tr><td>2</td><td><strong>Testbook Mock Tests</strong></td><td>Timed tests</td></tr><tr><td>3</td><td><strong>Prepins (TCS)</strong></td><td>TCS-specific</td></tr><tr><td>4</td><td><strong>Campusgate</strong></td><td>Product company questions</td></tr></tbody></table>
+<hr />
+
+<h2 id="final-verdict">🎯 Final Verdict</h2>
+
+<h3>Importance Rating: ★★★★☆ (4/5)</h3>
+
+SI/CI is the financial engine of aptitude — it turns percentage skills into real-world money problems. Every company tests it, the questions are formula-driven (fast to solve once formulas are memorized), and the concepts appear in interviews at finance and product companies.
+
+<h3>Placement ROI Score: <strong>8/10</strong></h3>
+<ul><li>Appears in every test (2-5 questions)</li><li>Formula-driven → fast solving once mastered</li><li>SI-CI difference formula alone appears in 60% of questions</li><li>Rule of 72 is a free shortcut that saves significant time</li></ul>
+
+<h3>Difficulty Score: <strong>5/10</strong></h3>
+<ul><li>70% Easy–Medium (formulas, substitution)</li><li>30% Hard (installments, fractional periods, varying rates)</li><li>The hard parts are formula-based, not concept-based — learn the formulas and they're solvable</li></ul>
+
+<h3>Priority Order: <strong>#4 — After Number Systems, Percentages, P&L</strong></h3>
+
+The flow is logical: Numbers → Percentages → P&L → SI/CI. Each builds on the previous. SI/CI essentially applies percentages over time, and P&L already taught you the three-price framework (CP, SP, MP) which maps to (Principal, Amount, Interest).
+
+<h3>Company Level Verdict</h3>
+
+<table><thead><tr><th>Target</th><th>Mandatory/Important/Optional</th><th>Reasoning</th></tr></thead><tbody><tr><td><strong>10 LPA+ (Service)</strong></td><td>✅ <strong>Mandatory</strong></td><td>2-4 questions, easy-medium, high accuracy possible</td></tr><tr><td><strong>20 LPA+ (Service)</strong></td><td>✅ <strong>Mandatory</strong></td><td>2-4 questions, formula-heavy, moderate difficulty</td></tr><tr><td><strong>Product-Based (Amazon, Microsoft)</strong></td><td>✅ <strong>Important</strong></td><td>Growth, depreciation, varying rates appear</td></tr><tr><td><strong>Top Product (Google, Goldman)</strong></td><td>✅ <strong>Important</strong></td><td>EMI, present worth, effective rate, financial modeling</td></tr></tbody></table>
+<hr />
+
+<h3>The One Insight That Changes Everything</h3>
+
+<strong>CI always beats SI after the first year, and the gap is P×R²/10000 for 2 years.</strong>
+
+That's the single most-asked formula in placement tests. If you remember nothing else from this topic, remember that one.
+
+The second most important insight: <strong>Rule of 72</strong>. At any compound rate R%, your money doubles in approximately 72/R years. At 9%, it doubles in 8 years. At 12%, it doubles in 6 years. At 15%, it doubles in about 4.8 years. This is not just useful for exams — it's genuinely useful in life.
+
+<hr />
+
+<em>Guide compiled for placement-focused aptitude preparation. Questions sourced and adapted from TCS NQT, Infosys, Amazon, Goldman Sachs, and Microsoft archives.</em>
+
+    </main>
+</body>
+</html>

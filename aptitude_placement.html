@@ -1,0 +1,950 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ultimate Aptitude Placement Mastery Guide</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=JetBrains+Mono&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #f8fafc;
+            --text-color: #1e293b;
+            --card-bg: #ffffff;
+            --border-color: #e2e8f0;
+            --primary-color: #2563eb;
+            --primary-light: #eff6ff;
+            --primary-dark: #1e40af;
+            
+            --success-color: #10b981;
+            --warning-color: #f59e0b;
+            --danger-color: #ef4444;
+        }
+        
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        
+        body {
+            font-family: 'Outfit', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            background-image: radial-gradient(circle at 10% 20%, rgba(59, 130, 246, 0.03) 0%, transparent 40%),
+                              radial-gradient(circle at 90% 80%, rgba(79, 70, 229, 0.03) 0%, transparent 40%);
+            background-attachment: fixed;
+        }
+        
+        /* Navigation header */
+        .navbar {
+            background-color: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(8px);
+            border-bottom: 1px solid var(--border-color);
+            padding: 16px 40px;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .navbar-brand {
+            font-weight: 700;
+            font-size: 1.25rem;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            text-decoration: none;
+            transition: opacity 0.2s ease;
+        }
+        
+        .navbar-brand:hover {
+            opacity: 0.85;
+            text-decoration: none;
+        }
+        
+        /* Hero Section styling */
+        .hero {
+            padding: 80px 40px 60px 40px;
+            text-align: center;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        
+        .hero h1 {
+            font-size: 3rem;
+            color: #0f172a;
+            margin-bottom: 16px;
+            font-weight: 800;
+            letter-spacing: -0.02em;
+            line-height: 1.2;
+            background: linear-gradient(to right, #2563eb, #4f46e5);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .hero p {
+            font-size: 1.25rem;
+            color: #64748b;
+            max-width: 600px;
+            margin: 0 auto 30px auto;
+        }
+        
+        .hero-stats {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin-top: 20px;
+            flex-wrap: wrap;
+        }
+        
+        .stat-item {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+        
+        .stat-val {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #0f172a;
+        }
+        
+        .stat-label {
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: #64748b;
+            font-weight: 600;
+        }
+        
+        /* Main Layout */
+        .main-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 40px 80px 40px;
+        }
+        
+        .section-header {
+            font-size: 2rem;
+            color: #0f172a;
+            margin: 60px 0 24px 0;
+            font-weight: 700;
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 12px;
+        }
+        
+        /* Live Search Section */
+        .search-container {
+            background: #ffffff;
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 16px 24px;
+            margin-bottom: 30px;
+            display: flex;
+            gap: 16px;
+            align-items: center;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.02);
+        }
+        
+        .search-icon {
+            font-size: 1.25rem;
+        }
+        
+        .search-input {
+            flex: 1;
+            border: none;
+            outline: none;
+            font-family: inherit;
+            font-size: 1rem;
+            color: var(--text-color);
+        }
+        
+        /* Topics Grid System */
+        .topic-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+            gap: 24px;
+            margin-top: 20px;
+        }
+        
+        .topic-card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 24px;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.02);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .topic-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05),
+                        0 4px 6px -2px rgba(0, 0, 0, 0.03);
+            border-color: var(--primary-light);
+        }
+        
+        .card-header {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .card-emoji {
+            font-size: 1.25rem;
+        }
+        
+        .card-rank {
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: #64748b;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+        
+        .status-badge {
+            font-size: 0.7rem;
+            font-weight: 600;
+            padding: 2px 8px;
+            border-radius: 9999px;
+            margin-left: auto;
+        }
+        
+        .status-quant {
+            background-color: var(--primary-light);
+            color: var(--primary-color);
+        }
+        
+        .status-lr-di {
+            background-color: #f3e8ff;
+            color: #7c3aed;
+        }
+        
+        .card-title {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: #0f172a;
+        }
+        
+        .card-desc {
+            font-size: 0.9rem;
+            color: #64748b;
+            flex: 1;
+        }
+        
+        .card-meta {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 12px;
+            border-top: 1px solid var(--border-color);
+            padding-top: 16px;
+        }
+        
+        .meta-item {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+        
+        .meta-label {
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: #94a3b8;
+            font-weight: 600;
+        }
+        
+        .meta-stars {
+            font-size: 0.85rem;
+            color: var(--warning-color);
+        }
+        
+        .meta-badge {
+            font-size: 0.75rem;
+            font-weight: 600;
+            padding: 2px 6px;
+            border-radius: 4px;
+            text-align: center;
+            width: fit-content;
+        }
+        
+        .diff-easy {
+            background-color: #d1fae5;
+            color: #065f46;
+        }
+        
+        .diff-medium {
+            background-color: #fef3c7;
+            color: #92400e;
+        }
+        
+        .diff-hard {
+            background-color: #fee2e2;
+            color: #991b1b;
+        }
+        
+        .meta-practice {
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: #334155;
+        }
+        
+        .card-btn {
+            display: block;
+            text-align: center;
+            padding: 12px;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            text-decoration: none;
+            transition: all 0.2s ease;
+        }
+        
+        .btn-start {
+            background-color: var(--primary-color);
+            color: #ffffff;
+        }
+        
+        .btn-start:hover {
+            background-color: var(--primary-dark);
+        }
+        
+        .btn-disabled {
+            background-color: #f1f5f9;
+            color: #94a3b8;
+            cursor: not-allowed;
+            pointer-events: none;
+        }
+        
+        /* Tables styling */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            background-color: #ffffff;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.02);
+        }
+        
+        th, td {
+            padding: 14px 18px;
+            border: 1px solid var(--border-color);
+            text-align: left;
+        }
+        
+        th {
+            background-color: #f8fafc;
+            color: #0f172a;
+            font-weight: 600;
+        }
+        
+        tr:nth-child(even) {
+            background-color: #f8fafc;
+        }
+        
+        /* Alerts styling */
+        .alert {
+            display: flex;
+            border-left: 4px solid;
+            padding: 16px;
+            border-radius: 6px;
+            margin: 20px 0;
+            background: #ffffff;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.02);
+        }
+        
+        .alert-icon {
+            font-size: 1.25rem;
+            margin-right: 12px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .alert-content {
+            flex: 1;
+        }
+        
+        .alert-important {
+            border-left-color: var(--important-border, #8b5cf6);
+            background-color: rgba(139, 92, 246, 0.05);
+        }
+        
+        .alert-note {
+            border-left-color: #3b82f6;
+            background-color: rgba(59, 130, 246, 0.05);
+        }
+        
+        .alert-tip {
+            border-left-color: #10b981;
+            background-color: rgba(16, 185, 129, 0.05);
+        }
+        
+        ul, ol {
+            padding-left: 20px;
+            margin: 12px 0;
+        }
+        
+        li {
+            margin-bottom: 6px;
+        }
+        
+        /* Responsive Grid fixes */
+        @media (max-width: 768px) {
+            .navbar {
+                padding: 16px 20px;
+            }
+            .hero h1 {
+                font-size: 2.25rem;
+            }
+            .hero-stats {
+                gap: 20px;
+            }
+            .main-content {
+                padding: 0 20px 60px 20px;
+            }
+            .topic-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="navbar">
+        <a href="aptitude_placement.html" class="navbar-brand">
+            🎓 Aptitude Placement Mastery Portal
+        </a>
+    </header>
+    
+    <section class="hero">
+        <h1>Ultimate Aptitude Placement Mastery Guide</h1>
+        <p>A structured, high-ROI quantitative syllabus design to take you from zero to placement-ready in 15 days.</p>
+        <div class="hero-stats">
+            <div class="stat-item">
+                <span class="stat-val">15</span>
+                <span class="stat-label">Syllabus Ranks</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-val">9</span>
+                <span class="stat-label">Quant Guides</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-val">15 Days</span>
+                <span class="stat-label">Sprint Plan</span>
+            </div>
+        </div>
+    </section>
+    
+    <main class="main-content">
+        <h2 class="section-header">Executive Summary</h2>
+        <h2>Executive Summary</h2>
+
+This guide identifies the <strong>15 aptitude topics</strong> that appear most frequently and carry the highest weightage in placement tests at service giants (TCS, Infosys, Accenture, Cognizant, Capgemini, Wipro, Deloitte) and product companies (Amazon, Microsoft, Google, Flipkart, Paytm). Each topic is ranked by ROI — meaning how likely you are to face it and how much it contributes to your score.
+
+<strong>Assumptions:</strong> You study 1.5 hours/day on weekdays and 2.5 hours on weekends. No prior aptitude background is assumed — this is a structured sprint from zero to placement-ready.
+
+<hr />
+
+
+        
+        <h2 class="section-header" id="ranked-topics">Top 15 Aptitude Syllabus Topics (Ranked by ROI)</h2>
+        <div class="search-container">
+            <span class="search-icon">🔍</span>
+            <input type="text" id="topicSearch" class="search-input" placeholder="Search topics by rank, name, difficulty..." onkeyup="filterTopics()" />
+        </div>
+        <div class="topic-grid">
+        <div class="topic-card">
+            <div class="card-header">
+                <span class="card-emoji">🥇</span>
+                <span class="card-rank">Rank 1</span>
+                <span class="status-badge status-quant">Quant Guide</span>
+            </div>
+            <h3 class="card-title">Number Systems & Simplifications</h3>
+            <p class="card-desc">Number Systems is the single most foundational topic. Master this and other topics become easier.</p>
+            <div class="card-meta">
+                <div class="meta-item">
+                    <span class="meta-label">Importance</span>
+                    <span class="meta-stars">★★★★★</span>
+                </div>
+                <div class="meta-item">
+                    <span class="meta-label">Difficulty</span>
+                    <span class="meta-badge diff-medium">Medium</span>
+                </div>
+                <div class="meta-item">
+                    <span class="meta-label">Syllabus</span>
+                    <span class="meta-practice">75–100 Qs</span>
+                </div>
+            </div>
+            <a href="number_systems_simplification_study_guide.html" class="card-btn btn-start">Start Topic Guide</a>
+        </div>
+        
+        <div class="topic-card">
+            <div class="card-header">
+                <span class="card-emoji">🥈</span>
+                <span class="card-rank">Rank 2</span>
+                <span class="status-badge status-quant">Quant Guide</span>
+            </div>
+            <h3 class="card-title">Percentages</h3>
+            <p class="card-desc">Percentages are the connective tissue of quantitative reasoning, underlying Profit & Loss, SI/CI, and Data Interpretation.</p>
+            <div class="card-meta">
+                <div class="meta-item">
+                    <span class="meta-label">Importance</span>
+                    <span class="meta-stars">★★★★★</span>
+                </div>
+                <div class="meta-item">
+                    <span class="meta-label">Difficulty</span>
+                    <span class="meta-badge diff-easy">Easy-Medium</span>
+                </div>
+                <div class="meta-item">
+                    <span class="meta-label">Syllabus</span>
+                    <span class="meta-practice">60–80 Qs</span>
+                </div>
+            </div>
+            <a href="percentages_study_guide.html" class="card-btn btn-start">Start Topic Guide</a>
+        </div>
+        
+        <div class="topic-card">
+            <div class="card-header">
+                <span class="card-emoji">🥉</span>
+                <span class="card-rank">Rank 3</span>
+                <span class="status-badge status-quant">Quant Guide</span>
+            </div>
+            <h3 class="card-title">Profit, Loss & Discount</h3>
+            <p class="card-desc">Highly tested in service Giants. Covers CP, SP, MP, successive discounts, and dishonest merchant false weights.</p>
+            <div class="card-meta">
+                <div class="meta-item">
+                    <span class="meta-label">Importance</span>
+                    <span class="meta-stars">★★★★★</span>
+                </div>
+                <div class="meta-item">
+                    <span class="meta-label">Difficulty</span>
+                    <span class="meta-badge diff-easy">Easy-Medium</span>
+                </div>
+                <div class="meta-item">
+                    <span class="meta-label">Syllabus</span>
+                    <span class="meta-practice">60–80 Qs</span>
+                </div>
+            </div>
+            <a href="profit_loss_discount_study_guide.html" class="card-btn btn-start">Start Topic Guide</a>
+        </div>
+        
+        <div class="topic-card">
+            <div class="card-header">
+                <span class="card-emoji">🏅</span>
+                <span class="card-rank">Rank 4</span>
+                <span class="status-badge status-quant">Quant Guide</span>
+            </div>
+            <h3 class="card-title">Simple & Compound Interest</h3>
+            <p class="card-desc">Tested heavily in banking and IT services. Focuses on compounding growth and EMI calculations.</p>
+            <div class="card-meta">
+                <div class="meta-item">
+                    <span class="meta-label">Importance</span>
+                    <span class="meta-stars">★★★★★</span>
+                </div>
+                <div class="meta-item">
+                    <span class="meta-label">Difficulty</span>
+                    <span class="meta-badge diff-medium">Medium</span>
+                </div>
+                <div class="meta-item">
+                    <span class="meta-label">Syllabus</span>
+                    <span class="meta-practice">50–70 Qs</span>
+                </div>
+            </div>
+            <a href="simple_compound_interest_study_guide.html" class="card-btn btn-start">Start Topic Guide</a>
+        </div>
+        
+        <div class="topic-card">
+            <div class="card-header">
+                <span class="card-emoji">⚙️</span>
+                <span class="card-rank">Rank 5</span>
+                <span class="status-badge status-quant">Quant Guide</span>
+            </div>
+            <h3 class="card-title">Time & Work</h3>
+            <p class="card-desc">Covers efficiency ratios, alternating days, and pipes & cisterns fill/drain rate problems.</p>
+            <div class="card-meta">
+                <div class="meta-item">
+                    <span class="meta-label">Importance</span>
+                    <span class="meta-stars">★★★★★</span>
+                </div>
+                <div class="meta-item">
+                    <span class="meta-label">Difficulty</span>
+                    <span class="meta-badge diff-medium">Medium</span>
+                </div>
+                <div class="meta-item">
+                    <span class="meta-label">Syllabus</span>
+                    <span class="meta-practice">60–80 Qs</span>
+                </div>
+            </div>
+            <a href="time_work_study_guide.html" class="card-btn btn-start">Start Topic Guide</a>
+        </div>
+        
+        <div class="topic-card">
+            <div class="card-header">
+                <span class="card-emoji">⏳</span>
+                <span class="card-rank">Rank 6</span>
+                <span class="status-badge status-quant">Quant Guide</span>
+            </div>
+            <h3 class="card-title">Time, Speed & Distance</h3>
+            <p class="card-desc">Includes relative speeds, train crossings, circular tracks, and boat upstream/downstream problems.</p>
+            <div class="card-meta">
+                <div class="meta-item">
+                    <span class="meta-label">Importance</span>
+                    <span class="meta-stars">★★★★★</span>
+                </div>
+                <div class="meta-item">
+                    <span class="meta-label">Difficulty</span>
+                    <span class="meta-badge diff-medium">Medium</span>
+                </div>
+                <div class="meta-item">
+                    <span class="meta-label">Syllabus</span>
+                    <span class="meta-practice">60–80 Qs</span>
+                </div>
+            </div>
+            <a href="time_speed_distance_study_guide.html" class="card-btn btn-start">Start Topic Guide</a>
+        </div>
+        
+        <div class="topic-card">
+            <div class="card-header">
+                <span class="card-emoji">📊</span>
+                <span class="card-rank">Rank 7</span>
+                <span class="status-badge status-quant">Quant Guide</span>
+            </div>
+            <h3 class="card-title">Averages, Ratio & Proportion</h3>
+            <p class="card-desc">Master Central Tendency deviations, weighted averages, direct/inverse scaling, and ratios.</p>
+            <div class="card-meta">
+                <div class="meta-item">
+                    <span class="meta-label">Importance</span>
+                    <span class="meta-stars">★★★★☆</span>
+                </div>
+                <div class="meta-item">
+                    <span class="meta-label">Difficulty</span>
+                    <span class="meta-badge diff-easy">Easy-Medium</span>
+                </div>
+                <div class="meta-item">
+                    <span class="meta-label">Syllabus</span>
+                    <span class="meta-practice">50–70 Qs</span>
+                </div>
+            </div>
+            <a href="averages_ratio_proportion_study_guide.html" class="card-btn btn-start">Start Topic Guide</a>
+        </div>
+        
+        <div class="topic-card">
+            <div class="card-header">
+                <span class="card-emoji">⚖️</span>
+                <span class="card-rank">Rank 8</span>
+                <span class="status-badge status-quant">Quant Guide</span>
+            </div>
+            <h3 class="card-title">Mixtures & Alligations</h3>
+            <p class="card-desc">Features the Alligation Cross, a powerful visual tool for finding mixing ratios and replacement dilution.</p>
+            <div class="card-meta">
+                <div class="meta-item">
+                    <span class="meta-label">Importance</span>
+                    <span class="meta-stars">★★★★☆</span>
+                </div>
+                <div class="meta-item">
+                    <span class="meta-label">Difficulty</span>
+                    <span class="meta-badge diff-easy">Easy-Medium</span>
+                </div>
+                <div class="meta-item">
+                    <span class="meta-label">Syllabus</span>
+                    <span class="meta-practice">50–70 Qs</span>
+                </div>
+            </div>
+            <a href="mixtures_alligations_study_guide.html" class="card-btn btn-start">Start Topic Guide</a>
+        </div>
+        
+        <div class="topic-card">
+            <div class="card-header">
+                <span class="card-emoji">🎲</span>
+                <span class="card-rank">Rank 9</span>
+                <span class="status-badge status-quant">Quant Guide</span>
+            </div>
+            <h3 class="card-title">Probability</h3>
+            <p class="card-desc">A favorite for product companies (Amazon, Google). Covers conditional probability and Bayes' Theorem.</p>
+            <div class="card-meta">
+                <div class="meta-item">
+                    <span class="meta-label">Importance</span>
+                    <span class="meta-stars">★★★★☆</span>
+                </div>
+                <div class="meta-item">
+                    <span class="meta-label">Difficulty</span>
+                    <span class="meta-badge diff-hard">Medium-Hard</span>
+                </div>
+                <div class="meta-item">
+                    <span class="meta-label">Syllabus</span>
+                    <span class="meta-practice">50–80 Qs</span>
+                </div>
+            </div>
+            <a href="probability_study_guide.html" class="card-btn btn-start">Start Topic Guide</a>
+        </div>
+        
+        <div class="topic-card">
+            <div class="card-header">
+                <span class="card-emoji">🧩</span>
+                <span class="card-rank">Rank 10</span>
+                <span class="status-badge status-lr-di">LR/DI Module</span>
+            </div>
+            <h3 class="card-title">Permutations & Combinations</h3>
+            <p class="card-desc">Core foundation for Probability and arrangement brain-teasers (circular arrangement, identical items).</p>
+            <div class="card-meta">
+                <div class="meta-item">
+                    <span class="meta-label">Importance</span>
+                    <span class="meta-stars">★★★★☆</span>
+                </div>
+                <div class="meta-item">
+                    <span class="meta-label">Difficulty</span>
+                    <span class="meta-badge diff-hard">Medium-Hard</span>
+                </div>
+                <div class="meta-item">
+                    <span class="meta-label">Syllabus</span>
+                    <span class="meta-practice">60–80 Qs</span>
+                </div>
+            </div>
+            <a href="#" class="card-btn btn-disabled">Core Syllabus Only</a>
+        </div>
+        
+        <div class="topic-card">
+            <div class="card-header">
+                <span class="card-emoji">⏳</span>
+                <span class="card-rank">Rank 11</span>
+                <span class="status-badge status-lr-di">LR/DI Module</span>
+            </div>
+            <h3 class="card-title">Ages</h3>
+            <p class="card-desc">Algebraic relationship equations tracking variables across time scales.</p>
+            <div class="card-meta">
+                <div class="meta-item">
+                    <span class="meta-label">Importance</span>
+                    <span class="meta-stars">★★★☆☆</span>
+                </div>
+                <div class="meta-item">
+                    <span class="meta-label">Difficulty</span>
+                    <span class="meta-badge diff-easy">Easy-Medium</span>
+                </div>
+                <div class="meta-item">
+                    <span class="meta-label">Syllabus</span>
+                    <span class="meta-practice">40–60 Qs</span>
+                </div>
+            </div>
+            <a href="#" class="card-btn btn-disabled">Core Syllabus Only</a>
+        </div>
+        
+        <div class="topic-card">
+            <div class="card-header">
+                <span class="card-emoji">🔤</span>
+                <span class="card-rank">Rank 12</span>
+                <span class="status-badge status-lr-di">LR/DI Module</span>
+            </div>
+            <h3 class="card-title">Coding & Decoding</h3>
+            <p class="card-desc">Alphabet-number logical reasoning series. High scoring speed multiplier.</p>
+            <div class="card-meta">
+                <div class="meta-item">
+                    <span class="meta-label">Importance</span>
+                    <span class="meta-stars">★★★☆☆</span>
+                </div>
+                <div class="meta-item">
+                    <span class="meta-label">Difficulty</span>
+                    <span class="meta-badge diff-easy">Easy-Medium</span>
+                </div>
+                <div class="meta-item">
+                    <span class="meta-label">Syllabus</span>
+                    <span class="meta-practice">60–80 Qs</span>
+                </div>
+            </div>
+            <a href="#" class="card-btn btn-disabled">Core Syllabus Only</a>
+        </div>
+        
+        <div class="topic-card">
+            <div class="card-header">
+                <span class="card-emoji">🌳</span>
+                <span class="card-rank">Rank 13</span>
+                <span class="status-badge status-lr-di">LR/DI Module</span>
+            </div>
+            <h3 class="card-title">Blood Relations</h3>
+            <p class="card-desc">Family tree analysis, coded generation tracking, and pointing-to puzzle relationships.</p>
+            <div class="card-meta">
+                <div class="meta-item">
+                    <span class="meta-label">Importance</span>
+                    <span class="meta-stars">★★★☆☆</span>
+                </div>
+                <div class="meta-item">
+                    <span class="meta-label">Difficulty</span>
+                    <span class="meta-badge diff-easy">Easy-Medium</span>
+                </div>
+                <div class="meta-item">
+                    <span class="meta-label">Syllabus</span>
+                    <span class="meta-practice">50–70 Qs</span>
+                </div>
+            </div>
+            <a href="#" class="card-btn btn-disabled">Core Syllabus Only</a>
+        </div>
+        
+        <div class="topic-card">
+            <div class="card-header">
+                <span class="card-emoji">📅</span>
+                <span class="card-rank">Rank 14</span>
+                <span class="status-badge status-lr-di">LR/DI Module</span>
+            </div>
+            <h3 class="card-title">Clocks & Calendar</h3>
+            <p class="card-desc">Hands alignment angle calculations, leap year calculations, and odd days tracking.</p>
+            <div class="card-meta">
+                <div class="meta-item">
+                    <span class="meta-label">Importance</span>
+                    <span class="meta-stars">★★★☆☆</span>
+                </div>
+                <div class="meta-item">
+                    <span class="meta-label">Difficulty</span>
+                    <span class="meta-badge diff-medium">Medium</span>
+                </div>
+                <div class="meta-item">
+                    <span class="meta-label">Syllabus</span>
+                    <span class="meta-practice">40–60 Qs</span>
+                </div>
+            </div>
+            <a href="#" class="card-btn btn-disabled">Core Syllabus Only</a>
+        </div>
+        
+        <div class="topic-card">
+            <div class="card-header">
+                <span class="card-emoji">📈</span>
+                <span class="card-rank">Rank 15</span>
+                <span class="status-badge status-lr-di">LR/DI Module</span>
+            </div>
+            <h3 class="card-title">Data Interpretation</h3>
+            <p class="card-desc">Chart analyses (pie charts, line graphs, bar graphs, tables) checking fast numerical calculation.</p>
+            <div class="card-meta">
+                <div class="meta-item">
+                    <span class="meta-label">Importance</span>
+                    <span class="meta-stars">★★★★☆</span>
+                </div>
+                <div class="meta-item">
+                    <span class="meta-label">Difficulty</span>
+                    <span class="meta-badge diff-medium">Medium</span>
+                </div>
+                <div class="meta-item">
+                    <span class="meta-label">Syllabus</span>
+                    <span class="meta-practice">150+ Qs</span>
+                </div>
+            </div>
+            <a href="#" class="card-btn btn-disabled">Core Syllabus Only</a>
+        </div>
+        </div>
+        
+        <h2 class="section-header">The 15-Day Sprint Roadmap</h2>
+        <h2>The 15-Day Sprint Roadmap</h2>
+
+This schedule assumes 1.5 hours on weekdays (Mon–Fri) and 2.5 hours on weekends (Sat–Sun). Each day has a primary focus and a lighter secondary task. Revise previous day's topics for 20 minutes before starting the new one.
+
+<table><thead><tr><th>Day</th><th>Primary Focus (90–120 min)</th><th>Secondary Task (30 min)</th></tr></thead><tbody><tr><td><strong>Day 1</strong></td><td>Number Systems — fundamentals + HCF/LCM + remainder basics</td><td>Learn BODMAS, divisibility rules (2–13)</td></tr><tr><td><strong>Day 2</strong></td><td>Number Systems — cyclicity, last digits, surds, CRT introduction</td><td>15 practice questions on Rank 1</td></tr><tr><td><strong>Day 3</strong></td><td>Percentages — conversion tables, successive %, base concept</td><td>10 practice questions on Rank 2</td></tr><tr><td><strong>Day 4</strong></td><td>Profit & Loss + Discount — core formulas, false weight, equivalent discount</td><td>10 practice questions on Rank 3</td></tr><tr><td><strong>Day 5</strong></td><td>SI & CI — formulas, population/growth, depreciation, installment basics</td><td>10 practice questions on Rank 4</td></tr><tr><td><strong>Day 6</strong></td><td>Time & Work — man-days, combined work, alternate days, leave problems</td><td>10 practice questions on Rank 5</td></tr><tr><td><strong>Day 7</strong></td><td>Time, Speed & Distance + Boats & Streams — all variants</td><td>10 practice questions on Rank 6 + Weekend revision of Days 1–6</td></tr><tr><td><strong>Day 8</strong></td><td>Averages, Ratio & Proportion — weighted avg, deviation formula, ratio division</td><td>10 practice questions on Rank 7</td></tr><tr><td><strong>Day 9</strong></td><td>Mixtures & Alligations — alligation diagrams, replacement formula</td><td>10 practice questions on Rank 8</td></tr><tr><td><strong>Day 10</strong></td><td>Probability — basic rules, cards/dice/coins, complement method</td><td>10 practice questions on Rank 9</td></tr><tr><td><strong>Day 11</strong></td><td>Permutations & Combinations — nPr, nCr, circular, complement method</td><td>10 practice questions on Rank 10 + Weekend revision of Days 8–10</td></tr><tr><td><strong>Day 12</strong></td><td>Ages + Coding-Decoding + Blood Relations — logical reasoning speed practice</td><td>15 mixed LR questions</td></tr><tr><td><strong>Day 13</strong></td><td>Clocks & Calendar — all formula variants, odd days counting</td><td>10 practice questions on Rank 14</td></tr><tr><td><strong>Day 14</strong></td><td>Data Interpretation — mixed charts, approximation, DI caselets</td><td>3–4 full DI caselets (15–20 questions)</td></tr><tr><td><strong>Day 15</strong></td><td>Full Mock Test (90 min) + Weak area revision (30 min)</td><td>Priority list review — final preparation</td></tr></tbody></table>
+<strong>Weekend principle:</strong> Saturday is for consolidation and solving mixed-question sets. Sunday morning is for revision of the week's topics. Do not start new topics on Sundays.
+
+<hr />
+
+
+        
+        <h2 class="section-header">Best Free Learning Resources</h2>
+        <h2>Best Free Resources</h2>
+
+<h3>YouTube Channels</h3>
+
+<table><thead><tr><th>Channel</th><th>Best For</th></tr></thead><tbody><tr><td><strong>Aditya Ranjan (Anuj Aggarwal)</strong></td><td>Complete placement-focused course, Indian audience</td></tr><tr><td><strong>SSC achievers</strong></td><td>Quick tricks and shortcuts for speed</td></tr><tr><td><strong>Dear Sir</strong></td><td>Clear, methodical explanations for beginners</td></tr><tr><td><strong>Riyaz Smart Learning</strong></td><td>Shortcuts for percentage, profit/loss, SI/CI</td></tr><tr><td><strong>Winners Strategy (Avids Beam)</strong></td><td>Time and work, TSD — fast problem-solving techniques</td></tr><tr><td><strong>Raghava Coacher</strong></td><td>P&C and probability — excellent for product company prep</td></tr><tr><td><strong>Competitive Exam Hub</strong></td><td>Mixed topic practice with time-bound solving</td></tr></tbody></table>
+<h3>Websites & Practice Platforms</h3>
+
+<table><thead><tr><th>Platform</th><th>URL</th><th>Use</th></tr></thead><tbody><tr><td><strong>IndiaBix</strong></td><td>indiabix.com</td><td>#1 practice site — topic-wise questions, answers, explanations</td></tr><tr><td><strong>Testbook</strong></td><td>testbook.com</td><td>Sectional tests, daily quizzes, previous year papers</td></tr><tr><td><strong>Preppers</strong></td><td>preppers.com</td><td>Topic-wise drill, difficulty-filtered questions</td></tr><tr><td><strong>Gradeup</strong></td><td>gradeup.co</td><td>Mock tests and topic practice</td></tr><tr><td><strong>Freshersworld</strong></td><td>freshersworld.com</td><td>Company-specific previous year questions</td></tr><tr><td><strong>GeekforGeeks</strong></td><td>geeksforgeeks.org</td><td>P&C, probability, number systems — especially for product companies</td></tr><tr><td><strong>Khan Academy</strong></td><td>khanacademy.org</td><td>Conceptual clarity on percentages, probability foundations</td></tr></tbody></table>
+<h3>Previous Year Papers (PDFs)</h3>
+<ul><li><strong>TCS NQT Previous Year Questions</strong> — search on Google Drive for "TCS NQT 2023 aptitude questions PDF"</li><li><strong>Infosys Aptitude Questions PDF</strong> — available on PrepInsta and Freshersworld</li><li><strong>Cognizant Previous Year Questions PDF</strong> — available on Testbook</li><li><strong>Amazon SDE Aptitude Questions</strong> — available on GeekforGeeks</li><li><strong>Collect from:</strong> indiabix.com → placement papers section</li></ul>
+
+<h3>Mobile Apps</h3>
+<ul><li><strong>IndiaBix</strong> (Android/iOS) — practice on the go</li><li><strong>PrepLadder</strong> — topic-wise mocks</li><li><strong>M4Maths</strong> — puzzles and mixed aptitude</li></ul>
+
+<hr />
+
+
+        
+        <h2 class="section-header">Top 50 Practice Questions Per Topic</h2>
+        <h2>Top 50 Must-Practice Questions Per Topic</h2>
+
+> These questions represent the most high-frequency and high-difficulty variants asked in placement tests. Practice each topic until you can solve in under 90 seconds per question.
+
+<h3>Number Systems — Top 50</h3>
+<ol><li>Find the unit digit of 7^2023.</li><li>Find the last two digits of 3^456.</li><li>When 5^75 is divided by 8, what is the remainder?</li><li>Find the HCF of 72, 48, and 36 using the prime factorisation method.</li><li>Two numbers have HCF 12 and LCM 360. If one number is 48, find the other.</li><li>Find the smallest number that leaves remainder 2 when divided by 3, 4, 5, and 6.</li><li>The sum of two numbers is 36 and their HCF is 4. How many such pairs exist?</li><li>Find the largest 5-digit number divisible by 45.</li><li>If 3^x × 5^y = 675, find x + y.</li><li>A number when divided by 7 leaves remainder 5; when divided by 9 leaves remainder 6; by 11 leaves remainder 8. Find the smallest such number.</li><li>How many factors does 216 have?</li><li>Find the sum of all factors of 36.</li><li>If 2^n × 3^n × 5^n = 1000^n, find n.</li><li>The unit digit of 2^50 + 3^50 is?</li><li>If a number is divided by 13, the remainder is 11. When doubled and divided by 13, remainder is?</li><li>Find the least common multiple of 8/9, 12/15, and 20/21.</li><li>A number leaves remainder 7 when divided by 8, 9, and 12. Find the smallest such number.</li><li>1! + 2! + 3! + ... + 100! divided by 24 — what is the remainder?</li><li>If 47a58 is divisible by 3, find the minimum value of 'a'.</li><li>Find the smallest integer that must be added to 1065 to make it divisible by 41.</li><li>Find the greatest power of 5 in 100!</li><li>The difference between the place value and face value of 5 in 5037 is?</li><li>How many numbers between 100 and 500 are divisible by 6?</li><li>Find the remainder when 2^100 is divided by 3.</li><li>If a number N has 14 factors. If the square root of N is less than 20, find N.</li><li>Two numbers are in ratio 4:5. Their LCM is 240. Find their HCF.</li><li>Find the largest 4-digit number divisible by 12, 15, and 20.</li><li>If the product of two numbers is 4107 and their HCF is 17, find their LCM.</li><li>What is the least number that should be subtracted from 1000 so that 32, 36, and 40 divide it exactly?</li><li>1^3 + 2^3 + 3^3 + ... + 10^3 = ?</li><li>Find the unit digit of 1! + 2! + 3! + ... + 100!.</li><li>If the sum of digits of a number is divisible by 9, the number is divisible by 9. Verify: is 1,234,567 divisible by 9?</li><li>Two numbers leave remainders 2 and 3 when divided by 8. When divided by 4, what remainder will their product leave?</li><li>Find the HCF of (15^3 – 15) and (17^3 – 17).</li><li>If a number is divisible by 14 and 8, by what other numbers is it definitely divisible?</li><li>The sum of all odd numbers from 1 to 100 is?</li><li>The sum of all even numbers from 1 to 100 is?</li><li>A number N when divided by 12 gives remainder 7. What is the remainder when 3N + 2 is divided by 12?</li><li>Find the least number which when divided by 8, 12, 20, and 36 leaves remainder 5 in each case.</li><li>If a number when divided by 5 gives remainder 3, by 7 gives remainder 4, and by 9 gives remainder 5, find the smallest such number.</li><li>100! ends with how many zeros?</li><li>If 5 × 6 × 7 × ... × 15 is divisible by 2^k, find the maximum value of k.</li><li>The sum of three consecutive odd numbers is 153. Find the largest.</li><li>A number N has 8 factors. If 8 and 27 are factors of N, and N < 500, find N.</li><li>Find the remainder when 1! × 2! × 3! × ... × 10! is divided by 11.</li><li>Find the difference between the largest and smallest 5-digit numbers divisible by 43.</li><li>If 3^x × 4^y = 1152, find (x + y).</li><li>How many 3-digit numbers are divisible by 7 but not by 3?</li><li>A number when divided by 6 leaves remainder 3. When the same number is divided by 9, what is the largest possible remainder?</li><li>The product of three consecutive integers is always divisible by ___.</li></ol>
+
+<hr />
+
+<h3>Percentages — Top 50</h3>
+<ol><li>If 15% of (A + B) = 25% of (A – B), find the ratio A:B.</li><li>A number is increased by 20% and then decreased by 20%. What is the net change?</li><li>A's income is 25% more than B's. By what percent is B's income less than A's?</li><li>The price of a commodity decreases by 20% and then increases by 20%. What is the net change?</li><li>If 60% of X equals 40% of Y, and X + Y = 500, find X and Y.</li><li>The population of a town is 80,000. It increases at 10% per annum for 2 years. Find the new population.</li><li>A man spends 85% of his income. If his income increases by 30% and his expenditure increases by 20%, by what percent does his savings increase?</li><li>Two successive discounts of 20% and 30% are equivalent to a single discount of what percent?</li><li>A shopkeeper offers two successive discounts of 10% each on an article marked at Rs. 500. Find the selling price.</li><li>If A's salary is 40% less than B's, how much percent is B's salary more than A's?</li><li>In an examination, 70% passed in English, 75% in Mathematics, and 15% failed in both. What percent passed in both subjects?</li><li>The radius of a circle is increased by 10%. By what percent does its area increase?</li><li>A student scored 45 out of 60 in Physics, 60 out of 80 in Chemistry, and 75 out of 100 in Mathematics. In which subject was the performance best?</li><li>The population decreases by 5% per year. If the current population is 100,000, what will it be after 2 years?</li><li>If the price of sugar goes up by 20%, by how much must a housewife reduce consumption to keep expenditure the same?</li><li>A merchant offers a discount of 25% on the marked price and still makes a profit of 20%. If the cost price is Rs. 800, find the marked price.</li><li>The value of a machine depreciates by 10% each year. If its current value is Rs. 50,000, what will it be after 3 years?</li><li>In a class of 60 students, 55% are boys. 20% of boys and 30% of girls passed an exam. How many students passed?</li><li>A man sells an article at a loss of 10%. If he buys it for 20% less and sells it at the same price, what is his profit%?</li><li>The price of a commodity is increased by 30% in January, decreased by 20% in February. If the original price was Rs. 100, what is the final price?</li><li>In an election, 60% of voters voted. If 2% of voted ballots were invalid and A got 48% of valid votes and won by 2,000 votes, how many voters were registered?</li><li>A person spends 20% on rent, 30% on education, and 40% on food out of his monthly salary. He saves Rs. 2,500. What is his salary?</li><li>If the price of a shirt is reduced by 15% and the number of shirts sold increases by 20%, by what percent does the revenue change?</li><li>A solution contains 40% alcohol. How much water should be added to 50 liters to make it 25% alcohol solution? (mixture concept)</li><li>The length of a rectangle is increased by 30% and breadth is decreased by 30%. What is the net change in area?</li><li>A car travels 20% faster than a bus. The bus is what percent slower than the car?</li><li>If X% of Y = Y% of Z, find the relationship between X, Y, and Z.</li><li>A batsman's score increased by 15% in the second test compared to the first, and by 25% in the third test compared to the second. If his first test score was 200 runs, what was his third test score?</li><li>The marked price of a book is 40% above the cost price. If a discount of 20% is offered, find the profit%.</li><li>In a school, 60% of students play football, 50% play cricket, and 20% play neither. What percent play both?</li><li>The population of a village is 20,000. It increases by 10% in the first year and 20% in the second year. Find the population after 2 years.</li><li>A shopkeeper gives a free article with every 5 purchased. What is the effective discount?</li><li>If the price of gold increases by 30% and then falls by 30%, what is the net change?</li><li>Out of 800 candidates, 70% appeared in the exam. Of those who appeared, 40% passed. How many candidates passed?</li><li>A's weight is 20% more than B's. B's weight is 30% less than C's. If C weighs 100 kg, find A's weight.</li><li>Two discounts of 15% and 10% are offered on a product priced at Rs. 2,000. Find the final price.</li><li>A number is first increased by 25% and then decreased by 20%. What percent of the original number is the result?</li><li>In an exam, 75% of boys and 60% of girls passed. If 70% of total 200 students passed, how many girls appeared?</li><li>The area of a circle increases by 44% — what is the percentage increase in its radius?</li><li>If the price of a commodity is reduced by 25%, by how much percent should it be increased to return to the original price?</li><li>A person saves 20% of his income. If his income increases by 15% and his savings increase by Rs. 500, what is his new income?</li><li>The pass percentage increased from 50% to 60% in a class of 100. How many additional students passed?</li><li>A merchant sells 80% of his stock at a 20% profit and the rest at a loss. If overall he makes a 10% profit, at what profit percent did he sell the remaining stock?</li><li>If 15% of A = 30% of B = 45% of C, and A + B + C = 200, find A, B, and C.</li><li>The weight of a man is 80 kg on Earth and 13.3 kg on the Moon. If his weight increases by 10% on Earth, by what percent is it different on the Moon?</li><li>In a survey, 70% owned a car, 40% owned a motorcycle, and 20% owned both. What percent owned neither?</li><li>The selling price of 20 articles equals the cost price of 30 articles. Find the gain or loss percent.</li><li>A student appearing for an exam needs 40% to pass. He scores 30 out of 80 and also gets 10 grace marks. Does he pass?</li><li>If the length of a rectangle is increased by 50% and the diagonal remains the same, by what percent does the breadth change?</li><li>A company gives a 20% hike to employees in category A and 30% to category B. If the average hike is 26%, find the ratio of employees in A to B.</li></ol>
+
+<hr />
+
+<h3>Profit, Loss & Discount — Top 50</h3>
+<ol><li>A shopkeeper buys an article for Rs. 200 and sells it at a profit of 15%. Find the selling price.</li><li>An article is sold for Rs. 690 at a loss of 8%. Find its cost price.</li><li>A shopkeeper gives a discount of 20% on the marked price and still makes a 10% profit. If the cost price is Rs. 1,000, find the marked price.</li><li>The cost price of 20 articles equals the selling price of 25 articles. Find the loss percent.</li><li>A merchant sells an article at a profit of 20%. If he had bought it at 10% less and sold it for Rs. 10 less, his profit would be 30%. Find the cost price.</li><li>Two successive discounts of 15% and 20% are offered. What single discount is equivalent?</li><li>A shopkeeper uses a false weight of 900g for 1kg. At what price per kg should he sell to make a 20% profit? CP = Rs. 50/kg.</li><li>A man buys 50 mangoes for Rs. 200 and sells 40 mangoes for Rs. 200. Find his profit or loss percent.</li><li>The marked price of an article is 40% above the cost price. It is sold at a discount of 20%. Find the profit percent.</li><li>A dealer offers 3 free articles with every 5 purchased. What is the effective discount?</li><li>An article is sold at a profit of 15%. If it were sold for Rs. 30 more, the profit would be 25%. Find the cost price.</li><li>The selling price of 15 articles equals the cost price of 12 articles. Find the gain percent.</li><li>A shopkeeper offers a buy-2-get-1-free offer on an article costing Rs. 60 each. What is the effective price per article?</li><li>If a trader makes a loss of 10% when selling at the marked price, and the marked price is Rs. 540, find the cost price.</li><li>A shopkeeper sells two articles at Rs. 396 each. He makes 10% profit on one and 10% loss on the other. Find his net profit or loss.</li><li>The cost price of 8 pens equals the selling price of 6 pens. Find the profit percent.</li><li>A dealer sells a car for Rs. 5,76,000 and earns a commission of 8% on it. He also earns a bonus of 1/2% on the profit. If the cost of the car is Rs. 4,80,000, find his total earnings.</li><li>An article is sold at a profit of 25%. If the cost price is doubled and the selling price remains the same, what is the new profit or loss percent?</li><li>The marked price of an article is 25% above the cost price. A discount of 15% is offered on the marked price. Find the profit percent.</li><li>A merchant sells an article at Rs. 800 and earns a profit equal to the cost price of 4 such articles. Find the cost price.</li><li>If the profit percent on an article equals its cost price (in rupees), and the selling price is Rs. 77, find the cost price.</li><li>A shopkeeper offers two successive discounts of 10% each on an article marked at Rs. 1,000. Find the selling price.</li><li>A dishonest shopkeeper claims to sell at cost price but uses a false weight of 850g. Find his gain percent.</li><li>The selling price of 10 articles equals the cost price of 12 articles. Find the loss percent.</li><li>An article is sold at a loss of 15%. If the selling price is increased by Rs. 130, there would be a profit of 10%. Find the cost price.</li><li>A dealer sells goods at cost price but gives only 800g for 1kg. Find his gain percent.</li><li>The cost price of 12 pens equals the selling price of 8 pens. Find the gain percent.</li><li>A shopkeeper offers a discount of 25% on the marked price and still makes a profit of 20%. If the marked price is Rs. 800, find the cost price.</li><li>A trader buys goods at a 20% discount on the marked price and sells at the marked price. Find his profit percent.</li><li>An article is sold for Rs. 960 at a profit of 20%. What should be the selling price to earn a profit of 30%?</li><li>The marked price of an article is 50% above the cost price. If the shopkeeper gives a discount of 20%, what is the profit percent?</li><li>A shopkeeper sells an article at a profit of 20%. If he had bought it for 20% less and sold it for Rs. 10 less, his profit would be 40%. Find the cost price.</li><li>Two articles are sold at Rs. 360 each. One is sold at a profit of 20% and the other at a loss of 20%. Find the net profit or loss.</li><li>The selling price of 30 articles equals the cost price of 45 articles. Find the gain or loss percent.</li><li>A shopkeeper offers a discount of 15% on the marked price. He still makes a profit of 19%. If the cost price is Rs. 850, find the marked price.</li><li>A merchant sells rice at a profit of 25%. If he reduces the price by 10%, his profit becomes?</li><li>An article is marked 30% above the cost price. If a discount of 20% is offered, find the profit percent.</li><li>A shopkeeper offers a festival discount of 15% and still makes a profit of 19.5%. If the cost price is Rs. 2,000, find the marked price.</li><li>The selling price of 5 articles equals the cost price of 8 articles. Find the gain percent.</li><li>A dealer sells an article at a loss of 10%. If he increases the selling price by Rs. 200, he makes a profit of 5%. Find the cost price.</li><li>An article is sold at two successive profits of 20% and 25%. What is the equivalent single profit?</li><li>The marked price of an article is Rs. 1,200. A discount of 20% is offered and a profit of 10% is made. Find the cost price.</li><li>A shopkeeper sells an article at a loss of 15%. If the selling price is Rs. 425, find the cost price and the loss amount.</li><li>An article costs the manufacturer Rs. 60. The manufacturer sells it to the wholesaler at 20% profit. The wholesaler sells to the retailer at 25% profit. The retailer sells to the customer at 30% profit. Find the final price.</li><li>A shopkeeper gives a discount of 10% on the marked price and makes a profit of Rs. 20. If the cost price is Rs. 400, find the marked price.</li><li>The selling price of 20 articles equals the cost price of 16 articles. Find the loss percent.</li><li>A shopkeeper sells an article at cost price but uses 800g weight for 1kg. Find his gain percent.</li><li>An article is sold at a profit of 15%. If the cost price is increased by Rs. 50 and the selling price remains the same, the profit becomes 5%. Find the original cost price.</li><li>A trader sells an article at 20% discount on the marked price and makes a loss of 10%. If the marked price is Rs. 1,200, find the cost price.</li><li>Two dealers buy goods at the same cost price. One sells at a 20% profit, the other sells at a 10% loss. If the total revenue is Rs. 1,430, find each dealer's cost price.</li></ol>
+
+<hr />
+
+<h3>Simple & Compound Interest — Top 50</h3>
+<ol><li>Find the SI on Rs. 5,000 at 8% per annum for 3 years.</li><li>Find the CI on Rs. 10,000 at 10% per annum for 2 years.</li><li>A sum of Rs. 8,000 becomes Rs. 9,440 in 2 years at SI. Find the rate.</li><li>The CI on a sum at 10% per annum for 2 years is Rs. 210. Find the SI on the same sum for the same period.</li><li>A sum at CI doubles itself in 5 years. In how many years will it become 8 times?</li><li>The population of a town is 100,000. It increases at 5% per annum. What will it be after 3 years?</li><li>A sum of Rs. 12,000 is invested at 12% p.a. SI. What will it become after 3 years?</li><li>Find the amount on Rs. 8,000 at 10% p.a. CI for 2 years.</li><li>The difference between SI and CI on a sum for 2 years at 10% p.a. is Rs. 50. Find the sum.</li><li>A sum of Rs. 6,000 is invested at CI. After 1 year it becomes Rs. 6,600. What will it be after 2 years?</li><li>At what rate will Rs. 500 become Rs. 620 in 2 years at SI?</li><li>The CI on a sum for 2 years at 5% p.a. is Rs. 328. Find the sum.</li><li>A man borrowed Rs. 20,000 at 12% p.a. SI and repaid in two equal annual installments. Find the installment amount.</li><li>A sum of Rs. 1,000 is invested at 20% p.a. CI. In how many years will it become Rs. 1,728?</li><li>The population of a village was 50,000 in 2020. It decreases at 5% per annum. What will it be in 2023?</li><li>Find the SI on Rs. 2,500 at 6% p.a. for 4 years.</li><li>The CI on a sum for 3 years at 10% p.a. is Rs. 3,310. Find the sum.</li><li>A machine's value depreciates at 10% per year. Its current value is Rs. 80,000. What will it be after 3 years?</li><li>At what rate will Rs. 1,000 become Rs. 1,331 in 3 years at CI?</li><li>A sum becomes double in 5 years at SI. Find the rate.</li><li>The CI on a sum at 8% p.a. for 2 years is Rs. 832. Find the SI on the same sum for the same period.</li><li>A sum of Rs. 15,000 is invested at 12% p.a. CI. What will it become after 1.5 years? (use half-year compounding)</li><li>A person takes a loan of Rs. 50,000 at 15% p.a. SI. He repays Rs. 11,250 at the end of 3 years. Find the balance outstanding.</li><li>The amount on a sum at 12% p.a. CI for 2 years is Rs. 14,112. Find the sum.</li><li>At what rate will Rs. 800 become Rs. 1,082 in 2 years at CI?</li><li>A sum becomes 3 times in 5 years at CI. In how many years will it become 9 times?</li><li>The difference between CI and SI on a sum for 3 years at 10% p.a. is Rs. 310. Find the sum.</li><li>A sum of Rs. 10,000 is invested at 8% p.a. CI for 2 years and then at 10% p.a. CI for the next 2 years. Find the final amount.</li><li>The SI on a sum for 4 years at 6% p.a. is Rs. 2,400. Find the CI on the same sum for 2 years at the same rate.</li><li>A person invests Rs. 25,000 at 10% p.a. CI. He withdraws Rs. 5,000 at the end of 1 year. Find the amount at the end of 2 years.</li><li>The population of a city is 200,000. It grows at 8% per annum. In how many years will it become 300,000?</li><li>A sum at SI becomes Rs. 6,500 in 2 years and Rs. 7,500 in 5 years. Find the sum and rate.</li><li>A machine depreciates at 20% per annum. Its current value is Rs. 3,00,000. After how many years will its value be Rs. 1,00,000?</li><li>At what rate will a sum treble itself in 5 years at CI?</li><li>The CI on a sum at 12% p.a. for 3 years is Rs. 3,560.64. Find the sum.</li><li>A sum of Rs. 8,000 is invested at CI. After 2 years it becomes Rs. 9,680. Find the rate.</li><li>A person lends Rs. 5,000 partly at 4% SI and partly at 6% SI. If his total income is Rs. 260 in 2 years, find the amounts lent at each rate.</li><li>The CI on Rs. 10,000 for 1.5 years at 20% p.a. is? (compound half-yearly)</li><li>A sum of Rs. 20,000 becomes Rs. 23,315 in 1.5 years at CI. Find the rate.</li><li>At what rate will Rs. 2,000 become Rs. 2,420 in 2 years at SI?</li><li>A sum at CI becomes Rs. 29,160 in 3 years and Rs. 31,540 in 4 years. Find the rate.</li><li>The amount after 2 years at 10% CI is Rs. 6,050. What will it be after 3 years?</li><li>A person borrows Rs. 80,000 at 10% p.a. SI and lends it at 15% p.a. CI. Find his gain after 2 years.</li><li>The CI on Rs. 5,000 for 3 years at 8% p.a. is Rs. 1,298.432. Verify and find the sum (already given).</li><li>The SI on Rs. 1,200 at 5% p.a. for a certain period is Rs. 240. Find the time period.</li><li>A sum of Rs. 15,000 at CI becomes Rs. 18,150 in 2 years. In how many years will it become Rs. 21,997?</li><li>The difference between the amount and the principal at 20% p.a. CI for 2 years is Rs. 1,120. Find the principal.</li><li>A person invests Rs. 1,00,000 in a scheme that gives 12% p.a. CI. He withdraws Rs. 20,000 at the end of 2 years. What will the balance be at the end of 3 years?</li><li>The SI on a sum is Rs. 800 and the CI on the same sum for 2 years at the same rate is Rs. 880. Find the sum and rate.</li><li>At what rate will Rs. 1,000 become Rs. 1,331 in 3 years at CI? (Also: At what rate will it treble in 3 years?)</li></ol>
+
+<hr />
+
+<h3>Time & Work — Top 50</h3>
+<ol><li>A can do a work in 20 days, B in 30 days. In how many days can they complete the work together?</li><li>A can do a work in 10 days. B can do it in 15 days. A works for 3 days, then B joins. How many more days are needed?</li><li>A is twice as efficient as B. Together they complete a work in 12 days. How long would A alone take?</li><li>10 men can do a work in 6 days. How many days will 15 men take?</li><li>A pipe fills a tank in 10 hours but due to a leak it takes 15 hours. How long does the leak take to empty the full tank?</li><li>A can do a work in 30 days. B can do it in 40 days. They work together for 5 days. Then A leaves. How long does B take to finish?</li><li>24 men can complete a work in 16 days. After 6 days, 8 more men join. How many more days are needed?</li><li>A and B work on alternate days, starting with A. They complete a work in 13 days. A alone can do it in 20 days. Find B's time.</li><li>12 workers can complete a project in 18 days. After 6 days, 3 workers leave. How many additional days are needed?</li><li>A is 50% more efficient than B. A can complete a work in 30 days. In how many days can both complete the work together?</li><li>5 women can do a work in 12 days. 5 men can do the same work in 8 days. In how many days can 5 men and 5 women do it?</li><li>A and B together can do a work in 20 days. B and C together can do it in 25 days. A and C together can do it in 30 days. In how many days can all three do it together?</li><li>A pipe fills a tank in 20 minutes. Another pipe empties it in 30 minutes. If both are opened together, in how many minutes will the tank be filled?</li><li>16 men can complete a work in 30 days. 8 men start and after 10 days, 8 more join. How many days in total?</li><li>A can do 3/5 of a work in 9 days. B can do 1/3 of the work in 7 days. In how many days can both together complete the work?</li><li>A tap fills a tank in 12 minutes. Another tap fills it in 20 minutes. A drain tap empties it in 30 minutes. If all three are open, how long to fill the tank?</li><li>4 workers can complete a task in 8 days. 6 workers start but 2 leave after 3 days. How many more days are needed?</li><li>A does 1/4 of a work in 10 days. He then calls B who works at twice A's speed. How many more days to finish?</li><li>30 workers can finish a work in 40 days. After 20 days, 10 workers leave. How many more days?</li><li>A can do a work in 15 days, B in 20 days. If they work together for 4 days, what fraction of work remains?</li><li>5 pumps can fill a tank in 6 hours. How many pumps are needed to fill it in 4 hours?</li><li>A is twice as fast as B, who is twice as fast as C. Together they complete a work in 4 days. How long would A alone take?</li><li>A and B work for 4 days at half efficiency. Then A works at full efficiency and B at half. Total work done in 10 days. If A alone can do it in 20 days, find B's time.</li><li>12 men can do a work in 4 days. 6 women can do the same work in 12 days. In how many days can 8 men and 6 women do it?</li><li>Two pipes fill a tank in 15 and 20 minutes respectively. A third pipe empties it in 30 minutes. When all three are open, how long to fill the tank?</li><li>A and B together complete 2/3 of a work in 6 days. A leaves and B completes the remaining work. How many more days does B need?</li><li>20 workers can complete a project in 30 days. 5 workers are added after 10 days. How many days early or late?</li><li>A can do a work in 25 days, B in 20 days. They work together for 5 days, then C joins and they finish in 2 more days. Find C's time.</li><li>If 4 men or 6 women can do a work in 12 days, how long will 5 men and 3 women take?</li><li>A does half the work in 15 days. B does 1/3 in 10 days. In how many days can they complete the work together?</li><li>8 workers can complete a work in 20 days. After 5 days, 2 workers leave. How many days late?</li><li>A, B, C work together. A and B alone can do the work in 10 and 15 days respectively. C works twice as fast as A. Find total time.</li><li>A pipe fills a tank in 8 hours. Due to a leak, it takes 10 hours. How long would the leak alone empty a full tank?</li><li>15 men can do a work in 12 days. 5 days after starting, 5 more men join. After 5 more days, 5 men leave. How many days total?</li><li>A tap fills a tank in 40 minutes. Another tap in 60 minutes. A drain empties in 80 minutes. Time to fill with all three open?</li><li>6 men can paint a fence in 10 days. 4 women can paint it in 15 days. How long will 4 men and 6 women take?</li><li>A is 3 times as fast as B. Together they finish in 18 days. How long would A alone take?</li><li>12 men complete 1/3 of a work in 8 days. Then 8 more men join. How many days for remaining work?</li><li>Two pipes fill a tank. Pipe 1 is 50% more efficient than pipe 2. Together they fill in 12 days. Find pipe 2's time alone.</li><li>A and B can do a work in 8 and 12 days respectively. They work together for 3 days, then A leaves. B finishes. Total days?</li><li>30 workers can finish in 20 days. After 10 days, 10 more workers are added and work is completed 2 days early. By how many days was it originally planned?</li><li>A and B work on alternate days starting with B. They finish 1 day early compared to if both worked together. If A alone takes 15 days, find B's time.</li><li>A pipe fills a tank in 5 hours. Another pipe in 10 hours. A drain in 15 hours. Time to fill if all open?</li><li>4 men and 5 women can complete a work in 12 days. 3 men and 6 women in 15 days. Find time for 2 men and 3 women.</li><li>A can do 1/3 of a work in 5 days. He rests for 2 days, then resumes. Total days to complete?</li><li>Two workers A and B. A works for 3 days, B for 4 days. Together they would take 5 days. Find A and B's individual times.</li><li>12 men and 8 women complete a work in 6 days. 8 men and 4 women take 10 days. Find time for 2 men and 2 women.</li><li>A tap fills a tank in 30 minutes. Another tap fills it in 45 minutes. They are opened together. After 15 minutes, both are closed and a drain opens. It empties in 20 minutes. Time to fill the tank completely?</li><li>A and B together complete a work in 30 days. After 20 days, A leaves. B completes remaining work in 20 more days. Find A and B's individual times.</li><li>10 workers can do a work in 30 days. Every 10 days, 2 workers are added. How many days to complete?</li></ol>
+
+<hr />
+
+<h3>Time, Speed & Distance — Top 50</h3>
+<ol><li>A train 200m long passes a man walking at 5 km/h in 36 seconds. Find the train's speed.</li><li>Two trains 150m and 200m long run towards each other at 40 km/h and 50 km/h. How long to cross completely?</li><li>A man goes to a place at 30 km/h and returns at 20 km/h. Find his average speed.</li><li>A boat goes 30 km upstream and 44 km downstream in 10 hours. Its speed in still water is 10 km/h. Find the stream's speed.</li><li>A person covers a certain distance at 3 km/h and returns at 6 km/h. Total time = 3 hours. Find total distance.</li><li>A train passes a platform 120m long in 20 seconds and a pole in 12 seconds. Find the train's length.</li><li>Two persons A and B start from P and Q (120 km apart) towards each other at 20 km/h and 30 km/h. Where do they meet?</li><li>A man walks at 4 km/h and reaches a destination 30 minutes late. At 5 km/h he reaches 15 minutes early. Find the distance.</li><li>A car covers 360 km in 6 hours downstream and 8 hours upstream. Find the speed of the stream.</li><li>Two trains start from stations A and B towards each other. After meeting, they take 4 hours and 9 hours to reach B and A respectively. Find the speed ratio.</li><li>A train 100m long passes a platform 150m long in 10 seconds. Find the speed.</li><li>A man rows upstream at 8 km/h and downstream at 12 km/h. Find the speed of the stream and the speed in still water.</li><li>A person covers 120 km. If he increases his speed by 10 km/h, he takes 1 hour less. Find the original speed.</li><li>Two trains 200m and 300m long run in the same direction at 30 km/h and 60 km/h. How long does the faster train take to overtake the slower?</li><li>A train passes a man in 10 seconds and a platform in 25 seconds. The platform is 150m long. Find the train's length and speed.</li><li>A car travels the first 100 km at 50 km/h and the next 200 km at 100 km/h. Find average speed.</li><li>Two cyclists start from A and B towards each other at 15 km/h and 20 km/h. They meet after 2 hours. Distance between A and B?</li><li>A man rows 40 km downstream in 4 hours and the same distance upstream in 8 hours. Find his speed in still water.</li><li>A train 150m long passes a pole in 9 seconds. It passes a tunnel 300m long in 18 seconds. Find the speed.</li><li>Two trains start at 9 AM from stations 300 km apart and meet at 2 PM. One train travels 10 km/h faster. Find their speeds.</li><li>A man covers a distance at 12 km/h and returns at 18 km/h. If total time is 5 hours, find the distance.</li><li>A train leaves station A for B at 60 km/h. Another leaves B for A at 80 km/h. Distance 420 km. Where do they meet?</li><li>A boat can row 12 km downstream in 1 hour. Against the current it covers 6 km in 1 hour. Find the speed of the stream.</li><li>A car covers 300 km. It would have taken 1 hour less if it had traveled 30 km/h faster. Find the speed.</li><li>Two persons A and B start from the same point in opposite directions. A walks at 6 km/h, B at 8 km/h. After 3 hours, they turn and walk toward each other. When do they meet?</li><li>A train 180m long passes another train 120m long running in the opposite direction in 15 seconds. If the speeds are 40 km/h and 30 km/h, verify time.</li><li>A person rows 6 km downstream and back in 4 hours. If the stream's speed is 2 km/h, find his speed in still water.</li><li>Two stations A and B are 180 km apart. A train leaves A for B at 60 km/h. Another leaves B for A at 90 km/h. Where do they meet from A?</li><li>A man covers 400 km by train and 200 km by car. His average speed for the whole journey is 50 km/h. If the car speed is 40 km/h, find the train speed.</li><li>A train passes a pole at 72 km/h in 5 seconds. Find the train's length.</li><li>Two cyclists start from opposite ends of a 60 km track. Speeds are 15 km/h and 20 km/h. After how long will they meet?</li><li>A car leaves station A at 8 AM at 60 km/h. Another leaves A at 10 AM at 80 km/h. When does the second catch up?</li><li>A boat goes 30 km upstream and returns in 4 hours. If the stream's speed is 5 km/h, find the boat's speed in still water.</li><li>A train covers 180 km in 3 hours downstream and 240 km in 4 hours upstream. Find the speed of the stream.</li><li>Two persons A and B start at 6 AM from P toward Q. A at 50 km/h, B at 40 km/h. A reaches Q, returns immediately. When do they meet?</li><li>A man covers 240 km partly at 30 km/h and partly at 45 km/h. He covers the whole distance in 7 hours. Find distances covered at each speed.</li><li>A train passes a man running at 6 km/h in the same direction in 10 seconds. The train's speed is 54 km/h. Find the train's length.</li><li>Two trains 180m and 220m long run toward each other. They completely cross each other in 20 seconds at speeds 50 km/h and 60 km/h. Verify the lengths.</li><li>A man rows to a place 60 km away and comes back in 16 hours. He rows 5 km/h in still water and the stream is 3 km/h. Find time for upstream and downstream.</li><li>A car travels 300 km. It would have taken 2 hours more if it had traveled 20 km/h slower. Find the speed.</li><li>A train 150m long passes a platform in 30 seconds and a pole in 15 seconds. Find the platform's length.</li><li>Two persons start from P and Q (100 km apart) toward each other. They meet after 4 hours. After meeting, one reaches Q in 2 hours. Find their speeds.</li><li>A man rows 12 km downstream and back in 3 hours. His speed in still water is 9 km/h. Find the stream's speed.</li><li>A train leaves station A for B at 9 AM at 50 km/h. Another leaves B for A at 11 AM at 70 km/h. Distance 300 km. Where do they meet from A?</li><li>A car travels the first half at 40 km/h and second half at 60 km/h. Find average speed for the entire journey.</li><li>Two trains start simultaneously from stations 200 km apart. One travels east at 40 km/h, the other west at 60 km/h. When and where do they meet?</li><li>A man rows 2 km upstream in 30 minutes and returns in 20 minutes. Find his speed in still water and the stream's speed.</li><li>A train 240m long passes another train 360m long running in the same direction in 60 seconds. If the faster train's speed is 90 km/h, find the slower train's speed.</li><li>A person covers a distance at 10 km/h and returns at 15 km/h. His average speed for the round trip is?</li><li>Two stations A and B are 300 km apart. A train leaves A at 7 AM at 60 km/h. Another leaves B at 8 AM at 80 km/h. At what time do they meet?</li></ol>
+
+<hr />
+
+<h3>Averages, Ratio & Proportion — Top 50</h3>
+<ol><li>The average of 15 numbers is 25. One number is removed and the average becomes 23. Find the removed number.</li><li>The average weight of 8 persons increases by 2 kg when a person weighing 60 kg is replaced by a new person. Find the new person's weight.</li><li>The average of 10 numbers is 12.5. A number 18 was misread as 28. Find the correct average.</li><li>The average of 20 numbers is 15. If each number is multiplied by 4, what is the new average?</li><li>The average of 8 numbers is 20. The average of first 5 numbers is 15 and last 4 numbers is 25. Find the 5th number.</li><li>A person covers 200 km at 40 km/h and 300 km at 60 km/h. Find the average speed.</li><li>Divide Rs. 1170 among A, B, C in ratio 1/2 : 2/3 : 3/4.</li><li>The ratio of ages of A and B is 4:3. A is 8 years older than B. Find their ages.</li><li>Two numbers are in the ratio 5:7 and their difference is 16. Find the numbers.</li><li>If a:b = 3:5 and b:c = 7:8, find a:b:c.</li><li>The sum of three numbers in the ratio 2:3:5 is 310. Find the numbers.</li><li>If A:B = 3:4 and B:C = 5:6, find A:C.</li><li>A mixture contains milk and water in ratio 5:3. When 10 liters of water is added, the ratio becomes 5:4. Find the original quantities.</li><li>A sum of Rs. 5,000 is divided among A, B, C in the ratio 3:4:8. Find A's share.</li><li>If the average of 30 students is 14 and the average of another 20 is 12, find the combined average.</li><li>The average age of a family of 5 is 30. When a 6th member joins, the average becomes 32. Find the new member's age.</li><li>In a class, the average weight of 30 boys is 60 kg and 20 girls is 50 kg. Find the average weight of the whole class.</li><li>A man covers the first 100 km at 50 km/h and the next 100 km at 100 km/h. Find his average speed.</li><li>The average of 6 consecutive even numbers is 21. Find the numbers.</li><li>The average of 5 consecutive odd numbers is 17. Find the largest number.</li><li>If a:b = 2:3, b:c = 4:5, and c:d = 6:7, find a:d.</li><li>A sum of Rs. 800 is divided among three persons in the ratio 2:3:7. The largest share is?</li><li>The ratio of income to expenditure of a person is 8:7. If his savings are Rs. 2,000 per month, find his income.</li><li>If x:y = 3:5 and x is increased by 20% and y is increased by 10%, find the new ratio.</li><li>The average of 7 numbers is 49. One number is excluded and the average becomes 42. Find the excluded number.</li><li>The ages of A, B, C are in the ratio 3:5:7. The sum of their ages is 75. Find B's age.</li><li>A mixture of 60 liters has milk and water in ratio 3:2. How much water should be added to make it 1:1?</li><li>If the ratio of boys to girls in a class is 7:5 and there are 84 boys, how many girls?</li><li>The ratio of speeds of a car and a bus is 5:3. If the car covers 250 km, how much does the bus cover in the same time?</li><li>The average of 25 numbers is 40. If 5 is added to each number, what is the new average?</li><li>The average of first 10 natural numbers is?</li><li>The average of first 10 even numbers is?</li><li>The average of squares of first n natural numbers is (n+1)(2n+1)/6. Find the average of squares of first 5 natural numbers.</li><li>If the average of 12 numbers is 15 and each number is divided by 3, what is the new average?</li><li>The average salary of 30 employees is Rs. 5,000. 10 employees with average salary Rs. 4,000 resign. What is the new average?</li><li>A man bought 10 books at Rs. 20 each, 5 at Rs. 50 each, and 3 at Rs. 100 each. Find the average price per book.</li><li>If the ratio of length to breadth of a rectangle is 5:3 and the perimeter is 160m, find the area.</li><li>The average of 5 numbers is 20. The average of 3 of them is 15. The average of the remaining 2 is?</li><li>A person travels from A to B at 40 km/h and B to A at 60 km/h. His average speed for the entire trip is?</li><li>If a:b = 3:4, find the value of (5a + 3b) : (3a + 4b).</li><li>The average of 5 numbers is 16. If one number is removed, the average becomes 15. Find the removed number.</li><li>The ages of a father and son are in ratio 5:2. After 8 years, the ratio becomes 3:1. Find the father's current age.</li><li>A sum of Rs. 8,640 is divided among A, B, C in the ratio 1/3 : 1/4 : 1/5. Find B's share.</li><li>If the average of 9 numbers is 27 and the average of 7 of them is 25, find the sum of the remaining 2 numbers.</li><li>The ratio of two numbers is 3:5. If each number is increased by 6, the ratio becomes 5:7. Find the numbers.</li><li>In a school, the ratio of teachers to students is 1:20. If there are 60 teachers, how many students?</li><li>The average of 8 numbers is 24. If each number is increased by 3, what is the new average?</li><li>A person covers 1/3 of a journey at 30 km/h, 1/3 at 60 km/h, and 1/3 at 90 km/h. Find average speed.</li><li>The average of 13 numbers is 18. The average of the first 7 is 14 and the last 7 is 20. Find the 7th number.</li><li>If the ratio of incomes of two persons is 9:7 and their expenditures are in ratio 4:3, and each saves Rs. 500, find their incomes.</li></ol>
+
+<hr />
+
+<h3>Mixtures & Alligations — Top 50</h3>
+<ol><li>In what ratio must rice at Rs. 20/kg and Rs. 30/kg be mixed to get a mixture worth Rs. 24/kg?</li><li>A container has 60 liters of milk. 12 liters are removed and replaced with water. Again 12 liters of mixture is removed and replaced. How much milk remains?</li><li>Two alloys contain gold and silver in ratios 3:5 and 5:7. In what ratio should they be mixed to get an alloy with gold:silver = 5:7?</li><li>A dishonest shopkeeper sells at cost price but uses a false weight of 850g for 1kg. Find his gain%.</li><li>In what ratio must two types of tea costing Rs. 40/kg and Rs. 60/kg be mixed so that the mixture costs Rs. 48/kg?</li><li>A cask contains 50 liters of wine. 10 liters are drawn out and replaced by water. This is done twice. How much wine remains?</li><li>A mixture of 80 liters has milk and water in ratio 7:3. How much water must be added to make it 1:1?</li><li>A man has 100 kg of wheat costing Rs. 12/kg. He mixes it with wheat costing Rs. 18/kg. If the average price is Rs. 14/kg, find the quantity of expensive wheat.</li><li>In what ratio must a 20% alcohol solution be mixed with a 60% alcohol solution to get a 30% solution?</li><li>A container has 90 liters of milk. First 10 liters are removed and replaced with water. Then 10 liters of the mixture is removed and replaced with water. How much milk remains?</li><li>Two solutions of acid and water contain 40% and 70% acid respectively. In what ratio must they be mixed to get a 50% acid solution?</li><li>A shopkeeper mixes 30 kg of rice at Rs. 15/kg with 20 kg at Rs. 20/kg. At what price per kg should he sell the mixture to earn 10% profit?</li><li>How much water must be added to 20 liters of a 25% salt solution to make it 10%?</li><li>A merchant buys 100 kg of rice at Rs. 20/kg and 200 kg at Rs. 30/kg. He sells the mixture at Rs. 28/kg. Find his profit%.</li><li>A cask contains 40% wine. After 10 liters are drawn and replaced with water, it becomes 30%. Find the capacity of the cask.</li><li>In what ratio must a 15% solution be mixed with a 5% solution to get a 10% solution?</li><li>Two blends of coffee cost Rs. 180/kg and Rs. 200/kg. In what ratio should they be mixed to sell at Rs. 190/kg with no profit/no loss?</li><li>A mixture of 120 liters has milk and water in ratio 5:3. If 20 liters of the mixture are removed and replaced with water, find the new ratio.</li><li>A container has 200 liters of a solution that is 60% acid. How much must be replaced with water to make it 40% acid?</li><li>A trader mixes 25% impurity rice with pure rice. After mixing, the impurity is 10%. In what ratio were they mixed?</li><li>A man has two kinds of gold: 24 karat (pure) and 18 karat (75% pure). How should he mix them to get 22 karat (91.67% pure) gold?</li><li>The ratio of milk to water in two containers is 3:2 and 5:4 respectively. In what ratio should their contents be mixed to get a new mixture with milk:water = 4:3?</li><li>A merchant sells goods at the cost price but uses a false weight of 900g for 1kg. Find his gain%.</li><li>In what ratio must rice at Rs. 25/kg, Rs. 35/kg, and Rs. 45/kg be mixed to get a mixture worth Rs. 30/kg?</li><li>A 50-liter mixture of milk and water has milk% = 60%. How much water should be added to reduce milk% to 40%?</li><li>A man has 40 kg of sugar at Rs. 30/kg. He wants to mix it with sugar at Rs. 40/kg to get a mixture at Rs. 35/kg. How much of the expensive sugar?</li><li>Two solutions of spirit and water contain 80% and 50% spirit respectively. In what ratio must they be mixed to get a 65% spirit solution?</li><li>A container has 100 liters of milk. First 20 liters are removed and replaced with water. Then 20 liters of the new mixture are removed and replaced with water. Find the final quantity of milk.</li><li>In what ratio must a shopkeeper mix pulses costing Rs. 60/kg and Rs. 80/kg to get a mixture costing Rs. 70/kg?</li><li>A cask of wine contains 100 liters. 20 liters are drawn and replaced with water. This is done 3 times. How much wine remains?</li><li>A man has a 10% salt solution. He wants a 20% salt solution by adding salt. How much salt must be added to 90 kg of the solution?</li><li>Two varieties of wheat costing Rs. 18/kg and Rs. 25/kg are mixed in the ratio 3:2. Find the price per kg of the mixture.</li><li>A 300-liter mixture has acid and water in ratio 2:1. How much water must be added to make it 1:1?</li><li>A man has a 15% sugar solution. He wants to strengthen it to 25% by adding sugar. How much sugar per 200 kg of solution?</li><li>In what ratio should I mix tea costing Rs. 100/kg and Rs. 120/kg to sell at Rs. 110/kg with a 10% profit margin?</li><li>A mixture of 80 liters has alcohol and water in ratio 3:1. After adding 20 liters of water, what is the new ratio?</li><li>A trader mixes 20% impurity wheat with pure wheat. After mixing, impurity becomes 8%. In what ratio were they mixed?</li><li>A solution contains 30% acid. How much water should be evaporated from 200 kg of the solution to make it 50% acid?</li><li>In what ratio must gold of 18 karat (75% pure) and 22 karat (91.67% pure) be mixed to get 20 karat?</li><li>A mixture of milk and water weighs 80 kg. 10 kg of the mixture is removed and replaced with water. If milk:water becomes 3:2, find original milk quantity.</li><li>Two varieties of sugar at Rs. 28/kg and Rs. 36/kg are mixed in the ratio 3:5. Find the price per kg.</li><li>A solution has 40% alcohol. 10 liters are drawn and replaced with water. The solution now has 30% alcohol. Find the total volume.</li><li>In what ratio must a shopkeeper mix pulses at Rs. 70/kg and Rs. 90/kg to sell at Rs. 80/kg with 20% profit?</li><li>A man has a solution of 50% concentration. He needs 30% concentration by adding water. If he has 20 liters of the solution, how much water?</li><li>A container has 60 liters of a 20% salt solution. How much of the solution must be replaced with water to get a 10% solution?</li><li>Two blends of coffee are priced at Rs. 150/kg and Rs. 250/kg. In what ratio must they be mixed so that on selling at Rs. 200/kg, the merchant makes a 20% profit?</li><li>A mixture of two liquids A and B has A:B = 3:5. After adding 5 liters of B, the ratio becomes 3:7. Find the original quantities.</li><li>A merchant has 100 kg of rice at Rs. 40/kg. He mixes it with a cheaper variety at Rs. 25/kg. The mixture sells at Rs. 35/kg with a 16.67% profit. Find the quantity of cheap rice.</li><li>In what ratio must three varieties of rice costing Rs. 50, Rs. 70, and Rs. 90 per kg be mixed to get a mixture costing Rs. 65/kg?</li><li>A solution of 80% concentration is mixed with a 30% solution to get 60 liters of 50% solution. How much of each is used?</li></ol>
+
+<hr />
+
+<h3>Probability — Top 50</h3>
+<ol><li>Two dice are thrown. What is the probability that the sum is 8?</li><li>A bag has 5 red and 4 white balls. Two balls are drawn without replacement. Find P(both red).</li><li>A speaks truth 3/4 of the time, B 2/3 of the time. They both report a coin toss showed heads. Find P it actually was heads.</li><li>From a deck of 52 cards, two cards are drawn. Find P(at least one is a king).</li><li>Three persons A, B, C have probabilities 1/3, 1/4, 1/5 of solving a problem. Find P(problem is solved).</li><li>A number is chosen from 1 to 100. Find P(it is divisible by 3 or 5).</li><li>A card is drawn from a deck. Find P(it is a face card or a spade).</li><li>Two dice are thrown. Find P(both show the same number).</li><li>A bag contains 6 white, 4 black, and 2 red balls. Two balls are drawn at random. Find P(both are white).</li><li>A man takes a train and a bus to reach office. Probability of train being late is 0.2 and bus being late is 0.3. Assuming independence, find P(neither is late).</li><li>Two dice are thrown. Find P(sum is a prime number).</li><li>A bag has 10 balls numbered 1–10. Two are drawn. Find P(both are odd).</li><li>A and B appear for an interview. Probability of A's selection is 1/3 and B's is 1/5. Find P(both selected) and P(at least one selected).</li><li>In a lottery, 10 tickets are sold and 3 prizes are won. A person buys 2 tickets. Find P(he wins at least one prize).</li><li>Two dice are thrown. Find P(sum is greater than 7).</li><li>A card is drawn from a deck. Find P(it is a red king or a black queen).</li><li>A bag has 7 white and 3 black balls. Two balls are drawn with replacement. Find P(both are white).</li><li>The probability that A solves a problem is 1/4, B is 1/5, C is 1/3. All try independently. Find P(at least one solves).</li><li>A number is selected from 1 to 50. Find P(it is a multiple of 3 or 7).</li><li>A box contains 12 items, 3 defective. 3 items are selected at random. Find P(none is defective).</li><li>A coin is tossed 3 times. Find P(exactly 2 heads).</li><li>A man can hit a target 3 out of 4 times. He fires 3 shots. Find P(all three hit).</li><li>A drawer contains 5 pairs of black socks and 3 pairs of white socks. Two socks are drawn at random. Find P(they form a pair).</li><li>From the word 'PROBABILITY', a letter is chosen at random. Find P(it is a vowel).</li><li>Two dice are thrown. Find P(the product is even).</li><li>A bag has 5 red, 4 blue, 3 green balls. Find P(a red or a blue ball is drawn).</li><li>A and B solve a problem independently. P(A solves) = 1/2, P(B solves) = 1/3. Find P(A solves and B doesn't).</li><li>A card is drawn from a deck. Find P(it is a 10 or a heart).</li><li>Two dice are thrown. Find P(sum is divisible by 3).</li><li>A bag has 8 balls, 2 of which are special. 3 balls are drawn without replacement. Find P(at least one is special).</li><li>A man has 3 children. Find P(all three are boys).</li><li>Two dice are thrown. Find P(the sum is 10 or 11).</li><li>A bag has 6 white, 4 black, 2 red balls. Find P(drawing a white or red ball).</li><li>The probability that a student passes in Mathematics is 3/5 and in Physics is 4/7. Both are independent. Find P(passes in at least one).</li><li>A bag has 5 coins, 2 are double-headed. A coin is tossed and shows heads. Find P(it is double-headed).</li><li>Two dice are thrown. Find P(sum is 6 or 8).</li><li>A committee of 5 is formed from 6 men and 4 women. Find P(the committee has exactly 3 men).</li><li>A bag has balls numbered 1–10. Two are drawn. Find P(sum is greater than 12).</li><li>The probability that a man lives 10 more years is 1/4, and that his wife lives 10 more years is 1/3. Find P(at least one lives 10 more years).</li><li>A card is drawn from a deck. Find P(it is a face card, given that it is a king).</li><li>Three dice are rolled. Find P(all show different numbers).</li><li>A bag has 3 white and 2 black balls. Balls are drawn one by one without replacement until a black ball appears. Find P(the process ends on the 3rd draw).</li><li>Two dice are thrown. Find P(sum is less than 12, given that the sum is more than 8).</li><li>A box has 4 defective and 6 working items. 3 are selected. Find P(exactly 2 are defective).</li><li>Two dice are thrown. Find P(product is a perfect square).</li><li>A bag has 5 red, 3 white, 2 blue balls. Find P(drawing red and white in two draws without replacement).</li><li>A man has 4 keys and only one fits the lock. He tries keys randomly until success. Find P(he succeeds on the 3rd try).</li><li>A card is drawn from a deck. Find P(it is a spade, given that it is black).</li><li>Two dice are thrown. Find P(difference between numbers is 1).</li><li>A bag has 8 balls, 3 of which are marked. 4 balls are drawn. Find P(at least 2 are marked).</li></ol>
+
+<hr />
+
+<h3>Permutations & Combinations — Top 50</h3>
+<ol><li>How many 4-digit numbers can be formed using digits 1, 2, 3, 4, 5 without repetition?</li><li>In how many ways can 3 boys and 3 girls be arranged in a row so that no two boys are together? (gap method)</li><li>How many different words can be formed from the letters of 'EQUATION' such that vowels always come together?</li><li>A committee of 5 is to be formed from 6 men and 5 women. In how many ways if it must have at least 2 women?</li><li>How many 3-digit numbers are divisible by 5?</li><li>How many 5-digit numbers can be formed from the digits 0, 1, 2, 3, 4 if repetition is allowed?</li><li>How many 4-digit numbers can be formed from the digits 1, 2, 3, 4, 5, 6 with no repetition and the number is divisible by 2?</li><li>In how many ways can 8 people be seated around a circular table?</li><li>How many different 6-digit numbers can be formed using the digits 1, 1, 2, 2, 3, 3?</li><li>A selection of 4 students is made from 8 boys and 4 girls. In how many ways if it must have exactly 2 boys?</li><li>How many 4-letter words can be formed from 'LOGARITHM' if the word must start with a vowel?</li><li>In how many ways can 5 prizes be given to 3 students if a student can get any number of prizes?</li><li>How many 3-digit numbers greater than 300 can be formed from 1, 2, 3, 4, 5 if repetition is not allowed?</li><li>From 8 consonants and 4 vowels, how many 5-letter words can be formed with 3 consonants and 2 vowels?</li><li>How many arrangements of the word 'COLLEGE' are possible?</li><li>In how many ways can 6 rings be worn on 3 fingers?</li><li>How many 4-digit numbers divisible by 4 can be formed from 1, 2, 3, 4, 5, 6 with no repetition?</li><li>A team of 6 is to be formed from 5 doctors and 4 engineers. In how many ways if the team must have at least 3 doctors?</li><li>How many 7-digit numbers have exactly two 3's?</li><li>How many ways can 4 men and 4 women be seated alternately around a circular table?</li><li>How many 3-digit numbers have all digits different?</li><li>From 5 mathematicians and 7 physicists, a committee of 7 is formed including at least 3 mathematicians. In how many ways?</li><li>How many words can be formed from 'DAUGHTER' with vowels together?</li><li>In how many ways can 7 prizes be awarded to 5 students if each student can receive any number of prizes?</li><li>How many 4-digit numbers greater than 4000 can be formed from 0, 1, 2, 3, 4, 5 with no repetition?</li><li>A signal uses 2 flags from a set of 4 distinct flags. How many signals are possible?</li><li>How many 5-digit numbers divisible by 5 can be formed from 1, 2, 3, 4, 5 if digits may repeat?</li><li>In how many ways can 5 books be arranged on a shelf such that a particular pair is always together?</li><li>From 10 points, 4 are collinear. How many triangles can be formed using these points?</li><li>How many 3-digit numbers have the digits in ascending order?</li><li>In how many ways can 4 boys and 4 girls be seated in a row with all girls together?</li><li>A polygon has 8 vertices. How many diagonals does it have?</li><li>How many 4-digit numbers start with 1 or end with 2?</li><li>From 5 men and 4 women, a committee of 5 is formed. In how many ways if exactly 2 women and the secretary must be a man?</li><li>How many arrangements of 'MISSISSIPPI' have the 4 I's together?</li><li>In how many ways can 10 examination papers be arranged so that the best and worst papers never come together?</li><li>How many 5-digit numbers have exactly two digits the same?</li><li>From a group of 8 men and 6 women, a committee of 5 is formed. What is the probability that all 5 are women?</li><li>How many 3-digit numbers have their digits in geometric progression?</li><li>In how many ways can 5 persons sit on 5 numbered chairs?</li><li>How many 4-letter words can be formed from 'MORNING' with no vowels?</li><li>From 7 consonants and 4 vowels, how many 3-consonant, 2-vowel words can be formed?</li><li>How many 6-digit numbers have exactly 3 distinct digits?</li><li>In how many ways can 11 players be selected from 15, with a particular player always selected?</li><li>How many 4-digit numbers have at least one digit repeated?</li><li>From 'INDEPENDENCE', how many words can be formed taking all letters with no restriction?</li><li>How many 5-digit numbers have exactly one zero?</li><li>A box has 6 red, 5 white, 4 blue balls. In how many ways can 4 balls be drawn with at least one of each color?</li><li>How many 6-digit numbers have 3 even and 3 odd digits?</li><li>In how many ways can 5 persons sit around a round table if A and B must not sit together?</li></ol>
+
+<hr />
+
+
+    </main>
+    
+    <script>
+        function filterTopics() {
+            let input = document.getElementById('topicSearch');
+            let filter = input.value.toLowerCase();
+            let cards = document.getElementsByClassName('topic-card');
+            
+            for (let i = 0; i < cards.length; i++) {
+                let title = cards[i].getElementsByClassName('card-title')[0].innerText.toLowerCase();
+                let rank = cards[i].getElementsByClassName('card-rank')[0].innerText.toLowerCase();
+                let desc = cards[i].getElementsByClassName('card-desc')[0].innerText.toLowerCase();
+                let diff = cards[i].getElementsByClassName('meta-badge')[0].innerText.toLowerCase();
+                
+                if (title.includes(filter) || rank.includes(filter) || desc.includes(filter) || diff.includes(filter)) {
+                    cards[i].style.display = "";
+                } else {
+                    cards[i].style.display = "none";
+                }
+            }
+        }
+    </script>
+</body>
+</html>
