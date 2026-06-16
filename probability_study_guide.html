@@ -866,16 +866,14 @@
   <img src="https://img.shields.io/badge/Focus-Placements-blueviolet?style=for-the-badge" alt="Focus" />
 </div>
 
-
-
 <table><thead><tr><th>Metric</th><th>Rating</th></tr></thead><tbody><tr><td><strong>Rank among all aptitude topics</strong></td><td>#5 of ~20 core topics</td></tr><tr><td><strong>Importance Rating</strong></td><td>★★★★★ (5/5) — Highest ROI topic</td></tr><tr><td><strong>Appears in every placement test</strong></td><td>Yes</td></tr><tr><td><strong>High scorers vs. average candidates gap</strong></td><td>Extremely High</td></tr></tbody></table>
 <h3>Why It Matters in Placements</h3>
 
-Probability is the <strong>language of uncertainty</strong> — and modern tech companies live in that space. Every time a system makes a decision under uncertain data, probability is baked in. Product companies (Amazon, Google, Microsoft) ask probability questions because:
-<ul><li>They test <strong>structured thinking under uncertainty</strong> — a core engineering skill</li><li>They reveal whether a candidate can <strong>count correctly</strong> (combinatorics + probability)</li><li>They surface <strong>intuition vs. formula-memorization</strong> — toppers solve by visualization, not just plugging numbers</li></ul>
+<p>Probability is the <strong>language of uncertainty</strong> — and modern tech companies live in that space. Every time a system makes a decision under uncertain data, probability is baked in. Product companies (Amazon, Google, Microsoft) ask probability questions because:
+<ul><li>They test <strong>structured thinking under uncertainty</strong> — a core engineering skill</li><li>They reveal whether a candidate can <strong>count correctly</strong> (combinatorics + probability)</li><li>They surface <strong>intuition vs. formula-memorization</strong> — toppers solve by visualization, not just plugging numbers</li></ul></p>
 
-It also connects deeply with:
-<ul><li><strong>Permutations & Combinations</strong> (the counting foundation)</li><li><strong>Percentages</strong> (probability as a fraction/percentage of sample space)</li><li><strong>Expected Value</strong> (appears in game theory and optimization interviews)</li><li><strong>Bayes' Theorem</strong> (increasingly asked in ML/data science interviews at product companies)</li></ul>
+<p>It also connects deeply with:
+<ul><li><strong>Permutations & Combinations</strong> (the counting foundation)</li><li><strong>Percentages</strong> (probability as a fraction/percentage of sample space)</li><li><strong>Expected Value</strong> (appears in game theory and optimization interviews)</li><li><strong>Bayes' Theorem</strong> (increasingly asked in ML/data science interviews at product companies)</li></ul></p>
 
 <h3>Weightage in Tests</h3>
 
@@ -889,7 +887,7 @@ Probability questions almost always follow 4–5 learnable patterns. Once you ma
 
 <h3>What Is Probability?</h3>
 
-Probability measures the <strong>likelihood</strong> of an event occurring, expressed as a number between 0 (impossible) and 1 (certain). In exams, it is almost always expressed as a fraction, decimal, or percentage.
+<p>Probability measures the <strong>likelihood</strong> of an event occurring, expressed as a number between 0 (impossible) and 1 (certain). In exams, it is almost always expressed as a fraction, decimal, or percentage.</p>
 
 <pre><code class="language-">P(Event) = Number of favorable outcomes / Total number of possible outcomes</code></pre>
 
@@ -910,35 +908,35 @@ In placement exams, we almost always use the <strong>Classical approach</strong>
 
 <h3>Concept 1: Basic Probability</h3>
 
-<strong>Definition</strong>: If a random experiment has <em>n</em> equally likely outcomes and <em>m</em> of them are favorable to event E, then P(E) = m/n.
+<p><strong>Definition</strong>: If a random experiment has <em>n</em> equally likely outcomes and <em>m</em> of them are favorable to event E, then P(E) = m/n.</p>
 
 <div class="alert alert-note"><span class="alert-icon">ℹ️</span><div class="alert-content"><strong>Intuition</strong>
 Think of a dartboard. If you randomly throw a dart at a board divided into equal sections, the probability of hitting a specific section is simply the fraction of the board that section occupies.</div></div>
 
-<strong>Formula</strong>:
+<p><strong>Formula</strong>:
 <pre><code class="language-">P(E) = Favorable outcomes / Total outcomes
-P(E) always lies in [0, 1]</code></pre>
+P(E) always lies in [0, 1]</code></pre></p>
 
-<strong>Shortcut Methods</strong>:
-<ul><li>When in doubt, <strong>enumerate the sample space</strong> first. Write out all possibilities.</li><li>For dice: Sample space = {1,2,3,4,5,6} → 6 equally likely outcomes</li><li>For coins: n coins → 2^n outcomes</li><li>For cards: 52 cards → 4 suits × 13 ranks</li></ul>
+<p><strong>Shortcut Methods</strong>:
+<ul><li>When in doubt, <strong>enumerate the sample space</strong> first. Write out all possibilities.</li><li>For dice: Sample space = {1,2,3,4,5,6} → 6 equally likely outcomes</li><li>For coins: n coins → 2^n outcomes</li><li>For cards: 52 cards → 4 suits × 13 ranks</li></ul></p>
 
 <div class="alert alert-warning"><span class="alert-icon">⚠️</span><div class="alert-content"><strong>Common Mistakes to Avoid</strong>
 <ul><li>❌ Forgetting that outcomes must be <strong>equally likely</strong> — you can't apply the formula to a biased coin</div></div></li><li>❌ Missing outcomes in the sample space — always count systematically</li><li>❌ Confusing "at least one" with "exactly one"</li></ul>
 
-<strong>Interview Relevance</strong>: "What is the probability of rolling a sum of 7 with two dice?" — fundamental question. Also tests counting discipline.
+<p><strong>Interview Relevance</strong>: "What is the probability of rolling a sum of 7 with two dice?" — fundamental question. Also tests counting discipline.</p>
 
 <hr />
 
 <h3>Concept 2: Complement Method (The Biggest Shortcut)</h3>
 
-<strong>Definition</strong>: P(not A) = 1 - P(A). This is the single most important shortcut in probability — use it when the problem asks for "at least one."
+<p><strong>Definition</strong>: P(not A) = 1 - P(A). This is the single most important shortcut in probability — use it when the problem asks for "at least one."</p>
 
 <div class="alert alert-note"><span class="alert-icon">ℹ️</span><div class="alert-content"><strong>Intuition</strong>
 It's often easier to count what <em>doesn't</em> happen than what does. "At least one head in 5 coin tosses" = 1 - P(no heads) = 1 - (1/2)^5 = 31/32. Much faster than counting all favorable cases.</div></div>
 
-<strong>Formula</strong>:
+<p><strong>Formula</strong>:
 <pre><code class="language-">P(at least one) = 1 - P(none)
-P(no event occurs) = (1 - p₁) × (1 - p₂) × ... × (1 - pₙ) [if independent]</code></pre>
+P(no event occurs) = (1 - p₁) × (1 - p₂) × ... × (1 - pₙ) [if independent]</code></pre></p>
 
 <div class="alert alert-note"><span class="alert-icon">ℹ️</span><div class="alert-content"><strong>Memory Trick</strong>
 > 🔑 <strong>"Complement is your best friend when 'at least' appears."</strong> — Always check if the problem asks for "at least one" or "none" before brute-forcing the favorable cases.</div></div>
@@ -950,19 +948,19 @@ P(no event occurs) = (1 - p₁) × (1 - p₂) × ... × (1 - pₙ) [if independe
 <div class="alert alert-warning"><span class="alert-icon">⚠️</span><div class="alert-content"><strong>Common Mistakes to Avoid</strong>
 <ul><li>❌ Using complement when the problem asks for "exactly two" (complement doesn't help here)</div></div></li><li>❌ Forgetting to raise (1-p) to the power of n-1 for "exactly one"</li></ul>
 
-<strong>Interview Relevance</strong>: "If you roll a die 4 times, what is the probability of getting at least one 6?" — interview classic. Answer = 1 - (5/6)^4.
+<p><strong>Interview Relevance</strong>: "If you roll a die 4 times, what is the probability of getting at least one 6?" — interview classic. Answer = 1 - (5/6)^4.</p>
 
 <hr />
 
 <h3>Concept 3: Independent vs. Dependent Events</h3>
 
-<strong>Independent Events</strong>: Two events A and B are independent if the occurrence of one does not affect the occurrence of the other.
+<p><strong>Independent Events</strong>: Two events A and B are independent if the occurrence of one does not affect the occurrence of the other.
 <pre><code class="language-">P(A ∩ B) = P(A) × P(B)</code></pre>
-<strong>Examples</strong>: Tossing two coins, rolling two dice, drawing cards with replacement.
+<strong>Examples</strong>: Tossing two coins, rolling two dice, drawing cards with replacement.</p>
 
-<strong>Dependent Events</strong>: The occurrence of one affects the probability of the other.
+<p><strong>Dependent Events</strong>: The occurrence of one affects the probability of the other.
 <pre><code class="language-">P(A ∩ B) = P(A) × P(B|A)  or  P(B) × P(A|B)</code></pre>
-<strong>Examples</strong>: Drawing cards without replacement, selecting people from a group.
+<strong>Examples</strong>: Drawing cards without replacement, selecting people from a group.</p>
 
 <div class="alert alert-note"><span class="alert-icon">ℹ️</span><div class="alert-content"><strong>Intuition</strong>
 Ask: "Does what happened in the first event change the landscape for the second?" If YES → dependent. If NO → independent.</div></div>
@@ -973,19 +971,19 @@ In "drawing" problems, ask: <strong>"With replacement?"</strong> If with replace
 <div class="alert alert-warning"><span class="alert-icon">⚠️</span><div class="alert-content"><strong>Common Mistakes to Avoid</strong>
 <ul><li>❌ Treating dependent events as independent (classic card problem trap)</div></div></li><li>❌ Forgetting to update the denominator after the first draw (52 → 51 → 50...)</li></ul>
 
-<strong>Interview Relevance</strong>: "You draw two cards without replacement. What is P(both are kings)?" — Tests whether you understand dependence. Answer: 4/52 × 3/51 = 1/221.
+<p><strong>Interview Relevance</strong>: "You draw two cards without replacement. What is P(both are kings)?" — Tests whether you understand dependence. Answer: 4/52 × 3/51 = 1/221.</p>
 
 <hr />
 
 <h3>Concept 4: Conditional Probability & Bayes' Theorem</h3>
 
-<strong>Conditional Probability</strong>: P(A|B) = Probability of A given that B has occurred.
-<pre><code class="language-">P(A|B) = P(A ∩ B) / P(B)</code></pre>
+<p><strong>Conditional Probability</strong>: P(A|B) = Probability of A given that B has occurred.
+<pre><code class="language-">P(A|B) = P(A ∩ B) / P(B)</code></pre></p>
 
-<strong>Bayes' Theorem</strong>: The classic formula for updating probabilities based on new evidence.
+<p><strong>Bayes' Theorem</strong>: The classic formula for updating probabilities based on new evidence.
 <pre><code class="language-">P(A|B) = P(B|A) × P(A) / P(B)</code></pre>
 Where:
-<ul><li>P(A) = Prior probability</li><li>P(A|B) = Posterior probability</li><li>P(B|A) = Likelihood</li></ul>
+<ul><li>P(A) = Prior probability</li><li>P(A|B) = Posterior probability</li><li>P(B|A) = Likelihood</li></ul></p>
 
 <div class="alert alert-note"><span class="alert-icon">ℹ️</span><div class="alert-content"><strong>Intuition</strong>
 Bayes' Theorem answers: "I know B happened. How does that change my belief about A?" It reverses the direction of conditional probability.</div></div>
@@ -993,7 +991,7 @@ Bayes' Theorem answers: "I know B happened. How does that change my belief about
 <div class="alert alert-note"><span class="alert-icon">ℹ️</span><div class="alert-content"><strong>Memory Trick</strong>
 > 🔑 <strong>"Posterior = Likelihood × Prior / Evidence"</strong> — In plain English: "New belief = How likely this evidence if A were true × My old belief ÷ How likely is this evidence overall."</div></div>
 
-<strong>Shortcut — The Bayes Table Method</strong>:
+<p><strong>Shortcut — The Bayes Table Method</strong>:
 <pre><code class="language-">For two hypotheses H₁ and H₂:
          P(H₁)    P(Evidence|H₁)    P(H₁)×P(E|H₁)    Posterior
 H₁       0.3          0.6              0.18         0.18/(0.18+0.14)
@@ -1001,50 +999,50 @@ H₂       0.7          0.2              0.14         0.14/(0.18+0.14)
 
 Sum of products = P(Evidence) = 0.32
 Posterior for H₁ = 0.18/0.32 = 9/16</code></pre>
-This table method avoids the formula confusion entirely.
+This table method avoids the formula confusion entirely.</p>
 
 <div class="alert alert-warning"><span class="alert-icon">⚠️</span><div class="alert-content"><strong>Common Mistakes to Avoid</strong>
 <ul><li>❌ Confusing P(A|B) with P(B|A) — they are almost always different</div></div></li><li>❌ Forgetting to divide by P(B) in Bayes' formula</li><li>❌ Not drawing the probability tree diagram first</li></ul>
 
-<strong>Interview Relevance</strong>: Bayes' Theorem is asked in <strong>every ML/data science interview</strong> at Amazon, Google, Microsoft. Classic: "A test for a disease has 99% accuracy. The disease affects 1% of the population. If you test positive, what is the actual probability you have the disease?"
+<p><strong>Interview Relevance</strong>: Bayes' Theorem is asked in <strong>every ML/data science interview</strong> at Amazon, Google, Microsoft. Classic: "A test for a disease has 99% accuracy. The disease affects 1% of the population. If you test positive, what is the actual probability you have the disease?"</p>
 
 <hr />
 
 <h3>Concept 5: Permutation & Combination Based Probability</h3>
 
-<strong>Definition</strong>: Probability where the sample space and favorable cases require counting arrangements or selections using P(n,r) and C(n,r).
+<p><strong>Definition</strong>: Probability where the sample space and favorable cases require counting arrangements or selections using P(n,r) and C(n,r).</p>
 
 <div class="alert alert-note"><span class="alert-icon">ℹ️</span><div class="alert-content"><strong>Intuition</strong>
 These problems have two steps:</div></div>
 <ol><li><strong>Count the total ways</strong> something can happen (P or C depending on order)</li><li><strong>Count the favorable ways</strong> (same principle, different numbers)</li></ol>
 
-<strong>When to Use Permutations (Order Matters)</strong>:
-<ul><li>Arranging people in a row</li><li>Forming numbers from digits</li><li>Words from letters</li></ul>
+<p><strong>When to Use Permutations (Order Matters)</strong>:
+<ul><li>Arranging people in a row</li><li>Forming numbers from digits</li><li>Words from letters</li></ul></p>
 
-<strong>When to Use Combinations (Order Doesn't Matter)</strong>:
-<ul><li>Selecting a committee</li><li>Drawing cards from a deck</li><li>Choosing items from a set</li></ul>
+<p><strong>When to Use Combinations (Order Doesn't Matter)</strong>:
+<ul><li>Selecting a committee</li><li>Drawing cards from a deck</li><li>Choosing items from a set</li></ul></p>
 
 <div class="alert alert-tip"><span class="alert-icon">💡</span><div class="alert-content"><strong>Shortcut Method</strong>
 Ask: <strong>"Does changing the order change the outcome?"</strong></div></div>
 <ul><li>"How many ways to arrange" → Permutation (P)</li><li>"In how many ways can you select" → Combination (C)</li></ul>
 
-<strong>Formula</strong>:
+<p><strong>Formula</strong>:
 <pre><code class="language-">P(n,r) = n! / (n-r)!
 C(n,r) = n! / [r! × (n-r)!]
 P(E) = C(favorable)/C(total)  [when order doesn't matter]
-P(E) = P(favorable)/P(total)  [when order matters]</code></pre>
+P(E) = P(favorable)/P(total)  [when order matters]</code></pre></p>
 
 <div class="alert alert-warning"><span class="alert-icon">⚠️</span><div class="alert-content"><strong>Common Mistakes to Avoid</strong>
 <ul><li>❌ Using P when C is needed (or vice versa) — this is the #1 source of error</div></div></li><li>❌ Double-counting arrangements</li><li>❌ Not simplifying C(n,r) before computing</li></ul>
 
-<strong>Interview Relevance</strong>: "4 cards are drawn from a deck. What is the probability they are all from the same suit?" — Tests C(13,4)/C(52,4) = 0.0106. Appears in Amazon and Goldman Sachs quant rounds.
+<p><strong>Interview Relevance</strong>: "4 cards are drawn from a deck. What is the probability they are all from the same suit?" — Tests C(13,4)/C(52,4) = 0.0106. Appears in Amazon and Goldman Sachs quant rounds.</p>
 
 <hr />
 
 <h3>Concept 6: Expected Value</h3>
 
-<strong>Definition</strong>: The weighted average of all possible outcomes, where the weights are their probabilities.
-<pre><code class="language-">E(X) = Σ (xᵢ × P(xᵢ))  for all outcomes i</code></pre>
+<p><strong>Definition</strong>: The weighted average of all possible outcomes, where the weights are their probabilities.
+<pre><code class="language-">E(X) = Σ (xᵢ × P(xᵢ))  for all outcomes i</code></pre></p>
 
 <div class="alert alert-note"><span class="alert-icon">ℹ️</span><div class="alert-content"><strong>Intuition</strong>
 If you played a game many times, what would be your <strong>average winnings per game</strong>? That's the expected value.</div></div>
@@ -1058,14 +1056,14 @@ In a game where you win ₹x with probability p and lose ₹y with probability (
 <div class="alert alert-warning"><span class="alert-icon">⚠️</span><div class="alert-content"><strong>Common Mistakes to Avoid</strong>
 <ul><li>❌ Computing E(X) as (max + min)/2 — that's only true for uniform distributions</div></div></li><li>❌ Forgetting that outcomes can be negative (losses) in games</li></ul>
 
-<strong>Interview Relevance</strong>: Expected value appears in decision-making questions at Amazon, Goldman Sachs, and Deloitte. "A game costs ₹50 to play. You win ₹200 with probability 0.3, ₹100 with probability 0.5, and nothing otherwise. Should you play?"
+<p><strong>Interview Relevance</strong>: Expected value appears in decision-making questions at Amazon, Goldman Sachs, and Deloitte. "A game costs ₹50 to play. You win ₹200 with probability 0.3, ₹100 with probability 0.5, and nothing otherwise. Should you play?"</p>
 
 <hr />
 
 <h3>Concept 7: Geometric Probability</h3>
 
-<strong>Definition</strong>: Probability expressed as a ratio of lengths, areas, or volumes.
-<pre><code class="language-">P = (Area of favorable region) / (Total area)</code></pre>
+<p><strong>Definition</strong>: Probability expressed as a ratio of lengths, areas, or volumes.
+<pre><code class="language-">P = (Area of favorable region) / (Total area)</code></pre></p>
 
 <div class="alert alert-note"><span class="alert-icon">ℹ️</span><div class="alert-content"><strong>Intuition</strong>
 If a point is chosen at random within a region, the probability it falls in a subregion is proportional to its area fraction.</div></div>
@@ -1076,7 +1074,7 @@ Draw the figure, shade the favorable region, compute the area ratio.</div></div>
 <div class="alert alert-warning"><span class="alert-icon">⚠️</span><div class="alert-content"><strong>Common Mistakes to Avoid</strong>
 <ul><li>❌ Forgetting to normalize — the ratio must be area/total, not just counting points</div></div></li><li>❌ Wrong geometric formula (circle area = πr², not 2πr)</li></ul>
 
-<strong>Interview Relevance</strong>: Less common in placements but appears at Google and in advanced Goldman Sachs problems.
+<p><strong>Interview Relevance</strong>: Less common in placements but appears at Google and in advanced Goldman Sachs problems.</p>
 
 <hr />
 
@@ -1127,15 +1125,15 @@ P(arranged) = P(favorable)/P(total) [permutations]</code></pre>
 
 <h3>Memory Tricks for Formulas</h3>
 
-> 🔑 <strong>"Add for OR, Multiply for AND"</strong> — Union (OR) → Addition (watch for overlap). Intersection (AND) → Multiplication (watch for dependence).
+<p>> 🔑 <strong>"Add for OR, Multiply for AND"</strong> — Union (OR) → Addition (watch for overlap). Intersection (AND) → Multiplication (watch for dependence).</p>
 
-> 🔑 <strong>"Bayes: LPH over P"</strong> — "Likelihood × Prior over Probability of evidence." The posterior probability equals likelihood times prior, divided by total probability of evidence.
+<p>> 🔑 <strong>"Bayes: LPH over P"</strong> — "Likelihood × Prior over Probability of evidence." The posterior probability equals likelihood times prior, divided by total probability of evidence.</p>
 
-> 🔑 <strong>"Complement: 1 - (all fail)"</strong> — For "at least one" problems, subtract the probability of none from 1.
+<p>> 🔑 <strong>"Complement: 1 - (all fail)"</strong> — For "at least one" problems, subtract the probability of none from 1.</p>
 
-> 🔑 <strong>"Independent = No Memory"</strong> — If the first event doesn't change the probability of the second, they are independent. With replacement = independent. Without = dependent.
+<p>> 🔑 <strong>"Independent = No Memory"</strong> — If the first event doesn't change the probability of the second, they are independent. With replacement = independent. Without = dependent.</p>
 
-> 🔑 <strong>"Arrange = Permute, Select = Combine"</strong> — Order matters → P. Order doesn't matter → C.
+<p>> 🔑 <strong>"Arrange = Permute, Select = Combine"</strong> — Order matters → P. Order doesn't matter → C.</p>
 
 <hr />
 
@@ -1312,32 +1310,32 @@ Shortcut: Block method. Treat the group as one unit, arrange, multiply by intern
 <h3>Day 1–2: Fundamentals</h3>
 <ol><li>Master the sample space concept — list, don't assume</li><li>Learn basic probability: P(E) = F/T</li><li>Practice dice (36 outcomes) and coin (2^n outcomes) problems</li><li>Memorize the card deck breakdown (52 = 4×13)</li></ol>
 
-<strong>Milestone</strong>: You can write down the full sample space for any 2-dice or 3-coin problem without thinking.
+<p><strong>Milestone</strong>: You can write down the full sample space for any 2-dice or 3-coin problem without thinking.</p>
 
 <h3>Day 3–4: Core Rules</h3>
 <ol><li>Learn complement rule — practice "at least one" problems</li><li>Learn addition and multiplication theorems</li><li>Distinguish independent vs dependent — draw probability trees</li><li>Practice drawing-without-replacement problems</li></ol>
 
-<strong>Milestone</strong>: You solve any 2-step probability problem by drawing a tree diagram in under 60 seconds.
+<p><strong>Milestone</strong>: You solve any 2-step probability problem by drawing a tree diagram in under 60 seconds.</p>
 
 <h3>Day 5–6: Intermediate Concepts</h3>
 <ol><li>Learn Bayes' Theorem — practice the table method</li><li>Learn binomial probability — memorize the formula</li><li>Practice "exactly r" and "at least r" problems</li><li>Connect probability with P&C — when to use C(n,r) vs P(n,r)</li></ol>
 
-<strong>Milestone</strong>: You can solve a Bayes' theorem problem using the table method in under 2 minutes.
+<p><strong>Milestone</strong>: You can solve a Bayes' theorem problem using the table method in under 2 minutes.</p>
 
 <h3>Day 7–8: Advanced Concepts</h3>
 <ol><li>Seating arrangement probability (linear and circular)</li><li>Birthday problem — memorize the formula</li><li>Expected value problems</li><li>Geometric probability — area ratios</li></ol>
 
-<strong>Milestone</strong>: You can handle the 5 hardest probability patterns (birthday, Bayes, expected value, round table, P&C).
+<p><strong>Milestone</strong>: You can handle the 5 hardest probability patterns (birthday, Bayes, expected value, round table, P&C).</p>
 
 <h3>Day 9–14: Placement-Level Practice</h3>
 <ol><li>Solve 50 TCS/Infosys pattern questions</li><li>Solve 30 Accenture/Cognizant pattern questions</li><li>Begin Amazon/Microsoft level questions</li></ol>
 
-<strong>Milestone</strong>: 90% accuracy on service-company level, 75% on product-company level.
+<p><strong>Milestone</strong>: 90% accuracy on service-company level, 75% on product-company level.</p>
 
 <h3>Day 15–20: Product-Company Level</h3>
 <ol><li>Solve 40 Amazon/Microsoft/Google pattern questions</li><li>Solve 20 Goldman Sachs pattern questions</li><li>Focus on Bayes' theorem, expected value, and complex arrangements</li><li>Timed practice: 2 minutes per question target</li></ol>
 
-<strong>Milestone</strong>: Solve any placement probability question in under 2 minutes with 85% accuracy.
+<p><strong>Milestone</strong>: Solve any placement probability question in under 2 minutes with 85% accuracy.</p>
 
 <hr />
 
@@ -1400,632 +1398,488 @@ Shortcut: Block method. Treat the group as one unit, arrange, multiply by intern
 
 <h3>🟢 Easy (Level 1) — 20 Questions</h3>
 
-<strong>Q1.</strong> Two dice are thrown. What is the probability that the sum is 8? <strong>[TCS]</strong>
+<p><strong>Q1.</strong> Two dice are thrown. What is the probability that the sum is 8? <strong>[TCS]</strong></p>
 
-<details>
-<summary>🔍 View Solution</summary>
+<details><p><summary>🔍 View Solution</summary></p>
 
-Sum = 8: (2,6),(3,5),(4,4),(5,3),(6,2) → 5 outcomes.
-P = 5/36 ✅
-</details>
+<p>Sum = 8: (2,6),(3,5),(4,4),(5,3),(6,2) → 5 outcomes.
+P = 5/36 ✅</p></details>
 <strong>Q2.</strong> A card is drawn from a standard deck. Find P(King of hearts). <strong>[Infosys]</strong>
 
-<details>
-<summary>🔍 View Solution</summary>
+<details><p><summary>🔍 View Solution</summary></p>
 
-Only 1 King of hearts in 52 cards.
-P = 1/52 ✅
-</details>
+<p>Only 1 King of hearts in 52 cards.
+P = 1/52 ✅</p></details>
 <strong>Q3.</strong> A coin is tossed 3 times. Find P(exactly 2 heads). <strong>[TCS]</strong>
 
-<details>
-<summary>🔍 View Solution</summary>
+<details><p><summary>🔍 View Solution</summary></p>
 
-Exactly 2 heads in 3 tosses: HHT, HTH, THH = 3 outcomes.
-P = 3/8 ✅
-</details>
+<p>Exactly 2 heads in 3 tosses: HHT, HTH, THH = 3 outcomes.
+P = 3/8 ✅</p></details>
 <strong>Q4.</strong> A bag has 5 red and 3 green balls. One ball is drawn. Find P(red). <strong>[Wipro]</strong>
 
-<details>
-<summary>🔍 View Solution</summary>
+<details><p><summary>🔍 View Solution</summary></p>
 
-P(red) = 5/(5+3) = 5/8 ✅
-</details>
+<p>P(red) = 5/(5+3) = 5/8 ✅</p></details>
 <strong>Q5.</strong> From a deck of 52 cards, a card is drawn. Find P(a red card). <strong>[Cognizant]</strong>
 
-<details>
-<summary>🔍 View Solution</summary>
+<details><p><summary>🔍 View Solution</summary></p>
 
-26 red cards out of 52.
-P = 26/52 = 1/2 ✅
-</details>
+<p>26 red cards out of 52.
+P = 26/52 = 1/2 ✅</p></details>
 <strong>Q6.</strong> Two coins are tossed. Find P(at least one head). <strong>[TCS]</strong>
 
-<details>
-<summary>🔍 View Solution</summary>
+<details><p><summary>🔍 View Solution</summary></p>
 
-Complement: P(no heads) = (1/2)² = 1/4.
-P(at least one head) = 1 - 1/4 = 3/4 ✅
-</details>
+<p>Complement: P(no heads) = (1/2)² = 1/4.
+P(at least one head) = 1 - 1/4 = 3/4 ✅</p></details>
 <strong>Q7.</strong> A die is rolled. Find P(a number greater than 4). <strong>[Accenture]</strong>
 
-<details>
-<summary>🔍 View Solution</summary>
+<details><p><summary>🔍 View Solution</summary></p>
 
-Numbers > 4: {5,6} → 2 outcomes.
-P = 2/6 = 1/3 ✅
-</details>
+<p>Numbers > 4: {5,6} → 2 outcomes.
+P = 2/6 = 1/3 ✅</p></details>
 <strong>Q8.</strong> A bag has 4 white, 5 black, 3 green balls. Find P(a black ball). <strong>[Infosys]</strong>
 
-<details>
-<summary>🔍 View Solution</summary>
+<details><p><summary>🔍 View Solution</summary></p>
 
-P(black) = 5/(4+5+3) = 5/12 ✅
-</details>
+<p>P(black) = 5/(4+5+3) = 5/12 ✅</p></details>
 <strong>Q9.</strong> Three dice are rolled. Find P(all showing 6). <strong>[TCS]</strong>
 
-<details>
-<summary>🔍 View Solution</summary>
+<details><p><summary>🔍 View Solution</summary></p>
 
-All 6: P = (1/6)³ = 1/216 ✅
-</details>
+<p>All 6: P = (1/6)³ = 1/216 ✅</p></details>
 <strong>Q10.</strong> From a standard deck, find P(an Ace or a Spade). <strong>[Cognizant]</strong>
 
-<details>
-<summary>🔍 View Solution</summary>
+<details><p><summary>🔍 View Solution</summary></p>
 
-P(Ace or Spade) = P(Ace) + P(Spade) - P(Ace of Spades)
-= 4/52 + 13/52 - 1/52 = 16/52 = 4/13 ✅
-</details>
+<p>P(Ace or Spade) = P(Ace) + P(Spade) - P(Ace of Spades)
+= 4/52 + 13/52 - 1/52 = 16/52 = 4/13 ✅</p></details>
 <strong>Q11.</strong> A number is chosen from 1 to 20. Find P(it is divisible by 3 or 5). <strong>[TCS]</strong>
 
-<details>
-<summary>🔍 View Solution</summary>
+<details><p><summary>🔍 View Solution</summary></p>
 
-Divisible by 3: {3,6,9,12,15,18} = 6. Divisible by 5: {5,10,15,20} = 4. Both (LCM 15): {15} = 1.
-P = (6+4-1)/20 = 9/20 ✅
-</details>
+<p>Divisible by 3: {3,6,9,12,15,18} = 6. Divisible by 5: {5,10,15,20} = 4. Both (LCM 15): {15} = 1.
+P = (6+4-1)/20 = 9/20 ✅</p></details>
 <strong>Q12.</strong> A bag has 6 balls: 2 red, 2 green, 2 blue. Two balls are drawn with replacement. Find P(both red). <strong>[Accenture]</strong>
 
-<details>
-<summary>🔍 View Solution</summary>
+<details><p><summary>🔍 View Solution</summary></p>
 
-With replacement → independent: P(both red) = (2/6) × (2/6) = 4/36 = 1/9 ✅
-</details>
+<p>With replacement → independent: P(both red) = (2/6) × (2/6) = 4/36 = 1/9 ✅</p></details>
 <strong>Q13.</strong> Two cards are drawn from a deck. Find P(both are Queens). <strong>[Wipro]</strong>
 
-<details>
-<summary>🔍 View Solution</summary>
+<details><p><summary>🔍 View Solution</summary></p>
 
-Without replacement: P(both queens) = C(4,2)/C(52,2) = 6/1326 = 1/221 ✅
-</details>
+<p>Without replacement: P(both queens) = C(4,2)/C(52,2) = 6/1326 = 1/221 ✅</p></details>
 <strong>Q14.</strong> A fair die is thrown twice. Find P(sum is at most 10). <strong>[TCS]</strong>
 
-<details>
-<summary>🔍 View Solution</summary>
+<details><p><summary>🔍 View Solution</summary></p>
 
-P(sum > 10) = P(11 or 12) = 2/36 + 1/36 = 3/36 = 1/12.
-P(sum ≤ 10) = 1 - 1/12 = 11/12 ✅
-</details>
+<p>P(sum > 10) = P(11 or 12) = 2/36 + 1/36 = 3/36 = 1/12.
+P(sum ≤ 10) = 1 - 1/12 = 11/12 ✅</p></details>
 <strong>Q15.</strong> A bag contains 3 defective and 7 good bulbs. One bulb is picked. Find P(it is good). <strong>[Infosys]</strong>
 
-<details>
-<summary>🔍 View Solution</summary>
+<details><p><summary>🔍 View Solution</summary></p>
 
-P(good) = 7/10 ✅
-</details>
+<p>P(good) = 7/10 ✅</p></details>
 <strong>Q16.</strong> A letter is chosen from the word PROBABILITY. Find P(it is a vowel). <strong>[TCS]</strong>
 
-<details>
-<summary>🔍 View Solution</summary>
+<details><p><summary>🔍 View Solution</summary></p>
 
-Vowels in PROBABILITY: O, A, I, I → 4 vowels (11 letters total, but I appears twice).
-P = 4/11 ✅
-</details>
+<p>Vowels in PROBABILITY: O, A, I, I → 4 vowels (11 letters total, but I appears twice).
+P = 4/11 ✅</p></details>
 <strong>Q17.</strong> Two dice are thrown. Find P(sum is neither 7 nor 11). <strong>[Accenture]</strong>
 
-<details>
-<summary>🔍 View Solution</summary>
+<details><p><summary>🔍 View Solution</summary></p>
 
-P(sum = 7) = 6/36 = 1/6. P(sum = 11) = 2/36 = 1/18.
-P(neither 7 nor 11) = 1 - (1/6 + 1/18) = 1 - (3/18 + 1/18) = 14/18 = 7/9 ✅
-</details>
+<p>P(sum = 7) = 6/36 = 1/6. P(sum = 11) = 2/36 = 1/18.
+P(neither 7 nor 11) = 1 - (1/6 + 1/18) = 1 - (3/18 + 1/18) = 14/18 = 7/9 ✅</p></details>
 <strong>Q18.</strong> A bag has balls numbered 1–10. One ball is drawn. Find P(it is a multiple of 2 or 3). <strong>[Wipro]</strong>
 
-<details>
-<summary>🔍 View Solution</summary>
+<details><p><summary>🔍 View Solution</summary></p>
 
-Multiples of 2: {2,4,6,8,10} = 5. Multiples of 3: {3,6,9} = 3. Both: {6} = 1.
-P = (5+3-1)/10 = 7/10 ✅
-</details>
+<p>Multiples of 2: {2,4,6,8,10} = 5. Multiples of 3: {3,6,9} = 3. Both: {6} = 1.
+P = (5+3-1)/10 = 7/10 ✅</p></details>
 <strong>Q19.</strong> Three coins are tossed. Find P(at most one head). <strong>[TCS]</strong>
 
-<details>
-<summary>🔍 View Solution</summary>
+<details><p><summary>🔍 View Solution</summary></p>
 
-At most one head = 0 heads + 1 head.
-P(0 heads) = 1/8. P(1 head) = 3/8. Total = 4/8 = 1/2 ✅
-</details>
+<p>At most one head = 0 heads + 1 head.
+P(0 heads) = 1/8. P(1 head) = 3/8. Total = 4/8 = 1/2 ✅</p></details>
 <strong>Q20.</strong> A card is drawn from a deck. Find P(a face card or a heart). <strong>[Infosys]</strong>
 
-<details>
-<summary>🔍 View Solution</summary>
+<details><p><summary>🔍 View Solution</summary></p>
 
-P(face card) = 12/52 = 3/13. P(heart) = 13/52 = 1/4. P(face card of hearts) = 3/52.
-P = 12/52 + 13/52 - 3/52 = 22/52 = 11/26 ✅
+<p>P(face card) = 12/52 = 3/13. P(heart) = 13/52 = 1/4. P(face card of hearts) = 3/52.
+P = 12/52 + 13/52 - 3/52 = 22/52 = 11/26 ✅</p>
 
 <hr />
 
-<h3>🟡 Medium Solutions</h3>
-</details>
-
+<h3>🟡 Medium Solutions</h3></details>
 
 <hr />
 
 <h3>🟡 Medium (Level 2) — 20 Questions</h3>
 
-<strong>Q21.</strong> Two cards are drawn without replacement from a deck. Find P(first is a king and second is a queen). <strong>[Amazon]</strong>
+<p><strong>Q21.</strong> Two cards are drawn without replacement from a deck. Find P(first is a king and second is a queen). <strong>[Amazon]</strong></p>
 
-<details>
-<summary>🔍 View Solution</summary>
+<details><p><summary>🔍 View Solution</summary></p>
 
-P(first king) = 4/52. P(second queen | first was king) = 4/51.
-P = 4/52 × 4/51 = 16/2652 = 4/663 ✅
-</details>
+<p>P(first king) = 4/52. P(second queen | first was king) = 4/51.
+P = 4/52 × 4/51 = 16/2652 = 4/663 ✅</p></details>
 <strong>Q22.</strong> A bag has 4 red and 6 green balls. Two balls are drawn without replacement. Find P(one red and one green). <strong>[Microsoft]</strong>
 
-<details>
-<summary>🔍 View Solution</summary>
+<details><p><summary>🔍 View Solution</summary></p>
 
-P(1 red, 1 green) = P(R then G) + P(G then R)
-= (4/10 × 6/9) + (6/10 × 4/9) = 24/90 + 24/90 = 48/90 = 8/15 ✅
-</details>
+<p>P(1 red, 1 green) = P(R then G) + P(G then R)
+= (4/10 × 6/9) + (6/10 × 4/9) = 24/90 + 24/90 = 48/90 = 8/15 ✅</p></details>
 <strong>Q23.</strong> A die is thrown 4 times. Find P(at least one 6 appears). <strong>[TCS]</strong>
 
-<details>
-<summary>🔍 View Solution</summary>
+<details><p><summary>🔍 View Solution</summary></p>
 
-P(at least one 6) = 1 - P(no 6 in 4 throws) = 1 - (5/6)⁴ = 1 - 625/1296 = 671/1296 ✅
-</details>
+<p>P(at least one 6) = 1 - P(no 6 in 4 throws) = 1 - (5/6)⁴ = 1 - 625/1296 = 671/1296 ✅</p></details>
 <strong>Q24.</strong> A drawer has 5 pairs of socks — 2 blue, 2 black, 1 white. Two socks are drawn at random. Find P(they are a matching pair). <strong>[Amazon]</strong>
 
-<details>
-<summary>🔍 View Solution</summary>
+<details><p><summary>🔍 View Solution</summary></p>
 
-Total ways to choose 2 socks from 10: C(10,2) = 45.
+<p>Total ways to choose 2 socks from 10: C(10,2) = 45.
 Matching pairs: 2 blue + 2 black + 1 white → C(2,2) + C(2,2) + C(1,2)=0 = 1 + 1 + 0 = 2.
-P = 2/45 ✅
-</details>
+P = 2/45 ✅</p></details>
 <strong>Q25.</strong> Two persons A and B solve a problem independently. P(A solves) = 0.7, P(B solves) = 0.5. Find P(at least one solves). <strong>[Deloitte]</strong>
 
-<details>
-<summary>🔍 View Solution</summary>
+<details><p><summary>🔍 View Solution</summary></p>
 
-P(at least one) = 1 - P(neither) = 1 - (0.3 × 0.5) = 1 - 0.15 = 0.85 ✅
-</details>
+<p>P(at least one) = 1 - P(neither) = 1 - (0.3 × 0.5) = 1 - 0.15 = 0.85 ✅</p></details>
 <strong>Q26.</strong> A bag has 3 white, 4 red, 5 black balls. Three balls are drawn without replacement. Find P(all are black). <strong>[Microsoft]</strong>
 
-<details>
-<summary>🔍 View Solution</summary>
+<details><p><summary>🔍 View Solution</summary></p>
 
-P(all black) = C(5,3)/C(12,3) = 10/220 = 1/22 ✅
-</details>
+<p>P(all black) = C(5,3)/C(12,3) = 10/220 = 1/22 ✅</p></details>
 <strong>Q27.</strong> From a group of 6 men and 4 women, a committee of 4 is formed. Find P(the committee has exactly 2 women). <strong>[Goldman Sachs]</strong>
 
-<details>
-<summary>🔍 View Solution</summary>
+<details><p><summary>🔍 View Solution</summary></p>
 
-C(6,2)×C(4,2)/C(10,4) = 15×6/210 = 90/210 = 3/7 ✅
-</details>
+<p>C(6,2)×C(4,2)/C(10,4) = 15×6/210 = 90/210 = 3/7 ✅</p></details>
 <strong>Q28.</strong> A test is 95% accurate. 90% of students pass. If a student passes, what is the probability they actually studied? (Given: 80% of those who studied passed, 30% of those who didn't passed) <strong>[Amazon]</strong>
 
-<details>
-<summary>🔍 View Solution</summary>
+<details><p><summary>🔍 View Solution</summary></p>
 
-Let S = studied, NS = not studied. P(S) = ?, P(pass|S) = 0.8, P(pass|NS) = 0.3.
+<p>Let S = studied, NS = not studied. P(S) = ?, P(pass|S) = 0.8, P(pass|NS) = 0.3.
 Bayes table:
            P(Prior)  P(Pass|Prior)  Joint     Posterior
 Studied    ?         0.8            0.8x
 NotStudied ?         0.3            0.3(1-x)
 Without x, we need overall pass rate: 0.9 = 0.8x + 0.3(1-x) = 0.5x + 0.3 → 0.5x = 0.6 → x = 6/5 > 1. Inconsistent data.
 Using available info: P(S|pass) = P(S∩pass)/P(pass) = 0.8x/0.9.
-Without x, cannot solve uniquely. Assuming 50% studied: P(S|pass) = 0.4/0.9 = <strong>4/9 ≈ 44.4%</strong> ✅
-</details>
+Without x, cannot solve uniquely. Assuming 50% studied: P(S|pass) = 0.4/0.9 = <strong>4/9 ≈ 44.4%</strong> ✅</p></details>
 <strong>Q29.</strong> A box has 10 items, 3 defective. If 4 items are selected at random, find P(exactly 2 are defective). <strong>[Microsoft]</strong>
 
-<details>
-<summary>🔍 View Solution</summary>
+<details><p><summary>🔍 View Solution</summary></p>
 
-P(exactly 2 defective) = C(3,2)×C(7,2)/C(10,4) = 3×21/210 = 63/210 = 3/10 ✅
-</details>
+<p>P(exactly 2 defective) = C(3,2)×C(7,2)/C(10,4) = 3×21/210 = 63/210 = 3/10 ✅</p></details>
 <strong>Q30.</strong> In a class, 60% play football, 50% play cricket, 30% play both. A student is selected at random. Find P(plays at least one sport). <strong>[Deloitte]</strong>
 
-<details>
-<summary>🔍 View Solution</summary>
+<details><p><summary>🔍 View Solution</summary></p>
 
-P(F∪C) = P(F) + P(C) - P(F∩C) = 0.6 + 0.5 - 0.3 = 0.8 ✅
-</details>
+<p>P(F∪C) = P(F) + P(C) - P(F∩C) = 0.6 + 0.5 - 0.3 = 0.8 ✅</p></details>
 <strong>Q31.</strong> A bag has balls numbered 1–6. Two balls are drawn with replacement. Find P(sum is 7). <strong>[TCS]</strong>
 
-<details>
-<summary>🔍 View Solution</summary>
+<details><p><summary>🔍 View Solution</summary></p>
 
-Sum = 7: (1,6),(2,5),(3,4),(4,3),(5,2),(6,1) = 6 outcomes.
-Total outcomes = 6×6 = 36. P = 6/36 = 1/6 ✅
-</details>
+<p>Sum = 7: (1,6),(2,5),(3,4),(4,3),(5,2),(6,1) = 6 outcomes.
+Total outcomes = 6×6 = 36. P = 6/36 = 1/6 ✅</p></details>
 <strong>Q32.</strong> Three persons A, B, C apply for a job. P(A selected) = 1/4, P(B selected) = 1/3, P(C selected) = 1/2. Find P(at least one is selected). <strong>[Amazon]</strong>
 
-<details>
-<summary>🔍 View Solution</summary>
+<details><p><summary>🔍 View Solution</summary></p>
 
-P(at least one) = 1 - P(none) = 1 - (3/4 × 2/3 × 1/2) = 1 - 6/24 = 18/24 = 3/4 ✅
-</details>
+<p>P(at least one) = 1 - P(none) = 1 - (3/4 × 2/3 × 1/2) = 1 - 6/24 = 18/24 = 3/4 ✅</p></details>
 <strong>Q33.</strong> A machine has 3 components with failure probabilities 0.1, 0.2, 0.3. Find P(the machine works). (All must work) <strong>[Microsoft]</strong>
 
-<details>
-<summary>🔍 View Solution</summary>
+<details><p><summary>🔍 View Solution</summary></p>
 
-P(all work) = (1-0.1)(1-0.2)(1-0.3) = 0.9×0.8×0.7 = 0.504 ✅
-</details>
+<p>P(all work) = (1-0.1)(1-0.2)(1-0.3) = 0.9×0.8×0.7 = 0.504 ✅</p></details>
 <strong>Q34.</strong> A bag has 7 green and 3 red balls. Two balls are drawn one by one without replacement. Find P(second ball is green). <strong>[Goldman Sachs]</strong>
 
-<details>
-<summary>🔍 View Solution</summary>
+<details><p><summary>🔍 View Solution</summary></p>
 
-By symmetry — the probability the second ball is green is the same as the first.
-P = 7/10 (7 green out of 10 total, regardless of draw position). ✅
-</details>
+<p>By symmetry — the probability the second ball is green is the same as the first.
+P = 7/10 (7 green out of 10 total, regardless of draw position). ✅</p></details>
 <strong>Q35.</strong> From a deck, 3 cards are drawn without replacement. Find P(all are from different suits). <strong>[Microsoft]</strong>
 
-<details>
-<summary>🔍 View Solution</summary>
+<details><p><summary>🔍 View Solution</summary></p>
 
-P(all different suits) = (13/52)×(13/51)×(13/50) × (arrangements? No, C(13,1) each → direct)
-= 13/52 × 13/51 × 13/50 = 2197/132600 ≈ 0.0166. ✅
-</details>
+<p>P(all different suits) = (13/52)×(13/51)×(13/50) × (arrangements? No, C(13,1) each → direct)
+= 13/52 × 13/51 × 13/50 = 2197/132600 ≈ 0.0166. ✅</p></details>
 <strong>Q36.</strong> A biased coin has P(H) = 0.6. It is tossed 3 times. Find P(exactly 2 heads). <strong>[Amazon]</strong>
 
-<details>
-<summary>🔍 View Solution</summary>
+<details><p><summary>🔍 View Solution</summary></p>
 
-P(exactly 2 heads) = C(3,2) × (0.6)² × (0.4)¹ = 3 × 0.36 × 0.4 = 0.432 ✅
-</details>
+<p>P(exactly 2 heads) = C(3,2) × (0.6)² × (0.4)¹ = 3 × 0.36 × 0.4 = 0.432 ✅</p></details>
 <strong>Q37.</strong> A committee of 5 is to be formed from 6 men and 5 women. Find P(it has a majority of women). <strong>[Goldman Sachs]</strong>
 
-<details>
-<summary>🔍 View Solution</summary>
+<details><p><summary>🔍 View Solution</summary></p>
 
-Majority women = 3, 4, or 5 women. C(5,3)×C(6,2)/C(11,5) + C(5,4)×C(6,1)/C(11,5) + C(5,5)×C(6,0)/C(11,5)
-= 10×15/462 + 5×6/462 + 1×1/462 = (150+30+1)/462 = 181/462 = 0.391 ✅
-</details>
+<p>Majority women = 3, 4, or 5 women. C(5,3)×C(6,2)/C(11,5) + C(5,4)×C(6,1)/C(11,5) + C(5,5)×C(6,0)/C(11,5)
+= 10×15/462 + 5×6/462 + 1×1/462 = (150+30+1)/462 = 181/462 = 0.391 ✅</p></details>
 <strong>Q38.</strong> Two dice are thrown. Find P(difference between numbers is 1). <strong>[TCS]</strong>
 
-<details>
-<summary>🔍 View Solution</summary>
+<details><p><summary>🔍 View Solution</summary></p>
 
-Difference = 1: (1,2),(2,1),(2,3),(3,2),(3,4),(4,3),(4,5),(5,4),(5,6),(6,5) = 10 outcomes.
-P = 10/36 = 5/18 ✅
-</details>
+<p>Difference = 1: (1,2),(2,1),(2,3),(3,2),(3,4),(4,3),(4,5),(5,4),(5,6),(6,5) = 10 outcomes.
+P = 10/36 = 5/18 ✅</p></details>
 <strong>Q39.</strong> A bag has 8 balls: 3 red, 2 green, 3 blue. Three balls are drawn with replacement. Find P(exactly 2 red). <strong>[Amazon]</strong>
 
-<details>
-<summary>🔍 View Solution</summary>
+<details><p><summary>🔍 View Solution</summary></p>
 
-P(exactly 2 red in 3 draws with replacement) = C(3,2) × (3/8)² × (5/8)¹ = 3 × 9/64 × 5/8 = 135/512 ✅
-</details>
+<p>P(exactly 2 red in 3 draws with replacement) = C(3,2) × (3/8)² × (5/8)¹ = 3 × 9/64 × 5/8 = 135/512 ✅</p></details>
 <strong>Q40.</strong> P(A) = 0.5, P(B) = 0.4, P(A∩B) = 0.2. Find P(A' | B'). <strong>[Deloitte]</strong>
 
-<details>
-<summary>🔍 View Solution</summary>
+<details><p><summary>🔍 View Solution</summary></p>
 
-P(A'|B') = P(A'∩B')/P(B'). P(A'∩B') = 1 - P(A∪B) = 1 - [P(A)+P(B)-P(A∩B)] = 1 - [0.5+0.4-0.2] = 1 - 0.7 = 0.3.
-P(B') = 1 - P(B) = 0.6. P(A'|B') = 0.3/0.6 = 1/2 ✅
+<p>P(A'|B') = P(A'∩B')/P(B'). P(A'∩B') = 1 - P(A∪B) = 1 - [P(A)+P(B)-P(A∩B)] = 1 - [0.5+0.4-0.2] = 1 - 0.7 = 0.3.
+P(B') = 1 - P(B) = 0.6. P(A'|B') = 0.3/0.6 = 1/2 ✅</p>
 
 <hr />
 
-<h3>🟠 Hard Solutions</h3>
-</details>
-
+<h3>🟠 Hard Solutions</h3></details>
 
 <hr />
 
 <h3>🟠 Hard (Level 3) — 20 Questions</h3>
 
-<strong>Q41.</strong> A bag has 5 red, 4 green, 3 blue balls. Three balls are drawn at random without replacement. Find P(1 red, 1 green, 1 blue). <strong>[Microsoft]</strong>
+<p><strong>Q41.</strong> A bag has 5 red, 4 green, 3 blue balls. Three balls are drawn at random without replacement. Find P(1 red, 1 green, 1 blue). <strong>[Microsoft]</strong></p>
 
-<details>
-<summary>🔍 View Solution</summary>
+<details><p><summary>🔍 View Solution</summary></p>
 
-P(1R, 1G, 1B) = [C(5,1)×C(4,1)×C(3,1)]/C(12,3) = 5×4×3/220 = 60/220 = 3/11 ✅
-</details>
+<p>P(1R, 1G, 1B) = [C(5,1)×C(4,1)×C(3,1)]/C(12,3) = 5×4×3/220 = 60/220 = 3/11 ✅</p></details>
 <strong>Q42.</strong> A test for a disease is 99% accurate. The disease affects 1 in 1000 people. If a person tests positive, what is the probability they have the disease? <strong>[Google]</strong>
 
-<details>
-<summary>🔍 View Solution</summary>
+<details><p><summary>🔍 View Solution</summary></p>
 
-Bayes: P(Disease|+) = P(+|Disease)×P(Disease) / [P(+|Disease)×P(Disease) + P(+|No Disease)×P(No Disease)]
-= 0.99×0.001 / [0.99×0.001 + 0.01×0.999] = 0.00099 / [0.00099 + 0.00999] = 0.00099/0.01098 = <strong>9.01%</strong> ✅
-</details>
+<p>Bayes: P(Disease|+) = P(+|Disease)×P(Disease) / [P(+|Disease)×P(Disease) + P(+|No Disease)×P(No Disease)]
+= 0.99×0.001 / [0.99×0.001 + 0.01×0.999] = 0.00099 / [0.00099 + 0.00999] = 0.00099/0.01098 = <strong>9.01%</strong> ✅</p></details>
 <strong>Q43.</strong> From the word EQUATION, 4 letters are arranged randomly. Find P(they form the word QUAD). (Q, U, A, D must all appear — Q and U are in original) <strong>[Google]</strong>
 
-<details>
-<summary>🔍 View Solution</summary>
+<details><p><summary>🔍 View Solution</summary></p>
 
-Word EQUATION has 8 letters. Arranging 4 letters: 4! = 24 total. For QUAD: Q,U are in word, A,D are in word. So all 4 letters are available. 1 arrangement gives QUAD. P = 1/24 ✅
-</details>
+<p>Word EQUATION has 8 letters. Arranging 4 letters: 4! = 24 total. For QUAD: Q,U are in word, A,D are in word. So all 4 letters are available. 1 arrangement gives QUAD. P = 1/24 ✅</p></details>
 <strong>Q44.</strong> Six boys and six girls sit around a round table alternately. Find the probability. <strong>[Amazon]</strong>
 
-<details>
-<summary>🔍 View Solution</summary>
+<details><p><summary>🔍 View Solution</summary></p>
 
-Fix one boy (circular reference). Arrange remaining 5 boys: 5! ways.
+<p>Fix one boy (circular reference). Arrange remaining 5 boys: 5! ways.
 For alternating: Arrange 6 girls in the 6 slots between boys: 6! ways.
 Total alternating arrangements: 5! × 6! = 120 × 720 = 86400.
 Total circular arrangements: 10!/10 = 362880.
-P = 86400/362880 = 1/4.2? = 5/21 ≈ 0.238 ✅
-</details>
+P = 86400/362880 = 1/4.2? = 5/21 ≈ 0.238 ✅</p></details>
 <strong>Q45.</strong> In a game, you win ₹10 with probability 0.4, lose ₹5 with probability 0.5, and ₹0 with probability 0.1. Find expected gain. <strong>[Goldman Sachs]</strong>
 
-<details>
-<summary>🔍 View Solution</summary>
+<details><p><summary>🔍 View Solution</summary></p>
 
-E = 10×0.4 + (-5)×0.5 + 0×0.1 = 4 - 2.5 + 0 = <strong>₹1.50</strong> expected gain per game ✅
-</details>
+<p>E = 10×0.4 + (-5)×0.5 + 0×0.1 = 4 - 2.5 + 0 = <strong>₹1.50</strong> expected gain per game ✅</p></details>
 <strong>Q46.</strong> A number is formed by arranging digits 1, 1, 2, 2, 3 randomly. Find P(it is divisible by 3). <strong>[Microsoft]</strong>
 
-<details>
-<summary>🔍 View Solution</summary>
+<details><p><summary>🔍 View Solution</summary></p>
 
-A number is divisible by 3 if sum of digits is divisible by 3.
+<p>A number is divisible by 3 if sum of digits is divisible by 3.
 Digits: 1,1,2,2,3 → Sum = 9 → always divisible by 3.
-All arrangements divisible by 3! P = 1. ✅
-</details>
+All arrangements divisible by 3! P = 1. ✅</p></details>
 <strong>Q47.</strong> A point is chosen inside a square of side 8. Find P(it is within 2 units of a corner). (Four corners exist) <strong>[Google]</strong>
 
-<details>
-<summary>🔍 View Solution</summary>
+<details><p><summary>🔍 View Solution</summary></p>
 
-Area within 2 units of a corner = 4 × (quarter circle of radius 2) = 4 × (π×4/4) = 4π.
-Total area = 8×8 = 64. P = 4π/64 = π/16 ≈ <strong>0.196</strong> ✅
-</details>
+<p>Area within 2 units of a corner = 4 × (quarter circle of radius 2) = 4 × (π×4/4) = 4π.
+Total area = 8×8 = 64. P = 4π/64 = π/16 ≈ <strong>0.196</strong> ✅</p></details>
 <strong>Q48.</strong> In a group of 5 people, find P(at least two share a birthday). Assume 365 days, no leap year. <strong>[Google]</strong>
 
-<details>
-<summary>🔍 View Solution</summary>
+<details><p><summary>🔍 View Solution</summary></p>
 
-P(no match) = (365×364×...×341)/365⁵ ≈ 0.973.
-P(at least one match) = 1 - 0.973 = <strong>0.027</strong> (about 2.7%). ✅
-</details>
+<p>P(no match) = (365×364×...×341)/365⁵ ≈ 0.973.
+P(at least one match) = 1 - 0.973 = <strong>0.027</strong> (about 2.7%). ✅</p></details>
 <strong>Q49.</strong> A bag has 5 white and 3 black balls. Balls are drawn without replacement until a black ball appears. Find P(the process stops on the 4th draw). <strong>[Microsoft]</strong>
 
-<details>
-<summary>🔍 View Solution</summary>
+<details><p><summary>🔍 View Solution</summary></p>
 
-Process stops on 4th draw means first 3 are not black.
-P = (5/8) × (4/7) × (3/6) × (3/5) = (5×4×3×3)/(8×7×6×5) = 180/1680 = 3/28 ✅
-</details>
+<p>Process stops on 4th draw means first 3 are not black.
+P = (5/8) × (4/7) × (3/6) × (3/5) = (5×4×3×3)/(8×7×6×5) = 180/1680 = 3/28 ✅</p></details>
 <strong>Q50.</strong> A box has 6 balls. A game costs ₹x to play. You draw 2 balls; if both are white you win ₹50, otherwise you lose your stake. Find the fair value of x. <strong>[Goldman Sachs]</strong>
 
-<details>
-<summary>🔍 View Solution</summary>
+<details><p><summary>🔍 View Solution</summary></p>
 
-P(both white) = C(5,2)/C(6,2) = 10/15 = 2/3. Fair price = 50 × (2/3) = <strong>₹33.33</strong> ✅
-</details>
+<p>P(both white) = C(5,2)/C(6,2) = 10/15 = 2/3. Fair price = 50 × (2/3) = <strong>₹33.33</strong> ✅</p></details>
 <strong>Q51.</strong> From 1 to 100, two numbers are chosen. Find P(their sum is even). <strong>[Google]</strong>
 
-<details>
-<summary>🔍 View Solution</summary>
+<details><p><summary>🔍 View Solution</summary></p>
 
-Sum even when both even or both odd.
-Even numbers 1-100: 50. Odd: 50. C(50,2)+C(50,2) / C(100,2) = 1225+1225 / 4950 = 2450/4950 = 49/99 ≈ <strong>0.4949</strong> ✅
-</details>
+<p>Sum even when both even or both odd.
+Even numbers 1-100: 50. Odd: 50. C(50,2)+C(50,2) / C(100,2) = 1225+1225 / 4950 = 2450/4950 = 49/99 ≈ <strong>0.4949</strong> ✅</p></details>
 <strong>Q52.</strong> A biased die has P(6) = 2×P(1). All other faces equally likely. Given that 6 appeared, find P(1 appeared on the first throw). (Two throws) <strong>[Microsoft]</strong>
 
-<details>
-<summary>🔍 View Solution</summary>
+<details><p><summary>🔍 View Solution</summary></p>
 
-Let P(1) = x, P(6) = 2x, others = y. 1×x + 1×2x + 4y = 1 → 3x + 4y = 1.
+<p>Let P(1) = x, P(6) = 2x, others = y. 1×x + 1×2x + 4y = 1 → 3x + 4y = 1.
 y = (1-3x)/4. Without additional constraint, multiple solutions.
 If uniform except 6 is doubled: P(6)=2p, others=p: 2p+5p=1 → p=1/7, P(6)=2/7.
 Bayes: P(Die=1|first die 6) = P(6|die1) × P(die1=1)/P(6) = ?
 P(die=1)×P(6|die=1) = (1/2)×(2/7)=1/7. P(die=2)×P(6|die=2) = (1/2)×(1/7)=1/14.
-P(6) = 1/7 + 1/14 = 3/14. P(die=1|first 6) = (1/7)/(3/14) = <strong>2/3</strong> ✅
-</details>
+P(6) = 1/7 + 1/14 = 3/14. P(die=1|first 6) = (1/7)/(3/14) = <strong>2/3</strong> ✅</p></details>
 <strong>Q53.</strong> Two persons A and B alternately draw cards from a deck (without replacement) until one draws an Ace. Find P(A wins). <strong>[Goldman Sachs]</strong>
 
-<details>
-<summary>🔍 View Solution</summary>
+<details><p><summary>🔍 View Solution</summary></p>
 
-A wins if: A gets Ace first try (4/52), OR A fails (48/52) AND B fails (47/51) AND A gets it on second try...
+<p>A wins if: A gets Ace first try (4/52), OR A fails (48/52) AND B fails (47/51) AND A gets it on second try...
 This is a geometric series: P(A) = 4/52 + (48×47)/(52×51) × 4/52 + ... = infinite series.
 Sum = p₁ + (1-p₁-p₂) × p₁ + (1-p₁-p₂)² × p₁ + ...
 Where p₁ = P(A gets Ace next | both failed) = 4/47 ≈ 0.085, p₂ = P(B gets Ace | A failed, B next) = 4/46 ≈ 0.087.
-This requires careful calculation. P(A) = p₁/(p₁+p₂-p₁p₂) ≈ <strong>0.54</strong> (A has slight advantage going first). ✅
-</details>
+This requires careful calculation. P(A) = p₁/(p₁+p₂-p₁p₂) ≈ <strong>0.54</strong> (A has slight advantage going first). ✅</p></details>
 <strong>Q54.</strong> 5 balls are placed randomly into 3 boxes. Find P(no box is empty). <strong>[Amazon]</strong>
 
-<details>
-<summary>🔍 View Solution</summary>
+<details><p><summary>🔍 View Solution</summary></p>
 
-Total distributions: each ball → 3 choices → 3⁵ = 243.
+<p>Total distributions: each ball → 3 choices → 3⁵ = 243.
 No empty: Inclusion-exclusion: 3⁵ - 3×2⁵ + 3×1⁵ - 0 = 243 - 96 + 3 = <strong>150</strong>.
-P = 150/243 = 50/81 ✅
-</details>
+P = 150/243 = 50/81 ✅</p></details>
 <strong>Q55.</strong> A and B play a game. A wins a point with probability 0.6 each round. The game ends when someone reaches 3 points. Find P(A wins the match). <strong>[Microsoft]</strong>
 
-<details>
-<summary>🔍 View Solution</summary>
+<details><p><summary>🔍 View Solution</summary></p>
 
-A wins if reaches 3 first. The match ends when one reaches 3.
+<p>A wins if reaches 3 first. The match ends when one reaches 3.
 P(A wins) = P(A wins 3-0) + P(A wins 3-1) + P(A wins 3-2).
 P(A wins 3-0) = 0.6³ = 0.216.
 P(A wins 3-1): A gets 2 points in first 3 rounds AND wins round 4.
 2 wins, 1 loss in first 3: C(3,2)×0.6²×0.4 = 3×0.36×0.4 = 0.432. Then win round 4: ×0.6 → 0.259.
 P(A wins 3-2): A gets 2 wins, B gets 2 wins in first 4 rounds AND A wins round 5.
 First 4 rounds: C(4,2)×0.6²×0.4² = 6×0.36×0.16 = 0.3456. Then win round 5: ×0.6 → 0.207.
-Total = 0.216 + 0.259 + 0.207 = <strong>0.682</strong> ✅
-</details>
+Total = 0.216 + 0.259 + 0.207 = <strong>0.682</strong> ✅</p></details>
 <strong>Q56.</strong> From the word MISSISSIPPI, 4 letters are chosen randomly. Find P(they are all consonants). <strong>[Google]</strong>
 
-<details>
-<summary>🔍 View Solution</summary>
+<details><p><summary>🔍 View Solution</summary></p>
 
-Consonants in MISSISSIPPI: M, S, S, S, S, P, P → 7 consonants. Total 11 letters.
-P(all 4 consonants) = C(7,4)/C(11,4) = 35/330 = <strong>7/66</strong> ✅
-</details>
+<p>Consonants in MISSISSIPPI: M, S, S, S, S, P, P → 7 consonants. Total 11 letters.
+P(all 4 consonants) = C(7,4)/C(11,4) = 35/330 = <strong>7/66</strong> ✅</p></details>
 <strong>Q57.</strong> In a tournament, 8 teams are divided into 2 groups of 4 randomly. Find P(two specific teams are in the same group). <strong>[Amazon]</strong>
 
-<details>
-<summary>🔍 View Solution</summary>
+<details><p><summary>🔍 View Solution</summary></p>
 
-Fix A in a group. 7 remaining spots. B can go to same group (3 spots) or other group (4 spots).
-P(same) = 3/7. ✅
-</details>
+<p>Fix A in a group. 7 remaining spots. B can go to same group (3 spots) or other group (4 spots).
+P(same) = 3/7. ✅</p></details>
 <strong>Q58.</strong> A bag has balls of colors red, green, blue. P(red) = 0.3, P(green) = 0.4. You draw with replacement. Find P(you see red before green). <strong>[Google]</strong>
 
-<details>
-<summary>🔍 View Solution</summary>
+<details><p><summary>🔍 View Solution</summary></p>
 
-P(red before green) = P(red on first) + P(neither red nor green on first) × P(red before green on remaining).
+<p>P(red before green) = P(red on first) + P(neither red nor green on first) × P(red before green on remaining).
 = 0.3 + 0.3 × x. x = P(red before green).
 0.7x = 0.3 → x = 3/7. P(red before green) = 0.3 + 0.3 × (3/7) = 0.3 + 0.9/7 = (2.1+0.9)/7 = 3/7 ≈ <strong>0.429</strong>? No.
 Using formula: P(A before B) = P(A)/(P(A)+P(B)) when only these two matter.
-P(red) = 0.3, P(green) = 0.4. P(red before green) = 0.3/(0.3+0.4) = <strong>3/7 ≈ 42.9%</strong> ✅
-</details>
+P(red) = 0.3, P(green) = 0.4. P(red before green) = 0.3/(0.3+0.4) = <strong>3/7 ≈ 42.9%</strong> ✅</p></details>
 <strong>Q59.</strong> Two dice are painted — one has 1 red face, 5 black faces. The other has 2 red faces, 4 black faces. One die is chosen at random and rolled. A red face appears. Find P(which die it was). <strong>[Goldman Sachs]</strong>
 
-<details>
-<summary>🔍 View Solution</summary>
+<details><p><summary>🔍 View Solution</summary></p>
 
-P(Die 1|red) = P(red|Die 1)×P(Die 1) / [P(red|Die 1)×P(Die 1) + P(red|Die 2)×P(Die 2)]
-= (1/6 × 1/2) / (1/6×1/2 + 1/3×1/2) = (1/12) / (1/12+1/6) = (1/12) / (3/12) = <strong>1/3</strong> ✅
-</details>
+<p>P(Die 1|red) = P(red|Die 1)×P(Die 1) / [P(red|Die 1)×P(Die 1) + P(red|Die 2)×P(Die 2)]
+= (1/6 × 1/2) / (1/6×1/2 + 1/3×1/2) = (1/12) / (1/12+1/6) = (1/12) / (3/12) = <strong>1/3</strong> ✅</p></details>
 <strong>Q60.</strong> In a class of 30 students, find P(at least one pair shares a birthday). <strong>[Google]</strong>
 
-<details>
-<summary>🔍 View Solution</summary>
+<details><p><summary>🔍 View Solution</summary></p>
 
-P(no match) = (365×364×...×336)/365³⁰ ≈ 0.706.
-P(at least one match) = 1 - 0.706 = <strong>0.294</strong> (29.4% for 30 people). ✅
+<p>P(no match) = (365×364×...×336)/365³⁰ ≈ 0.706.
+P(at least one match) = 1 - 0.706 = <strong>0.294</strong> (29.4% for 30 people). ✅</p>
 
 <hr />
 
-<h3>🔴 Product-Level Solutions</h3>
-</details>
-
+<h3>🔴 Product-Level Solutions</h3></details>
 
 <hr />
 
 <h3>🔴 Product-Based Company Level — 10 Questions</h3>
 
-<strong>Q61.</strong> Three factories F1, F2, F3 produce 20%, 30%, 50% of items. Defect rates are 3%, 2%, 1%. An inspector picks an item and it is defective. Using Bayesian update, what is the probability it came from F3? If the item is non-defective, what is P(it came from F1)? <strong>[Amazon L5]</strong>
+<p><strong>Q61.</strong> Three factories F1, F2, F3 produce 20%, 30%, 50% of items. Defect rates are 3%, 2%, 1%. An inspector picks an item and it is defective. Using Bayesian update, what is the probability it came from F3? If the item is non-defective, what is P(it came from F1)? <strong>[Amazon L5]</strong></p>
 
-<details>
-<summary>🔍 View Solution</summary>
+<details><p><summary>🔍 View Solution</summary></p>
 
-P(F3|Defective) = P(Def|F3)×P(F3) / [P(Def|F1)×P(F1)+P(Def|F2)×P(F2)+P(Def|F3)×P(F3)]
+<p>P(F3|Defective) = P(Def|F3)×P(F3) / [P(Def|F1)×P(F1)+P(Def|F2)×P(F2)+P(Def|F3)×P(F3)]
 = 0.01×0.5 / [0.03×0.2 + 0.02×0.3 + 0.01×0.5] = 0.005 / [0.006 + 0.006 + 0.005] = 0.005/0.017 = <strong>5/17 ≈ 29.4%</strong>.
 P(F1|Non-Def) = P(F1∩Non-Def)/P(Non-Def).
 P(F1∩Non-Def) = 0.2 × 0.97 = 0.194. Total non-defective = 0.006+0.006+0.005 = 0.017.
 Wait: Non-defective from each: 0.2×0.97=0.194, 0.3×0.98=0.294, 0.5×0.99=0.495. Total = 0.983.
-P(F1|Non-Def) = 0.194/0.983 = <strong>19.7%</strong> ✅
-</details>
+P(F1|Non-Def) = 0.194/0.983 = <strong>19.7%</strong> ✅</p></details>
 <strong>Q62.</strong> A person has 3 keys, only one of which fits the lock. He tries keys randomly until the lock opens. If he forgets which keys he has tried, what is the expected number of trials? What if he remembers which keys he tried? <strong>[Google]</strong>
 
-<details>
-<summary>🔍 View Solution</summary>
+<details><p><summary>🔍 View Solution</summary></p>
 
-With memory: 1, 2, 3 → each with 1/3. Expected = 1×1/3 + 2×1/3 + 3×1/3 = 2.
+<p>With memory: 1, 2, 3 → each with 1/3. Expected = 1×1/3 + 2×1/3 + 3×1/3 = 2.
 Without memory: Could try same key repeatedly → geometric distribution with p=1/3. E = 1/p = 3. But if you try a key and it fails, you try again — but since you don't remember, you might try the same key again.
-With no memory: each trial is independent, p=1/3. E = <strong>3 trials</strong>. ✅
-</details>
+With no memory: each trial is independent, p=1/3. E = <strong>3 trials</strong>. ✅</p></details>
 <strong>Q63.</strong> In a game show, there are 3 doors. Behind one is a car, behind the others are goats. You pick door 1. The host (who knows) opens door 3 (goat). He offers you a chance to switch to door 2. Should you switch? What are the probabilities? <strong>[Google / Amazon Interview Classic]</strong>
 
-<details>
-<summary>🔍 View Solution</summary>
+<details><p><summary>🔍 View Solution</summary></p>
 
-Classic Monty Hall. P(stay) = 1/3. P(switch) = 2/3.
-You should ALWAYS switch. The host's knowledge transfers the 2/3 probability to the remaining door. ✅
-</details>
+<p>Classic Monty Hall. P(stay) = 1/3. P(switch) = 2/3.
+You should ALWAYS switch. The host's knowledge transfers the 2/3 probability to the remaining door. ✅</p></details>
 <strong>Q64.</strong> A sequence of 5 cards is drawn from a shuffled deck (with replacement after each full deck). What is the probability that the sequence matches a specific prediction of 5 card ranks (e.g., 2, 5, J, K, A)? Each prediction card can be any of 13 ranks. <strong>[Microsoft L64]</strong>
 
-<details>
-<summary>🔍 View Solution</summary>
+<details><p><summary>🔍 View Solution</summary></p>
 
-Each card rank prediction: 4/52 = 1/13. Each draw is independent.
-P(all 5 match) = (1/13)⁵ = 1/371293 ≈ 0.0000027. ✅
-</details>
+<p>Each card rank prediction: 4/52 = 1/13. Each draw is independent.
+P(all 5 match) = (1/13)⁵ = 1/371293 ≈ 0.0000027. ✅</p></details>
 <strong>Q65.</strong> An ant starts at vertex A of a regular tetrahedron. At each step, it moves to an adjacent vertex with equal probability. After 3 steps, what is the probability it is back at A? Generalize for n steps. <strong>[Google]</strong>
 
-<details>
-<summary>🔍 View Solution</summary>
+<details><p><summary>🔍 View Solution</summary></p>
 
-Tetrahedron has 4 vertices. Adjacency: each vertex connects to 3 others.
+<p>Tetrahedron has 4 vertices. Adjacency: each vertex connects to 3 others.
 After 1 step: P(at A) = 0 (must move away).
 After 2 steps: P(at A) = 3 × (1/3 × 1/3) = 1/3. (3 ways to go to a neighbor and back).
 After 3 steps: Can return via: go-A-go-A (3×3 paths) or triangle (go-B, B-C, C-A)...
 The transition matrix shows eigenvalues. For n steps: P_n(A) = (1/4) + (3/4)(-1/3)^n.
-For n=3: = 1/4 + (3/4)(1/27) = 1/4 + 1/36 = 9/36 + 1/36 = <strong>10/36 = 5/18</strong> ✅
-</details>
+For n=3: = 1/4 + (3/4)(1/27) = 1/4 + 1/36 = 9/36 + 1/36 = <strong>10/36 = 5/18</strong> ✅</p></details>
 <strong>Q66.</strong> 100 prisoners are in line. Each can see the people ahead but not behind. Each has a hat (black or white). Each must guess their hat color. They can agree on a strategy beforehand. What strategy guarantees at least 99 survive? (Classic hat problem) <strong>[Amazon / Google Interview]</strong>
 
-<details>
-<summary>🔍 View Solution</summary>
+<details><p><summary>🔍 View Solution</summary></p>
 
-Strategy: Count the number of black hats in front of you (mod 2). If even → say "black", if odd → say "white". This way, each person provides information about all people behind them. The first person has 50-50 chance, but everyone else is guaranteed to be correct.
-Survival rate: 99 out of 100 (first prisoner has 50% chance). ✅
-</details>
+<p>Strategy: Count the number of black hats in front of you (mod 2). If even → say "black", if odd → say "white". This way, each person provides information about all people behind them. The first person has 50-50 chance, but everyone else is guaranteed to be correct.
+Survival rate: 99 out of 100 (first prisoner has 50% chance). ✅</p></details>
 <strong>Q67.</strong> A deck of 52 cards is dealt to 4 players (13 each). Find the probability that each player gets one Ace. Find the probability that a specific player gets all 4 Aces. <strong>[Goldman Sachs]</strong>
 
-<details>
-<summary>🔍 View Solution</summary>
+<details><p><summary>🔍 View Solution</summary></p>
 
-Each player gets one Ace: C(4,1)×C(4,1)×C(4,1)×C(4,1)×3! arrangements? No.
+<p>Each player gets one Ace: C(4,1)×C(4,1)×C(4,1)×C(4,1)×3! arrangements? No.
 P(each player gets 1 Ace) = 4! × C(48,9) × C(36,9) × C(27,9) / [ways to distribute 52 cards to 4 players × 13!³]? No.
 Direct: Deal 13 to each. P(each gets one Ace) = 4! × (48!/(12!⁴)) / (52!/(13!⁴)) × (13!⁴/(48!)) = 4! × 13!⁴ / (12!⁴ × 52!)
 = 24 × (13×12×11×10)⁴ / (52×51×50×49)⁴ = 24 × (17160/6497400)⁴ = <strong>24 × (0.00264)⁴ ≈ 1.06×10⁻⁷</strong>? No.
 Standard result: P = (4! × 48! × 13⁴) / 52! = <strong>24 × 48! × 13⁴ / 52!</strong>
-Specific player gets all 4 Aces: C(4,4)×C(48,9)/C(52,13) = 1 × 48C9 / 52C13 = <strong>C(48,9)/C(52,13)</strong> ≈ 0.0026. ✅
-</details>
+Specific player gets all 4 Aces: C(4,4)×C(48,9)/C(52,13) = 1 × 48C9 / 52C13 = <strong>C(48,9)/C(52,13)</strong> ≈ 0.0026. ✅</p></details>
 <strong>Q68.</strong> In a random walk on integers starting at 0, at each step you move +1 with probability p and -1 with probability q=1-p. What is the probability of ever reaching +1 before -1, starting from 0? What is the probability of ever reaching +N before -M? <strong>[Google / Jane Street]</strong>
 
-<details>
-<summary>🔍 View Solution</summary>
+<details><p><summary>🔍 View Solution</summary></p>
 
-For a biased random walk starting at 0, probability of reaching +1 before -1:
+<p>For a biased random walk starting at 0, probability of reaching +1 before -1:
 If p ≤ q: P(reach +1 first) = p/q? No. Formula: For p ≠ q, P(reach +a before -b) = (1-(q/p)^b) / (1-(q/p)^(a+b)).
 For +1 before -1: a=1, b=1 → P = (1-(q/p)) / (1-(q/p)²) = (p-q)/(p+q).
 For p=0.5 (fair): P = (0.5-0.5)/(1) = 0. So for +1 before -1, starting at 0, P = 1/2 (since symmetric).
-General: P(reach +N before -M) = [1-(q/p)^M] / [1-(q/p)^(N+M)] if p≠q. If p=q=0.5: = M/(N+M). ✅
-</details>
+General: P(reach +N before -M) = [1-(q/p)^M] / [1-(q/p)^(N+M)] if p≠q. If p=q=0.5: = M/(N+M). ✅</p></details>
 <strong>Q69.</strong> A biased coin with P(H) = p is tossed until the first head appears. Let X be the number of tosses. Find E(X) and Var(X). What is P(X > n)? <strong>[Microsoft / Amazon SDE]</strong>
 
-<details>
-<summary>🔍 View Solution</summary>
+<details><p><summary>🔍 View Solution</summary></p>
 
-Geometric distribution: P(X=n) = (1-p)^(n-1) × p.
-E(X) = 1/p. Var(X) = (1-p)/p². P(X > n) = (1-p)^n. ✅
-</details>
+<p>Geometric distribution: P(X=n) = (1-p)^(n-1) × p.
+E(X) = 1/p. Var(X) = (1-p)/p². P(X > n) = (1-p)^n. ✅</p></details>
 <strong>Q70.</strong> In a party of n couples, each person shakes hands with everyone except their spouse. If a person counts 7 handshakes, what is the probability their spouse is among the people they shook hands with? Generalize for k handshakes. <strong>[Google / Math Olympiad]</strong>
 
-<details>
-<summary>🔍 View Solution</summary>
+<details><p><summary>🔍 View Solution</summary></p>
 
-Total people met = 2n-1 (all except self and spouse). Handshakes k = 7.
+<p>Total people met = 2n-1 (all except self and spouse). Handshakes k = 7.
 P(spouse among handshakes | k handshakes) = k/(2n-1). (Hypergeometric with one special item).
 For n couples, 2n-1 people (excluding self), 1 spouse.
 P = C(1,1)×C(2n-2, k-1) / C(2n-1, k) = (2n-k-1)/(2n-1)? No.
 Hypergeometric: N=2n-1, K=1 special (spouse), n_drawn=k.
 P(spouse drawn) = K/N = 1/(2n-1). Independent of k! (Because exactly k people are met, one must be the spouse among the 2n-1 others.)
-<strong>Answer: P = 1/(2n-1). For n=5: P = 1/9 ≈ 11.1%.</strong> ✅
+<strong>Answer: P = 1/(2n-1). For n=5: P = 1/9 ≈ 11.1%.</strong> ✅</p>
+
+<hr /></details>
 
 <hr />
-</details>
 
-
-<hr />
-
-<em>(Solutions on next page)</em>
+<p><em>(Solutions on next page)</em></p>
 
 <hr />
 
@@ -2061,16 +1915,15 @@ P(spouse drawn) = K/N = 1/(2n-1). Independent of k! (Because exactly k people ar
 <table><thead><tr><th>Target</th><th>Verdict</th><th>Reasoning</th></tr></thead><tbody><tr><td><strong>TCS/Infosys/Wipro</strong></td><td>✅ <strong>Mandatory</strong></td><td>1–2 easy questions; complement trick solves most in 30 seconds</td></tr><tr><td><strong>10 LPA+ jobs</strong></td><td>✅ <strong>Mandatory</strong></td><td>Appears in virtually every test</td></tr><tr><td><strong>Accenture/Cognizant</strong></td><td>✅ <strong>Mandatory</strong></td><td>Conditional probability, tree diagrams</td></tr><tr><td><strong>20 LPA+ jobs</strong></td><td>✅ <strong>Important</strong></td><td>Bayes, binomial, P&C combinations become differentiators</td></tr><tr><td><strong>Amazon/Microsoft</strong></td><td>✅ <strong>Important</strong></td><td>Expected value, Bayes, complex arrangements</td></tr><tr><td><strong>Goldman Sachs</strong></td><td>✅ <strong>Important</strong></td><td>Binomial, expected value, game theory</td></tr><tr><td><strong>Google</strong></td><td>✅ <strong>Important</strong></td><td>Non-standard sample spaces, birthday, hat problems</td></tr></tbody></table>
 <h3>Bottom Line</h3>
 
-> Probability is the <strong>highest-ROI topic</strong> in the aptitude syllabus. The basics (complement trick, tree diagrams, Bayes' table) can be mastered in 4–6 hours and will solve 80% of placement questions. The remaining 20% (complex Bayes, P&C-based probability, round table arrangements, birthday problem) separate the 90th percentile from the 99th percentile. Master the complement shortcut, the Bayes table method, and the binomial formula — and probability becomes one of your strongest sections in any placement test.
+<p>> Probability is the <strong>highest-ROI topic</strong> in the aptitude syllabus. The basics (complement trick, tree diagrams, Bayes' table) can be mastered in 4–6 hours and will solve 80% of placement questions. The remaining 20% (complex Bayes, P&C-based probability, round table arrangements, birthday problem) separate the 90th percentile from the 99th percentile. Master the complement shortcut, the Bayes table method, and the binomial formula — and probability becomes one of your strongest sections in any placement test.</p>
 
-<strong>Study Time to Master</strong>: 10–15 hours total
+<p><strong>Study Time to Master</strong>: 10–15 hours total
 <strong>Questions to Practice</strong>: 120–180
-<strong>Expected Score Improvement</strong>: +5–8 marks in most aptitude tests
+<strong>Expected Score Improvement</strong>: +5–8 marks in most aptitude tests</p>
 
 <hr />
 
-<em>End of Guide — Probability | Elite Placement Aptitude Series</em>
-
+<p><em>End of Guide — Probability | Elite Placement Aptitude Series</em></p>
     </main>
     
     <button class="floating-action-btn" id="backToTopBtn" aria-label="Back to Top">▲</button>
@@ -2168,10 +2021,10 @@ P(spouse drawn) = K/N = 1/(2n-1). Independent of k! (Because exactly k people ar
                 while (currentEl && currentEl.tagName !== 'H2') {
                     // Scan children of solutions block to extract Q1, Q2, etc.
                     const text = currentEl.textContent.trim();
-                    const qMatch = text.match(/^\s*\*?\*?Q(?:uestion\s*)?(\d+)\.?\*?\*?/i);
+                    const qMatch = text.match(/^\s*\*?\*?Q(?:uestion\s*)?(\d+[a-z]?)\.?\*?\*?/i);
                     
                     if (qMatch) {
-                        const qNum = parseInt(qMatch[1], 10);
+                        const qNum = qMatch[1].toLowerCase();
                         // Clean up the Q1. tag from solution html
                         let innerHTML = currentEl.innerHTML;
                         solutionsMap.set(qNum, innerHTML);
@@ -2181,9 +2034,9 @@ P(spouse drawn) = K/N = 1/(2n-1). Independent of k! (Because exactly k people ar
                         const listItems = currentEl.querySelectorAll('li');
                         listItems.forEach(li => {
                             const liText = li.textContent.trim();
-                            const liMatch = liText.match(/^\s*\*?\*?Q(?:uestion\s*)?(\d+)\.?\*?\*?/i);
+                            const liMatch = liText.match(/^\s*\*?\*?Q(?:uestion\s*)?(\d+[a-z]?)\.?\*?\*?/i);
                             if (liMatch) {
-                                const qNum = parseInt(liMatch[1], 10);
+                                const qNum = liMatch[1].toLowerCase();
                                 solutionsMap.set(qNum, li.innerHTML);
                                 foundSolutionsCount++;
                             }
@@ -2232,6 +2085,99 @@ P(spouse drawn) = K/N = 1/(2n-1). Independent of k! (Because exactly k people ar
             practiceHeader.after(progressWidget);
 
             const qCards = [];
+            let activeCard = null;
+
+            function createQuestionCard(el, isListItem, parentListEl) {
+                const text = el.textContent.trim();
+                
+                // Parse question number (either explicit e.g. Q12 or implicit from index)
+                const explicitMatch = text.match(/^\s*\*?\*?Q(?:uestion\s*)?(\d+[a-z]?)\.?\*?\*?/i);
+                const qIdRaw = explicitMatch ? explicitMatch[1] : String(questionNumberIndex);
+                
+                // Parse company tag e.g. [TCS], [Amazon]
+                const companyMatch = text.match(/\[([^\]]+)\]\s*$/);
+                const companyName = companyMatch ? companyMatch[1] : '';
+                
+                // Create card element
+                const card = document.createElement('div');
+                card.className = `question-card diff-${currentDifficulty}`;
+                card.setAttribute('data-difficulty', currentDifficulty);
+                card.setAttribute('data-qnum', qIdRaw);
+
+                // Check if solution exists (either pre-existing inside details, or extracted from bottom)
+                let solutionHTML = '';
+                const existingDetails = el.querySelector('details');
+                if (existingDetails) {
+                    solutionHTML = existingDetails.querySelector('div, p, ul, ol, pre')?.outerHTML || existingDetails.innerHTML.replace(/<s[u]mmary>.*?<\/s[u]mmary>/i, '');
+                } else {
+                    const key = qIdRaw.toLowerCase();
+                    if (solutionsMap.has(key)) {
+                        solutionHTML = solutionsMap.get(key);
+                    } else {
+                        const keyInt = parseInt(key, 10);
+                        if (!isNaN(keyInt) && solutionsMap.has(keyInt)) {
+                            solutionHTML = solutionsMap.get(keyInt);
+                        }
+                    }
+                }
+
+                // Build clean question content text (stripping company tags and solution details if present)
+                let questionCleanText = el.innerHTML;
+                if (existingDetails) {
+                    questionCleanText = questionCleanText.replace(existingDetails.outerHTML, '');
+                }
+                // Strip the trailing company tag from question representation
+                if (companyMatch) {
+                    questionCleanText = questionCleanText.replace(companyMatch[0], '');
+                }
+
+                // Check localStorage for completion state
+                const isCompleted = localStorage.getItem(`${topicKey}_q${qIdRaw}`) === 'true';
+                if (isCompleted) {
+                    card.classList.add('completed');
+                }
+
+                card.innerHTML = `
+                    <div class="question-header">
+                        <div class="question-meta-group">
+                            <span class="company-tag" style="background-color: var(--primary-light); color: var(--primary-color);">Q${qIdRaw}</span>
+                            ${companyName ? `<span class="company-tag" style="background-color: var(--accent-light); color: var(--accent-color);">${companyName}</span>` : ''}
+                        </div>
+                        <label class="question-checkbox-label">
+                            <input type="checkbox" class="q-checkbox" data-qnum="${qIdRaw}" ${isCompleted ? 'checked' : ''}>
+                            <span class="checkbox-box"></span>
+                            Done
+                        </label>
+                    </div>
+                    <div class="question-text">${questionCleanText}</div>
+                `;
+
+                // Append Solution if exists
+                if (solutionHTML) {
+                    const detailsEl = document.createElement('details');
+                    const summaryEl = document.createElement('summary');
+                    summaryEl.innerHTML = "🔍 View Detailed Solution";
+                    detailsEl.appendChild(summaryEl);
+                    
+                    const wrapperEl = document.createElement('div');
+                    wrapperEl.className = "solution-wrapper";
+                    wrapperEl.innerHTML = solutionHTML;
+                    detailsEl.appendChild(wrapperEl);
+                    
+                    card.appendChild(detailsEl);
+                }
+
+                // Insert card
+                if (isListItem && parentListEl) {
+                    parentListEl.parentNode.insertBefore(card, parentListEl);
+                } else {
+                    el.parentNode.insertBefore(card, el);
+                }
+
+                qCards.push(card);
+                questionNumberIndex++;
+                return card;
+            }
 
             while (nextEl && nextEl.tagName !== 'H2' && nextEl !== solutionsContainer) {
                 // Detect difficulty section change
@@ -2241,113 +2187,38 @@ P(spouse drawn) = K/N = 1/(2n-1). Independent of k! (Because exactly k people ar
                     else if (textVal.includes('medium')) currentDifficulty = 'medium';
                     else if (textVal.includes('hard')) currentDifficulty = 'hard';
                     else if (textVal.includes('product') || textVal.includes('advanced')) currentDifficulty = 'product';
+                    
+                    nextEl = nextEl.nextElementSibling;
+                    continue;
                 }
 
-                // Look for question list items or paragraphs
-                const questionElements = [];
-                if (nextEl.tagName === 'OL' || nextEl.tagName === 'UL') {
+                // Check if it is a list
+                const isList = nextEl.tagName === 'OL' || nextEl.tagName === 'UL';
+                // A list is a question list if it is OL, or if it is a UL where the first item starts with a question marker
+                const isQuestionList = nextEl.tagName === 'OL' || (nextEl.tagName === 'UL' && nextEl.children.length > 0 && /^\s*(\d+|Q\d+|Question\s*\d+)\b/i.test(nextEl.children[0].textContent.trim()));
+
+                if (isList && isQuestionList) {
                     const listItems = Array.from(nextEl.children);
-                    listItems.forEach(li => {
-                        questionElements.push({ element: li, parentList: nextEl });
-                    });
-                } else if (nextEl.tagName === 'P' && (textVal.startsWith('**q') || textVal.startsWith('q') || textVal.startsWith('**question'))) {
-                    questionElements.push({ element: nextEl, parentList: null });
-                }
-
-                // Convert each question element to a styled question card
-                questionElements.forEach(qItem => {
-                    const el = qItem.element;
-                    const text = el.textContent.trim();
-                    
-                    // Parse question number (either explicit e.g. Q12 or implicit from index)
-                    const explicitMatch = text.match(/^\s*\*?\*?Q(?:uestion\s*)?(\d+)\.?\*?\*?/i);
-                    const qId = explicitMatch ? parseInt(explicitMatch[1], 10) : questionNumberIndex;
-                    
-                    // Parse company tag e.g. [TCS], [Amazon]
-                    const companyMatch = text.match(/\[([^\]]+)\]\s*$/);
-                    const companyName = companyMatch ? companyMatch[1] : '';
-                    
-                    // Create card element
-                    const card = document.createElement('div');
-                    card.className = `question-card diff-${currentDifficulty}`;
-                    card.setAttribute('data-difficulty', currentDifficulty);
-                    card.setAttribute('data-qnum', qId);
-
-                    // Check if solution exists (either pre-existing inside details, or extracted from bottom)
-                    let solutionHTML = '';
-                    const existingDetails = el.querySelector('details');
-                    if (existingDetails) {
-                        solutionHTML = existingDetails.querySelector('div, p, ul, ol, pre')?.outerHTML || existingDetails.innerHTML.replace(/<s[u]mmary>.*?<\/s[u]mmary>/i, '');
-                    } else if (solutionsMap.has(qId)) {
-                        solutionHTML = solutionsMap.get(qId);
-                    }
-
-                    // Build clean question content text (stripping company tags and solution details if present)
-                    let questionCleanText = el.innerHTML;
-                    if (existingDetails) {
-                        questionCleanText = questionCleanText.replace(existingDetails.outerHTML, '');
-                    }
-                    // Strip the trailing company tag from question representation
-                    if (companyMatch) {
-                        questionCleanText = questionCleanText.replace(companyMatch[0], '');
-                    }
-
-                    // Check localStorage for completion state
-                    const isCompleted = localStorage.getItem(`${topicKey}_q${qId}`) === 'true';
-                    if (isCompleted) {
-                        card.classList.add('completed');
-                    }
-
-                    card.innerHTML = `
-                        <div class="question-header">
-                            <div class="question-meta-group">
-                                <span class="company-tag" style="background-color: var(--primary-light); color: var(--primary-color);">Q${qId}</span>
-                                ${companyName ? `<span class="company-tag" style="background-color: var(--accent-light); color: var(--accent-color);">${companyName}</span>` : ''}
-                            </div>
-                            <label class="question-checkbox-label">
-                                <input type="checkbox" class="q-checkbox" data-qnum="${qId}" ${isCompleted ? 'checked' : ''}>
-                                <span class="checkbox-box"></span>
-                                Done
-                            </label>
-                        </div>
-                        <div class="question-text">${questionCleanText}</div>
-                    `;
-
-                    // Append Solution if exists
-                    if (solutionHTML) {
-                        const detailsEl = document.createElement('details');
-                        const summaryEl = document.createElement('summary');
-                        summaryEl.innerHTML = "🔍 View Detailed Solution";
-                        detailsEl.appendChild(summaryEl);
-                        
-                        const wrapperEl = document.createElement('div');
-                        wrapperEl.className = "solution-wrapper";
-                        wrapperEl.innerHTML = solutionHTML;
-                        detailsEl.appendChild(wrapperEl);
-                        
-                        card.appendChild(detailsEl);
-                    }
-
-                    // Insert card and remove original element
-                    if (qItem.parentList) {
-                        // We will insert card before parentList or append it in order
-                        qItem.parentList.parentNode.insertBefore(card, qItem.parentList);
-                    } else {
-                        el.parentNode.insertBefore(card, el);
-                        el.remove();
-                    }
-
-                    qCards.push(card);
-                    questionNumberIndex++;
-                });
-
-                // Remove the list elements once all their list-items are transformed
-                if (nextEl.tagName === 'OL' || nextEl.tagName === 'UL') {
                     const listEl = nextEl;
-                    nextEl = nextEl.nextElementSibling;
+                    nextEl = nextEl.nextElementSibling; // save sibling before removing list
+                    
+                    listItems.forEach(li => {
+                        activeCard = createQuestionCard(li, true, listEl);
+                    });
                     listEl.remove();
+                } else if (nextEl.tagName === 'P' && (textVal.startsWith('**q') || textVal.startsWith('q') || textVal.startsWith('**question'))) {
+                    const el = nextEl;
+                    nextEl = nextEl.nextElementSibling; // save sibling before removing paragraph
+                    
+                    activeCard = createQuestionCard(el, false, null);
+                    el.remove();
                 } else {
-                    nextEl = nextEl.nextElementSibling;
+                    const el = nextEl;
+                    nextEl = nextEl.nextElementSibling; // save sibling before moving element
+                    
+                    if (activeCard) {
+                        activeCard.querySelector('.question-text').appendChild(el);
+                    }
                 }
             }
 

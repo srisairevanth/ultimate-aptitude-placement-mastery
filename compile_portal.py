@@ -426,7 +426,53 @@ def markdown_to_html(md_text):
     # Links
     html = re.sub(r'\[([^\]]+)\]\(([^)]+)\)', r'<a href="\2">\1</a>', html)
     
+    # Wrap standard text paragraphs in <p> tags
+    html = wrap_paragraphs(html)
+    
     return html
+
+def wrap_paragraphs(html):
+    placeholders = []
+    
+    def repl_placeholder(match):
+        placeholder = f"<!--__BLOCK_PLACEHOLDER_{len(placeholders)}__-->"
+        placeholders.append((placeholder, match.group(0)))
+        return placeholder
+
+    protected_patterns = [
+        r'<pre\b[^>]*>.*?</pre>',
+        r'<details\b[^>]*>.*?</details>',
+        r'<blockquote\b[^>]*>.*?</blockquote>',
+        r'<div\b[^>]*>.*?</div>',
+        r'<table\b[^>]*>.*?</table>'
+    ]
+    
+    protected_regex = '|'.join(protected_patterns)
+    html_with_placeholders = re.sub(protected_regex, repl_placeholder, html, flags=re.DOTALL | re.IGNORECASE)
+    
+    blocks = re.split(r'\n\n+', html_with_placeholders)
+    new_blocks = []
+    
+    for block in blocks:
+        block_stripped = block.strip()
+        if not block_stripped:
+            continue
+        
+        is_placeholder = block_stripped.startswith("<!--__BLOCK_PLACEHOLDER_")
+        is_block_tag = re.match(r'^\s*<(h[1-6]|hr|ul|ol|p)\b', block_stripped, re.IGNORECASE)
+        
+        if not is_placeholder and not is_block_tag:
+            new_blocks.append(f"<p>{block_stripped}</p>")
+        else:
+            new_blocks.append(block_stripped)
+            
+    reassembled_html = '\n\n'.join(new_blocks)
+    
+    for placeholder, original in reversed(placeholders):
+        reassembled_html = reassembled_html.replace(placeholder, original)
+        
+    return reassembled_html
+
 
 # Generate dynamic table of contents for sidebars
 def generate_toc(md_content):
@@ -1421,10 +1467,10 @@ def compile_study_guide(filename):
                 while (currentEl && currentEl.tagName !== 'H2') {{
                     // Scan children of solutions block to extract Q1, Q2, etc.
                     const text = currentEl.textContent.trim();
-                    const qMatch = text.match(/^\\s*\\*?\\*?Q(?:uestion\\s*)?(\\d+)\\.?\\*?\\*?/i);
+                    const qMatch = text.match(/^\\s*\\*?\\*?Q(?:uestion\\s*)?(\\d+[a-z]?)\\.?\\*?\\*?/i);
                     
                     if (qMatch) {{
-                        const qNum = parseInt(qMatch[1], 10);
+                        const qNum = qMatch[1].toLowerCase();
                         // Clean up the Q1. tag from solution html
                         let innerHTML = currentEl.innerHTML;
                         solutionsMap.set(qNum, innerHTML);
@@ -1434,9 +1480,9 @@ def compile_study_guide(filename):
                         const listItems = currentEl.querySelectorAll('li');
                         listItems.forEach(li => {{
                             const liText = li.textContent.trim();
-                            const liMatch = liText.match(/^\\s*\\*?\\*?Q(?:uestion\\s*)?(\\d+)\\.?\\*?\\*?/i);
+                            const liMatch = liText.match(/^\\s*\\*?\\*?Q(?:uestion\\s*)?(\\d+[a-z]?)\\.?\\*?\\*?/i);
                             if (liMatch) {{
-                                const qNum = parseInt(liMatch[1], 10);
+                                const qNum = liMatch[1].toLowerCase();
                                 solutionsMap.set(qNum, li.innerHTML);
                                 foundSolutionsCount++;
                             }}
@@ -1485,6 +1531,99 @@ def compile_study_guide(filename):
             practiceHeader.after(progressWidget);
 
             const qCards = [];
+            let activeCard = null;
+
+            function createQuestionCard(el, isListItem, parentListEl) {{
+                const text = el.textContent.trim();
+                
+                // Parse question number (either explicit e.g. Q12 or implicit from index)
+                const explicitMatch = text.match(/^\\s*\\*?\\*?Q(?:uestion\\s*)?(\\d+[a-z]?)\\.?\\*?\\*?/i);
+                const qIdRaw = explicitMatch ? explicitMatch[1] : String(questionNumberIndex);
+                
+                // Parse company tag e.g. [TCS], [Amazon]
+                const companyMatch = text.match(/\\[([^\\]]+)\\]\\s*$/);
+                const companyName = companyMatch ? companyMatch[1] : '';
+                
+                // Create card element
+                const card = document.createElement('div');
+                card.className = `question-card diff-${{currentDifficulty}}`;
+                card.setAttribute('data-difficulty', currentDifficulty);
+                card.setAttribute('data-qnum', qIdRaw);
+
+                // Check if solution exists (either pre-existing inside details, or extracted from bottom)
+                let solutionHTML = '';
+                const existingDetails = el.querySelector('details');
+                if (existingDetails) {{
+                    solutionHTML = existingDetails.querySelector('div, p, ul, ol, pre')?.outerHTML || existingDetails.innerHTML.replace(/<s[u]mmary>.*?<\\/s[u]mmary>/i, '');
+                }} else {{
+                    const key = qIdRaw.toLowerCase();
+                    if (solutionsMap.has(key)) {{
+                        solutionHTML = solutionsMap.get(key);
+                    }} else {{
+                        const keyInt = parseInt(key, 10);
+                        if (!isNaN(keyInt) && solutionsMap.has(keyInt)) {{
+                            solutionHTML = solutionsMap.get(keyInt);
+                        }}
+                    }}
+                }}
+
+                // Build clean question content text (stripping company tags and solution details if present)
+                let questionCleanText = el.innerHTML;
+                if (existingDetails) {{
+                    questionCleanText = questionCleanText.replace(existingDetails.outerHTML, '');
+                }}
+                // Strip the trailing company tag from question representation
+                if (companyMatch) {{
+                    questionCleanText = questionCleanText.replace(companyMatch[0], '');
+                }}
+
+                // Check localStorage for completion state
+                const isCompleted = localStorage.getItem(`${{topicKey}}_q${{qIdRaw}}`) === 'true';
+                if (isCompleted) {{
+                    card.classList.add('completed');
+                }}
+
+                card.innerHTML = `
+                    <div class="question-header">
+                        <div class="question-meta-group">
+                            <span class="company-tag" style="background-color: var(--primary-light); color: var(--primary-color);">Q${{qIdRaw}}</span>
+                            ${{companyName ? `<span class="company-tag" style="background-color: var(--accent-light); color: var(--accent-color);">${{companyName}}</span>` : ''}}
+                        </div>
+                        <label class="question-checkbox-label">
+                            <input type="checkbox" class="q-checkbox" data-qnum="${{qIdRaw}}" ${{isCompleted ? 'checked' : ''}}>
+                            <span class="checkbox-box"></span>
+                            Done
+                        </label>
+                    </div>
+                    <div class="question-text">${{questionCleanText}}</div>
+                `;
+
+                // Append Solution if exists
+                if (solutionHTML) {{
+                    const detailsEl = document.createElement('details');
+                    const summaryEl = document.createElement('summary');
+                    summaryEl.innerHTML = "🔍 View Detailed Solution";
+                    detailsEl.appendChild(summaryEl);
+                    
+                    const wrapperEl = document.createElement('div');
+                    wrapperEl.className = "solution-wrapper";
+                    wrapperEl.innerHTML = solutionHTML;
+                    detailsEl.appendChild(wrapperEl);
+                    
+                    card.appendChild(detailsEl);
+                }}
+
+                // Insert card
+                if (isListItem && parentListEl) {{
+                    parentListEl.parentNode.insertBefore(card, parentListEl);
+                }} else {{
+                    el.parentNode.insertBefore(card, el);
+                }}
+
+                qCards.push(card);
+                questionNumberIndex++;
+                return card;
+            }}
 
             while (nextEl && nextEl.tagName !== 'H2' && nextEl !== solutionsContainer) {{
                 // Detect difficulty section change
@@ -1494,113 +1633,38 @@ def compile_study_guide(filename):
                     else if (textVal.includes('medium')) currentDifficulty = 'medium';
                     else if (textVal.includes('hard')) currentDifficulty = 'hard';
                     else if (textVal.includes('product') || textVal.includes('advanced')) currentDifficulty = 'product';
+                    
+                    nextEl = nextEl.nextElementSibling;
+                    continue;
                 }}
 
-                // Look for question list items or paragraphs
-                const questionElements = [];
-                if (nextEl.tagName === 'OL' || nextEl.tagName === 'UL') {{
+                // Check if it is a list
+                const isList = nextEl.tagName === 'OL' || nextEl.tagName === 'UL';
+                // A list is a question list if it is OL, or if it is a UL where the first item starts with a question marker
+                const isQuestionList = nextEl.tagName === 'OL' || (nextEl.tagName === 'UL' && nextEl.children.length > 0 && /^\\s*(\\d+|Q\\d+|Question\\s*\\d+)\\b/i.test(nextEl.children[0].textContent.trim()));
+
+                if (isList && isQuestionList) {{
                     const listItems = Array.from(nextEl.children);
-                    listItems.forEach(li => {{
-                        questionElements.push({{ element: li, parentList: nextEl }});
-                    }});
-                }} else if (nextEl.tagName === 'P' && (textVal.startsWith('**q') || textVal.startsWith('q') || textVal.startsWith('**question'))) {{
-                    questionElements.push({{ element: nextEl, parentList: null }});
-                }}
-
-                // Convert each question element to a styled question card
-                questionElements.forEach(qItem => {{
-                    const el = qItem.element;
-                    const text = el.textContent.trim();
-                    
-                    // Parse question number (either explicit e.g. Q12 or implicit from index)
-                    const explicitMatch = text.match(/^\\s*\\*?\\*?Q(?:uestion\\s*)?(\\d+)\\.?\\*?\\*?/i);
-                    const qId = explicitMatch ? parseInt(explicitMatch[1], 10) : questionNumberIndex;
-                    
-                    // Parse company tag e.g. [TCS], [Amazon]
-                    const companyMatch = text.match(/\\[([^\\]]+)\\]\\s*$/);
-                    const companyName = companyMatch ? companyMatch[1] : '';
-                    
-                    // Create card element
-                    const card = document.createElement('div');
-                    card.className = `question-card diff-${{currentDifficulty}}`;
-                    card.setAttribute('data-difficulty', currentDifficulty);
-                    card.setAttribute('data-qnum', qId);
-
-                    // Check if solution exists (either pre-existing inside details, or extracted from bottom)
-                    let solutionHTML = '';
-                    const existingDetails = el.querySelector('details');
-                    if (existingDetails) {{
-                        solutionHTML = existingDetails.querySelector('div, p, ul, ol, pre')?.outerHTML || existingDetails.innerHTML.replace(/<s[u]mmary>.*?<\\/s[u]mmary>/i, '');
-                    }} else if (solutionsMap.has(qId)) {{
-                        solutionHTML = solutionsMap.get(qId);
-                    }}
-
-                    // Build clean question content text (stripping company tags and solution details if present)
-                    let questionCleanText = el.innerHTML;
-                    if (existingDetails) {{
-                        questionCleanText = questionCleanText.replace(existingDetails.outerHTML, '');
-                    }}
-                    // Strip the trailing company tag from question representation
-                    if (companyMatch) {{
-                        questionCleanText = questionCleanText.replace(companyMatch[0], '');
-                    }}
-
-                    // Check localStorage for completion state
-                    const isCompleted = localStorage.getItem(`${{topicKey}}_q${{qId}}`) === 'true';
-                    if (isCompleted) {{
-                        card.classList.add('completed');
-                    }}
-
-                    card.innerHTML = `
-                        <div class="question-header">
-                            <div class="question-meta-group">
-                                <span class="company-tag" style="background-color: var(--primary-light); color: var(--primary-color);">Q${{qId}}</span>
-                                ${{companyName ? `<span class="company-tag" style="background-color: var(--accent-light); color: var(--accent-color);">${{companyName}}</span>` : ''}}
-                            </div>
-                            <label class="question-checkbox-label">
-                                <input type="checkbox" class="q-checkbox" data-qnum="${{qId}}" ${{isCompleted ? 'checked' : ''}}>
-                                <span class="checkbox-box"></span>
-                                Done
-                            </label>
-                        </div>
-                        <div class="question-text">${{questionCleanText}}</div>
-                    `;
-
-                    // Append Solution if exists
-                    if (solutionHTML) {{
-                        const detailsEl = document.createElement('details');
-                        const summaryEl = document.createElement('summary');
-                        summaryEl.innerHTML = "🔍 View Detailed Solution";
-                        detailsEl.appendChild(summaryEl);
-                        
-                        const wrapperEl = document.createElement('div');
-                        wrapperEl.className = "solution-wrapper";
-                        wrapperEl.innerHTML = solutionHTML;
-                        detailsEl.appendChild(wrapperEl);
-                        
-                        card.appendChild(detailsEl);
-                    }}
-
-                    // Insert card and remove original element
-                    if (qItem.parentList) {{
-                        // We will insert card before parentList or append it in order
-                        qItem.parentList.parentNode.insertBefore(card, qItem.parentList);
-                    }} else {{
-                        el.parentNode.insertBefore(card, el);
-                        el.remove();
-                    }}
-
-                    qCards.push(card);
-                    questionNumberIndex++;
-                }});
-
-                // Remove the list elements once all their list-items are transformed
-                if (nextEl.tagName === 'OL' || nextEl.tagName === 'UL') {{
                     const listEl = nextEl;
-                    nextEl = nextEl.nextElementSibling;
+                    nextEl = nextEl.nextElementSibling; // save sibling before removing list
+                    
+                    listItems.forEach(li => {{
+                        activeCard = createQuestionCard(li, true, listEl);
+                    }});
                     listEl.remove();
+                }} else if (nextEl.tagName === 'P' && (textVal.startsWith('**q') || textVal.startsWith('q') || textVal.startsWith('**question'))) {{
+                    const el = nextEl;
+                    nextEl = nextEl.nextElementSibling; // save sibling before removing paragraph
+                    
+                    activeCard = createQuestionCard(el, false, null);
+                    el.remove();
                 }} else {{
-                    nextEl = nextEl.nextElementSibling;
+                    const el = nextEl;
+                    nextEl = nextEl.nextElementSibling; // save sibling before moving element
+                    
+                    if (activeCard) {{
+                        activeCard.querySelector('.question-text').appendChild(el);
+                    }}
                 }}
             }}
 

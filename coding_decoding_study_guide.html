@@ -862,10 +862,10 @@
 <table><thead><tr><th>Metric</th><th>Rating</th></tr></thead><tbody><tr><td><strong>Rank among all aptitude topics</strong></td><td>#7 of ~20 core topics</td></tr><tr><td><strong>Importance Rating</strong></td><td>★★★★☆ (4/5)</td></tr><tr><td><strong>Appears in TCS/Infosys</strong></td><td>2–3 questions per test</td></tr><tr><td><strong>Logical reasoning vs. calculation</strong></td><td>Pure pattern recognition</td></tr><tr><td><strong>High scorers vs. average candidates gap</strong></td><td>High</td></tr></tbody></table>
 <h3>Why It Matters in Placements</h3>
 
-Coding & Decoding is the <strong>logic and pattern-recognition</strong> pillar of aptitude tests. Unlike calculation-heavy topics, this tests your ability to <strong>decode rules, find patterns, and apply transformations</strong> — skills directly relevant to:
-<ul><li><strong>Programming & debugging</strong> (identifying the logic behind code)</li><li><strong>Data analysis</strong> (spotting trends in datasets)</li><li><strong>Problem-solving interviews</strong> (rule identification)</li><li><strong>Logical reasoning in general</strong> (deductive thinking)</li></ul>
+<p>Coding & Decoding is the <strong>logic and pattern-recognition</strong> pillar of aptitude tests. Unlike calculation-heavy topics, this tests your ability to <strong>decode rules, find patterns, and apply transformations</strong> — skills directly relevant to:
+<ul><li><strong>Programming & debugging</strong> (identifying the logic behind code)</li><li><strong>Data analysis</strong> (spotting trends in datasets)</li><li><strong>Problem-solving interviews</strong> (rule identification)</li><li><strong>Logical reasoning in general</strong> (deductive thinking)</li></ul></p>
 
-Companies love this topic because it correlates strongly with coding ability — if you can spot the pattern in a letter-shift cipher, you can debug code.
+<p>Companies love this topic because it correlates strongly with coding ability — if you can spot the pattern in a letter-shift cipher, you can debug code.</p>
 
 <h3>Weightage in Tests</h3>
 
@@ -878,8 +878,8 @@ Companies love this topic because it correlates strongly with coding ability —
 
 <h3>What Is Coding & Decoding?</h3>
 
-Coding & Decoding problems present a <strong>rule</strong> encoded in examples, and ask you to either:
-<ol><li><strong>Encode</strong> — apply the rule to new input</li><li><strong>Decode</strong> — reverse-engineer the rule from examples, then apply it</li></ol>
+<p>Coding & Decoding problems present a <strong>rule</strong> encoded in examples, and ask you to either:
+<ol><li><strong>Encode</strong> — apply the rule to new input</li><li><strong>Decode</strong> — reverse-engineer the rule from examples, then apply it</li></ol></p>
 
 <h3>Alphabet Fundamentals (Must-Know)</h3>
 
@@ -890,8 +890,8 @@ Reverse alphabet:
 Position:  Z  Y  X  W  V  U  T  S  R  Q  P  O  N  M  L  K  J  I  H  G  F  E  D  C  B  A
 Value:   26 25 24 23 22 21 20 19 18 17 16 15 14 13 12 11 10  9  8  7  6  5  4  3  2  1</code></pre>
 
-<strong>Memorize these pairs</strong> — saves 20 seconds per question:
-<pre><code class="language-">A↔Z, B↔Y, C↔X, D↔W, E↔V, F↔U, G↔T, H↔S, I↔R, J↔Q, K↔P, L↔O, M↔N</code></pre>
+<p><strong>Memorize these pairs</strong> — saves 20 seconds per question:
+<pre><code class="language-">A↔Z, B↔Y, C↔X, D↔W, E↔V, F↔U, G↔T, H↔S, I↔R, J↔Q, K↔P, L↔O, M↔N</code></pre></p>
 
 <h3>Subtopics to Master</h3>
 <ol><li><strong>Letter-to-letter coding</strong> — forward/backward shift (Caesar cipher)</li><li><strong>Letter-to-number coding</strong> — alphabetical position transformation</li><li><strong>Number series</strong> — arithmetic, geometric, fibonacci patterns</li><li><strong>Mixed alphanumeric series</strong> — letters + numbers combined</li><li><strong>Analogy-based coding</strong> — A:B::C:D find D</li><li><strong>Syllable/word coding</strong> — coding words as units</li><li><strong>Matrix-based coding</strong> — grid position coding</li><li><strong>Conditional coding</strong> — coding with if-then conditions</li><li><strong>Letter gap series</strong> — positional difference patterns</li><li><strong>Mirror/coded blood relations</strong> — coding in family terms</li></ol>
@@ -902,159 +902,159 @@ Value:   26 25 24 23 22 21 20 19 18 17 16 15 14 13 12 11 10  9  8  7  6  5  4  3
 
 <h3>Concept 1: Letter Shift (Forward/Backward)</h3>
 
-<strong>Definition</strong>: Each letter is shifted by a fixed number of positions in the alphabet. Also called Caesar cipher.
+<p><strong>Definition</strong>: Each letter is shifted by a fixed number of positions in the alphabet. Also called Caesar cipher.</p>
 
-<strong>Intuition</strong>: Think of a wheel — rotating the alphabet by k positions. If k=3, A→D, B→E, etc.
+<p><strong>Intuition</strong>: Think of a wheel — rotating the alphabet by k positions. If k=3, A→D, B→E, etc.</p>
 
-<strong>Formula</strong>:
+<p><strong>Formula</strong>:
 <pre><code class="language-">Forward shift by k: New = (Old + k) mod 26
 Backward shift by k: New = (Old - k) mod 26
-Alphabetically forward: A→B→C→...→Z</code></pre>
+Alphabetically forward: A→B→C→...→Z</code></pre></p>
 
-<strong>Shortcut — The Modulo Rule</strong>:
+<p><strong>Shortcut — The Modulo Rule</strong>:
 <pre><code class="language-">After Z comes A (26 + 1 = 27 ≡ 1 mod 26)
 E + 3 = H (8 + 3 = 11)
-Z + 2 = B (26 + 2 = 28 ≡ 2 mod 26)</code></pre>
+Z + 2 = B (26 + 2 = 28 ≡ 2 mod 26)</code></pre></p>
 
-<strong>Example</strong>:
-"ABC" coded as "DEF" → shift of +3. So "XYZ" → "ABC" (wraps around).
+<p><strong>Example</strong>:
+"ABC" coded as "DEF" → shift of +3. So "XYZ" → "ABC" (wraps around).</p>
 
-<strong>Common Mistakes</strong>:
-<ul><li>❌ Forgetting to wrap around after Z</li><li>❌ Mixing up forward and backward shift</li><li>❌ Wrong modulo calculation</li></ul>
+<p><strong>Common Mistakes</strong>:
+<ul><li>❌ Forgetting to wrap around after Z</li><li>❌ Mixing up forward and backward shift</li><li>❌ Wrong modulo calculation</li></ul></p>
 
-<strong>Interview Relevance</strong>: "If GOOD is coded as JRRG, what is the code for BAD?" → Tests shift pattern recognition.
+<p><strong>Interview Relevance</strong>: "If GOOD is coded as JRRG, what is the code for BAD?" → Tests shift pattern recognition.</p>
 
 <hr />
 
 <h3>Concept 2: Reverse Alphabet Coding</h3>
 
-<strong>Definition</strong>: Each letter is replaced by its opposite position in the alphabet (A↔Z, B↔Y, etc.)
+<p><strong>Definition</strong>: Each letter is replaced by its opposite position in the alphabet (A↔Z, B↔Y, etc.)</p>
 
-<strong>Intuition</strong>: Mirror image across the alphabet's center. The alphabet is a mirror from M-N.
+<p><strong>Intuition</strong>: Mirror image across the alphabet's center. The alphabet is a mirror from M-N.</p>
 
-<strong>Formula</strong>:
+<p><strong>Formula</strong>:
 <pre><code class="language-">Code = 27 - Original position
-Or: 26 - (position - 1) = 27 - position</code></pre>
+Or: 26 - (position - 1) = 27 - position</code></pre></p>
 
-<strong>Shortcut — Pairs to Memorize</strong>:
+<p><strong>Shortcut — Pairs to Memorize</strong>:
 <pre><code class="language-">A↔Z (26), B↔Y (25), C↔X (24), D↔W (23), E↔V (22)
 F↔U (21), G↔T (20), H↔S (19), I↔R (18), J↔Q (17)
-K↔P (16), L↔O (15), M↔N (14)</code></pre>
+K↔P (16), L↔O (15), M↔N (14)</code></pre></p>
 
-<strong>Example</strong>:
-"CAT" → XZG (C=X, A=Z, T=G). Check: C(3)→X(24), A(1)→Z(26), T(20)→G(7).
+<p><strong>Example</strong>:
+"CAT" → XZG (C=X, A=Z, T=G). Check: C(3)→X(24), A(1)→Z(26), T(20)→G(7).</p>
 
-<strong>Common Mistakes</strong>:
-<ul><li>❌ Not knowing the reverse position quickly</li><li>❌ Confusing with forward/backward shift</li></ul>
+<p><strong>Common Mistakes</strong>:
+<ul><li>❌ Not knowing the reverse position quickly</li><li>❌ Confusing with forward/backward shift</li></ul></p>
 
 <hr />
 
 <h3>Concept 3: Alphabetical Position to Number</h3>
 
-<strong>Definition</strong>: Converting letters to their position (A=1, B=2, ...) and applying arithmetic operations.
+<p><strong>Definition</strong>: Converting letters to their position (A=1, B=2, ...) and applying arithmetic operations.</p>
 
-<strong>Intuition</strong>: Treat each letter as its numerical value and perform addition, subtraction, multiplication, or division.
+<p><strong>Intuition</strong>: Treat each letter as its numerical value and perform addition, subtraction, multiplication, or division.</p>
 
-<strong>Formula</strong>:
+<p><strong>Formula</strong>:
 <pre><code class="language-">Value of letter = its position (A=1, Z=26)
 Sum of word = sum of all letter values
-Difference = operation on position values</code></pre>
+Difference = operation on position values</code></pre></p>
 
-<strong>Example</strong>:
+<p><strong>Example</strong>:
 "If in a certain code, CAT = 24, what is DOG?"
-C=3, A=1, T=20 → sum = 24. D=4, O=15, G=7 → sum = 26.
+C=3, A=1, T=20 → sum = 24. D=4, O=15, G=7 → sum = 26.</p>
 
-<strong>Shortcut — Quick Position Lookup</strong>:
+<p><strong>Shortcut — Quick Position Lookup</strong>:
 <pre><code class="language-">A=1, J=10, S=19, Z=26
 Half alphabet: M=13 (middle)
-Reverse: Z=1, Y=2, ... A=26</code></pre>
+Reverse: Z=1, Y=2, ... A=26</code></pre></p>
 
-<strong>Common Mistakes</strong>:
-<ul><li>❌ Using A=0 instead of A=1 (common in programmers)</li><li>❌ Wrong addition/subtraction of positions</li></ul>
+<p><strong>Common Mistakes</strong>:
+<ul><li>❌ Using A=0 instead of A=1 (common in programmers)</li><li>❌ Wrong addition/subtraction of positions</li></ul></p>
 
 <hr />
 
 <h3>Concept 4: Number Series (Arithmetic)</h3>
 
-<strong>Definition</strong>: A sequence where each term increases/decreases by a constant difference.
+<p><strong>Definition</strong>: A sequence where each term increases/decreases by a constant difference.</p>
 
-<strong>Intuition</strong>: Think of a staircase — each step is the same height. Pattern: a, a+d, a+2d, a+3d, ...
+<p><strong>Intuition</strong>: Think of a staircase — each step is the same height. Pattern: a, a+d, a+2d, a+3d, ...</p>
 
-<strong>Formula</strong>:
+<p><strong>Formula</strong>:
 <pre><code class="language-">nth term: aₙ = a + (n-1)d
-Sum: Sₙ = n/2 × (first + last) = n/2 × [2a + (n-1)d]</code></pre>
+Sum: Sₙ = n/2 × (first + last) = n/2 × [2a + (n-1)d]</code></pre></p>
 
-<strong>Example</strong>:
-3, 7, 11, 15, 19 → d=4. Next term = 23. 50th term = 3 + 49×4 = 199.
+<p><strong>Example</strong>:
+3, 7, 11, 15, 19 → d=4. Next term = 23. 50th term = 3 + 49×4 = 199.</p>
 
-<strong>Shortcut</strong>: Find the difference pattern. Check if difference is constant → AP.
+<p><strong>Shortcut</strong>: Find the difference pattern. Check if difference is constant → AP.</p>
 
-<strong>Common Mistakes</strong>:
-<ul><li>❌ Not checking for multiple difference levels (if first difference isn't constant, check second difference)</li></ul>
+<p><strong>Common Mistakes</strong>:
+<ul><li>❌ Not checking for multiple difference levels (if first difference isn't constant, check second difference)</li></ul></p>
 
 <hr />
 
 <h3>Concept 5: Number Series (Geometric)</h3>
 
-<strong>Definition</strong>: A sequence where each term is multiplied/divided by a constant ratio.
+<p><strong>Definition</strong>: A sequence where each term is multiplied/divided by a constant ratio.</p>
 
-<strong>Intuition</strong>: Think of doubling — each step multiplies by a fixed factor.
+<p><strong>Intuition</strong>: Think of doubling — each step multiplies by a fixed factor.</p>
 
-<strong>Formula</strong>:
-<pre><code class="language-">nth term: aₙ = a × r^(n-1)</code></pre>
+<p><strong>Formula</strong>:
+<pre><code class="language-">nth term: aₙ = a × r^(n-1)</code></pre></p>
 
-<strong>Example</strong>:
-2, 6, 18, 54 → r=3. Next = 162. a₅ = 2 × 3^4 = 2 × 81 = 162.
+<p><strong>Example</strong>:
+2, 6, 18, 54 → r=3. Next = 162. a₅ = 2 × 3^4 = 2 × 81 = 162.</p>
 
-<strong>Common Mistakes</strong>:
-<ul><li>❌ Missing the pattern when ratio changes slightly</li><li>❌ Not checking for fractional ratios (×1/2, ×2/3)</li></ul>
+<p><strong>Common Mistakes</strong>:
+<ul><li>❌ Missing the pattern when ratio changes slightly</li><li>❌ Not checking for fractional ratios (×1/2, ×2/3)</li></ul></p>
 
 <hr />
 
 <h3>Concept 6: Fibonacci-type Series</h3>
 
-<strong>Definition</strong>: Each term is the sum of the previous two (or more) terms.
+<p><strong>Definition</strong>: Each term is the sum of the previous two (or more) terms.</p>
 
-<strong>Formula</strong>:
+<p><strong>Formula</strong>:
 <pre><code class="language-">aₙ = aₙ₋₁ + aₙ₋₂
-Generalization: aₙ = aₙ₋₁ + aₙ₋₂ + aₙ₋₃ (tribonacci), etc.</code></pre>
+Generalization: aₙ = aₙ₋₁ + aₙ₋₂ + aₙ₋₃ (tribonacci), etc.</code></pre></p>
 
-<strong>Example</strong>:
-1, 1, 2, 3, 5, 8, 13, 21 → next = 34.
+<p><strong>Example</strong>:
+1, 1, 2, 3, 5, 8, 13, 21 → next = 34.</p>
 
-<strong>Shortcut</strong>: Sum of previous two → Fibonacci. Check if it's the only pattern or if a hybrid exists.
+<p><strong>Shortcut</strong>: Sum of previous two → Fibonacci. Check if it's the only pattern or if a hybrid exists.</p>
 
 <hr />
 
 <h3>Concept 7: Alphabetical Series (Missing Letter)</h3>
 
-<strong>Definition</strong>: A sequence of letters with one or more missing. Find the pattern and fill the gap.
+<p><strong>Definition</strong>: A sequence of letters with one or more missing. Find the pattern and fill the gap.</p>
 
-<strong>Formula</strong>:
+<p><strong>Formula</strong>:
 <pre><code class="language-">Same logic as number series — find the step between consecutive letters.
-Step = (position difference) = constant or varying</code></pre>
+Step = (position difference) = constant or varying</code></pre></p>
 
-<strong>Example</strong>:
-A, C, E, G, I, ? → step of +2. Answer = K.
+<p><strong>Example</strong>:
+A, C, E, G, I, ? → step of +2. Answer = K.</p>
 
-<strong>Shortcut — Alphabet Ring</strong>:
+<p><strong>Shortcut — Alphabet Ring</strong>:
 <pre><code class="language-">Forward: A→B→C→...→Z→A (cycle)
 Backward: Z→Y→X→...→A→Z
-Count positions: C to G = +4</code></pre>
+Count positions: C to G = +4</code></pre></p>
 
-<strong>Common Mistakes</strong>:
-<ul><li>❌ Forgetting Z→A wrap-around</li><li>❌ Not checking both directions</li></ul>
+<p><strong>Common Mistakes</strong>:
+<ul><li>❌ Forgetting Z→A wrap-around</li><li>❌ Not checking both directions</li></ul></p>
 
 <hr />
 
 <h3>Concept 8: Analogy-Based Coding</h3>
 
-<strong>Definition</strong>: Given A:B::C:D, find the relationship between A and B, then apply to C to get D.
+<p><strong>Definition</strong>: Given A:B::C:D, find the relationship between A and B, then apply to C to get D.</p>
 
-<strong>Formula</strong>:
-<pre><code class="language-">Rule(B) - Rule(A) = transformation applied to C = D</code></pre>
+<p><strong>Formula</strong>:
+<pre><code class="language-">Rule(B) - Rule(A) = transformation applied to C = D</code></pre></p>
 
-<strong>Example</strong>:
+<p><strong>Example</strong>:
 If CATER = BDUBS, then SMART = ?
 C→B (-1), A→D (+3), T→U (+1), E→S (+? pattern?), R→? (need full pattern)
 C(3)→B(2): -1
@@ -1069,42 +1069,42 @@ A→D: A+3=D. T+3=W? But T→U is +1. Not consistent.
 Let's try reverse: C→X (reverse of C), A→Z, T→G, E→V, R→I.
 XZGVI? SMART → XZGVI? Check: CATER → BDUBS (no).
 Maybe position-based: CATER = 3,1,20,5,18 → BDUBS = 2,4,21,19,2? No.
-This pattern needs careful analysis. ✅
+This pattern needs careful analysis. ✅</p>
 
-<strong>Common Mistakes</strong>:
-<ul><li>❌ Assuming a single simple shift when the pattern is complex</li><li>❌ Not verifying the pattern on all letters before applying</li></ul>
+<p><strong>Common Mistakes</strong>:
+<ul><li>❌ Assuming a single simple shift when the pattern is complex</li><li>❌ Not verifying the pattern on all letters before applying</li></ul></p>
 
 <hr />
 
 <h3>Concept 9: Matrix/Grid Coding</h3>
 
-<strong>Definition</strong>: Letters are coded using their position in an alphanumeric grid (row × column).
+<p><strong>Definition</strong>: Letters are coded using their position in an alphanumeric grid (row × column).</p>
 
-<strong>Formula</strong>:
+<p><strong>Formula</strong>:
 <pre><code class="language-">Letter at row r, column c → code = (r, c) or r-th row, c-th column
-Example: A in 3×9 grid → row 1, column 1</code></pre>
+Example: A in 3×9 grid → row 1, column 1</code></pre></p>
 
-<strong>Example</strong>:
+<p><strong>Example</strong>:
 In a 3×9 grid (letters A-Z):
-A(1,1), B(1,2), C(1,3), ... I(1,9), J(2,1), K(2,2), ... Z(3,8).
+A(1,1), B(1,2), C(1,3), ... I(1,9), J(2,1), K(2,2), ... Z(3,8).</p>
 
-<strong>Common Mistakes</strong>:
-<ul><li>❌ Wrong grid dimensions</li><li>❌ Mixing up row and column</li></ul>
+<p><strong>Common Mistakes</strong>:
+<ul><li>❌ Wrong grid dimensions</li><li>❌ Mixing up row and column</li></ul></p>
 
 <hr />
 
 <h3>Concept 10: Conditional Coding</h3>
 
-<strong>Definition</strong>: Coding rules that apply only under specific conditions (vowel/consonant, odd/even position, etc.)
+<p><strong>Definition</strong>: Coding rules that apply only under specific conditions (vowel/consonant, odd/even position, etc.)</p>
 
-<strong>Formula</strong>:
+<p><strong>Formula</strong>:
 <pre><code class="language-">If letter is vowel: apply Rule A
 If letter is consonant: apply Rule B
-If position is odd/even: apply different rule</code></pre>
+If position is odd/even: apply different rule</code></pre></p>
 
-<strong>Example</strong>:
+<p><strong>Example</strong>:
 "In a code, vowels are shifted by +3, consonants by -2."
-A→D (vowel), B→Z (consonant, -2).
+A→D (vowel), B→Z (consonant, -2).</p>
 
 <hr />
 
@@ -1146,15 +1146,15 @@ Extended: aₙ = aₙ₋₁ + aₙ₋₂ + aₙ₋₃ (tribonacci)</code></pre>
 
 <h3>Memory Tricks</h3>
 
-> 🔑 <strong>"Wrap Around After Z"</strong> — When shifting, always check if you pass Z. If yes, subtract 26.
+<p>> 🔑 <strong>"Wrap Around After Z"</strong> — When shifting, always check if you pass Z. If yes, subtract 26.</p>
 
-> 🔑 <strong>"A↔Z Mirror Pairs"</strong> — Memorize A-Z, B-Y, C-X, D-W, E-V. That's half the alphabet.
+<p>> 🔑 <strong>"A↔Z Mirror Pairs"</strong> — Memorize A-Z, B-Y, C-X, D-W, E-V. That's half the alphabet.</p>
 
-> 🔑 <strong>"First Half vs Second Half"</strong> — A-M (1-13), N-Z (14-26). Sum = 27.
+<p>> 🔑 <strong>"First Half vs Second Half"</strong> — A-M (1-13), N-Z (14-26). Sum = 27.</p>
 
-> 🔑 <strong>"Number Series: Difference First"</strong> — Always compute the first difference. If constant → AP. If not → compute second difference or ratio.
+<p>> 🔑 <strong>"Number Series: Difference First"</strong> — Always compute the first difference. If constant → AP. If not → compute second difference or ratio.</p>
 
-> 🔑 <strong>"Vowel = A,E,I,O,U"</strong> — Always 5 vowels. Everything else is a consonant.
+<p>> 🔑 <strong>"Vowel = A,E,I,O,U"</strong> — Always 5 vowels. Everything else is a consonant.</p>
 
 <hr />
 
@@ -1293,22 +1293,22 @@ If X→A(-2), Y→B(-2), Z→C(-2): P→N(-2)=N. ✓</code></pre>
 <h3>Day 1: Fundamentals</h3>
 <ol><li>Memorize alphabet positions A=1 through Z=26</li><li>Memorize reverse pairs (A↔Z through M↔N)</li><li>Practice forward/backward shift calculations (with wrap-around)</li><li>Learn AP and GP formulas</li></ol>
 
-<strong>Milestone</strong>: You can instantly convert any letter to its position and back in under 2 seconds.
+<p><strong>Milestone</strong>: You can instantly convert any letter to its position and back in under 2 seconds.</p>
 
 <h3>Day 2: Series Patterns</h3>
 <ol><li>Master number series — AP, GP, Fibonacci</li><li>Learn square/cube/triangular number patterns</li><li>Practice missing letter series</li><li>Practice alternating/interleaved series</li></ol>
 
-<strong>Milestone</strong>: Identify the pattern in any 2-series question in under 30 seconds.
+<p><strong>Milestone</strong>: Identify the pattern in any 2-series question in under 30 seconds.</p>
 
 <h3>Day 3: Advanced Coding</h3>
 <ol><li>Learn analogy-based coding</li><li>Practice conditional coding (vowel/consonant rules)</li><li>Practice word reordering coding</li><li>Learn grid/matrix coding</li></ol>
 
-<strong>Milestone</strong>: Handle any coding problem by identifying the transformation type.
+<p><strong>Milestone</strong>: Handle any coding problem by identifying the transformation type.</p>
 
 <h3>Day 4–5: Placement Practice</h3>
 <ol><li>Solve 50 TCS/Infosys pattern questions</li><li>Solve 30 Accenture/Cognizant level questions</li><li>Attempt 20 Amazon/Microsoft level questions</li></ol>
 
-<strong>Milestone</strong>: 95% accuracy on all coding & decoding questions.
+<p><strong>Milestone</strong>: 95% accuracy on all coding & decoding questions.</p>
 
 <hr />
 
@@ -1362,161 +1362,161 @@ If X→A(-2), Y→B(-2), Z→C(-2): P→N(-2)=N. ✓</code></pre>
 
 <h3>🟢 Easy (Level 1) — 20 Questions</h3>
 
-<strong>Q1.</strong> If "BAT" is coded as "CBU", how is "DOG" coded? <strong>[TCS]</strong>
+<p><strong>Q1.</strong> If "BAT" is coded as "CBU", how is "DOG" coded? <strong>[TCS]</strong></p>
 
-<strong>Q2.</strong> In a certain code, "CAT" is written as "DBU". What is the code for "DOG"? <strong>[Infosys]</strong>
+<p><strong>Q2.</strong> In a certain code, "CAT" is written as "DBU". What is the code for "DOG"? <strong>[Infosys]</strong></p>
 
-<strong>Q3.</strong> Complete the series: 2, 6, 12, 20, 30, ? <strong>[TCS]</strong>
+<p><strong>Q3.</strong> Complete the series: 2, 6, 12, 20, 30, ? <strong>[TCS]</strong></p>
 
-<strong>Q4.</strong> In a code, MAN = NZM. What is the code for CAT? <strong>[Wipro]</strong>
+<p><strong>Q4.</strong> In a code, MAN = NZM. What is the code for CAT? <strong>[Wipro]</strong></p>
 
-<strong>Q5.</strong> Find the missing letter: A, C, E, G, I, ? <strong>[TCS]</strong>
+<p><strong>Q5.</strong> Find the missing letter: A, C, E, G, I, ? <strong>[TCS]</strong></p>
 
-<strong>Q6.</strong> If Z = 26, A = 1, then what is Y = ? <strong>[Cognizant]</strong>
+<p><strong>Q6.</strong> If Z = 26, A = 1, then what is Y = ? <strong>[Cognizant]</strong></p>
 
-<strong>Q7.</strong> Complete: 3, 6, 11, 18, 27, ? <strong>[TCS]</strong>
+<p><strong>Q7.</strong> Complete: 3, 6, 11, 18, 27, ? <strong>[TCS]</strong></p>
 
-<strong>Q8.</strong> If D = 4, C = 3, B = 2, then what is J? <strong>[Accenture]</strong>
+<p><strong>Q8.</strong> If D = 4, C = 3, B = 2, then what is J? <strong>[Accenture]</strong></p>
 
-<strong>Q9.</strong> In a code, PENCIL is written as QFODJM. How is RUBBER written? <strong>[Infosys]</strong>
+<p><strong>Q9.</strong> In a code, PENCIL is written as QFODJM. How is RUBBER written? <strong>[Infosys]</strong></p>
 
-<strong>Q10.</strong> Find the next term: 1, 4, 9, 16, 25, ? <strong>[TCS]</strong>
+<p><strong>Q10.</strong> Find the next term: 1, 4, 9, 16, 25, ? <strong>[TCS]</strong></p>
 
-<strong>Q11.</strong> If GOOD is coded as JRRG, what is the code for BAD? <strong>[TCS]</strong>
+<p><strong>Q11.</strong> If GOOD is coded as JRRG, what is the code for BAD? <strong>[TCS]</strong></p>
 
-<strong>Q12.</strong> Complete the letter series: A, D, G, J, ? <strong>[Wipro]</strong>
+<p><strong>Q12.</strong> Complete the letter series: A, D, G, J, ? <strong>[Wipro]</strong></p>
 
-<strong>Q13.</strong> If 5 = K, 8 = N, then 12 = ? <strong>[Cognizant]</strong>
+<p><strong>Q13.</strong> If 5 = K, 8 = N, then 12 = ? <strong>[Cognizant]</strong></p>
 
-<strong>Q14.</strong> Find the missing term: 2, 5, 10, 17, 26, ? <strong>[TCS]</strong>
+<p><strong>Q14.</strong> Find the missing term: 2, 5, 10, 17, 26, ? <strong>[TCS]</strong></p>
 
-<strong>Q15.</strong> If "ACE" is coded as "BDF", how is "GHI" coded? <strong>[Infosys]</strong>
+<p><strong>Q15.</strong> If "ACE" is coded as "BDF", how is "GHI" coded? <strong>[Infosys]</strong></p>
 
-<strong>Q16.</strong> Complete: AZ, BY, CX, DW, ? <strong>[TCS]</strong>
+<p><strong>Q16.</strong> Complete: AZ, BY, CX, DW, ? <strong>[TCS]</strong></p>
 
-<strong>Q17.</strong> If PENCIL = 48, what is the numerical value of BOOK? <strong>[Wipro]</strong>
+<p><strong>Q17.</strong> If PENCIL = 48, what is the numerical value of BOOK? <strong>[Wipro]</strong></p>
 
-<strong>Q18.</strong> Find the next term: 1, 2, 6, 24, 120, ? <strong>[TCS]</strong>
+<p><strong>Q18.</strong> Find the next term: 1, 2, 6, 24, 120, ? <strong>[TCS]</strong></p>
 
-<strong>Q19.</strong> In a code, "123" means "ACE" and "246" means "BDF". What does "369" mean? <strong>[Accenture]</strong>
+<p><strong>Q19.</strong> In a code, "123" means "ACE" and "246" means "BDF". What does "369" mean? <strong>[Accenture]</strong></p>
 
-<strong>Q20.</strong> Complete: BZD, EYG, HXJ, ? <strong>[TCS]</strong>
+<p><strong>Q20.</strong> Complete: BZD, EYG, HXJ, ? <strong>[TCS]</strong></p>
 
 <hr />
 
 <h3>🟡 Medium (Level 2) — 20 Questions</h3>
 
-<strong>Q21.</strong> In a code language, "COMB" is written as "MCOB". How will "SMART" be written? <strong>[Amazon]</strong>
+<p><strong>Q21.</strong> In a code language, "COMB" is written as "MCOB". How will "SMART" be written? <strong>[Amazon]</strong></p>
 
-<strong>Q22.</strong> If 1 = A, 2 = B, 3 = C, ... and 26 = Z, what is the code for "GOOGLE"? <strong>[Microsoft]</strong>
+<p><strong>Q22.</strong> If 1 = A, 2 = B, 3 = C, ... and 26 = Z, what is the code for "GOOGLE"? <strong>[Microsoft]</strong></p>
 
-<strong>Q23.</strong> Find the missing term: 1, 3, 6, 10, 15, 21, ? <strong>[Deloitte]</strong>
+<p><strong>Q23.</strong> Find the missing term: 1, 3, 6, 10, 15, 21, ? <strong>[Deloitte]</strong></p>
 
-<strong>Q24.</strong> If "FRIEND" is coded as "HUMJTG", how is "ENEMY" coded? <strong>[Amazon]</strong>
+<p><strong>Q24.</strong> If "FRIEND" is coded as "HUMJTG", how is "ENEMY" coded? <strong>[Amazon]</strong></p>
 
-<strong>Q25.</strong> In a certain code, 3×4=12, 5×6=30, 2×7=14. What is 4×5? <strong>[Microsoft]</strong>
+<p><strong>Q25.</strong> In a certain code, 3×4=12, 5×6=30, 2×7=14. What is 4×5? <strong>[Microsoft]</strong></p>
 
-<strong>Q26.</strong> Complete: A2, C4, E6, G8, ? <strong>[TCS]</strong>
+<p><strong>Q26.</strong> Complete: A2, C4, E6, G8, ? <strong>[TCS]</strong></p>
 
-<strong>Q27.</strong> If "DELHI" is coded as "EFMIJ", how is "MUMBAI" coded? <strong>[Infosys]</strong>
+<p><strong>Q27.</strong> If "DELHI" is coded as "EFMIJ", how is "MUMBAI" coded? <strong>[Infosys]</strong></p>
 
-<strong>Q28.</strong> Find the next term: 2, 3, 5, 7, 11, 13, ? <strong>[TCS]</strong>
+<p><strong>Q28.</strong> Find the next term: 2, 3, 5, 7, 11, 13, ? <strong>[TCS]</strong></p>
 
-<strong>Q29.</strong> In a code, "APPLE" is written as "EPPLA". How is "MANGO" written? <strong>[Amazon]</strong>
+<p><strong>Q29.</strong> In a code, "APPLE" is written as "EPPLA". How is "MANGO" written? <strong>[Amazon]</strong></p>
 
-<strong>Q30.</strong> Find the missing: AZ, CX, EV, GT, ? <strong>[Deloitte]</strong>
+<p><strong>Q30.</strong> Find the missing: AZ, CX, EV, GT, ? <strong>[Deloitte]</strong></p>
 
-<strong>Q31.</strong> If BIRD is coded as 29184, FISH is coded as 6198, find the code for HORSE. <strong>[Microsoft]</strong>
+<p><strong>Q31.</strong> If BIRD is coded as 29184, FISH is coded as 6198, find the code for HORSE. <strong>[Microsoft]</strong></p>
 
-<strong>Q32.</strong> Complete the series: 5, 11, 23, 47, 95, ? <strong>[TCS]</strong>
+<p><strong>Q32.</strong> Complete the series: 5, 11, 23, 47, 95, ? <strong>[TCS]</strong></p>
 
-<strong>Q33.</strong> In a certain code, "RAIN" is written as "SJJQ". How is "CLOUD" written? <strong>[Goldman Sachs]</strong>
+<p><strong>Q33.</strong> In a certain code, "RAIN" is written as "SJJQ". How is "CLOUD" written? <strong>[Goldman Sachs]</strong></p>
 
-<strong>Q34.</strong> Find the missing term: 1, 4, 27, 16, 125, ? <strong>[Microsoft]</strong>
+<p><strong>Q34.</strong> Find the missing term: 1, 4, 27, 16, 125, ? <strong>[Microsoft]</strong></p>
 
-<strong>Q35.</strong> If "TABLE" is coded as "UBMF", what is "CHAIR" coded as? <strong>[Accenture]</strong>
+<p><strong>Q35.</strong> If "TABLE" is coded as "UBMF", what is "CHAIR" coded as? <strong>[Accenture]</strong></p>
 
-<strong>Q36.</strong> Complete: 2, 6, 30, 260, ? <strong>[Amazon]</strong>
+<p><strong>Q36.</strong> Complete: 2, 6, 30, 260, ? <strong>[Amazon]</strong></p>
 
-<strong>Q37.</strong> If "MASTER" is coded as "1123218", how is "SLAVE" coded? <strong>[Microsoft]</strong>
+<p><strong>Q37.</strong> If "MASTER" is coded as "1123218", how is "SLAVE" coded? <strong>[Microsoft]</strong></p>
 
-<strong>Q38.</strong> Find the next term: A, C, F, J, O, ? <strong>[TCS]</strong>
+<p><strong>Q38.</strong> Find the next term: A, C, F, J, O, ? <strong>[TCS]</strong></p>
 
-<strong>Q39.</strong> In a code, if "1234" means "PLAY", "5678" means "GAME", what does "1523" mean? <strong>[Deloitte]</strong>
+<p><strong>Q39.</strong> In a code, if "1234" means "PLAY", "5678" means "GAME", what does "1523" mean? <strong>[Deloitte]</strong></p>
 
-<strong>Q40.</strong> Complete: 1, 1, 2, 3, 5, 8, 13, 21, ? <strong>[TCS]</strong>
+<p><strong>Q40.</strong> Complete: 1, 1, 2, 3, 5, 8, 13, 21, ? <strong>[TCS]</strong></p>
 
 <hr />
 
 <h3>🟠 Hard (Level 3) — 20 Questions</h3>
 
-<strong>Q41.</strong> If A=1, B=2, ... Z=26, find the word that has the maximum value from: OWL, CAT, ZEBRA, DOG. <strong>[Google]</strong>
+<p><strong>Q41.</strong> If A=1, B=2, ... Z=26, find the word that has the maximum value from: OWL, CAT, ZEBRA, DOG. <strong>[Google]</strong></p>
 
-<strong>Q42.</strong> In a certain code, "SEND" + "MORE" = "MONEY". Each letter is a distinct digit. S=9, E=5, N=6, D=7, M=1, O=0, R=8, Y=2. Using this, code "DOMES". <strong>[Amazon / Goldman Sachs]</strong>
+<p><strong>Q42.</strong> In a certain code, "SEND" + "MORE" = "MONEY". Each letter is a distinct digit. S=9, E=5, N=6, D=7, M=1, O=0, R=8, Y=2. Using this, code "DOMES". <strong>[Amazon / Goldman Sachs]</strong></p>
 
-<strong>Q43.</strong> Find the missing term in the series: 2, 3, 5, 7, 11, 13, 17, ? <strong>[Google]</strong>
+<p><strong>Q43.</strong> Find the missing term in the series: 2, 3, 5, 7, 11, 13, 17, ? <strong>[Google]</strong></p>
 
-<strong>Q44.</strong> If "RAINBOW" is coded as "TBKPCQX", decode "YLCJCN". <strong>[Microsoft]</strong>
+<p><strong>Q44.</strong> If "RAINBOW" is coded as "TBKPCQX", decode "YLCJCN". <strong>[Microsoft]</strong></p>
 
-<strong>Q45.</strong> In a coding system, if consonants are coded as previous letter and vowels as next letter, code "STRONG". <strong>[Amazon]</strong>
+<p><strong>Q45.</strong> In a coding system, if consonants are coded as previous letter and vowels as next letter, code "STRONG". <strong>[Amazon]</strong></p>
 
-<strong>Q46.</strong> Complete: 0, 1, 1, 2, 4, 7, 13, 24, ? <strong>[Google]</strong>
+<p><strong>Q46.</strong> Complete: 0, 1, 1, 2, 4, 7, 13, 24, ? <strong>[Google]</strong></p>
 
-<strong>Q47.</strong> If CAT = 24, DOG = 26, FOX = 39, what is PIG? <strong>[Microsoft]</strong>
+<p><strong>Q47.</strong> If CAT = 24, DOG = 26, FOX = 39, what is PIG? <strong>[Microsoft]</strong></p>
 
-<strong>Q48.</strong> In a code language, "TIGER" is written as "UIHFS". Following the same logic, "HORSE" is written as: <strong>[Goldman Sachs]</strong>
+<p><strong>Q48.</strong> In a code language, "TIGER" is written as "UIHFS". Following the same logic, "HORSE" is written as: <strong>[Goldman Sachs]</strong></p>
 
-<strong>Q49.</strong> Find the next term: 1, 11, 21, 1211, 111221, ? (Look-and-Say sequence) <strong>[Google]</strong>
+<p><strong>Q49.</strong> Find the next term: 1, 11, 21, 1211, 111221, ? (Look-and-Say sequence) <strong>[Google]</strong></p>
 
-<strong>Q50.</strong> If in a certain code, the position of each letter in the word is reversed: ENGLAND becomes "DNA LNEG"? Wait, not. "ENGLAND" → positions: E(1)N(2)G(3)L(4)A(5)N(6)D(7). If code reverses pairs: EN|G L|AN|D → NE|GL|NA|D? <strong>[Microsoft]</strong>
+<p><strong>Q50.</strong> If in a certain code, the position of each letter in the word is reversed: ENGLAND becomes "DNA LNEG"? Wait, not. "ENGLAND" → positions: E(1)N(2)G(3)L(4)A(5)N(6)D(7). If code reverses pairs: EN|G L|AN|D → NE|GL|NA|D? <strong>[Microsoft]</strong></p>
 
-<strong>Q51.</strong> Complete: 3, 4, 7, 11, 18, 29, ? <strong>[Google]</strong>
+<p><strong>Q51.</strong> Complete: 3, 4, 7, 11, 18, 29, ? <strong>[Google]</strong></p>
 
-<strong>Q52.</strong> If the code for "KITE" is "LLJV", and code for "BIRD" is "CJSE", find the code for "FISH". <strong>[Amazon]</strong>
+<p><strong>Q52.</strong> If the code for "KITE" is "LLJV", and code for "BIRD" is "CJSE", find the code for "FISH". <strong>[Amazon]</strong></p>
 
-<strong>Q53.</strong> Find the missing term: A, Z, D, Y, G, X, ? <strong>[TCS]</strong>
+<p><strong>Q53.</strong> Find the missing term: A, Z, D, Y, G, X, ? <strong>[TCS]</strong></p>
 
-<strong>Q54.</strong> In a coding system, if PALE is coded as 2134, LEAP is coded as 4312, PLEA is coded as 2413, then PLEA is coded as? <strong>[Microsoft]</strong>
+<p><strong>Q54.</strong> In a coding system, if PALE is coded as 2134, LEAP is coded as 4312, PLEA is coded as 2413, then PLEA is coded as? <strong>[Microsoft]</strong></p>
 
-<strong>Q55.</strong> Complete: 1, 8, 27, 64, 125, 216, ? <strong>[TCS]</strong>
+<p><strong>Q55.</strong> Complete: 1, 8, 27, 64, 125, 216, ? <strong>[TCS]</strong></p>
 
-<strong>Q56.</strong> If "MASTER" : "MASTRE" :: "SLAVE" : ? <strong>[Amazon]</strong>
+<p><strong>Q56.</strong> If "MASTER" : "MASTRE" :: "SLAVE" : ? <strong>[Amazon]</strong></p>
 
-<strong>Q57.</strong> Find the next term: 101, 103, 107, 109, 113, ? <strong>[Google]</strong>
+<p><strong>Q57.</strong> Find the next term: 101, 103, 107, 109, 113, ? <strong>[Google]</strong></p>
 
-<strong>Q58.</strong> In a certain code, A is coded as 1, B as 3, C as 5, D as 7, ... (odd numbers). What is the code for "GOOGLE"? <strong>[Microsoft]</strong>
+<p><strong>Q58.</strong> In a certain code, A is coded as 1, B as 3, C as 5, D as 7, ... (odd numbers). What is the code for "GOOGLE"? <strong>[Microsoft]</strong></p>
 
-<strong>Q59.</strong> Complete: 2, 5, 10, 17, 26, 37, ? (show formula) <strong>[Goldman Sachs]</strong>
+<p><strong>Q59.</strong> Complete: 2, 5, 10, 17, 26, 37, ? (show formula) <strong>[Goldman Sachs]</strong></p>
 
-<strong>Q60.</strong> If CLOUD is coded as 59421 and BLOOD is coded as 51212, find the code for DOUBT. <strong>[Amazon]</strong>
+<p><strong>Q60.</strong> If CLOUD is coded as 59421 and BLOOD is coded as 51212, find the code for DOUBT. <strong>[Amazon]</strong></p>
 
 <hr />
 
 <h3>🔴 Product-Based Company Level — 10 Questions</h3>
 
-<strong>Q61.</strong> In a 3×3 Sudoku-like grid, each row, column, and diagonal sums to 15. Using A=1, B=2... fill the magic square. What is the letter at position (2,2)? <strong>[Google / Amazon Interview]</strong>
+<p><strong>Q61.</strong> In a 3×3 Sudoku-like grid, each row, column, and diagonal sums to 15. Using A=1, B=2... fill the magic square. What is the letter at position (2,2)? <strong>[Google / Amazon Interview]</strong></p>
 
-<strong>Q62.</strong> SEND + MORE = MONEY. Each letter = distinct digit 0-9. If M=1, O=0, S=9, E=5, N=6, D=7, R=8, Y=2, code the word "SENDY". <strong>[Goldman Sachs]</strong>
+<p><strong>Q62.</strong> SEND + MORE = MONEY. Each letter = distinct digit 0-9. If M=1, O=0, S=9, E=5, N=6, D=7, R=8, Y=2, code the word "SENDY". <strong>[Goldman Sachs]</strong></p>
 
-<strong>Q63.</strong> A code is defined as: Replace each letter with the letter 13 positions ahead in the alphabet (A→N, B→O, ... Z→M). This is ROT13. Decode: "JRERAFVGR". What does it say? <strong>[Google / Security Interview]</strong>
+<p><strong>Q63.</strong> A code is defined as: Replace each letter with the letter 13 positions ahead in the alphabet (A→N, B→O, ... Z→M). This is ROT13. Decode: "JRERAFVGR". What does it say? <strong>[Google / Security Interview]</strong></p>
 
-<strong>Q64.</strong> The sequence is defined as: a(1)=1, a(n)=n - a(a(n-1)) for n>1. Find a(1) through a(10). This is the Van Eck sequence. <strong>[Google / Code Interview]</strong>
+<p><strong>Q64.</strong> The sequence is defined as: a(1)=1, a(n)=n - a(a(n-1)) for n>1. Find a(1) through a(10). This is the Van Eck sequence. <strong>[Google / Code Interview]</strong></p>
 
-<strong>Q65.</strong> In a certain coding system, each letter is replaced by a letter that is n positions ahead, where n is the position of the letter in the word. For "ACE", A(1)→B, C(3)→F, E(5)→J → "BFJ". Decode "DMX". <strong>[Microsoft L64]</strong>
+<p><strong>Q65.</strong> In a certain coding system, each letter is replaced by a letter that is n positions ahead, where n is the position of the letter in the word. For "ACE", A(1)→B, C(3)→F, E(5)→J → "BFJ". Decode "DMX". <strong>[Microsoft L64]</strong></p>
 
-<strong>Q66.</strong> A sequence follows: a(n) = a(n-1) + 2a(n-2) with a(1)=1, a(2)=2. Find a(8). Also find closed form. <strong>[Google / Jane Street]</strong>
+<p><strong>Q66.</strong> A sequence follows: a(n) = a(n-1) + 2a(n-2) with a(1)=1, a(2)=2. Find a(8). Also find closed form. <strong>[Google / Jane Street]</strong></p>
 
-<strong>Q67.</strong> "If in a code, WORDS are encoded as 135, SENTENCE as 72910, what does LETTERS encode as?" — pattern on number of letters? Or on vowels? <strong>[Amazon]</strong>
+<p><strong>Q67.</strong> "If in a code, WORDS are encoded as 135, SENTENCE as 72910, what does LETTERS encode as?" — pattern on number of letters? Or on vowels? <strong>[Amazon]</strong></p>
 
-<strong>Q68.</strong> A grid has letters: A1, B2, C3, D4, E5, F6, G7, H8, I9, J0, K1, L2... (cycling 1-9 then 0). Find the letter at grid position 100. <strong>[Google / Math Olympiad]</strong>
+<p><strong>Q68.</strong> A grid has letters: A1, B2, C3, D4, E5, F6, G7, H8, I9, J0, K1, L2... (cycling 1-9 then 0). Find the letter at grid position 100. <strong>[Google / Math Olympiad]</strong></p>
 
-<strong>Q69.</strong> The coding is such that the position of letters in the word are squared: "JOB" → positions 10,15,2 → squares: 100,225,4 → code: 1002254? Or 10²,15²,2² = 100,225,4. How would you code "WORK"? Find all possible interpretations and which is most logical. <strong>[Microsoft L65]</strong>
+<p><strong>Q69.</strong> The coding is such that the position of letters in the word are squared: "JOB" → positions 10,15,2 → squares: 100,225,4 → code: 1002254? Or 10²,15²,2² = 100,225,4. How would you code "WORK"? Find all possible interpretations and which is most logical. <strong>[Microsoft L65]</strong></p>
 
-<strong>Q70.</strong> In a binary coding, "A" = 1, "B" = 2, ... "Z" = 26. "APPLE" → binary: 00001, 10000, 10000, 01011, 00101. If the binary digits are then read as decimal: 11000010000100101100101 → what word is this? What is the encoding scheme? <strong>[Google / Security Interview]</strong>
+<p><strong>Q70.</strong> In a binary coding, "A" = 1, "B" = 2, ... "Z" = 26. "APPLE" → binary: 00001, 10000, 10000, 01011, 00101. If the binary digits are then read as decimal: 11000010000100101100101 → what word is this? What is the encoding scheme? <strong>[Google / Security Interview]</strong></p>
 
 <hr />
 
-<em>(Solutions on next page)</em>
+<p><em>(Solutions on next page)</em></p>
 
 <hr />
 
@@ -1524,71 +1524,71 @@ If X→A(-2), Y→B(-2), Z→C(-2): P→N(-2)=N. ✓</code></pre>
 
 <h3>🟢 Easy Solutions</h3>
 
-<strong>Q1.</strong> B→C(+1), A→B(+1), T→U(+1). Apply to DOG: D→E, O→P, G→H → <strong>EPH</strong> ✅
+<p><strong>Q1.</strong> B→C(+1), A→B(+1), T→U(+1). Apply to DOG: D→E, O→P, G→H → <strong>EPH</strong> ✅</p>
 
-<strong>Q2.</strong> C→D(+1), A→B(+1), T→U(+1). Apply to DOG: D→E, O→P, G→H → <strong>EPH</strong> ✅
+<p><strong>Q2.</strong> C→D(+1), A→B(+1), T→U(+1). Apply to DOG: D→E, O→P, G→H → <strong>EPH</strong> ✅</p>
 
-<strong>Q3.</strong> Differences: 4,6,8,10,12 → next diff = 14. 30+14 = <strong>44</strong> ✅
+<p><strong>Q3.</strong> Differences: 4,6,8,10,12 → next diff = 14. 30+14 = <strong>44</strong> ✅</p>
 
-<strong>Q4.</strong> M→N(+1), A→Z(27-1=26), N→M(-1). Wait: A→Z is reverse. Actually: M→N, A→Z, N→M. Pattern: +1, reverse, -1. So for CAT: C→D, A→Z, T→S → <strong>DZS</strong> ✅
+<p><strong>Q4.</strong> M→N(+1), A→Z(27-1=26), N→M(-1). Wait: A→Z is reverse. Actually: M→N, A→Z, N→M. Pattern: +1, reverse, -1. So for CAT: C→D, A→Z, T→S → <strong>DZS</strong> ✅</p>
 
-<strong>Q5.</strong> A(1),C(3),E(5),G(7),I(9) → +2 each → <strong>K(11)</strong> ✅
+<p><strong>Q5.</strong> A(1),C(3),E(5),G(7),I(9) → +2 each → <strong>K(11)</strong> ✅</p>
 
-<strong>Q6.</strong> Y = 25, but Z=26. So Y = <strong>25</strong> ✅
+<p><strong>Q6.</strong> Y = 25, but Z=26. So Y = <strong>25</strong> ✅</p>
 
-<strong>Q7.</strong> Differences: 3,5,7,9,11 → +2 each → next diff = 13. 27+13 = <strong>40</strong> ✅
+<p><strong>Q7.</strong> Differences: 3,5,7,9,11 → +2 each → next diff = 13. 27+13 = <strong>40</strong> ✅</p>
 
-<strong>Q8.</strong> D=4, C=3, B=2, A=1. J is the 10th letter → <strong>10</strong> ✅
+<p><strong>Q8.</strong> D=4, C=3, B=2, A=1. J is the 10th letter → <strong>10</strong> ✅</p>
 
-<strong>Q9.</strong> P→Q(+1), E→F(+1), N→O(+1), C→D(+1), I→J(+1), L→M(+1). All +1.
-RUBBER: R→S, U→V, B→C, B→C, E→F, R→S → <strong>SVCCFS</strong> ✅
+<p><strong>Q9.</strong> P→Q(+1), E→F(+1), N→O(+1), C→D(+1), I→J(+1), L→M(+1). All +1.
+RUBBER: R→S, U→V, B→C, B→C, E→F, R→S → <strong>SVCCFS</strong> ✅</p>
 
-<strong>Q10.</strong> 1², 2², 3², 4², 5² → <strong>6² = 36</strong> ✅
+<p><strong>Q10.</strong> 1², 2², 3², 4², 5² → <strong>6² = 36</strong> ✅</p>
 
-<strong>Q11.</strong> G→J(+3), O→R(+3), O→R(+3), D→G(+3). Shift +3. B→E, A→D, D→G → <strong>EDG</strong> ✅
+<p><strong>Q11.</strong> G→J(+3), O→R(+3), O→R(+3), D→G(+3). Shift +3. B→E, A→D, D→G → <strong>EDG</strong> ✅</p>
 
-<strong>Q12.</strong> A(1),D(4),G(7),J(10) → +3 each → <strong>M(13)</strong> ✅
+<p><strong>Q12.</strong> A(1),D(4),G(7),J(10) → +3 each → <strong>M(13)</strong> ✅</p>
 
-<strong>Q13.</strong> 5→K: 5+10=K? Or 5+? Pattern: 5+5=10→K(11)? No. 5+6=11→K. 8+? Pattern: 8+6=14→N(14). 12+? = L(12)→? Pattern: 5→K(11), 8→N(14), 12→?(12). Difference: 6,4,? Pattern decreases by 2: next +2 → 12+2=14→N. <strong>N</strong> ✅
+<p><strong>Q13.</strong> 5→K: 5+10=K? Or 5+? Pattern: 5+5=10→K(11)? No. 5+6=11→K. 8+? Pattern: 8+6=14→N(14). 12+? = L(12)→? Pattern: 5→K(11), 8→N(14), 12→?(12). Difference: 6,4,? Pattern decreases by 2: next +2 → 12+2=14→N. <strong>N</strong> ✅</p>
 
-<strong>Q14.</strong> 2,5,10,17,26 → differences: 3,5,7,9 → next diff = 11. 26+11 = <strong>37</strong> ✅
+<p><strong>Q14.</strong> 2,5,10,17,26 → differences: 3,5,7,9 → next diff = 11. 26+11 = <strong>37</strong> ✅</p>
 
-<strong>Q15.</strong> A→B(+1), C→D(+1), E→F(+1). All +1. G→H, H→I, I→J → <strong>HIJ</strong> ✅
+<p><strong>Q15.</strong> A→B(+1), C→D(+1), E→F(+1). All +1. G→H, H→I, I→J → <strong>HIJ</strong> ✅</p>
 
-<strong>Q16.</strong> A(1)Z(26), B(2)Y(25), C(3)X(24), D(4)W(23). Pattern: first letter +1, reverse letter -1. Next: E(5)V(22) → <strong>EV</strong> ✅
+<p><strong>Q16.</strong> A(1)Z(26), B(2)Y(25), C(3)X(24), D(4)W(23). Pattern: first letter +1, reverse letter -1. Next: E(5)V(22) → <strong>EV</strong> ✅</p>
 
-<strong>Q17.</strong> PENCIL = 16+5+14+3+9+12 = 59? Wait: P=16, E=5, N=14, C=3, I=9, L=12 → sum = 59? But given = 48. Maybe sum of positions mod something? Or product?
+<p><strong>Q17.</strong> PENCIL = 16+5+14+3+9+12 = 59? Wait: P=16, E=5, N=14, C=3, I=9, L=12 → sum = 59? But given = 48. Maybe sum of positions mod something? Or product?
 PENCIL = 16+5+14+3+9+12 = 59. But problem says 48. Maybe reverse positions? 11+22+13+24+18+15 = 103? No.
 Maybe only consonants: P(16)+N(14)+C(3)+L(12) = 45? No.
 Maybe (position × something)? Or just positions: P=16, E=5, N=14, C=3, I=9, L=12 → but sum doesn't match 48.
 Wait: PENCIL might be 16+5+14+3+9+12 = 59. Not 48. The given value 48 might be for a different word. 
 Or: P=16→6, E=5→5, N=14→4, C=3→3, I=9→9, L=12→2. Sum=6+5+4+3+9+2=29? No.
 Maybe product: 16×5×14×3×9×12 = huge. 
-PENCIL = 48 might be number of letters × something? 6 letters, 48/6=8. BOOK = 4 letters × 8 = 32. <strong>32</strong>? ✅
+PENCIL = 48 might be number of letters × something? 6 letters, 48/6=8. BOOK = 4 letters × 8 = 32. <strong>32</strong>? ✅</p>
 
-<strong>Q18.</strong> 1, 2, 6, 24, 120 → factorials: 1!, 2!, 3!, 4!, 5! → <strong>6! = 720</strong> ✅
+<p><strong>Q18.</strong> 1, 2, 6, 24, 120 → factorials: 1!, 2!, 3!, 4!, 5! → <strong>6! = 720</strong> ✅</p>
 
-<strong>Q19.</strong> 123→ACE: 1→A, 2→B, 3→C. 246→BDF: 2→B, 4→D, 6→F. 369: 3→C, 6→F, 9→I → <strong>CFI</strong> ✅
+<p><strong>Q19.</strong> 123→ACE: 1→A, 2→B, 3→C. 246→BDF: 2→B, 4→D, 6→F. 369: 3→C, 6→F, 9→I → <strong>CFI</strong> ✅</p>
 
-<strong>Q20.</strong> B(2)ZD, E(5)YG, H(8)XJ → first letters: 2,5,8 +3. Last letters: D(4),G(7),J(10) +3. Next: K(11)LM → <strong>KLM</strong>? Wait: first+3, last+3. K(11) + M(?). H(8)→X(24). Next: K(11)→N(14) → <strong>K N?</strong> Wait, pattern: B(2)ZD: first=2, then Z, then D. E(5)YG: 5, Y, G. H(8)XJ: 8, X, J. First: +3. Second: reverse alphabet Z,Y,X,W... Third: D(4),G(7),J(10) → +3. Next: K(11), W(?), M(13) → <strong>KWM</strong> ✅
+<p><strong>Q20.</strong> B(2)ZD, E(5)YG, H(8)XJ → first letters: 2,5,8 +3. Last letters: D(4),G(7),J(10) +3. Next: K(11)LM → <strong>KLM</strong>? Wait: first+3, last+3. K(11) + M(?). H(8)→X(24). Next: K(11)→N(14) → <strong>K N?</strong> Wait, pattern: B(2)ZD: first=2, then Z, then D. E(5)YG: 5, Y, G. H(8)XJ: 8, X, J. First: +3. Second: reverse alphabet Z,Y,X,W... Third: D(4),G(7),J(10) → +3. Next: K(11), W(?), M(13) → <strong>KWM</strong> ✅</p>
 
 <hr />
 
 <h3>🟡 Medium Solutions</h3>
 
-<strong>Q21.</strong> COMB → MCOB: C(3)O(15)M(13)B(2) → reversed: MCOB? Positions: C(3), O(15), M(13), B(2) → first half? C(3), O(15) → M(13), C(3)? No. Split COMB: CO|MB → MB|CO → M(13)B(2)C(3)O(15) → MBCO. But answer is MCOB. Hmm.
+<p><strong>Q21.</strong> COMB → MCOB: C(3)O(15)M(13)B(2) → reversed: MCOB? Positions: C(3), O(15), M(13), B(2) → first half? C(3), O(15) → M(13), C(3)? No. Split COMB: CO|MB → MB|CO → M(13)B(2)C(3)O(15) → MBCO. But answer is MCOB. Hmm.
 COMB → swap first two: OCMB? No. COMB → swap last two: COMB → C(3)O(15)M(13)B(2) → position swap? O(15), C(3), M(13), B(2) → OCMB? MCOB: M(13),C(3),O(15),B(2) = swap pairs? CO→OC, MB→BM? CO|MB → OC|BM → OCMB? No. CO|MB → OC|BM → OCMB? Still not MCOB.
 COMB → MCOB: M(13), C(3), O(15), B(2) = reverse first half? C(3)O(15) → M(13)C(3)O(15)B(2)? No. Swap 1st and 2nd: O(15)C(3)M(13)B(2) = OCMB. Not MCOB.
 Swap 2nd and 3rd: C(3)O(15) → C(3)O(15) → COMB. Already.
 Swap 3rd and 4th: C(3)O(15)M(13)B(2) → COMB → C(3)O(15)B(2)M(13) = COBM. Not.
 Reverse entire: B(2)M(13)O(15)C(3) = BMOC. Not.
-Maybe it's alphabetical order of last two: COMB → CO|MB → MB|CO → MCOB. Yes! So "MB|CO" → M(13)C(3)O(15)B(2) = MCOB. ✅
+Maybe it's alphabetical order of last two: COMB → CO|MB → MB|CO → MCOB. Yes! So "MB|CO" → M(13)C(3)O(15)B(2) = MCOB. ✅</p>
 
-<strong>Q22.</strong> G=7, O=15, O=15, G=7, L=12, E=5 → sum = 7+15+15+7+12+5 = <strong>61</strong> ✅
+<p><strong>Q22.</strong> G=7, O=15, O=15, G=7, L=12, E=5 → sum = 7+15+15+7+12+5 = <strong>61</strong> ✅</p>
 
-<strong>Q23.</strong> Triangular numbers: n(n+1)/2: 1, 3, 6, 10, 15, 21, <strong>28</strong> ✅
+<p><strong>Q23.</strong> Triangular numbers: n(n+1)/2: 1, 3, 6, 10, 15, 21, <strong>28</strong> ✅</p>
 
-<strong>Q24.</strong> F(6)→H(8): +2, R(18)→U(21): +3, I(9)→M(13): +4, E(5)→J(10): +5, N(14)→T(20): +6, D(4)→G(7): +3? No. Pattern: +2, +3, +4, +5, +6, +7? F→H=+2, R→U=+3, I→M=+4, E→J=+5, N→T=+6, D→G=+3? No.
+<p><strong>Q24.</strong> F(6)→H(8): +2, R(18)→U(21): +3, I(9)→M(13): +4, E(5)→J(10): +5, N(14)→T(20): +6, D(4)→G(7): +3? No. Pattern: +2, +3, +4, +5, +6, +7? F→H=+2, R→U=+3, I→M=+4, E→J=+5, N→T=+6, D→G=+3? No.
 Maybe: FRIEND → H|T|?|?|? → H(8)U(21)M(13)J(10)T(20)? No. Given HUMJTG: H(8)U(21)M(13)J(10)T(20)G(7). Differences: +2, +3, +4, +5, +6, +3? G is 7th letter.
 Wait: F→H(+2), R→U(+3), I→M(+4), E→J(+5), N→T(+6), D→G(+3)? D→G=+3. But pattern should be +7 for last? No.
 Maybe reverse: D(4)→G(7) = +3. The increments: 2,3,4,5,6,3. The 6th step is +3, not following the pattern.
@@ -1602,28 +1602,28 @@ Wait — maybe it's not per-letter shift. FRIEND: F+R+I+E+N+D = 6+18+9+5+14+4 = 
 For ENEMY: E(5)+?=H?, N(14)+?=U?, E(5)+?=M?, M(13)+?=J?, Y(25)+?=T? Differences: 12,? Not constant.
 Let's use the per-letter shift pattern: 1:+2,2:+3,3:+4,4:+5,5:+6,6:? E(5)+2=7=G, N(14)+3=17=Q, E(5)+4=9=I, M(13)+5=18=R, Y(25)+6=31→5=E. GQIRE. But that's assuming same shift pattern as FRIEND→HUMJTG. 
 Wait: FRIEND: F(6)+2=H(8), R(18)+3=U(21), I(9)+4=M(13), E(5)+5=J(10), N(14)+6=T(20), D(4)+3=G(7). The last one breaks. Maybe it's a typo in the problem, or the 6th letter uses a different rule.
-If we follow the first 5: E(5)+2=G, N(14)+3=Q, E(5)+4=I, M(13)+5=R, Y(25)+6=31→5=E. ENEMY→GQIRE. ✅
+If we follow the first 5: E(5)+2=G, N(14)+3=Q, E(5)+4=I, M(13)+5=R, Y(25)+6=31→5=E. ENEMY→GQIRE. ✅</p>
 
-<strong>Q25.</strong> 3×4=12 ✓, 5×6=30 (but 5×6=30, not special). 2×7=14 (2×7=14 ✓). Pattern: maybe a×b = a²×b? No. a×b = a²+b? 3²+4=13≠12. a×b = a×(b+?): 3×4=12, 3×4=12 ✓. 5×6=30, 5×6=30 ✓. 2×7=14, 2×7=14 ✓. So it's just multiplication!
-4×5 = <strong>20</strong> ✅
+<p><strong>Q25.</strong> 3×4=12 ✓, 5×6=30 (but 5×6=30, not special). 2×7=14 (2×7=14 ✓). Pattern: maybe a×b = a²×b? No. a×b = a²+b? 3²+4=13≠12. a×b = a×(b+?): 3×4=12, 3×4=12 ✓. 5×6=30, 5×6=30 ✓. 2×7=14, 2×7=14 ✓. So it's just multiplication!
+4×5 = <strong>20</strong> ✅</p>
 
-<strong>Q26.</strong> Letters: A(1),C(3),E(5),G(7) → +2. Numbers: 2,4,6,8 → ×2. Next: I(9), <strong>10</strong> → <strong>I10</strong> ✅
+<p><strong>Q26.</strong> Letters: A(1),C(3),E(5),G(7) → +2. Numbers: 2,4,6,8 → ×2. Next: I(9), <strong>10</strong> → <strong>I10</strong> ✅</p>
 
-<strong>Q27.</strong> D→E(+1), E→F(+1), L→M(+1), H→I(+1), I→J(+1). All +1.
-MUMBAI: M→N, U→V, M→N, B→C, A→B, I→J → <strong>NVNCB J</strong>? No spaces: <strong>NVNC BJ</strong>? M→N, U→V, M→N, B→C, A→B, I→J → <strong>NVNC BJ</strong> ✅
+<p><strong>Q27.</strong> D→E(+1), E→F(+1), L→M(+1), H→I(+1), I→J(+1). All +1.
+MUMBAI: M→N, U→V, M→N, B→C, A→B, I→J → <strong>NVNCB J</strong>? No spaces: <strong>NVNC BJ</strong>? M→N, U→V, M→N, B→C, A→B, I→J → <strong>NVNC BJ</strong> ✅</p>
 
-<strong>Q28.</strong> Primes: 2,3,5,7,11,13,17 → <strong>19</strong> (next prime) ✅
+<p><strong>Q28.</strong> Primes: 2,3,5,7,11,13,17 → <strong>19</strong> (next prime) ✅</p>
 
-<strong>Q29.</strong> APPLE → EPPLA: A→E(+4), P→P(0), P→P(0), L→L(0), E→A(-4). Only first and last shifted. A→E(+4), E→A(-4). So M→Q(+4), U→U(0), M→M(0), B→B(0), A→E(+4)? No.
-A→E: A(1)+4=5=E. Last E→A: E(5)-4=1=A. Middle letters unchanged. So MANGO: M(13)+4=17=Q, A(1)+4=5=E (last), middle unchanged: N(14), G(7), O(15). Wait — MANGO: M→Q, A→E, N→N, G→G, O→O → <strong>QENGO</strong>? But first and last should shift. M(13)+4=17=Q, A(1)+4=5=E. So QENG O? No: M, A, N, G, O. M→Q, A→E, N,G,O unchanged. <strong>QENGO</strong> ✅
+<p><strong>Q29.</strong> APPLE → EPPLA: A→E(+4), P→P(0), P→P(0), L→L(0), E→A(-4). Only first and last shifted. A→E(+4), E→A(-4). So M→Q(+4), U→U(0), M→M(0), B→B(0), A→E(+4)? No.
+A→E: A(1)+4=5=E. Last E→A: E(5)-4=1=A. Middle letters unchanged. So MANGO: M(13)+4=17=Q, A(1)+4=5=E (last), middle unchanged: N(14), G(7), O(15). Wait — MANGO: M→Q, A→E, N→N, G→G, O→O → <strong>QENGO</strong>? But first and last should shift. M(13)+4=17=Q, A(1)+4=5=E. So QENG O? No: M, A, N, G, O. M→Q, A→E, N,G,O unchanged. <strong>QENGO</strong> ✅</p>
 
-<strong>Q30.</strong> A(1)Z(26), C(3)X(24), E(5)V(22), G(7)T(20). Pattern: odd letters forward, even letters backward. Next: I(9)U(19) → <strong>IU</strong> ✅
+<p><strong>Q30.</strong> A(1)Z(26), C(3)X(24), E(5)V(22), G(7)T(20). Pattern: odd letters forward, even letters backward. Next: I(9)U(19) → <strong>IU</strong> ✅</p>
 
-<strong>Q31.</strong> B=2, I=9, R=18, D=4 → 29184. F=6, I=9, S=19, H=8 → 6198. H=8, O=15, R=18, S=19, E=5 → <strong>815195</strong> ✅
+<p><strong>Q31.</strong> B=2, I=9, R=18, D=4 → 29184. F=6, I=9, S=19, H=8 → 6198. H=8, O=15, R=18, S=19, E=5 → <strong>815195</strong> ✅</p>
 
-<strong>Q32.</strong> 5,11,23,47,95 → each ×2+1: 5×2+1=11, 11×2+1=23, 23×2+1=47, 47×2+1=95, 95×2+1=<strong>191</strong> ✅
+<p><strong>Q32.</strong> 5,11,23,47,95 → each ×2+1: 5×2+1=11, 11×2+1=23, 23×2+1=47, 47×2+1=95, 95×2+1=<strong>191</strong> ✅</p>
 
-<strong>Q33.</strong> R→S(+1), A→J(+9), I→J(+? Pattern?), N→Q(+?): R(18)+1=19=S, A(1)+?=10=J→+9, I(9)+?=10=J→+1? No. N(14)+5=19? Not consistent.
+<p><strong>Q33.</strong> R→S(+1), A→J(+9), I→J(+? Pattern?), N→Q(+?): R(18)+1=19=S, A(1)+?=10=J→+9, I(9)+?=10=J→+1? No. N(14)+5=19? Not consistent.
 Maybe: R(18)→S(19)=+1, A(1)→J(10)=+9, I(9)→J(10)=+1, N(14)→Q(17)=+3. No pattern.
 Maybe reverse: R(18)→S(19)=+1, A(1)→J(10)=+9, I(9)→J(10)=+1, N(14)→Q(17)=+3. No.
 CLOUD: C(3)+?→?, O(15)+?→?, L(12)+?→?, U(21)+?→?, D(4)+?→?.
@@ -1636,14 +1636,14 @@ Let's use the reverse alphabet pairs: R→I, A→Z, I→R, N→M. SJJQ doesn't m
 Maybe: R(18)→19=S (+1), A(1)→10=J (+9), I(9)→10=J (+1), N(14)→17=Q (+3). The increments: +1, +9, +1, +3. Second is +9 (close to +1 but ×9), fourth is +3. Maybe +1, +9, +1, +3 → pattern: ×9, ×1, ×3? No.
 Let's assume the pattern is: +1, +9, +1, +3. Apply to CLOUD: C(3)+1=4=D, O(15)+9=24=X, L(12)+1=13=M, U(21)+3=24=X, D(4)+?=?. Wait, only 5 letters. Pattern: +1, +9, +1, +3, ? Fifth: maybe +? CLOUD: C(3)+1=4=D, O(15)+9=24=X, L(12)+1=13=M, U(21)+3=24=X, D(4)+9=13=M? Or +1? C→D(+1), O→X(+9), L→M(+1), U→X(+3), D→E(+1). Not consistent.
 Let's try: R→S(+1), A→J(A+9), I→J(I+1), N→Q(N+3). Pattern: +1, +9, +1, +3. 
-CLOUD: C→D(+1), O→X(O+9), L→M(L+1), U→?(U+3=U+3=24=X), D→?(D+9=4+9=13=M). <strong>DXMXM</strong> ✅
+CLOUD: C→D(+1), O→X(O+9), L→M(L+1), U→?(U+3=U+3=24=X), D→?(D+9=4+9=13=M). <strong>DXMXM</strong> ✅</p>
 
-<strong>Q34.</strong> 1=1³, 4=2², 27=3³, 16=4², 125=5³, ?=6²=<strong>36</strong> ✅
+<p><strong>Q34.</strong> 1=1³, 4=2², 27=3³, 16=4², 125=5³, ?=6²=<strong>36</strong> ✅</p>
 
-<strong>Q35.</strong> T→U(+1), A→B(+1), B→C(+1), L→M(+1), E→F(+1). All +1.
-CHAIR: C→D, H→I, A→B, I→J, R→S → <strong>DIBJS</strong> ✅
+<p><strong>Q35.</strong> T→U(+1), A→B(+1), B→C(+1), L→M(+1), E→F(+1). All +1.
+CHAIR: C→D, H→I, A→B, I→J, R→S → <strong>DIBJS</strong> ✅</p>
 
-<strong>Q36.</strong> 2, 6, 30, 260 → 2×1=2, 3×2=6, 5×6=30, 9×? Pattern: ×1, ×2, ×3, ×4, ×5: 9×26=234? 260/30=8.67. 30/6=5, 6/2=3. Not constant multiplier.
+<p><strong>Q36.</strong> 2, 6, 30, 260 → 2×1=2, 3×2=6, 5×6=30, 9×? Pattern: ×1, ×2, ×3, ×4, ×5: 9×26=234? 260/30=8.67. 30/6=5, 6/2=3. Not constant multiplier.
 Maybe: n^n - n: 1¹-1=0, 2²-2=2, 3³-3=24, 4⁴-4=252, 5⁵-5=3120. Not matching.
 Maybe: n! + n: 1!+1=2, 2!+2=4, 3!+3=9, 4!+4=28, 5!+5=125. Not 2,6,30,260.
 2×1=2, 3×2=6, 5×6=30, 9×? Next base = 2,3,5,9: pattern ×? 2×3=6, 3×5=15, 5×9=45. 9×29=261≈260. Or 2×1=2, 3×2=6, 5×6=30, 9×(30-?).
@@ -1677,27 +1677,27 @@ Maybe: 2=1!+1, 2!=2, 3!+6=30? 6+24=30 ✓, 4!+?=260? 24+?=260, 4!+236=260. No.
 Maybe: 1²+1=2, 2²+2=6, 3²+21=30, 4²+244=260. No.
 2=2, 6=6, 30=30, 260=260. These are numbers with exactly 2 factors? No.
 Try: 2=2, 6=2×3, 30=2×3×5, 260=2×2×5×13. 2,3,5,13 → next prime 17. 260×17=4420? Not.
-Maybe: 2, 6, 30, 260 = 2^1-0, 2^2+2, 3^3+3, 4^4+4. 2^1=2, 2^2=4+2=6, 3^3=27+3=30, 4^4=256+4=260. Pattern: n^n + n: 1¹+1=2, 2²+2=6, 3³+3=30, 4⁴+4=260, 5⁵+5=3120+5=3125. <strong>3125</strong> ✅
+Maybe: 2, 6, 30, 260 = 2^1-0, 2^2+2, 3^3+3, 4^4+4. 2^1=2, 2^2=4+2=6, 3^3=27+3=30, 4^4=256+4=260. Pattern: n^n + n: 1¹+1=2, 2²+2=6, 3³+3=30, 4⁴+4=260, 5⁵+5=3120+5=3125. <strong>3125</strong> ✅</p>
 
-<strong>Q37.</strong> M=13, A=1, S=19, T=20, E=5, R=18. Positions: 13,1,19,20,5,18 → 1123218. S=19, L=12, A=1, V=22, E=5 → 19,12,1,22,5 → <strong>19122105</strong> ✅
+<p><strong>Q37.</strong> M=13, A=1, S=19, T=20, E=5, R=18. Positions: 13,1,19,20,5,18 → 1123218. S=19, L=12, A=1, V=22, E=5 → 19,12,1,22,5 → <strong>19122105</strong> ✅</p>
 
-<strong>Q38.</strong> A(1),C(3),F(6),J(10),O(15) → differences: +2,+3,+4,+5 → next +6. O(15)+6=<strong>U(21)</strong> ✅
+<p><strong>Q38.</strong> A(1),C(3),F(6),J(10),O(15) → differences: +2,+3,+4,+5 → next +6. O(15)+6=<strong>U(21)</strong> ✅</p>
 
-<strong>Q39.</strong> 1234→PLAY: 1→P, 2→L, 3→A, 4→Y. 5678→GAME: 5→G, 6→A, 7→M, 8→E. 1523: 1→P, 5→G, 2→L, 3→A → <strong>PLAG</strong>? Wait: 1→P, 5→G, 2→L, 3→A → <strong>PGLA</strong> ✅
+<p><strong>Q39.</strong> 1234→PLAY: 1→P, 2→L, 3→A, 4→Y. 5678→GAME: 5→G, 6→A, 7→M, 8→E. 1523: 1→P, 5→G, 2→L, 3→A → <strong>PLAG</strong>? Wait: 1→P, 5→G, 2→L, 3→A → <strong>PGLA</strong> ✅</p>
 
-<strong>Q40.</strong> Fibonacci: 1+1=2, 1+2=3, 2+3=5, 3+5=8, 5+8=13, 8+13=<strong>21</strong> ✅
+<p><strong>Q40.</strong> Fibonacci: 1+1=2, 1+2=3, 2+3=5, 3+5=8, 5+8=13, 8+13=<strong>21</strong> ✅</p>
 
 <hr />
 
 <h3>🟠 Hard Solutions</h3>
 
-<strong>Q41.</strong> OWL: 15+23+12=50. CAT: 3+1+20=24. ZEBRA: 26+5+2+18+1=52. DOG: 4+15+7=26. <strong>ZEBRA = 52</strong> ✅
+<p><strong>Q41.</strong> OWL: 15+23+12=50. CAT: 3+1+20=24. ZEBRA: 26+5+2+18+1=52. DOG: 4+15+7=26. <strong>ZEBRA = 52</strong> ✅</p>
 
-<strong>Q42.</strong> SENDY: S=9, E=5, N=6, D=7, Y=2 → <strong>95672</strong> ✅
+<p><strong>Q42.</strong> SENDY: S=9, E=5, N=6, D=7, Y=2 → <strong>95672</strong> ✅</p>
 
-<strong>Q43.</strong> 2,3,5,7,11,13,17 → primes. Next prime after 17 is <strong>19</strong> ✅
+<p><strong>Q43.</strong> 2,3,5,7,11,13,17 → primes. Next prime after 17 is <strong>19</strong> ✅</p>
 
-<strong>Q44.</strong> RAINBOW→TBKPCQX: R(18)+1=19=S, A(1)+9=10=J, I(9)+1=10=J, N(14)+3=17=Q, B(2)+? B(2)+?=T(20)→+18? No. O(15)+? O(15)+?=K(11)→-4, W(23)+?=X(24)→+1. No consistent pattern.
+<p><strong>Q44.</strong> RAINBOW→TBKPCQX: R(18)+1=19=S, A(1)+9=10=J, I(9)+1=10=J, N(14)+3=17=Q, B(2)+? B(2)+?=T(20)→+18? No. O(15)+? O(15)+?=K(11)→-4, W(23)+?=X(24)→+1. No consistent pattern.
 Let's recheck: R→T(+2), A→B(+1), I→K(+3), N→P(+2), B→C(+1), O→Q(+2), W→X(+1). Alternating +2,+1. So Y→A(+2), L→M(+1) → YLCJCN→WMDKLO? CLOUD? Wait.
 R→T(+2), A→B(+1), I→K(+3), N→P(+2), B→C(+1), O→Q(+2), W→X(+1). Alternating +2,+1.
 Decode YLCJCN: Y(25)+2=27→A? 25+2=27≡1=A. L(12)+1=13=M. C(3)+2=5=E. J(10)+1=11=K. C(3)+2=5=E. N(14)+1=15=O. <strong>AMEKEN</strong>? Doesn't spell. Y→A(-2)? 25-2=23=W. L-1=11=K. C-2=1=A. J-1=I. C-2=A. N-1=M. <strong>WAKIAM</strong>? No.
@@ -1730,23 +1730,23 @@ Let me just decode the last word: Y(25)+2=27→1=A, L(12)+1=13=M, C(3)+2=5=E, J(
 Wait: Y+2=A, L+1=M, C+2=E, J+1=K, C+2=E, N+1=O. <strong>AMEKEO</strong>. Close to AMEND? No.
 Try: RAINBOW: maybe it's +2,+1,-2,+1,-2,+1,-2 pattern? No.
 The answer is most likely <strong>WORK</strong> using ROT13-like: R→E? No. <strong>WAKIAM</strong>?
-Given the time, I'll state: The decoded word is <strong>WORK</strong> (using the identified pattern of +2 for consonants, +1 for vowels). ✅
+Given the time, I'll state: The decoded word is <strong>WORK</strong> (using the identified pattern of +2 for consonants, +1 for vowels). ✅</p>
 
-<strong>Q45.</strong> S(19)→Q(17) [S is consonant → -2], T(20)→R(18) [T is consonant → -2], R(18)→P(16) [R is consonant → -2], O(15)→P(16) [O is vowel → +1], N(14)→L(12) [N is consonant → -2], G(7)→E(5) [G is consonant → -2]. Wait, O→P is +1 (vowel → next letter). But in this problem, consonants → previous (-1?) Let's use consonant → -2, vowel → +1.
+<p><strong>Q45.</strong> S(19)→Q(17) [S is consonant → -2], T(20)→R(18) [T is consonant → -2], R(18)→P(16) [R is consonant → -2], O(15)→P(16) [O is vowel → +1], N(14)→L(12) [N is consonant → -2], G(7)→E(5) [G is consonant → -2]. Wait, O→P is +1 (vowel → next letter). But in this problem, consonants → previous (-1?) Let's use consonant → -2, vowel → +1.
 Actually: "consonants are coded as previous letter and vowels as next letter"
-Consonant → previous: S→R, T→S, R→Q, N→M, G→F. Wait: O is vowel → next = P. So STRONG: S→R, T→S, R→Q, O→P, N→M, G→F → <strong>RSQPMF</strong> ✅
+Consonant → previous: S→R, T→S, R→Q, N→M, G→F. Wait: O is vowel → next = P. So STRONG: S→R, T→S, R→Q, O→P, N→M, G→F → <strong>RSQPMF</strong> ✅</p>
 
-<strong>Q46.</strong> 0,1,1,2,4,7,13,24,? → a(n) = a(n-1) + a(n-2) + a(n-3): 4+2+1=7 ✓, 7+4+2=13 ✓, 13+7+4=24 ✓, next = 24+13+7=<strong>44</strong> ✅
+<p><strong>Q46.</strong> 0,1,1,2,4,7,13,24,? → a(n) = a(n-1) + a(n-2) + a(n-3): 4+2+1=7 ✓, 7+4+2=13 ✓, 13+7+4=24 ✓, next = 24+13+7=<strong>44</strong> ✅</p>
 
-<strong>Q47.</strong> CAT = 3+1+20=24. DOG = 4+15+7=26. FOX: F=6, O=15, X=24. F+6? Or F²+O+X? 36+15+24=75. F+O+X=45. F×O+X=6×15+24=90+24=114. F^2+O^2+X^2=36+225+576=837. No.
+<p><strong>Q47.</strong> CAT = 3+1+20=24. DOG = 4+15+7=26. FOX: F=6, O=15, X=24. F+6? Or F²+O+X? 36+15+24=75. F+O+X=45. F×O+X=6×15+24=90+24=114. F^2+O^2+X^2=36+225+576=837. No.
 Maybe alphabetical product? C×A×T=3×1×20=60. D×O×G=4×15×7=420. F×O×X=6×15×24=2160. No.
 Maybe cubes: C³+A³+T³=27+1+8000=8028. No.
 Maybe reverse position: X+C+Z? 24+3+26=53. D+U+G=4+21+7=32. F+U+L=6+21+12=39? No.
 CAT=24, DOG=26, FOX=? Difference: +2. So FOX = <strong>39</strong>? Wait.
 Maybe: C(3)×A(1)×T(20)=60, D(4)×O(15)×G(7)=420. 60×7=420. So PIG = C(3)×A(1)×G(7)×7? No. P×I×G ×7 = 16×9×7×7 = 7056.
-PIG: P=16, I=9, G=7. Sum = 32. PIG = <strong>39</strong>? ✅
+PIG: P=16, I=9, G=7. Sum = 32. PIG = <strong>39</strong>? ✅</p>
 
-<strong>Q48.</strong> T(20)→U(21)=+1, I(9)→H(8)=-1, G(7)→E(5)=-2, E(5)→R(18)=+13? No. T+1=U, I-1=H, G-2=E, E+?=R(18)→+13. No.
+<p><strong>Q48.</strong> T(20)→U(21)=+1, I(9)→H(8)=-1, G(7)→E(5)=-2, E(5)→R(18)=+13? No. T+1=U, I-1=H, G-2=E, E+?=R(18)→+13. No.
 T+1=U, I-1=H, G-1=F? G(7)→E(5)=-2. E+13=R(18). No pattern.
 Maybe position sum: TIGER=20+9+7+5+18=59. UIHFS=21+9+8+6+19=63. Difference=+4.
 T→U+? T(20)+1=U(21). I(9)+0=I? No I→H(-1). G(7)-2=E(5). E(5)-?R. Pattern: +1,-1,-2,-13.
@@ -1759,15 +1759,15 @@ Given the difficulty: TIGER→UIHFS. T→U(+1), I→H(-1), G→F(-2), E→S(+14�
 Actually E→S: E(5)→S(19) = +14 ≡ -12. R(18)→?=R+(-12)=6=F? But S(19) is the last. So last should be F? R→F(-12)=6. So HORSE→? H+1=I, O-1=N, R-2=P, S+14=B, E-12=C? <strong>INPBC</strong>? 
 This problem has no clean pattern. The most likely intended answer based on similar problems: Each letter is shifted by its position in the word: 1:T+1=U, 2:I-1=H, 3:G+? F(6), 4:E+13=S, 5:R+? S(19). 
 Maybe: T+1, I+0? No.
-The answer is <strong>IPSHC</strong> or similar. ✅
+The answer is <strong>IPSHC</strong> or similar. ✅</p>
 
-<strong>Q49.</strong> Look-and-say: 1→"1"=1, 11→"two 1s"=21, 21→"one 2, one 1"=1211, 111221→"three 1s, two 2s, one 1"=<strong>312211</strong> ✅
+<p><strong>Q49.</strong> Look-and-say: 1→"1"=1, 11→"two 1s"=21, 21→"one 2, one 1"=1211, 111221→"three 1s, two 2s, one 1"=<strong>312211</strong> ✅</p>
 
-<strong>Q50.</strong> MASTER→MASTRE: swap last two letters. SLAVE → swap last two: <strong>SAVLE</strong> ✅
+<p><strong>Q50.</strong> MASTER→MASTRE: swap last two letters. SLAVE → swap last two: <strong>SAVLE</strong> ✅</p>
 
-<strong>Q51.</strong> 3,4,7,11,18,29,? → Fibonacci-like: 3+4=7, 4+7=11, 7+11=18, 11+18=29, 18+29=<strong>47</strong> ✅
+<p><strong>Q51.</strong> 3,4,7,11,18,29,? → Fibonacci-like: 3+4=7, 4+7=11, 7+11=18, 11+18=29, 18+29=<strong>47</strong> ✅</p>
 
-<strong>Q52.</strong> KITE→LLJV: K(11)+1=12=L, I(9)+1=10=J? No. K→L(+1), I→L(9+?K is 11): 11→L=+1. T→V(+2), E→J(-4?). No.
+<p><strong>Q52.</strong> KITE→LLJV: K(11)+1=12=L, I(9)+1=10=J? No. K→L(+1), I→L(9+?K is 11): 11→L=+1. T→V(+2), E→J(-4?). No.
 KITE→LLJV: K(11)→L(12)=+1, I(9)→L(12)=+3, T(20)→V(22)=+2, E(5)→J(10)=+5. Differences: 1,3,2,5.
 BIRD→CJSE: B(2)→C(3)=+1, I(9)→J(10)=+1, R(18)→S(19)=+1, D(4)→E(5)=+1. All +1. But BIRD is given as CJSE. B→C=+1, I→J=+1, R→S=+1, D→E=+1. So it's +1 for all. But KITE→LLJV has K→L=+1, I→L=+3, T→V=+2, E→J=+5. Not +1.
 Maybe: K(11)→L(12)=+1, I(9)→L(12)=+3, T(20)→V(22)=+2, E(5)→J(10)=+5. Pattern: differences: 1,3,2,5. Not simple.
@@ -1785,54 +1785,54 @@ Apply to FISH: F(6), I(9), S(19), H(8). Adds: 1,3,2,5 → F+1=G(7), I+3=L(12), S
 Try: F+1=G, I+1=J? But I→L in KITE is +3, not +1. So F→? depends.
 Maybe BIRD and KITE use different codes. BIRD→+1 all. KITE→K+1=L, I+? L, T+? V, E+? J.
 K+1=L. T+2=V. I→L (9+3). E→J (5+5). Adds: 1,3,2,5.
-FISH: F(6)+1=G(7), I(9)+3=L(12), S(19)+2=U(21), H(8)+5=M(13) → <strong>GLUM</strong> ✅
+FISH: F(6)+1=G(7), I(9)+3=L(12), S(19)+2=U(21), H(8)+5=M(13) → <strong>GLUM</strong> ✅</p>
 
-<strong>Q53.</strong> A(1),Z(26),D(4),Y(25),G(7),X(24) → pattern: 1,26,4,25,7,24. Differences: +25,-22,+21,-18,+17. Alternating large positive, negative decreasing.
-Next: -? pattern in differences: +25, -22, +21, -18, +17. Next: -14. 24-14=10 → <strong>J(10)</strong> ✅
+<p><strong>Q53.</strong> A(1),Z(26),D(4),Y(25),G(7),X(24) → pattern: 1,26,4,25,7,24. Differences: +25,-22,+21,-18,+17. Alternating large positive, negative decreasing.
+Next: -? pattern in differences: +25, -22, +21, -18, +17. Next: -14. 24-14=10 → <strong>J(10)</strong> ✅</p>
 
-<strong>Q54.</strong> PALE→2134: P=16→2, A=1→1, L=12→3, E=5→4. Not direct position.
+<p><strong>Q54.</strong> PALE→2134: P=16→2, A=1→1, L=12→3, E=5→4. Not direct position.
 PALE: positions: 16,1,12,5 → 2,1,3,4. LEAP: 12,5,1,16 → 3,4,1,2. PLEA: 16,12,5,1 → ? PLEA should be: P(16)→4? E(5)→3? L(12)→1? A(1)→2? → 4,3,1,2. Given PLEA→2413. 16→4✓, 12→1? 12→1? PALE: P=2, A=1, L=3, E=4. So P→2, A→1, L→3, E→4.
 LEAP: L=3, E=4, A=1, P=2 → 3412. Given 4312. Wait, LEAP given is 4312. So L→4, E→3, A→1, P→2. But PALE: P=2, A=1, L=3, E=4. Conflict: L=3 in PALE but L=4 in LEAP.
 PALE: positions 16,1,12,5 → digits 2,1,3,4 (map to 1-4 scale). LEAP: 12,5,1,16 → 3,4,1,2. PLEA: 16,12,5,1 → should be 2,3,4,1? 16→2, 12→3, 5→4, 1→1 → 2341. Given 2413. 
-Wait, PLEA given as 2413 in problem. So 16→2✓, 12→4? 5→1? 1→3? → 2413. <strong>2413</strong> ✅
+Wait, PLEA given as 2413 in problem. So 16→2✓, 12→4? 5→1? 1→3? → 2413. <strong>2413</strong> ✅</p>
 
-<strong>Q55.</strong> 1³, 2³, 3³, 4³, 5³, 6³ → <strong>7³ = 343</strong> ✅
+<p><strong>Q55.</strong> 1³, 2³, 3³, 4³, 5³, 6³ → <strong>7³ = 343</strong> ✅</p>
 
-<strong>Q56.</strong> MASTER:MASTRE — swap last two letters. SLAVE → <strong>SAVLE</strong> ✅
+<p><strong>Q56.</strong> MASTER:MASTRE — swap last two letters. SLAVE → <strong>SAVLE</strong> ✅</p>
 
-<strong>Q57.</strong> 101,103,107,109,113 → prime numbers starting from 101. Next prime: <strong>127</strong> ✅
+<p><strong>Q57.</strong> 101,103,107,109,113 → prime numbers starting from 101. Next prime: <strong>127</strong> ✅</p>
 
-<strong>Q58.</strong> A=1→1, B=3, C=5, D=7 (odd numbers). So G=13, O=15, O=15, G=13, L=11, E=5 → <strong>131513115</strong>? Wait. G=2×7-1=13, O=2×8-1=15, L=2×12-1=23, E=2×5-1=9. GOOGLE: G=13, O=15, O=15, G=13, L=23, E=9 → <strong>131523159</strong> ✅
+<p><strong>Q58.</strong> A=1→1, B=3, C=5, D=7 (odd numbers). So G=13, O=15, O=15, G=13, L=11, E=5 → <strong>131513115</strong>? Wait. G=2×7-1=13, O=2×8-1=15, L=2×12-1=23, E=2×5-1=9. GOOGLE: G=13, O=15, O=15, G=13, L=23, E=9 → <strong>131523159</strong> ✅</p>
 
-<strong>Q59.</strong> 2,5,10,17,26,37,? → differences: 3,5,7,9,11 → next diff = 13. 37+13=<strong>50</strong>. Formula: n²+1: 1²+1=2, 2²+1=5, 3²+1=10, 4²+1=17, 5²+1=26, 6²+1=37, 7²+1=<strong>50</strong> ✅
+<p><strong>Q59.</strong> 2,5,10,17,26,37,? → differences: 3,5,7,9,11 → next diff = 13. 37+13=<strong>50</strong>. Formula: n²+1: 1²+1=2, 2²+1=5, 3²+1=10, 4²+1=17, 5²+1=26, 6²+1=37, 7²+1=<strong>50</strong> ✅</p>
 
-<strong>Q60.</strong> CLOUD=59421: C=3→5? L=12→9? O=15→4? U=21→2? D=4→1. Pattern: C(3)+2=5, L(12)-3=9, O(15)-11=4, U(21)-19=2, D(4)-3=1. No.
+<p><strong>Q60.</strong> CLOUD=59421: C=3→5? L=12→9? O=15→4? U=21→2? D=4→1. Pattern: C(3)+2=5, L(12)-3=9, O(15)-11=4, U(21)-19=2, D(4)-3=1. No.
 CLOUD→59421: C→5, L→9, O→4, U→2, D→1. BLOOD→51212: B→5, L→1, O→2, O→1, D→2.
 B→5, C→5. L→9 and L→1. Conflict! Unless L has two codes.
 Maybe CLOUD and BLOOD share no common letters? C,L,O,U,D and B,L,O,O,D. Shared: L,O,D. L=9 in CLOUD, L=1 in BLOOD. Contradiction.
 Maybe the code is per position in the word, not per letter: CLOUD (5 letters): 5,9,4,2,1. BLOOD (5 letters): 5,1,2,1,2. Pattern: first position →5, last position→1 or 2? No.
 Maybe: CLOUD: C=3→5, L=12→9, O=15→4, U=21→2, D=4→1. BLOOD: B=2→5, L=12→1, O=15→2, O→1, D→4→2. C→5, B→5. L→9 and L→1. Impossible unless CLOUD and BLOOD use different code schemes.
 Maybe it's a direct substitution: C=5, L=9, O=4, U=2, D=1, B=5, O=2 (O is 4 in CLOUD, 2 in BLOOD — inconsistent).
-<strong>Insufficient data</strong> for consistent coding. ✅
+<strong>Insufficient data</strong> for consistent coding. ✅</p>
 
 <hr />
 
 <h3>🔴 Product-Level Solutions</h3>
 
-<strong>Q61.</strong> Magic square 3×3 (Lo Shu): 8,1,6 / 3,5,7 / 4,9,2. A=1,B=2,C=3... Position (2,2) = <strong>5</strong> (center) = E. ✅
+<p><strong>Q61.</strong> Magic square 3×3 (Lo Shu): 8,1,6 / 3,5,7 / 4,9,2. A=1,B=2,C=3... Position (2,2) = <strong>5</strong> (center) = E. ✅</p>
 
-<strong>Q62.</strong> SENDY: S=9, E=5, N=6, D=7, Y=2 → <strong>95672</strong> ✅
+<p><strong>Q62.</strong> SENDY: S=9, E=5, N=6, D=7, Y=2 → <strong>95672</strong> ✅</p>
 
-<strong>Q63.</strong> ROT13 decode: J→W, R→E, E→R, R→E, A→N, F→S, V→I, G→T, R→E → <strong>WEENRSITE</strong> → <strong>WRITING</strong> (fixing the R pattern: W-E-E-R-N-S-I-T-E = WERE WRITING → <strong>WRITING</strong>). ✅
+<p><strong>Q63.</strong> ROT13 decode: J→W, R→E, E→R, R→E, A→N, F→S, V→I, G→T, R→E → <strong>WEENRSITE</strong> → <strong>WRITING</strong> (fixing the R pattern: W-E-E-R-N-S-I-T-E = WERE WRITING → <strong>WRITING</strong>). ✅</p>
 
-<strong>Q64.</strong> Van Eck sequence: a(1)=1. a(2)=2-1=1. a(3)=3-1=2. a(4)=4-2=2. a(5)=5-2=3. a(6)=6-2=4. a(7)=7-4=3. a(8)=8-3=5. a(9)=9-3=6. a(10)=10-5=5. Sequence: 1,1,2,2,3,4,3,5,6,5... ✅
+<p><strong>Q64.</strong> Van Eck sequence: a(1)=1. a(2)=2-1=1. a(3)=3-1=2. a(4)=4-2=2. a(5)=5-2=3. a(6)=6-2=4. a(7)=7-4=3. a(8)=8-3=5. a(9)=9-3=6. a(10)=10-5=5. Sequence: 1,1,2,2,3,4,3,5,6,5... ✅</p>
 
-<strong>Q65.</strong> ACE: A(1)→1+1=2→B, C(3)→3+3=6→F, E(5)→5+5=10→J → BFJ. Decode DMX: D(4)→? D is 4th letter, so 4-4=0→wrap to Z? Or subtract position from letter: D-1=C? Or position minus n: 4-n=? DMX: D is 1st letter? Wait.
-Word = DMX. D(1), M(2), X(3). Each letter is shifted by its position: D+1=E, M+2=O, X+3=A (wrap) → <strong>EOA</strong>. ✅
+<p><strong>Q65.</strong> ACE: A(1)→1+1=2→B, C(3)→3+3=6→F, E(5)→5+5=10→J → BFJ. Decode DMX: D(4)→? D is 4th letter, so 4-4=0→wrap to Z? Or subtract position from letter: D-1=C? Or position minus n: 4-n=? DMX: D is 1st letter? Wait.
+Word = DMX. D(1), M(2), X(3). Each letter is shifted by its position: D+1=E, M+2=O, X+3=A (wrap) → <strong>EOA</strong>. ✅</p>
 
-<strong>Q66.</strong> a(n) = a(n-1) + 2a(n-2), a(1)=1, a(2)=2. a(3)=2+2×1=4, a(4)=4+2×2=8, a(5)=8+2×4=16, a(6)=16+2×8=32, a(7)=32+2×16=64, a(8)=64+2×32=<strong>128</strong>. Closed form: r²=r+2 → r=(1±√9)/2=2,-1. a(n)=A·2ⁿ⁻¹+B·(-1)ⁿ⁻¹. Using a(1)=1: A·2⁰+B·(-1)⁰=A+B=1. a(2)=2: A·2¹+B·(-1)¹=2A-B=2. Solve: A+B=1, 2A-B=2 → 3A=3 → A=1, B=0. So a(n)=<strong>2ⁿ⁻¹</strong>. ✅
+<p><strong>Q66.</strong> a(n) = a(n-1) + 2a(n-2), a(1)=1, a(2)=2. a(3)=2+2×1=4, a(4)=4+2×2=8, a(5)=8+2×4=16, a(6)=16+2×8=32, a(7)=32+2×16=64, a(8)=64+2×32=<strong>128</strong>. Closed form: r²=r+2 → r=(1±√9)/2=2,-1. a(n)=A·2ⁿ⁻¹+B·(-1)ⁿ⁻¹. Using a(1)=1: A·2⁰+B·(-1)⁰=A+B=1. a(2)=2: A·2¹+B·(-1)¹=2A-B=2. Solve: A+B=1, 2A-B=2 → 3A=3 → A=1, B=0. So a(n)=<strong>2ⁿ⁻¹</strong>. ✅</p>
 
-<strong>Q67.</strong> WORDS(5)→135, SENTENCE(8)→72910. 5 letters→3 digits? 8 letters→5 digits? 5→3, 8→5. 5-2=3, 8-3=5. Next subtract 3? 7-3=4. LETTERS(7)→4 digits → <strong>7234</strong>? Or based on vowels: WORDS has 1 vowel → 1, consonants → 4? 1,4→14? No. 135: 1,3,5 are odd numbers ≤5? No.
+<p><strong>Q67.</strong> WORDS(5)→135, SENTENCE(8)→72910. 5 letters→3 digits? 8 letters→5 digits? 5→3, 8→5. 5-2=3, 8-3=5. Next subtract 3? 7-3=4. LETTERS(7)→4 digits → <strong>7234</strong>? Or based on vowels: WORDS has 1 vowel → 1, consonants → 4? 1,4→14? No. 135: 1,3,5 are odd numbers ≤5? No.
 WORDS→135: W(23)O(15)R(18)D(4)S(19). Sum=79. Not 135. 135=1,3,5 → odd positions? W(1),O(2),R(3),S(4): odd: W,R →23,18 →2+3,1+8=3,5. 2,3,5→135. SENTENCE(8): S(1),E(2),N(3),T(4),E(5),N(6),C(7),E(8): odd: S(19),N(14),E(5),C(3),E(5) →2+0? Sum: 19+14+5+3+5=46. Not 72910. 
 Maybe position of vowels? WORDS: O=15→1+5=6? No. 
 WORDS→135: W=23→2+3=5, O=15→1+5=6, R=18→1+8=9, D=4→4, S=19→2+0=1? 5,6,9,4,1 → not 135.
@@ -1854,20 +1854,20 @@ WORDS: 23,15,18,4,19. 1,3,5→23,18,4→2+3,1+8,4→5,9,4→594. Not 135.
 Maybe: positions of letters in word that are prime? WORDS: D=4(prime), S=19(prime). Positions: 4th and ? No.
 Maybe: WORDS→135: W(1), O(2), R(3), D(4), S(5): 1,3,5→1st(W=23),3rd(R=18),5th(S=19)→23→2,18→9,19→1→291. No.
 1,3,5 could be 1,3,5th letters of ALPHABET: A,C,E → A=1,C=3,E=5. WORDS: W=23,A=1,C=3,E=5? No.
-The answer is most likely: <strong>LETTERS → 57139</strong> (based on 5th, 7th, etc. pattern). Given the complexity, the answer is <strong>57139</strong>. ✅
+The answer is most likely: <strong>LETTERS → 57139</strong> (based on 5th, 7th, etc. pattern). Given the complexity, the answer is <strong>57139</strong>. ✅</p>
 
-<strong>Q68.</strong> Grid: A1,B2,C3,D4,E5,F6,G7,H8,I9,J0, then repeat. 100 mod 10 = 0 → J. <strong>J</strong> ✅
+<p><strong>Q68.</strong> Grid: A1,B2,C3,D4,E5,F6,G7,H8,I9,J0, then repeat. 100 mod 10 = 0 → J. <strong>J</strong> ✅</p>
 
-<strong>Q69.</strong> Position squares: W(23)²=529, O(15)²=225, R(18)²=324, K(11)²=121. Code: 529225324121. Multiple interpretations possible. <strong>529225324121</strong> is the most logical (concatenated squares). ✅
+<p><strong>Q69.</strong> Position squares: W(23)²=529, O(15)²=225, R(18)²=324, K(11)²=121. Code: 529225324121. Multiple interpretations possible. <strong>529225324121</strong> is the most logical (concatenated squares). ✅</p>
 
-<strong>Q70.</strong> Binary: 00001(A),10000(T),10000(T),01011(K),00101(E). Concatenated: 00001100001000000101100101. Read as decimal: 11000010000100101100101 = 11000010000100101100101. As decimal: 11000010000100101100101₂ = 197268853. 197268853 → what word?
+<p><strong>Q70.</strong> Binary: 00001(A),10000(T),10000(T),01011(K),00101(E). Concatenated: 00001100001000000101100101. Read as decimal: 11000010000100101100101 = 11000010000100101100101. As decimal: 11000010000100101100101₂ = 197268853. 197268853 → what word?
 26=11010. A=1→00001. T=20→10100. T=10100. K=11→01011. E=5→00101. 00001|10100|10100|01011|00101. If we read the binary as: the 1s represent letters by position in the binary string.
 197268853 in binary = 1011110010101110010010101? No.
 As decimal: 197268853. Divide by 26? Too complex.
 Most likely: the binary string grouped as 5-bit: 00001,10000,10000,01011,00101 → A,T,T,K,E → <strong>ATTKE</strong>? Or <strong>APPLE</strong> with error.
 If read as 5-bit groups: 00001=1=A, 10000=16=P, 10000=16=P, 01011=11=K, 00101=5=E. <strong>AAPKE</strong>? Not.
 The original 5-letter binary of APPLE: A=00001, P=10000(16), P=10000, L=01011(11), E=00101(5). But the concatenated is: 00001 10000 10000 01011 00101 = decimal 11000010000100101100101. This decodes to <strong>ATTKE</strong> if we map wrong. 
-The answer is: <strong>APPLE</strong> (with one bit flipped in transmission — K instead of L in position 4). ✅
+The answer is: <strong>APPLE</strong> (with one bit flipped in transmission — K instead of L in position 4). ✅</p>
 
 <hr />
 
@@ -1894,14 +1894,13 @@ The answer is: <strong>APPLE</strong> (with one bit flipped in transmission — 
 <table><thead><tr><th>Target</th><th>Verdict</th><th>Reasoning</th></tr></thead><tbody><tr><td><strong>TCS/Infosys/Wipro</strong></td><td>✅ <strong>Mandatory</strong></td><td>2-3 questions, easy patterns</td></tr><tr><td><strong>10 LPA+</strong></td><td>✅ <strong>Important</strong></td><td>Pattern recognition essential</td></tr><tr><td><strong>Accenture/Cognizant</strong></td><td>✅ <strong>Important</strong></td><td>Coding + series</td></tr><tr><td><strong>20 LPA+</strong></td><td>✅ <strong>Important</strong></td><td>Conditional coding</td></tr><tr><td><strong>Amazon/Microsoft</strong></td><td>✅ <strong>Important</strong></td><td>Word coding, analogy</td></tr><tr><td><strong>Goldman Sachs</strong></td><td>⚠️ <strong>Optional</strong></td><td>Number puzzles, substitution</td></tr><tr><td><strong>Google</strong></td><td>⚠️ <strong>Optional</strong></td><td>Complex series, grid puzzles</td></tr></tbody></table>
 <h3>Bottom Line</h3>
 
-> Coding & Decoding rewards <strong>pattern recognition</strong> over calculation. The key skills are: (1) alphabet position arithmetic (forward/backward shift, reverse), (2) identifying number series type (AP, GP, Fibonacci), and (3) testing transformation rules on multiple letters before committing. Once you memorize the 13 reverse pairs and the modulo wrap-around rule, most questions solve in under 60 seconds.
+<p>> Coding & Decoding rewards <strong>pattern recognition</strong> over calculation. The key skills are: (1) alphabet position arithmetic (forward/backward shift, reverse), (2) identifying number series type (AP, GP, Fibonacci), and (3) testing transformation rules on multiple letters before committing. Once you memorize the 13 reverse pairs and the modulo wrap-around rule, most questions solve in under 60 seconds.</p>
 
-<strong>Study Time</strong>: 3–5 hours | <strong>Questions to Practice</strong>: 80–100 | <strong>Expected Score</strong>: +2–4 marks per test
+<p><strong>Study Time</strong>: 3–5 hours | <strong>Questions to Practice</strong>: 80–100 | <strong>Expected Score</strong>: +2–4 marks per test</p>
 
 <hr />
 
-<em>End of Guide — Coding & Decoding (Alphabet/Number Series) | Elite Placement Aptitude Series</em>
-
+<p><em>End of Guide — Coding & Decoding (Alphabet/Number Series) | Elite Placement Aptitude Series</em></p>
     </main>
     
     <button class="floating-action-btn" id="backToTopBtn" aria-label="Back to Top">▲</button>
@@ -1999,10 +1998,10 @@ The answer is: <strong>APPLE</strong> (with one bit flipped in transmission — 
                 while (currentEl && currentEl.tagName !== 'H2') {
                     // Scan children of solutions block to extract Q1, Q2, etc.
                     const text = currentEl.textContent.trim();
-                    const qMatch = text.match(/^\s*\*?\*?Q(?:uestion\s*)?(\d+)\.?\*?\*?/i);
+                    const qMatch = text.match(/^\s*\*?\*?Q(?:uestion\s*)?(\d+[a-z]?)\.?\*?\*?/i);
                     
                     if (qMatch) {
-                        const qNum = parseInt(qMatch[1], 10);
+                        const qNum = qMatch[1].toLowerCase();
                         // Clean up the Q1. tag from solution html
                         let innerHTML = currentEl.innerHTML;
                         solutionsMap.set(qNum, innerHTML);
@@ -2012,9 +2011,9 @@ The answer is: <strong>APPLE</strong> (with one bit flipped in transmission — 
                         const listItems = currentEl.querySelectorAll('li');
                         listItems.forEach(li => {
                             const liText = li.textContent.trim();
-                            const liMatch = liText.match(/^\s*\*?\*?Q(?:uestion\s*)?(\d+)\.?\*?\*?/i);
+                            const liMatch = liText.match(/^\s*\*?\*?Q(?:uestion\s*)?(\d+[a-z]?)\.?\*?\*?/i);
                             if (liMatch) {
-                                const qNum = parseInt(liMatch[1], 10);
+                                const qNum = liMatch[1].toLowerCase();
                                 solutionsMap.set(qNum, li.innerHTML);
                                 foundSolutionsCount++;
                             }
@@ -2063,6 +2062,99 @@ The answer is: <strong>APPLE</strong> (with one bit flipped in transmission — 
             practiceHeader.after(progressWidget);
 
             const qCards = [];
+            let activeCard = null;
+
+            function createQuestionCard(el, isListItem, parentListEl) {
+                const text = el.textContent.trim();
+                
+                // Parse question number (either explicit e.g. Q12 or implicit from index)
+                const explicitMatch = text.match(/^\s*\*?\*?Q(?:uestion\s*)?(\d+[a-z]?)\.?\*?\*?/i);
+                const qIdRaw = explicitMatch ? explicitMatch[1] : String(questionNumberIndex);
+                
+                // Parse company tag e.g. [TCS], [Amazon]
+                const companyMatch = text.match(/\[([^\]]+)\]\s*$/);
+                const companyName = companyMatch ? companyMatch[1] : '';
+                
+                // Create card element
+                const card = document.createElement('div');
+                card.className = `question-card diff-${currentDifficulty}`;
+                card.setAttribute('data-difficulty', currentDifficulty);
+                card.setAttribute('data-qnum', qIdRaw);
+
+                // Check if solution exists (either pre-existing inside details, or extracted from bottom)
+                let solutionHTML = '';
+                const existingDetails = el.querySelector('details');
+                if (existingDetails) {
+                    solutionHTML = existingDetails.querySelector('div, p, ul, ol, pre')?.outerHTML || existingDetails.innerHTML.replace(/<s[u]mmary>.*?<\/s[u]mmary>/i, '');
+                } else {
+                    const key = qIdRaw.toLowerCase();
+                    if (solutionsMap.has(key)) {
+                        solutionHTML = solutionsMap.get(key);
+                    } else {
+                        const keyInt = parseInt(key, 10);
+                        if (!isNaN(keyInt) && solutionsMap.has(keyInt)) {
+                            solutionHTML = solutionsMap.get(keyInt);
+                        }
+                    }
+                }
+
+                // Build clean question content text (stripping company tags and solution details if present)
+                let questionCleanText = el.innerHTML;
+                if (existingDetails) {
+                    questionCleanText = questionCleanText.replace(existingDetails.outerHTML, '');
+                }
+                // Strip the trailing company tag from question representation
+                if (companyMatch) {
+                    questionCleanText = questionCleanText.replace(companyMatch[0], '');
+                }
+
+                // Check localStorage for completion state
+                const isCompleted = localStorage.getItem(`${topicKey}_q${qIdRaw}`) === 'true';
+                if (isCompleted) {
+                    card.classList.add('completed');
+                }
+
+                card.innerHTML = `
+                    <div class="question-header">
+                        <div class="question-meta-group">
+                            <span class="company-tag" style="background-color: var(--primary-light); color: var(--primary-color);">Q${qIdRaw}</span>
+                            ${companyName ? `<span class="company-tag" style="background-color: var(--accent-light); color: var(--accent-color);">${companyName}</span>` : ''}
+                        </div>
+                        <label class="question-checkbox-label">
+                            <input type="checkbox" class="q-checkbox" data-qnum="${qIdRaw}" ${isCompleted ? 'checked' : ''}>
+                            <span class="checkbox-box"></span>
+                            Done
+                        </label>
+                    </div>
+                    <div class="question-text">${questionCleanText}</div>
+                `;
+
+                // Append Solution if exists
+                if (solutionHTML) {
+                    const detailsEl = document.createElement('details');
+                    const summaryEl = document.createElement('summary');
+                    summaryEl.innerHTML = "🔍 View Detailed Solution";
+                    detailsEl.appendChild(summaryEl);
+                    
+                    const wrapperEl = document.createElement('div');
+                    wrapperEl.className = "solution-wrapper";
+                    wrapperEl.innerHTML = solutionHTML;
+                    detailsEl.appendChild(wrapperEl);
+                    
+                    card.appendChild(detailsEl);
+                }
+
+                // Insert card
+                if (isListItem && parentListEl) {
+                    parentListEl.parentNode.insertBefore(card, parentListEl);
+                } else {
+                    el.parentNode.insertBefore(card, el);
+                }
+
+                qCards.push(card);
+                questionNumberIndex++;
+                return card;
+            }
 
             while (nextEl && nextEl.tagName !== 'H2' && nextEl !== solutionsContainer) {
                 // Detect difficulty section change
@@ -2072,113 +2164,38 @@ The answer is: <strong>APPLE</strong> (with one bit flipped in transmission — 
                     else if (textVal.includes('medium')) currentDifficulty = 'medium';
                     else if (textVal.includes('hard')) currentDifficulty = 'hard';
                     else if (textVal.includes('product') || textVal.includes('advanced')) currentDifficulty = 'product';
+                    
+                    nextEl = nextEl.nextElementSibling;
+                    continue;
                 }
 
-                // Look for question list items or paragraphs
-                const questionElements = [];
-                if (nextEl.tagName === 'OL' || nextEl.tagName === 'UL') {
+                // Check if it is a list
+                const isList = nextEl.tagName === 'OL' || nextEl.tagName === 'UL';
+                // A list is a question list if it is OL, or if it is a UL where the first item starts with a question marker
+                const isQuestionList = nextEl.tagName === 'OL' || (nextEl.tagName === 'UL' && nextEl.children.length > 0 && /^\s*(\d+|Q\d+|Question\s*\d+)\b/i.test(nextEl.children[0].textContent.trim()));
+
+                if (isList && isQuestionList) {
                     const listItems = Array.from(nextEl.children);
-                    listItems.forEach(li => {
-                        questionElements.push({ element: li, parentList: nextEl });
-                    });
-                } else if (nextEl.tagName === 'P' && (textVal.startsWith('**q') || textVal.startsWith('q') || textVal.startsWith('**question'))) {
-                    questionElements.push({ element: nextEl, parentList: null });
-                }
-
-                // Convert each question element to a styled question card
-                questionElements.forEach(qItem => {
-                    const el = qItem.element;
-                    const text = el.textContent.trim();
-                    
-                    // Parse question number (either explicit e.g. Q12 or implicit from index)
-                    const explicitMatch = text.match(/^\s*\*?\*?Q(?:uestion\s*)?(\d+)\.?\*?\*?/i);
-                    const qId = explicitMatch ? parseInt(explicitMatch[1], 10) : questionNumberIndex;
-                    
-                    // Parse company tag e.g. [TCS], [Amazon]
-                    const companyMatch = text.match(/\[([^\]]+)\]\s*$/);
-                    const companyName = companyMatch ? companyMatch[1] : '';
-                    
-                    // Create card element
-                    const card = document.createElement('div');
-                    card.className = `question-card diff-${currentDifficulty}`;
-                    card.setAttribute('data-difficulty', currentDifficulty);
-                    card.setAttribute('data-qnum', qId);
-
-                    // Check if solution exists (either pre-existing inside details, or extracted from bottom)
-                    let solutionHTML = '';
-                    const existingDetails = el.querySelector('details');
-                    if (existingDetails) {
-                        solutionHTML = existingDetails.querySelector('div, p, ul, ol, pre')?.outerHTML || existingDetails.innerHTML.replace(/<s[u]mmary>.*?<\/s[u]mmary>/i, '');
-                    } else if (solutionsMap.has(qId)) {
-                        solutionHTML = solutionsMap.get(qId);
-                    }
-
-                    // Build clean question content text (stripping company tags and solution details if present)
-                    let questionCleanText = el.innerHTML;
-                    if (existingDetails) {
-                        questionCleanText = questionCleanText.replace(existingDetails.outerHTML, '');
-                    }
-                    // Strip the trailing company tag from question representation
-                    if (companyMatch) {
-                        questionCleanText = questionCleanText.replace(companyMatch[0], '');
-                    }
-
-                    // Check localStorage for completion state
-                    const isCompleted = localStorage.getItem(`${topicKey}_q${qId}`) === 'true';
-                    if (isCompleted) {
-                        card.classList.add('completed');
-                    }
-
-                    card.innerHTML = `
-                        <div class="question-header">
-                            <div class="question-meta-group">
-                                <span class="company-tag" style="background-color: var(--primary-light); color: var(--primary-color);">Q${qId}</span>
-                                ${companyName ? `<span class="company-tag" style="background-color: var(--accent-light); color: var(--accent-color);">${companyName}</span>` : ''}
-                            </div>
-                            <label class="question-checkbox-label">
-                                <input type="checkbox" class="q-checkbox" data-qnum="${qId}" ${isCompleted ? 'checked' : ''}>
-                                <span class="checkbox-box"></span>
-                                Done
-                            </label>
-                        </div>
-                        <div class="question-text">${questionCleanText}</div>
-                    `;
-
-                    // Append Solution if exists
-                    if (solutionHTML) {
-                        const detailsEl = document.createElement('details');
-                        const summaryEl = document.createElement('summary');
-                        summaryEl.innerHTML = "🔍 View Detailed Solution";
-                        detailsEl.appendChild(summaryEl);
-                        
-                        const wrapperEl = document.createElement('div');
-                        wrapperEl.className = "solution-wrapper";
-                        wrapperEl.innerHTML = solutionHTML;
-                        detailsEl.appendChild(wrapperEl);
-                        
-                        card.appendChild(detailsEl);
-                    }
-
-                    // Insert card and remove original element
-                    if (qItem.parentList) {
-                        // We will insert card before parentList or append it in order
-                        qItem.parentList.parentNode.insertBefore(card, qItem.parentList);
-                    } else {
-                        el.parentNode.insertBefore(card, el);
-                        el.remove();
-                    }
-
-                    qCards.push(card);
-                    questionNumberIndex++;
-                });
-
-                // Remove the list elements once all their list-items are transformed
-                if (nextEl.tagName === 'OL' || nextEl.tagName === 'UL') {
                     const listEl = nextEl;
-                    nextEl = nextEl.nextElementSibling;
+                    nextEl = nextEl.nextElementSibling; // save sibling before removing list
+                    
+                    listItems.forEach(li => {
+                        activeCard = createQuestionCard(li, true, listEl);
+                    });
                     listEl.remove();
+                } else if (nextEl.tagName === 'P' && (textVal.startsWith('**q') || textVal.startsWith('q') || textVal.startsWith('**question'))) {
+                    const el = nextEl;
+                    nextEl = nextEl.nextElementSibling; // save sibling before removing paragraph
+                    
+                    activeCard = createQuestionCard(el, false, null);
+                    el.remove();
                 } else {
-                    nextEl = nextEl.nextElementSibling;
+                    const el = nextEl;
+                    nextEl = nextEl.nextElementSibling; // save sibling before moving element
+                    
+                    if (activeCard) {
+                        activeCard.querySelector('.question-text').appendChild(el);
+                    }
                 }
             }
 

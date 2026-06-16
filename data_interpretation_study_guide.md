@@ -753,7 +753,7 @@ Check the axis scale carefully.
 **Q25.** A line graph shows company profit over 6 months: Jan=₹2L, Feb=₹2.5L, Mar=₹2L, Apr=₹3L, May=₹3.5L, Jun=₹3L. What is the average monthly profit?
 - A) ₹2.5L  B) ₹2.67L  C) ₹2.75L  D) ₹3L
 
-**Q26.** In a table, the ratio of boys to girls in School A is 3:2 and in School B is 4:3. If both schools have the same number of total students, and School A has 300 boys, how many girls are in School B?
+**Q26.** In a table, the ratio of boys to girls in School A is 3:2 and in School B is 23:27. If both schools have the same number of total students, and School A has 300 boys, how many girls are in School B?
 - A) 250  B) 270  C) 280  D) 300
 
 **Q27.** A pie chart shows budget allocation: Housing 25%, Food 20%, Transport 15%, Education 18%, Savings 22%. If the total budget is ₹5,00,000, what is the difference between Housing and Transport allocation?
@@ -791,7 +791,7 @@ What is the compound growth rate for the North region?
 - A) 25  B) 100  C) 125  D) Cannot be determined
 
 **Q35.** A table shows student marks in 4 subjects. Average of 3 subjects is 75. The 4th subject has 85 marks. What is the overall average?
-- A) 75  B) 77  C) 78  D) 80
+- A) 75  B) 77.5  C) 78  D) 80
 
 **Q36.** A pie chart shows percentage of time spent on activities: Work=40%, Sleep=25%, Commute=10%, Entertainment=15%, Others=10%. If total daily hours = 24, how many hours are spent on Work and Entertainment combined?
 - A) 9.6 hrs  B) 12 hrs  C) 13.2 hrs  D) 15 hrs
@@ -799,7 +799,7 @@ What is the compound growth rate for the North region?
 **Q37.** A line graph shows a company's stock price over 5 weeks: Week 1=₹100, Week 2=₹110, Week 3=₹99, Week 4=₹121, Week 5=₹133.1. What is the approximate CAGR over 5 weeks?
 - A) 5%  B) 7.3%  C) 10%  D) 33%
 
-**Q38.** Two pie charts show population distribution of a city by age group for 2020 and 2030. The 0-18 age group changes from 35% to 30%. If the total population in 2030 is 12 Lakhs, and the 0-18 group decreases by 20,000 in absolute terms, what was the population in 2020?
+**Q38.** Two pie charts show population distribution of a city by age group for 2020 and 2030. The 0-18 age group changes from 35% in 2020 to 30% in 2030. If the total population in 2030 is 12 Lakhs, and the 0-18 group increases by 10,000 in absolute terms from 2020 to 2030, what was the population in 2020?
 - A) 8 Lakhs  B) 10 Lakhs  C) 12 Lakhs  D) Cannot be determined
 
 **Q39.** A table shows: Product | Qty Sold | Price/unit | Cost/unit
@@ -809,7 +809,7 @@ R | 80 | ₹60 | ₹45
 Which product gives the highest profit per unit?
 - A) P  B) Q  C) R  D) P and Q tied
 
-**Q40.** A caselet: "A train travels 600 km. It covers 30% at 60 km/h, 40% at 80 km/h, and the remaining at 100 km/h. What is the average speed?"
+**Q40.** A caselet: "A train travels 600 km. It covers 30% at 60 km/h, 40% at 80 km/h, and the remaining at 90 km/h. What is the average speed?"
 - A) 72 km/h  B) 75 km/h  C) 78 km/h  D) 80 km/h
 
 ---
@@ -820,7 +820,7 @@ Which product gives the highest profit per unit?
 - A) A  B) B  C) C  D) D
 
 **Q42.** A stacked bar chart shows monthly sales (₹ Lakhs) for 4 products across 6 months. The chart reveals that Product X's share of total monthly sales remains constant at 25% throughout. In Month 3, Product X sells ₹45 Lakhs. What is the total market size in Month 3?
-- A) ₹1,60,000  B) ₹1,75,000  C) ₹1,80,000  D) ₹1,95,000
+- A) ₹160 Lakhs  B) ₹175 Lakhs  C) ₹180 Lakhs  D) ₹195 Lakhs
 
 **Q43.** A caselet: "In a survey of 2,000 people, 55% prefer Brand A, 45% prefer Brand B. Among Brand A supporters, 60% are male. Among Brand B supporters, 55% are female. How many males prefer Brand B?"
 - A) 405  B) 450  C) 495  D) 550
@@ -832,7 +832,7 @@ Which product gives the highest profit per unit?
 2022: Stocks=40%, Bonds=30%, Real Estate=20%, Cash=10%
 2023: Stocks=45%, Bonds=25%, Real Estate=22%, Cash=8%
 If the total portfolio value grew from ₹10 Lakhs to ₹13 Lakhs, what is the absolute increase in Real Estate investment?
-- A) ₹2,20,000  B) ₹2,60,000  C) ₹2,86,000  D) ₹3,00,000
+- A) ₹60,000  B) ₹86,000  C) ₹1,10,000  D) ₹1,20,000
 
 **Q46.** A table shows the number of students in 5 departments over 3 years with some missing values:
 Dept | 2021 | 2022 | 2023
@@ -842,8 +842,8 @@ C | 90 | ?  | 130
 D | ?  | 88  | 96
 E | 70 | 75  | 82
 
-Additional info: Average students per dept in 2022 = 85. Dept B grew at 10% per year consistently. Dept C's growth from 2021 to 2023 is 44.44%. Dept D had equal numbers in 2021 and 2023. Find the value of 2023 for Dept B.
-- A) 87.12  B) 88  C) 92.4  D) 96
+Additional info: Average students per dept in 2022 = 85. Dept B grew at 20% per year consistently. Dept C's growth from 2021 to 2023 is 44.44%. Dept D had equal numbers in 2021 and 2023. Find the value of 2023 for Dept B.
+- A) 86.4  B) 88  C) 92.4  D) 96
 
 **Q47.** A mixed chart: Bar shows Revenue (₹ Crores), Line shows EBITDA Margin (%). Data:
 Year | Revenue | EBITDA Margin
@@ -861,11 +861,11 @@ If EBITDA = Revenue × Margin%, what is the approximate CAGR in EBITDA from Y1 t
 **Q49.** A table shows quarterly sales (₹ Lakhs) for 4 products P, Q, R, S across 8 quarters. The trend shows: P's sales are consistently 20% of Q's. Q's sales equal R + S in every quarter. If in Q8, P = 60 and R = 80, what is S's sales in Q8?
 - A) Cannot be determined  B) 220  C) 300  D) 380
 
-**Q50.** Two pie charts show expenses breakdown for Household A and Household B. Household A's total monthly expense = ₹50,000. Household B's total monthly expense = ₹75,000. A's Food expense = 25% of A's total. B's Food expense = 20% of B's total. If A's Food expense = B's Food expense, what is the ratio of A's Food to B's total expense?
+**Q50.** Two pie charts show expenses breakdown for Household A and Household B. Household A's total monthly expense = ₹60,000. Household B's total monthly expense = ₹75,000. A's Food expense = 25% of A's total. B's Food expense = 20% of B's total. What is the ratio of A's Food expense to B's total expense?
 - A) 1:3  B) 1:4  C) 1:5  D) Cannot be determined
 
 **Q51.** A stacked bar chart shows percentage distribution of energy sources across 5 years. Coal decreases from 60% to 40%. Renewable increases from 10% to 25%. Nuclear stays constant at 5%. Gas increases from 15% to 20%. Oil makes up the remainder. In Year 5, total energy = 500 units. What is the change in Oil's contribution from Year 1 to Year 5?
-- A) Decrease of 5%  B) Decrease of 10%  C) Increase of 5%  D) Cannot be determined
+- A) Decrease of 5%  B) Decrease of 10%  C) Increase of 5%  D) No change
 
 **Q52.** A table shows production (in units) and defect rate (%) for 4 factories over 3 months:
 Factory | Month1 Prod | Month1 Def% | Month2 Prod | Month2 Def% | Month3 Prod | Month3 Def%
@@ -876,7 +876,7 @@ W | 600 | 3% | 800 | 3% | 900 | 2%
 If defective units cannot be sold, which factory contributed the most total defective units across 3 months?
 - A) X  B) Y  C) Z  D) W
 
-**Q53.** A caselet: "A shopkeeper sells two articles at the same selling price. He makes a profit of 20% on one and a loss of 20% on the other. The cost price of the first article is ₹500. The total revenue from both articles is ₹2,400. Find the profit/loss % overall."
+**Q53.** A caselet: "A shopkeeper sells two articles at the same selling price. He makes a profit of 20% on one and a loss of 20% on the other. The cost price of the first article is ₹500. Find the profit/loss % overall."
 - A) 1% Loss  B) 2% Profit  C) 4% Loss  D) 4% Profit
 
 **Q54.** Two line graphs show exchange rates: USD/INR and EUR/INR over 12 months. The question asks: "If you convert ₹10,00,000 to USD in Month 3, then convert that USD to EUR in Month 9, how many EUR do you get?" This requires:
@@ -888,7 +888,7 @@ If defective units cannot be sold, which factory contributed the most total defe
 **Q56.** A stacked bar chart shows revenue mix for a company: Product A, B, C. From Year 1 to Year 5, Product A's revenue doubles, Product B's revenue triples, and Product C's revenue halves. The total revenue in Year 1 = ₹100 Crores. In Year 5, Product C's revenue = ₹20 Crores. What is the total revenue in Year 5?
 - A) ₹200 Cr  B) ₹240 Cr  C) ₹280 Cr  D) Cannot be determined
 
-**Q57.** A caselet: "Three friends A, B, C invest in a business. A invests ₹X for 6 months, B invests ₹2X for the entire year, C invests ₹3X for 4 months. At the end of the year, the profit is ₹2,40,000. A's share of profit is ₹60,000." Find C's share.
+**Q57.** A caselet: "Three friends A, B, C invest in a business. A invests ₹X for 6 months, B invests ₹2X for 6 months, and C invests ₹3X for 4 months. At the end of the year, the profit is ₹2,40,000. A's share of profit is ₹48,000." Find C's share.
 - A) ₹36,000  B) ₹48,000  C) ₹72,000  D) ₹96,000
 
 **Q58.** A table shows sales (in ₹ Lakhs) and YoY growth rates:
@@ -901,7 +901,7 @@ Y5 | 361 | ?
 What is the growth rate from Y1 to Y5?
 - A) 80.5%  B) 75%  C) 70%  D) 65%
 
-**Q59.** A pie chart shows market share of 5 companies. The angle of Company A's slice is 144°. Company B's share is 1.5 times Company C's. Company D and E together account for 18% of the market. If Company A's actual revenue = ₹360 Crores, what is Company D's revenue?
+**Q59.** A pie chart shows market share of 5 companies. The angle of Company A's slice is 144°. Company B's share is 1.5 times Company C's. Company D and E together account for 18% of the market, with Company D's share being half of Company E's share. If Company A's actual revenue = ₹360 Crores, what is Company D's revenue?
 - A) ₹48 Cr  B) ₹54 Cr  C) ₹60 Cr  D) ₹72 Cr
 
 **Q60.** A caselet with a complex network of information: 4 departments, 3 products, 2 years, percentage changes, absolute changes, and a question asking for the change in profit margin. To solve this, you need to:
@@ -931,10 +931,79 @@ What is the growth rate from Y1 to Y5?
 | Year | Company X Revenue (₹ Cr) | Company Y Revenue (₹ Cr) | X Profit Margin (%) | Y Profit Margin (%) |
 |------|--------------------------|--------------------------|---------------------|---------------------|
 | 2019 | 200 | 150 | 12% | 10% |
-| 2020 | 250 | 180 | 10% | 12% |
+| 2020 | 250 | 180 | 10% | 15% |
 | 2021 | 300 | 240 | 15% | 14% |
 | 2022 | 360 | 300 | 18% | 16% |
 | 2023 | 450 | 375 | 20% | 18% |
+
+<div class="di-chart-container" style="display: flex; flex-direction: column; align-items: center; margin: 24px 0; background: var(--details-bg); padding: 20px; border-radius: var(--radius-md); border: 1px solid var(--border-color);">
+  <div style="font-weight: 700; margin-bottom: 15px; color: var(--text-color); font-size: 0.95rem; text-align: center;">📊 Company X vs Company Y: Revenue (Bars) and Profit Margins (Lines)</div>
+  <svg viewBox="0 0 650 350" style="width: 100%; max-width: 650px; height: auto;">
+    <line x1="60" y1="50" x2="590" y2="50" stroke="var(--border-color)" stroke-dasharray="4" />
+    <line x1="60" y1="100" x2="590" y2="100" stroke="var(--border-color)" stroke-dasharray="4" />
+    <line x1="60" y1="150" x2="590" y2="150" stroke="var(--border-color)" stroke-dasharray="4" />
+    <line x1="60" y1="200" x2="590" y2="200" stroke="var(--border-color)" stroke-dasharray="4" />
+    <line x1="60" y1="250" x2="590" y2="250" stroke="var(--border-color)" stroke-dasharray="4" />
+    <line x1="60" y1="300" x2="590" y2="300" stroke="var(--text-color)" stroke-width="1.5" />
+    
+    <line x1="60" y1="50" x2="60" y2="300" stroke="var(--text-color)" stroke-width="1.5" />
+    <line x1="590" y1="50" x2="590" y2="300" stroke="var(--text-color)" stroke-width="1.5" />
+    
+    <text x="50" y="55" fill="var(--text-muted)" font-size="11" font-weight="600" text-anchor="end">500</text>
+    <text x="50" y="105" fill="var(--text-muted)" font-size="11" font-weight="600" text-anchor="end">400</text>
+    <text x="50" y="155" fill="var(--text-muted)" font-size="11" font-weight="600" text-anchor="end">300</text>
+    <text x="50" y="205" fill="var(--text-muted)" font-size="11" font-weight="600" text-anchor="end">200</text>
+    <text x="50" y="255" fill="var(--text-muted)" font-size="11" font-weight="600" text-anchor="end">100</text>
+    <text x="50" y="305" fill="var(--text-muted)" font-size="11" font-weight="600" text-anchor="end">0</text>
+    
+    <text x="600" y="55" fill="var(--text-muted)" font-size="11" font-weight="600">25%</text>
+    <text x="600" y="105" fill="var(--text-muted)" font-size="11" font-weight="600">20%</text>
+    <text x="600" y="155" fill="var(--text-muted)" font-size="11" font-weight="600">15%</text>
+    <text x="600" y="205" fill="var(--text-muted)" font-size="11" font-weight="600">10%</text>
+    <text x="600" y="255" fill="var(--text-muted)" font-size="11" font-weight="600">5%</text>
+    <text x="600" y="305" fill="var(--text-muted)" font-size="11" font-weight="600">0%</text>
+    
+    <text x="120" y="322" fill="var(--text-color)" font-size="11" font-weight="600" text-anchor="middle">2019</text>
+    <text x="220" y="322" fill="var(--text-color)" font-size="11" font-weight="600" text-anchor="middle">2020</text>
+    <text x="320" y="322" fill="var(--text-color)" font-size="11" font-weight="600" text-anchor="middle">2021</text>
+    <text x="420" y="322" fill="var(--text-color)" font-size="11" font-weight="600" text-anchor="middle">2022</text>
+    <text x="520" y="322" fill="var(--text-color)" font-size="11" font-weight="600" text-anchor="middle">2023</text>
+    
+    <rect x="98" y="200" width="20" height="100" fill="#3b82f6" rx="2" opacity="0.85" />
+    <rect x="122" y="225" width="20" height="75" fill="#a78bfa" rx="2" opacity="0.85" />
+    <rect x="198" y="175" width="20" height="125" fill="#3b82f6" rx="2" opacity="0.85" />
+    <rect x="222" y="210" width="20" height="90" fill="#a78bfa" rx="2" opacity="0.85" />
+    <rect x="298" y="150" width="20" height="150" fill="#3b82f6" rx="2" opacity="0.85" />
+    <rect x="322" y="180" width="20" height="120" fill="#a78bfa" rx="2" opacity="0.85" />
+    <rect x="398" y="120" width="20" height="180" fill="#3b82f6" rx="2" opacity="0.85" />
+    <rect x="422" y="150" width="20" height="150" fill="#a78bfa" rx="2" opacity="0.85" />
+    <rect x="498" y="75" width="20" height="225" fill="#3b82f6" rx="2" opacity="0.85" />
+    <rect x="522" y="112.5" width="20" height="187.5" fill="#a78bfa" rx="2" opacity="0.85" />
+    
+    <path d="M 120 180 L 220 200 L 320 150 L 420 120 L 520 100" fill="none" stroke="#10b981" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
+    <path d="M 120 200 L 220 150 L 320 160 L 420 140 L 520 120" fill="none" stroke="#f59e0b" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
+    
+    <circle cx="120" cy="180" r="5" fill="#10b981" />
+    <circle cx="220" cy="200" r="5" fill="#10b981" />
+    <circle cx="320" cy="150" r="5" fill="#10b981" />
+    <circle cx="420" cy="120" r="5" fill="#10b981" />
+    <circle cx="520" cy="100" r="5" fill="#10b981" />
+    
+    <circle cx="120" cy="200" r="5" fill="#f59e0b" />
+    <circle cx="220" cy="150" r="5" fill="#f59e0b" />
+    <circle cx="320" cy="160" r="5" fill="#f59e0b" />
+    <circle cx="420" cy="140" r="5" fill="#f59e0b" />
+    <circle cx="520" cy="120" r="5" fill="#f59e0b" />
+  </svg>
+  
+  <div style="display: flex; gap: 15px; margin-top: 15px; font-size: 0.85rem; flex-wrap: wrap; justify-content: center;">
+    <span style="display: flex; align-items: center; gap: 5px; color: var(--text-color); font-weight: 600;"><span style="display: inline-block; width: 12px; height: 12px; background: #3b82f6; border-radius: 2px;"></span> X Revenue</span>
+    <span style="display: flex; align-items: center; gap: 5px; color: var(--text-color); font-weight: 600;"><span style="display: inline-block; width: 12px; height: 12px; background: #a78bfa; border-radius: 2px;"></span> Y Revenue</span>
+    <span style="display: flex; align-items: center; gap: 5px; color: var(--text-color); font-weight: 600;"><span style="display: inline-block; width: 20px; height: 3px; background: #10b981;"></span> X Margin</span>
+    <span style="display: flex; align-items: center; gap: 5px; color: var(--text-color); font-weight: 600;"><span style="display: inline-block; width: 20px; height: 3px; background: #f59e0b;"></span> Y Margin</span>
+  </div>
+</div>
+
 
 **Q62a.** In which year did Company Y's profit first exceed Company X's profit?
 **Q62b.** What is the CAGR in Company X's profit from 2019 to 2023?
@@ -956,7 +1025,28 @@ In the placement season, 70% of boys and 60% of girls from Science got placed. F
 
 **Q64.** *(Pie Chart Analysis)* The following pie chart shows the distribution of monthly household expenses:
 
-Housing: 30% | Food: 22% | Education: 15% | Transport: 12% | Healthcare: 8% | Others: 13%
+<div class="di-chart-container" style="display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 30px; margin: 24px 0; background: var(--details-bg); padding: 25px; border-radius: var(--radius-md); border: 1px solid var(--border-color);">
+  <svg width="220" height="220" viewBox="0 0 220 220">
+    <circle cx="110" cy="110" r="80" fill="transparent" stroke="#3b82f6" stroke-width="28" stroke-dasharray="150.8 502.65" stroke-dashoffset="0" transform="rotate(-90 110 110)" />
+    <circle cx="110" cy="110" r="80" fill="transparent" stroke="#10b981" stroke-width="28" stroke-dasharray="110.6 502.65" stroke-dashoffset="-150.8" transform="rotate(-90 110 110)" />
+    <circle cx="110" cy="110" r="80" fill="transparent" stroke="#f59e0b" stroke-width="28" stroke-dasharray="75.4 502.65" stroke-dashoffset="-261.4" transform="rotate(-90 110 110)" />
+    <circle cx="110" cy="110" r="80" fill="transparent" stroke="#ec4899" stroke-width="28" stroke-dasharray="60.3 502.65" stroke-dashoffset="-336.8" transform="rotate(-90 110 110)" />
+    <circle cx="110" cy="110" r="80" fill="transparent" stroke="#ef4444" stroke-width="28" stroke-dasharray="40.2 502.65" stroke-dashoffset="-397.1" transform="rotate(-90 110 110)" />
+    <circle cx="110" cy="110" r="80" fill="transparent" stroke="#6b7280" stroke-width="28" stroke-dasharray="65.4 502.65" stroke-dashoffset="-437.3" transform="rotate(-90 110 110)" />
+    
+    <text x="110" y="105" fill="var(--text-color)" font-size="14" font-weight="700" text-anchor="middle">Expenses</text>
+    <text x="110" y="125" fill="var(--text-muted)" font-size="11" font-weight="600" text-anchor="middle">Breakdown</text>
+  </svg>
+  
+  <div style="display: flex; flex-direction: column; gap: 8px; font-size: 0.85rem;">
+    <div style="display: flex; align-items: center; gap: 8px; color: var(--text-color); font-weight: 600;"><span style="display: inline-block; width: 12px; height: 12px; background: #3b82f6; border-radius: 50%;"></span> Housing (30%)</div>
+    <div style="display: flex; align-items: center; gap: 8px; color: var(--text-color); font-weight: 600;"><span style="display: inline-block; width: 12px; height: 12px; background: #10b981; border-radius: 50%;"></span> Food (22%)</div>
+    <div style="display: flex; align-items: center; gap: 8px; color: var(--text-color); font-weight: 600;"><span style="display: inline-block; width: 12px; height: 12px; background: #f59e0b; border-radius: 50%;"></span> Education (15%)</div>
+    <div style="display: flex; align-items: center; gap: 8px; color: var(--text-color); font-weight: 600;"><span style="display: inline-block; width: 12px; height: 12px; background: #ec4899; border-radius: 50%;"></span> Transport (12%)</div>
+    <div style="display: flex; align-items: center; gap: 8px; color: var(--text-color); font-weight: 600;"><span style="display: inline-block; width: 12px; height: 12px; background: #ef4444; border-radius: 50%;"></span> Healthcare (8%)</div>
+    <div style="display: flex; align-items: center; gap: 8px; color: var(--text-color); font-weight: 600;"><span style="display: inline-block; width: 12px; height: 12px; background: #6b7280; border-radius: 50%;"></span> Others (13%)</div>
+  </div>
+</div>
 
 The total monthly income = ₹1,20,000. Monthly savings = 15% of income.
 
@@ -967,6 +1057,54 @@ The total monthly income = ₹1,20,000. Monthly savings = 15% of income.
 **Q64e.** A pie chart of savings and expenses combined would have what angle for the Savings sector?
 
 **Q65.** *(Trend + Prediction DI)* The following table shows the monthly active users (MAU) of a social media app over 12 months:
+
+<div class="di-chart-container" style="display: flex; flex-direction: column; align-items: center; margin: 24px 0; background: var(--details-bg); padding: 20px; border-radius: var(--radius-md); border: 1px solid var(--border-color);">
+  <div style="font-weight: 700; margin-bottom: 15px; color: var(--text-color); font-size: 0.95rem; text-align: center;">📈 Social Media App: Monthly Active Users (Lakhs)</div>
+  <svg viewBox="0 0 650 300" style="width: 100%; max-width: 650px; height: auto;">
+    <line x1="60" y1="50" x2="590" y2="50" stroke="var(--border-color)" stroke-dasharray="4" />
+    <line x1="60" y1="100" x2="590" y2="100" stroke="var(--border-color)" stroke-dasharray="4" />
+    <line x1="60" y1="150" x2="590" y2="150" stroke="var(--border-color)" stroke-dasharray="4" />
+    <line x1="60" y1="200" x2="590" y2="200" stroke="var(--border-color)" stroke-dasharray="4" />
+    <line x1="60" y1="250" x2="590" y2="250" stroke="var(--border-color)" stroke-dasharray="4" />
+    <line x1="60" y1="260" x2="590" y2="260" stroke="var(--text-color)" stroke-width="1.5" />
+    
+    <line x1="60" y1="50" x2="60" y2="260" stroke="var(--text-color)" stroke-width="1.5" />
+    
+    <text x="50" y="55" fill="var(--text-muted)" font-size="11" font-weight="600" text-anchor="end">220</text>
+    <text x="50" y="105" fill="var(--text-muted)" font-size="11" font-weight="600" text-anchor="end">180</text>
+    <text x="50" y="155" fill="var(--text-muted)" font-size="11" font-weight="600" text-anchor="end">140</text>
+    <text x="50" y="205" fill="var(--text-muted)" font-size="11" font-weight="600" text-anchor="end">100</text>
+    <text x="50" y="255" fill="var(--text-muted)" font-size="11" font-weight="600" text-anchor="end">60</text>
+    
+    <text x="80" y="280" fill="var(--text-color)" font-size="10" font-weight="600" text-anchor="middle">Jan</text>
+    <text x="125" y="280" fill="var(--text-color)" font-size="10" font-weight="600" text-anchor="middle">Feb</text>
+    <text x="170" y="280" fill="var(--text-color)" font-size="10" font-weight="600" text-anchor="middle">Mar</text>
+    <text x="215" y="280" fill="var(--text-color)" font-size="10" font-weight="600" text-anchor="middle">Apr</text>
+    <text x="260" y="280" fill="var(--text-color)" font-size="10" font-weight="600" text-anchor="middle">May</text>
+    <text x="305" y="280" fill="var(--text-color)" font-size="10" font-weight="600" text-anchor="middle">Jun</text>
+    <text x="350" y="280" fill="var(--text-color)" font-size="10" font-weight="600" text-anchor="middle">Jul</text>
+    <text x="395" y="280" fill="var(--text-color)" font-size="10" font-weight="600" text-anchor="middle">Aug</text>
+    <text x="440" y="280" fill="var(--text-color)" font-size="10" font-weight="600" text-anchor="middle">Sep</text>
+    <text x="485" y="280" fill="var(--text-color)" font-size="10" font-weight="600" text-anchor="middle">Oct</text>
+    <text x="530" y="280" fill="var(--text-color)" font-size="10" font-weight="600" text-anchor="middle">Nov</text>
+    <text x="575" y="280" fill="var(--text-color)" font-size="10" font-weight="600" text-anchor="middle">Dec</text>
+    
+    <path d="M 80 210 L 125 203.75 L 170 195 L 215 200 L 260 185 L 305 166.25 L 350 172.5 L 395 153.75 L 440 135 L 485 116.25 L 530 97.5 L 575 72.5" fill="none" stroke="#2563eb" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
+    
+    <circle cx="80" cy="210" r="4.5" fill="#3b82f6" stroke="#ffffff" stroke-width="1.5" />
+    <circle cx="125" cy="203.75" r="4.5" fill="#3b82f6" stroke="#ffffff" stroke-width="1.5" />
+    <circle cx="170" cy="195" r="4.5" fill="#3b82f6" stroke="#ffffff" stroke-width="1.5" />
+    <circle cx="215" cy="200" r="4.5" fill="#3b82f6" stroke="#ffffff" stroke-width="1.5" />
+    <circle cx="260" cy="185" r="4.5" fill="#3b82f6" stroke="#ffffff" stroke-width="1.5" />
+    <circle cx="305" cy="166.25" r="4.5" fill="#3b82f6" stroke="#ffffff" stroke-width="1.5" />
+    <circle cx="350" cy="172.5" r="4.5" fill="#3b82f6" stroke="#ffffff" stroke-width="1.5" />
+    <circle cx="395" cy="153.75" r="4.5" fill="#3b82f6" stroke="#ffffff" stroke-width="1.5" />
+    <circle cx="440" cy="135" r="4.5" fill="#3b82f6" stroke="#ffffff" stroke-width="1.5" />
+    <circle cx="485" cy="116.25" r="4.5" fill="#3b82f6" stroke="#ffffff" stroke-width="1.5" />
+    <circle cx="530" cy="97.5" r="4.5" fill="#3b82f6" stroke="#ffffff" stroke-width="1.5" />
+    <circle cx="575" cy="72.5" r="4.5" fill="#3b82f6" stroke="#ffffff" stroke-width="1.5" />
+  </svg>
+</div>
 
 | Month | MAU (Lakhs) |
 |-------|-------------|
@@ -991,8 +1129,39 @@ The total monthly income = ₹1,20,000. Monthly savings = 15% of income.
 
 **Q66.** *(Comparative Pie Charts)* Two pie charts show the revenue mix of Company M for 2022 and 2023:
 
-2022: Product A=30%, B=25%, C=20%, D=15%, E=10%
-2023: Product A=28%, B=27%, C=22%, D=13%, E=10%
+<div class="di-chart-container" style="display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 40px; margin: 24px 0; background: var(--details-bg); padding: 25px; border-radius: var(--radius-md); border: 1px solid var(--border-color);">
+  <div style="display: flex; flex-direction: column; align-items: center;">
+    <div style="font-weight: 700; margin-bottom: 10px; color: var(--text-color); font-size: 0.9rem;">2022 (Revenue: ₹500 Cr)</div>
+    <svg width="180" height="180" viewBox="0 0 180 180">
+      <circle cx="90" cy="90" r="70" fill="transparent" stroke="#3b82f6" stroke-width="24" stroke-dasharray="132.0 439.8" stroke-dashoffset="0" transform="rotate(-90 90 90)" />
+      <circle cx="90" cy="90" r="70" fill="transparent" stroke="#10b981" stroke-width="24" stroke-dasharray="110.0 439.8" stroke-dashoffset="-132.0" transform="rotate(-90 90 90)" />
+      <circle cx="90" cy="90" r="70" fill="transparent" stroke="#f59e0b" stroke-width="24" stroke-dasharray="88.0 439.8" stroke-dashoffset="-242.0" transform="rotate(-90 90 90)" />
+      <circle cx="90" cy="90" r="70" fill="transparent" stroke="#ec4899" stroke-width="24" stroke-dasharray="66.0 439.8" stroke-dashoffset="-330.0" transform="rotate(-90 90 90)" />
+      <circle cx="90" cy="90" r="70" fill="transparent" stroke="#6b7280" stroke-width="24" stroke-dasharray="44.0 439.8" stroke-dashoffset="-396.0" transform="rotate(-90 90 90)" />
+      <text x="90" y="95" fill="var(--text-color)" font-size="11" font-weight="700" text-anchor="middle">Total: ₹500 Cr</text>
+    </svg>
+  </div>
+  
+  <div style="display: flex; flex-direction: column; align-items: center;">
+    <div style="font-weight: 700; margin-bottom: 10px; color: var(--text-color); font-size: 0.9rem;">2023 (Revenue: ₹650 Cr)</div>
+    <svg width="180" height="180" viewBox="0 0 180 180">
+      <circle cx="90" cy="90" r="70" fill="transparent" stroke="#3b82f6" stroke-width="24" stroke-dasharray="123.1 439.8" stroke-dashoffset="0" transform="rotate(-90 90 90)" />
+      <circle cx="90" cy="90" r="70" fill="transparent" stroke="#10b981" stroke-width="24" stroke-dasharray="118.7 439.8" stroke-dashoffset="-123.1" transform="rotate(-90 90 90)" />
+      <circle cx="90" cy="90" r="70" fill="transparent" stroke="#f59e0b" stroke-width="24" stroke-dasharray="96.8 439.8" stroke-dashoffset="-241.8" transform="rotate(-90 90 90)" />
+      <circle cx="90" cy="90" r="70" fill="transparent" stroke="#ec4899" stroke-width="24" stroke-dasharray="57.2 439.8" stroke-dashoffset="-338.6" transform="rotate(-90 90 90)" />
+      <circle cx="90" cy="90" r="70" fill="transparent" stroke="#6b7280" stroke-width="24" stroke-dasharray="44.0 439.8" stroke-dashoffset="-395.8" transform="rotate(-90 90 90)" />
+      <text x="90" y="95" fill="var(--text-color)" font-size="11" font-weight="700" text-anchor="middle">Total: ₹650 Cr</text>
+    </svg>
+  </div>
+  
+  <div style="width: 100%; display: flex; gap: 15px; font-size: 0.85rem; justify-content: center; flex-wrap: wrap; margin-top: 10px; border-top: 1px solid var(--border-color); padding-top: 15px;">
+    <div style="display: flex; align-items: center; gap: 6px; color: var(--text-color); font-weight: 600;"><span style="display: inline-block; width: 12px; height: 12px; background: #3b82f6; border-radius: 50%;"></span> Prod A (30% vs 28%)</div>
+    <div style="display: flex; align-items: center; gap: 6px; color: var(--text-color); font-weight: 600;"><span style="display: inline-block; width: 12px; height: 12px; background: #10b981; border-radius: 50%;"></span> Prod B (25% vs 27%)</div>
+    <div style="display: flex; align-items: center; gap: 6px; color: var(--text-color); font-weight: 600;"><span style="display: inline-block; width: 12px; height: 12px; background: #f59e0b; border-radius: 50%;"></span> Prod C (20% vs 22%)</div>
+    <div style="display: flex; align-items: center; gap: 6px; color: var(--text-color); font-weight: 600;"><span style="display: inline-block; width: 12px; height: 12px; background: #ec4899; border-radius: 50%;"></span> Prod D (15% vs 13%)</div>
+    <div style="display: flex; align-items: center; gap: 6px; color: var(--text-color); font-weight: 600;"><span style="display: inline-block; width: 12px; height: 12px; background: #6b7280; border-radius: 50%;"></span> Prod E (10% vs 10%)</div>
+  </div>
+</div>
 
 Total revenue in 2022 = ₹500 Crores. Total revenue in 2023 = ₹650 Crores.
 
@@ -1003,6 +1172,59 @@ Total revenue in 2022 = ₹500 Crores. Total revenue in 2023 = ₹650 Crores.
 **Q66e.** If the company targets Product B to be 30% of revenue in 2024 (with total revenue = ₹780 Crores), by how much must Product B's revenue grow from 2023?
 
 **Q67.** *(Stacked Bar + Calculation)* A company sells 4 products across 4 quarters. The stacked bar chart shows revenue (₹ Lakhs) per quarter with the following segment data:
+
+<div class="di-chart-container" style="display: flex; flex-direction: column; align-items: center; margin: 24px 0; background: var(--details-bg); padding: 20px; border-radius: var(--radius-md); border: 1px solid var(--border-color);">
+  <div style="font-weight: 700; margin-bottom: 15px; color: var(--text-color); font-size: 0.95rem; text-align: center;">📊 Quarterly Product Revenue Mix (Stacked ₹ Lakhs)</div>
+  <svg viewBox="0 0 600 320" style="width: 100%; max-width: 600px; height: auto;">
+    <line x1="60" y1="50" x2="550" y2="50" stroke="var(--border-color)" stroke-dasharray="4" />
+    <line x1="60" y1="100" x2="550" y2="100" stroke="var(--border-color)" stroke-dasharray="4" />
+    <line x1="60" y1="150" x2="550" y2="150" stroke="var(--border-color)" stroke-dasharray="4" />
+    <line x1="60" y1="200" x2="550" y2="200" stroke="var(--border-color)" stroke-dasharray="4" />
+    <line x1="60" y1="250" x2="550" y2="250" stroke="var(--border-color)" stroke-dasharray="4" />
+    <line x1="60" y1="270" x2="550" y2="270" stroke="var(--text-color)" stroke-width="1.5" />
+    
+    <line x1="60" y1="50" x2="60" y2="270" stroke="var(--text-color)" stroke-width="1.5" />
+    
+    <text x="50" y="55" fill="var(--text-muted)" font-size="11" font-weight="600" text-anchor="end">180</text>
+    <text x="50" y="105" fill="var(--text-muted)" font-size="11" font-weight="600" text-anchor="end">140</text>
+    <text x="50" y="155" fill="var(--text-muted)" font-size="11" font-weight="600" text-anchor="end">100</text>
+    <text x="50" y="205" fill="var(--text-muted)" font-size="11" font-weight="600" text-anchor="end">60</text>
+    <text x="50" y="255" fill="var(--text-muted)" font-size="11" font-weight="600" text-anchor="end">20</text>
+    <text x="50" y="275" fill="var(--text-muted)" font-size="11" font-weight="600" text-anchor="end">0</text>
+    
+    <text x="140" y="290" fill="var(--text-color)" font-size="11" font-weight="600" text-anchor="middle">Quarter 1</text>
+    <text x="240" y="290" fill="var(--text-color)" font-size="11" font-weight="600" text-anchor="middle">Quarter 2</text>
+    <text x="340" y="290" fill="var(--text-color)" font-size="11" font-weight="600" text-anchor="middle">Quarter 3</text>
+    <text x="440" y="290" fill="var(--text-color)" font-size="11" font-weight="600" text-anchor="middle">Quarter 4</text>
+    
+    <rect x="115" y="257.8" width="50" height="12.2" fill="#ec4899" opacity="0.85" />
+    <rect x="115" y="233.4" width="50" height="24.4" fill="#f59e0b" opacity="0.85" />
+    <rect x="115" y="196.8" width="50" height="36.6" fill="#10b981" opacity="0.85" />
+    <rect x="115" y="148.0" width="50" height="48.8" fill="#3b82f6" opacity="0.85" />
+    
+    <rect x="215" y="251.7" width="50" height="18.3" fill="#ec4899" opacity="0.85" />
+    <rect x="215" y="221.2" width="50" height="30.5" fill="#f59e0b" opacity="0.85" />
+    <rect x="215" y="178.5" width="50" height="42.7" fill="#10b981" opacity="0.85" />
+    <rect x="215" y="123.6" width="50" height="54.9" fill="#3b82f6" opacity="0.85" />
+    
+    <rect x="315" y="245.6" width="50" height="24.4" fill="#ec4899" opacity="0.85" />
+    <rect x="315" y="209.0" width="50" height="36.6" fill="#f59e0b" opacity="0.85" />
+    <rect x="315" y="160.2" width="50" height="48.8" fill="#10b981" opacity="0.85" />
+    <rect x="315" y="99.2" width="50" height="61.0" fill="#3b82f6" opacity="0.85" />
+    
+    <rect x="415" y="240.7" width="50" height="29.3" fill="#ec4899" opacity="0.85" />
+    <rect x="415" y="196.8" width="50" height="43.9" fill="#f59e0b" opacity="0.85" />
+    <rect x="415" y="138.2" width="50" height="58.6" fill="#10b981" opacity="0.85" />
+    <rect x="415" y="65.0" width="50" height="73.2" fill="#3b82f6" opacity="0.85" />
+  </svg>
+  
+  <div style="display: flex; gap: 15px; margin-top: 15px; font-size: 0.85rem; flex-wrap: wrap; justify-content: center;">
+    <span style="display: flex; align-items: center; gap: 5px; color: var(--text-color); font-weight: 600;"><span style="display: inline-block; width: 12px; height: 12px; background: #3b82f6; border-radius: 2px;"></span> Product P (20% margin)</span>
+    <span style="display: flex; align-items: center; gap: 5px; color: var(--text-color); font-weight: 600;"><span style="display: inline-block; width: 12px; height: 12px; background: #10b981; border-radius: 2px;"></span> Product Q (15% margin)</span>
+    <span style="display: flex; align-items: center; gap: 5px; color: var(--text-color); font-weight: 600;"><span style="display: inline-block; width: 12px; height: 12px; background: #f59e0b; border-radius: 2px;"></span> Product R (10% margin)</span>
+    <span style="display: flex; align-items: center; gap: 5px; color: var(--text-color); font-weight: 600;"><span style="display: inline-block; width: 12px; height: 12px; background: #ec4899; border-radius: 2px;"></span> Product S (25% margin)</span>
+  </div>
+</div>
 
 Q1: P=40, Q=30, R=20, S=10
 Q2: P=45, Q=35, R=25, S=15
@@ -1019,12 +1241,11 @@ Profit margins: P=20%, Q=15%, R=10%, S=25%
 
 **Q68.** *(Complex Caselet)* Five friends — A, B, C, D, E — invest in a startup. The following information is given:
 
-- Total investment = ₹10,00,000
-- A invests twice what B invests
-- B invests ₹50,000 more than C
-- C and D together invest ₹3,00,000
+- E's investment = ₹1,00,000
 - D invests ₹1,20,000 more than E
-- E's investment = 10% of total investment
+- C and D together invest ₹3,00,000
+- B invests ₹50,000 more than C
+- A invests twice what B invests
 
 After 1 year, the startup earns a profit of ₹2,00,000. The profit is distributed in proportion to their investments. However, A leaves after 6 months, and D doubles his investment for the second 6 months.
 
@@ -1060,6 +1281,67 @@ Statement 4: The average selling price of Alpha is ₹200, and 5,000 units were 
 | Sales | 150 | 180 | 200 | 250 |
 | Operations | 100 | 110 | 130 | 140 |
 | HR | 50 | 55 | 60 | 70 |
+
+<div class="di-chart-container" style="display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 30px; margin: 24px 0; background: var(--details-bg); padding: 20px; border-radius: var(--radius-md); border: 1px solid var(--border-color);">
+  <div style="display: flex; flex-direction: column; align-items: center; flex: 1; min-width: 260px;">
+    <div style="font-weight: 700; margin-bottom: 10px; color: var(--text-color); font-size: 0.9rem;">💼 Avg Salary in 2023 (₹ Lakhs/annum)</div>
+    <svg viewBox="0 0 250 180" style="width: 100%;">
+      <line x1="80" y1="20" x2="80" y2="140" stroke="var(--text-color)" />
+      <line x1="80" y1="140" x2="230" y2="140" stroke="var(--text-color)" />
+      <line x1="130" y1="20" x2="130" y2="140" stroke="var(--border-color)" stroke-dasharray="3" />
+      <line x1="180" y1="20" x2="180" y2="140" stroke="var(--border-color)" stroke-dasharray="3" />
+      
+      <text x="130" y="152" fill="var(--text-muted)" font-size="9" text-anchor="middle">5L</text>
+      <text x="180" y="152" fill="var(--text-muted)" font-size="9" text-anchor="middle">10L</text>
+      
+      <rect x="80" y="25" width="120" height="20" fill="#3b82f6" rx="2" />
+      <text x="70" y="38" fill="var(--text-color)" font-size="10" font-weight="600" text-anchor="end">Engineering</text>
+      <text x="205" y="38" fill="var(--text-color)" font-size="10" font-weight="600">12L</text>
+      
+      <rect x="80" y="55" width="80" height="20" fill="#10b981" rx="2" />
+      <text x="70" y="68" fill="var(--text-color)" font-size="10" font-weight="600" text-anchor="end">Sales</text>
+      <text x="165" y="68" fill="var(--text-color)" font-size="10" font-weight="600">8L</text>
+      
+      <rect x="80" y="85" width="60" height="20" fill="#f59e0b" rx="2" />
+      <text x="70" y="98" fill="var(--text-color)" font-size="10" font-weight="600" text-anchor="end">Operations</text>
+      <text x="145" y="98" fill="var(--text-color)" font-size="10" font-weight="600">6L</text>
+      
+      <rect x="80" y="115" width="50" height="20" fill="#ec4899" rx="2" />
+      <text x="70" y="128" fill="var(--text-color)" font-size="10" font-weight="600" text-anchor="end">HR</text>
+      <text x="135" y="128" fill="var(--text-color)" font-size="10" font-weight="600">5L</text>
+    </svg>
+  </div>
+  
+  <div style="display: flex; flex-direction: column; align-items: center; flex: 1; min-width: 260px;">
+    <div style="font-weight: 700; margin-bottom: 10px; color: var(--text-color); font-size: 0.9rem;">📈 Company Revenue Trend (₹ Crores)</div>
+    <svg viewBox="0 0 250 180" style="width: 100%;">
+      <line x1="40" y1="20" x2="40" y2="140" stroke="var(--text-color)" />
+      <line x1="40" y1="140" x2="230" y2="140" stroke="var(--text-color)" />
+      
+      <line x1="40" y1="90" x2="230" y2="90" stroke="var(--border-color)" stroke-dasharray="3" />
+      <line x1="40" y1="40" x2="230" y2="40" stroke="var(--border-color)" stroke-dasharray="3" />
+      
+      <text x="35" y="93" fill="var(--text-muted)" font-size="9" text-anchor="end">50</text>
+      <text x="35" y="43" fill="var(--text-muted)" font-size="9" text-anchor="end">100</text>
+      
+      <text x="65" y="152" fill="var(--text-color)" font-size="10" font-weight="600" text-anchor="middle">2020</text>
+      <text x="115" y="152" fill="var(--text-color)" font-size="10" font-weight="600" text-anchor="middle">2021</text>
+      <text x="165" y="152" fill="var(--text-color)" font-size="10" font-weight="600" text-anchor="middle">2022</text>
+      <text x="215" y="152" fill="var(--text-color)" font-size="10" font-weight="600" text-anchor="middle">2023</text>
+      
+      <path d="M 65 90 L 115 75 L 165 55 L 215 30" fill="none" stroke="#6366f1" stroke-width="2.5" />
+      <circle cx="65" cy="90" r="4.5" fill="#6366f1" stroke="#ffffff" stroke-width="1" />
+      <circle cx="115" cy="75" r="4.5" fill="#6366f1" stroke="#ffffff" stroke-width="1" />
+      <circle cx="165" cy="55" r="4.5" fill="#6366f1" stroke="#ffffff" stroke-width="1" />
+      <circle cx="215" cy="30" r="4.5" fill="#6366f1" stroke="#ffffff" stroke-width="1" />
+      
+      <text x="65" y="78" fill="var(--text-color)" font-size="9" font-weight="700" text-anchor="middle">50</text>
+      <text x="115" y="63" fill="var(--text-color)" font-size="9" font-weight="700" text-anchor="middle">65</text>
+      <text x="165" y="43" fill="var(--text-color)" font-size="9" font-weight="700" text-anchor="middle">85</text>
+      <text x="215" y="18" fill="var(--text-color)" font-size="9" font-weight="700" text-anchor="middle">110</text>
+    </svg>
+  </div>
+</div>
 
 **Bar Chart: Average salary (₹ Lakhs per annum) by department in 2023**
 Engineering: 12 | Sales: 8 | Operations: 6 | HR: 5
@@ -1133,7 +1415,7 @@ Engineering: 12 | Sales: 8 | Operations: 6 | HR: 5
 
 **Q25.** Sum = 2+2.5+2+3+3.5+3 = 16; Avg = 16/6 = **₹2.67L** → **B**
 
-**Q26.** A's boys = 300 = 3/5 × total. Total in A = 500. B's ratio 4:3 → B's girls = 3/7 × 500 = **214.3** ≈ **B** (closest match)
+**Q26.** A's boys = 300 = 3/5 × total. Total in A = 500. Since both schools have the same number of students, School B has 500 students. B's ratio of boys:girls = 23:27 → B's girls = (27/50) × 500 = **270** → **B**
 
 **Q27.** Housing = 25% of 5,00,000 = 1,25,000. Transport = 15% = 75,000. Diff = **50,000** → **C**
 
@@ -1157,11 +1439,11 @@ Engineering: 12 | Sales: 8 | Operations: 6 | HR: 5
 
 **Q37.** 5-week CAGR = (133.1/100)^(52/5) - 1. Weekly rate ≈ (133.1/100)^(1/5.2) - 1 ≈ **7.3%** → **B**
 
-**Q38.** Let 2020 population = P. 2020 group = 35% of P. 2030 group = 30% of 12L = 3.6L. Decrease = 0.2L. So 35% of P - 3.6L = 0.2L → P = 3.8L/0.35 = **10.86L** ≈ **B**
+**Q38.** Let 2020 population = P. 0-18 group in 2020 = 35% of P. 0-18 group in 2030 = 30% of 12L = 3.6L. Given the 0-18 group increases by 10,000 (0.1L) from 2020 to 2030: 3.6L - 35% of P = 0.1L → 35% of P = 3.5L → P = **10 Lakhs** → **B**
 
 **Q39.** Profit/unit: P = 20, Q = 15, R = 15. Highest = **P** → **A**
 
-**Q40.** Distances: 30% of 600 = 180km @ 60 km/h → 3 hrs. 40% = 240km @ 80 → 3 hrs. Remaining 30% = 180km @ 100 → 1.8 hrs. Total = 7.8 hrs. Total distance = 600. Avg speed = 600/7.8 = **76.9** ≈ **B**
+**Q40.** Distances: 30% of 600 = 180km @ 60 km/h → 3 hrs. 40% = 240km @ 80 → 3 hrs. Remaining 30% = 180km @ 90 → 2 hrs. Total time = 3 + 3 + 2 = 8 hrs. Average speed = 600 / 8 = **75 km/h** → **B**
 
 ---
 
@@ -1175,9 +1457,9 @@ Engineering: 12 | Sales: 8 | Operations: 6 | HR: 5
 
 **Q44.** H1 avg = (10000+15000+12000+20000)/4 = 14250. H2 = (12000+15000+12000+20000)/4 = 14750. Pattern: H1 avg repeated across 2 years × 4 halves = 2 × 57000 = **1,14,000**? Wait — the question says "total annual visits = 1,80,000." The pattern suggests Q1+Q2+Q3+Q4 = 1,80,000. Total for 2 years = **3,60,000** → **C**
 
-**Q45.** 2022 Real Estate = 20% of 10L = 2L. 2023 Real Estate = 22% of 13L = 2.86L. Increase = **₹2.86L - ₹2L = ₹0.86L = ₹86,000**? Wait — 22% of 13L = 2.86L. Increase = 2.86L - 2L = **0.86L = ₹86,000**? Not matching options. Let's check: Option C is ₹2,86,000 which is 2.86L. Increase = 0.86L. Not in options. Let's recalculate: 20% of 10,00,000 = 2,00,000. 22% of 13,00,000 = 2,86,000. Increase = 86,000. Not in options. **Re-examine:** Maybe the 2022 Real Estate amount is asked, not the increase. Real Estate 2023 = 2,86,000 → **C** (matches closest interpretation)
+**Q45.** Real Estate in 2022 = 20% of 10L = ₹2.0 Lakhs. Real Estate in 2023 = 22% of 13L = ₹2.86 Lakhs. Absolute increase = 2.86L - 2.0L = 0.86L = **₹86,000** → **B**
 
-**Q46.** B's values: 60 → 72 → 79.2 (at 10% growth). D's 2021 = 96 (since D 2021 = D 2023 from "equal numbers"). Average 2022 = 85. (100+72+?+88+75)/5 = 85 → 335+? = 425 → ? = 90. C 2022 = 90. C grows from 90 to 130 (2021→2023). 90 × ? × ? = 130. Growth factor = 130/90 = 1.444 = 44.4%. ✓. B 2023 = 72 × 1.1 = **79.2**? But this is not an option. The question likely expects rounding to nearest option: **B (88)** → Note: The answer choice options need rechecking.
+**Q46.** B's values: 2021 = 60, 2022 = 72 (grew 20%). Consistent 20% growth per year → 2023 value for Dept B = 72 × 1.20 = **86.4** → **A**
 
 **Q47.** EBITDA Y1 = 200×15% = 30. Y5 = 450×20% = 90. CAGR = (90/30)^(1/4) - 1 = 3^0.25 - 1 = 1.316 - 1 = **31.6%** → **C**
 
@@ -1185,25 +1467,25 @@ Engineering: 12 | Sales: 8 | Operations: 6 | HR: 5
 
 **Q49.** P = 20% of Q. Q = R + S. P = 60, R = 80. So 60 = 20% of Q → Q = 300. Q = R + S → 300 = 80 + S → S = **220** → **B**
 
-**Q50.** A's food = 25% of 50,000 = 12,500. B's food = 20% of 75,000 = 15,000. Given A's food = B's food? → 12,500 ≠ 15,000. Not equal. Wait — the question says "A's Food expense = B's Food expense." This is a contradiction unless we re-read: It says "A's Food expense = B's Food expense." If this is true, then 12,500 = 20% of B's total → B's total = 62,500 (not 75,000 as given). **Data inconsistency detected.** The answer is **D (Cannot be determined / Data inconsistent)**
+**Q50.** A's food = 25% of 60,000 = 15,000. B's total expense = 75,000. Ratio of A's food to B's total = 15,000 : 75,000 = **1:5** → **C**
 
-**Q51.** Year 1: Coal=60%, Renew=10%, Nuclear=5%, Gas=15%, Oil=10%. Year 5: Coal=40%, Renew=25%, Nuclear=5%, Gas=20%, Oil=10%. Change in Oil = 10% - 10% = **0% (No change)** → **D** (technically "No change" — but this wasn't an option, so D is the closest.)
+**Q51.** Year 1: Coal=60%, Renew=10%, Nuclear=5%, Gas=15% → Oil = 10%. Year 5: Coal=40%, Renew=25%, Nuclear=5%, Gas=20% → Oil = 10%. Change in Oil's contribution = 10% - 10% = **0% (No change)** → **D**
 
 **Q52.** Defective: X: 50+48+45 = 143. Y: 64+63+50 = 177. Z: 72+55+52 = 179. W: 18+24+18 = 60. Highest = **Z** → **C**
 
-**Q53.** SP of both = same. CP1 = 500, Profit 20% → SP = 600. CP2 = SP/0.8 = 750. Total CP = 1250. Total SP = 1200. Loss = 50/1250 × 100 = **4% Loss** → **C**
+**Q53.** SP of both is equal. Article 1: CP = 500, Profit = 20% → SP = 500 × 1.2 = 600. Thus, SP of article 2 is also 600. Article 2: SP = 600, Loss = 20% → CP = 600 / 0.8 = 750. Total CP = 500 + 750 = 1250. Total SP = 600 + 600 = 1200. Overall Loss = 50 / 1250 × 100 = **4% Loss** → **C**
 
 **Q54.** Month 3 USD/INR + Month 9 EUR/USD → requires **B (Cross-rate calculation)**
 
 **Q55.** Needs Population × Literacy Rate × Gender Ratio → needs cross-referencing of all three → **B**
 
-**Q56.** Y1: A+B+C = 100. C = 20 in Y5. A doubles → 2A. B triples → 3B. C halves? Wait — "C's revenue halves" means C goes from C to C/2 = 20 → C=40 in Y1. So A+B+40=100 → A+B=60. Y5: 2A+3B+20=100? → 2A+3B=80. Solve: A+B=60 → A=60-B. 2(60-B)+3B=80 → 120-2B+3B=80 → B=-40. **Data inconsistency detected** → **D (Cannot be determined)**
+**Q56.** In Year 1: Total = A + B + C = 100. In Year 5: C's revenue halves to become 20, meaning Y1 C's revenue was 40. Thus, Y1 A + B = 60. In Year 5, total revenue is 2A + 3B + 20. Since we don't know the individual values of A and B (only their sum is 60), the Year 5 total 2A + 3B + 20 is not uniquely determined. Thus, it **Cannot be determined** → **D**
 
-**Q57.** A invests X for 6 months = X×6 time-units. B invests 2X for 12 = 24X. C invests 3X for 4 = 12X. Total investment-time = X+24+12 = 37X (where X=1 unit). A's share = 6/37 × 2,40,000 = 38,919 ≈ 60,000? Wait — A = X×6 = 6 units. B = 24, C = 12. Total = 42. A's share = 6/42 × 2,40,000 = 34,285. Not matching. Let's recalculate using time-weighted: A: X for 6mo = 6X. B: 2X for 12mo = 24X. C: 3X for 4mo = 12X. Total = 42X. A = 6/42 = 1/7. 1/7 × 2,40,000 = 34,285. Given A gets 60,000. Scale factor = 60,000/34,285 = 1.75. C's share = 12/42 × 2,40,000 × 1.75 = 1,20,000. **Answer: ₹1,20,000** → **D**
+**Q57.** Time-weighted investments: A = X × 6 = 6X units; B = 2X × 6 = 12X units; C = 3X × 4 = 12X units. Total units = 6 + 12 + 12 = 30X units. A's share of profit = 6/30 = 20% of total profit. Since A's profit share is ₹48,000, total profit = ₹2,40,000. C's share = 12/30 = 40% of total profit = 40% of 2,40,000 = **₹96,000** → **D**
 
 **Q58.** Y1=200, Y2=240 (×1.2), Y3=276 (×1.15), Y4=303.6 (×1.1), Y5=361 (given). Check: 303.6? 276×1.1=303.6. 303.6×1.188=361. Growth from Y1 to Y5 = (361-200)/200 = **80.5%** → **A**
 
-**Q59.** A = 144° → 144/360 = 40% of market. Total market = 360/0.4 = 900 Cr. D+E = 18% → D+E = 162 Cr. Need D alone? Not enough data. **Cannot determine** → **D** (most likely)
+**Q59.** A occupies 144° → 144/360 = 40% of market. Total market revenue = 360 / 0.40 = ₹900 Crores. D and E together = 18% of market = ₹162 Crores. Since D's share is half of E's share, D accounts for 1/3 of their combined share = 6% of the market. D's revenue = 6% of 900 Cr = **₹54 Crores** → **B**
 
 **Q60.** Profit margin = (Revenue - Cost)/Revenue. Need both revenue and cost → **B**
 
@@ -1221,14 +1503,10 @@ Engineering: 12 | Sales: 8 | Operations: 6 | HR: 5
 
 **Q61e.** North profit = 415 × 18% = 74.7. South = 316 × 22% = 69.52. East = 240 × 15% = 36. West = 188 × 20% = 37.6. Highest = **North**
 
-**Q62a.** X profit by year: 24, 25, 45, 64.8, 90. Y profit: 15, 21.6, 33.6, 48, 67.5. Y first exceeds X = **2020** (21.6 > 25? No — 2021: 33.6 < 45? No — 2022: 48 < 64.8? No — 2023: 67.5 < 90? No.) Y never exceeds X. **Answer: Never**
-
-**Q62b.** X profit Y1=24, Y5=90. CAGR = (90/24)^(1/4) - 1 = 3.75^0.25 - 1 = 1.393 - 1 = **39.3%**
-
-**Q62c.** Y2→Y3 growth = (300-240)/240 = 25%. Y3→Y4 = (360-300)/300 = 20%. Y4→Y5 = (450-360)/360 = 25%. Avg growth ≈ 23.3%. 2024 projection = 450 × 1.233 = 554.9. Excess over 540 = 14.9. % excess = 14.9/540 × 100 = **2.76%** (exceeds by ~2.76%)
-
+**Q62a.** X profits: 2019: 200×12%=24; 2020: 250×10%=25; 2021: 300×15%=45; 2022: 360×18%=64.8; 2023: 450×20%=90. Y profits: 2019: 150×10%=15; 2020: 180×15%=27; 2021: 240×14%=33.6; 2022: 300×16%=48; 2023: 375×18%=67.5. Y first exceeds X in **2020** (27 > 25)
+**Q62b.** Company X profit grew from 24 (2019) to 90 (2023). CAGR = (90/24)^(1/4) - 1 = 3.75^0.25 - 1 = 1.3916 - 1 = **39.2%**
+**Q62c.** Company X revenue growth rate from 2022 to 2023 = (450 - 360) / 360 = 25%. Projected 2024 revenue = 450 × 1.25 = 562.5 Crores. Target is 540 Crores. Exceeds target by: ((562.5 - 540) / 540) × 100 = **4.17%**
 **Q62d.** Combined profit 2021 = 45+33.6=78.6. Combined revenue 2023 = 450+375=825. % = 78.6/825×100 = **9.5%**
-
 **Q62e.** X growth rates: 4.2%, 80%, 44%, 39%. Y: 44%, 55.6%, 42.9%, 25%. Coefficient of variation: X has more volatile growth → **Y is more consistent**
 
 **Q63a.** Engineering = 25% of 4000 = 1000. Girls = 20% = **200**
@@ -1281,15 +1559,9 @@ Engineering: 12 | Sales: 8 | Operations: 6 | HR: 5
 
 **Q67e.** Q1→Q2: 20%, Q2→Q3: 16.7%, Q3→Q4: 20%. Avg = (20+16.7+20)/3 = **18.9%**
 
-**Q68a.** E = 10% of 10,00,000 = **₹1,00,000**
-
-**Q68b.** E = 1,00,000. D = E + 1,20,000 = 2,20,000. C + D = 3,00,000 → C = 80,000. B = C + 50,000 = 1,30,000. A = 2B = 2,60,000. Total check: 2,60,000+1,30,000+80,000+2,20,000+1,00,000 = 7,90,000 ≠ 10,00,000. **Data inconsistency** — total doesn't add up to 10,00,000. Re-examine: C+D=3,00,000. If D=2,20,000, C=80,000. B=C+50,000=1,30,000. A=2B=2,60,000. E=1,00,000. Sum=7,90,000. Missing 2,10,000. The problem data may be self-contradictory or missing a fifth investor. **Cannot fully determine with given data.**
-
-**Q68c.** A's 6-month share = 2,60,000 × 6 = 15,60,000 investment-time units. B = 1,30,000×12 = 15,60,000. C = 80,000×12 = 9,60,000. E = 1,00,000×12 = 12,00,000. D: 2,20,000×6 + 4,40,000×6 = 39,60,000. Total = 15.6+15.6+9.6+39.6+12 = 92.4 (in units of 10,000). A's share = 15.6/92.4 × 2,00,000 = **₹33,766** (approximately). Given the data inconsistency, answer is **approximately ₹33,770** — closest option should be selected.
-
-**Q68d.** D's first 6 months = 2,20,000 × 6 = 13,20,000. Second 6 months = 4,40,000 × 6 = 26,40,000. Total = **39,60,000 investment-time units**
-
-**Q68e.** D contributes 39,60,000 out of 92,40,000 total = 42.9% of profit = 0.429 × 2,00,000 = **₹85,700** → D gets the highest.
+**Q68a.** E's investment = **₹1,00,000** (given directly)
+**Q68b.** E = 1,00,000; D = 2,20,000; C = 80,000; B = 1,30,000; A = 2,60,000. Total initial investment = 7,90,000. Ratio A:B:C:D:E = 2,60,000 : 1,30,000 : 80,000 : 2,20,000 : 1,00,000 = **26:13:8:22:10**
+**Q68c.** Time-weighted units (Investment × Months): A = 2,60,000 × 6 = 15,60,000; B = 1,30,000 × 12 = 15,60,000; C = 80,000 × 12 = 9,60,000; E = 1,00,000 × 12 = 12,00,000; D = (2,20,000 × 6) + (4,40,000 × 6) = 39,60,000. Total time-weighted units = 92,40,000. A's profit share = (15,60,000 / 92,40,000) × 2,00,000 = **₹33,766**
 
 **Q69a.** Alpha City X = 40% of 8,00,000 = 3,20,000. Alpha City Y = Gamma Y = 2,50,000. Total Alpha = **₹5,70,000** → Yes
 
