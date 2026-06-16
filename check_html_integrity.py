@@ -16,7 +16,13 @@ expected_files = [
     "profit_loss_discount_study_guide.html",
     "simple_compound_interest_study_guide.html",
     "time_speed_distance_study_guide.html",
-    "time_work_study_guide.html"
+    "time_work_study_guide.html",
+    "permutations_combinations_study_guide.html",
+    "ages_study_guide.html",
+    "coding_decoding_study_guide.html",
+    "blood_relations_study_guide.html",
+    "clocks_calendar_study_guide.html",
+    "data_interpretation_study_guide.html"
 ]
 
 all_passed = True

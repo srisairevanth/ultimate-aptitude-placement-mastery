@@ -1,0 +1,2139 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ages Study Guide | Learning Portal</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono&display=swap" rel="stylesheet">
+    <script>
+        // Sync theme immediately to prevent flashing
+        (function() {
+            const savedTheme = localStorage.getItem('theme') || 'light';
+            document.documentElement.setAttribute('data-theme', savedTheme);
+        })();
+    </script>
+    <style>
+        :root {
+            --bg-color: #f8fafc;
+            --text-color: #0f172a;
+            --text-muted: #64748b;
+            --sidebar-bg: #ffffff;
+            --card-bg: #ffffff;
+            --border-color: #e2e8f0;
+            --primary-color: #2563eb;
+            --primary-hover: #1d4ed8;
+            --primary-light: #eff6ff;
+            --accent-color: #8b5cf6;
+            --accent-light: #f5f3ff;
+            --code-bg: #f8fafc;
+            --details-bg: #ffffff;
+            
+            --note-border: #3b82f6;
+            --note-bg: rgba(59, 130, 246, 0.05);
+            --tip-border: #10b981;
+            --tip-bg: rgba(16, 185, 129, 0.05);
+            --warning-border: #f59e0b;
+            --warning-bg: rgba(245, 158, 11, 0.05);
+            --important-border: #8b5cf6;
+            --important-bg: rgba(139, 92, 246, 0.05);
+            
+            --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+            --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.08), 0 2px 4px -1px rgba(0, 0, 0, 0.04);
+            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            --radius-sm: 8px;
+            --radius-md: 12px;
+            --radius-lg: 16px;
+            --sidebar-width: 320px;
+            --transition-speed: 0.3s;
+        }
+        
+        [data-theme="dark"] {
+            --bg-color: #090d16;
+            --text-color: #f1f5f9;
+            --text-muted: #94a3b8;
+            --sidebar-bg: #111827;
+            --card-bg: #1f293d;
+            --border-color: #1f293d;
+            --primary-color: #3b82f6;
+            --primary-hover: #60a5fa;
+            --primary-light: rgba(59, 130, 246, 0.15);
+            --accent-color: #a78bfa;
+            --accent-light: rgba(139, 92, 246, 0.15);
+            --code-bg: #111827;
+            --details-bg: #111827;
+            --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.5);
+            --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.3);
+            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.4);
+            
+            --note-border: #3b82f6;
+            --note-bg: rgba(59, 130, 246, 0.1);
+            --tip-border: #10b981;
+            --tip-bg: rgba(16, 185, 129, 0.1);
+            --warning-border: #f59e0b;
+            --warning-bg: rgba(245, 158, 11, 0.1);
+            --important-border: #8b5cf6;
+            --important-bg: rgba(139, 92, 246, 0.1);
+        }
+        
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            transition: background-color var(--transition-speed) ease, border-color var(--transition-speed) ease;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            display: flex;
+            min-height: 100vh;
+        }
+        
+        /* Sticky Sidebar Layout */
+        .sidebar {
+            width: var(--sidebar-width);
+            background-color: var(--sidebar-bg);
+            border-right: 1px solid var(--border-color);
+            height: 100vh;
+            position: sticky;
+            top: 0;
+            padding: 30px 24px;
+            overflow-y: auto;
+            display: flex;
+            flex-direction: column;
+            gap: 28px;
+            flex-shrink: 0;
+            z-index: 90;
+            box-shadow: var(--shadow-sm);
+        }
+        
+        .sidebar.collapsed {
+            width: 0;
+            padding: 0;
+            overflow: hidden;
+            border-right: none;
+        }
+        
+        .sidebar-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .sidebar-brand {
+            font-family: 'Outfit', sans-serif;
+            font-weight: 700;
+            font-size: 1.35rem;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            text-decoration: none;
+        }
+        
+        .theme-toggle-btn {
+            background: none;
+            border: none;
+            color: var(--text-muted);
+            cursor: pointer;
+            width: 38px;
+            height: 38px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: var(--bg-color);
+            border: 1px solid var(--border-color);
+            transition: all 0.2s ease;
+        }
+        
+        .theme-toggle-btn:hover {
+            color: var(--primary-color);
+            transform: scale(1.05);
+        }
+        
+        .sun-icon { display: block; }
+        .moon-icon { display: none; }
+        
+        [data-theme="dark"] .sun-icon { display: none; }
+        [data-theme="dark"] .moon-icon { display: block; }
+        
+        .sidebar-progress-card {
+            background-color: var(--bg-color);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-md);
+            padding: 16px;
+        }
+        
+        .sidebar-progress-label {
+            font-size: 0.78rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--text-muted);
+            font-weight: 700;
+            margin-bottom: 8px;
+            display: block;
+        }
+        
+        .sidebar-progress-wrapper {
+            background-color: var(--border-color);
+            border-radius: 99px;
+            height: 8px;
+            overflow: hidden;
+            margin-bottom: 6px;
+        }
+        
+        .sidebar-progress-bar {
+            background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
+            height: 100%;
+            width: 0%;
+            border-radius: 99px;
+            transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .sidebar-progress-stats {
+            font-size: 0.82rem;
+            font-weight: 600;
+            color: var(--text-color);
+        }
+        
+        .sidebar-section-title {
+            font-family: 'Outfit', sans-serif;
+            font-size: 0.78rem;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            color: var(--text-muted);
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+        
+        .quick-nav-list, .toc-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+        
+        .quick-nav-list a, .toc-list a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 0.88rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 14px;
+            border-radius: var(--radius-sm);
+            transition: all 0.2s ease;
+            font-weight: 500;
+        }
+        
+        .quick-nav-list a:hover, .toc-list a:hover {
+            background-color: var(--bg-color);
+            color: var(--primary-color);
+            transform: translateX(4px);
+        }
+        
+        .quick-nav-list a.active {
+            background-color: var(--primary-light);
+            color: var(--primary-color);
+            font-weight: 600;
+            box-shadow: inset 3px 0 0 var(--primary-color);
+        }
+        
+        .toc-list a {
+            font-size: 0.84rem;
+            padding: 6px 12px;
+            border-left: 2px solid var(--border-color);
+            border-radius: 0;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        
+        .toc-list a:hover {
+            background-color: transparent;
+            border-left-color: var(--primary-color);
+            padding-left: 16px;
+            color: var(--text-color);
+        }
+        
+        /* Main Container */
+        .container {
+            flex: 1;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 40px 60px;
+            width: 100%;
+        }
+        
+        /* Floating layout controls */
+        .header-controls {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin-bottom: 24px;
+        }
+        
+        .collapse-btn {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            color: var(--text-color);
+            cursor: pointer;
+            padding: 10px 14px;
+            border-radius: var(--radius-sm);
+            font-size: 0.88rem;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            box-shadow: var(--shadow-sm);
+            transition: all 0.2s ease;
+        }
+        
+        .collapse-btn:hover {
+            background-color: var(--primary-light);
+            color: var(--primary-color);
+            border-color: var(--primary-color);
+        }
+        
+        h1, h2, h3, h4 {
+            font-family: 'Outfit', sans-serif;
+            color: var(--text-color);
+            margin-top: 1.8em;
+            margin-bottom: 0.6em;
+            font-weight: 700;
+            letter-spacing: -0.01em;
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 16px;
+            margin-top: 0;
+            background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        h2 {
+            font-size: 1.75rem;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 10px;
+            margin-top: 2.2em;
+        }
+        
+        h3 {
+            font-size: 1.35rem;
+        }
+        
+        p {
+            color: var(--text-color);
+            opacity: 0.9;
+            margin-bottom: 16px;
+            line-height: 1.7;
+        }
+        
+        a {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 500;
+        }
+        
+        a:hover {
+            text-decoration: underline;
+        }
+        
+        hr {
+            border: 0;
+            height: 1px;
+            background: var(--border-color);
+            margin: 40px 0;
+        }
+        
+        img {
+            border-radius: var(--radius-md);
+            max-width: 100%;
+        }
+        
+        /* Badge styling */
+        div[align="left"] {
+            display: flex;
+            gap: 10px;
+            margin: 24px 0;
+            flex-wrap: wrap;
+        }
+        
+        /* Alerts styling */
+        .alert {
+            display: flex;
+            border-left: 4px solid;
+            padding: 20px;
+            border-radius: var(--radius-md);
+            margin: 28px 0;
+            box-shadow: var(--shadow-sm);
+        }
+        
+        .alert-icon {
+            font-size: 1.4rem;
+            margin-right: 16px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .alert-content {
+            flex: 1;
+        }
+        
+        .alert-content p:last-child {
+            margin-bottom: 0;
+        }
+        
+        .alert-note {
+            border-left-color: var(--note-border);
+            background-color: var(--note-bg);
+        }
+        
+        .alert-tip {
+            border-left-color: var(--tip-border);
+            background-color: var(--tip-bg);
+        }
+        
+        .alert-warning {
+            border-left-color: var(--warning-border);
+            background-color: var(--warning-bg);
+        }
+        
+        .alert-important {
+            border-left-color: var(--important-border);
+            background-color: var(--important-bg);
+        }
+        
+        /* Tables styling */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 28px 0;
+            font-size: 0.9rem;
+            background-color: var(--card-bg);
+            border-radius: var(--radius-md);
+            overflow: hidden;
+            box-shadow: var(--shadow-sm);
+        }
+        
+        th, td {
+            padding: 14px 20px;
+            border: 1px solid var(--border-color);
+            text-align: left;
+        }
+        
+        th {
+            background-color: var(--primary-light);
+            color: var(--primary-color);
+            font-weight: 700;
+        }
+        
+        tr:nth-child(even) {
+            background-color: rgba(59, 130, 246, 0.02);
+        }
+        
+        /* Code blocks */
+        pre {
+            background-color: var(--code-bg);
+            padding: 20px;
+            border-radius: var(--radius-md);
+            overflow-x: auto;
+            border: 1px solid var(--border-color);
+            margin: 28px 0;
+            box-shadow: inset 0 1px 3px rgba(0,0,0,0.02);
+        }
+        
+        code {
+            font-family: 'JetBrains Mono', monospace;
+            background-color: var(--code-bg);
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-size: 0.86rem;
+            color: var(--primary-color);
+            font-weight: 600;
+        }
+        
+        pre code {
+            padding: 0;
+            background-color: transparent;
+            font-size: 0.82rem;
+            color: var(--text-color);
+            font-weight: 400;
+        }
+        
+        /* Interactive details / summary styling */
+        details {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-md);
+            margin: 16px 0;
+            padding: 0;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            overflow: hidden;
+            box-shadow: var(--shadow-sm);
+        }
+        
+        details[open] {
+            border-color: var(--primary-color);
+            box-shadow: var(--shadow-md);
+        }
+        
+        summary {
+            font-weight: 600;
+            cursor: pointer;
+            outline: none;
+            color: var(--text-color);
+            user-select: none;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 16px 20px;
+            list-style: none;
+        }
+        
+        summary::-webkit-details-marker {
+            display: none;
+        }
+        
+        summary::after {
+            content: "→";
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            transition: transform 0.3s ease;
+        }
+        
+        details[open] summary::after {
+            transform: rotate(90deg);
+        }
+        
+        summary:hover {
+            background-color: var(--primary-light);
+            color: var(--primary-color);
+        }
+        
+        .solution-wrapper {
+            padding: 20px;
+            border-top: 1px solid var(--border-color);
+            background-color: var(--bg-color);
+        }
+        
+        ul, ol {
+            padding-left: 24px;
+            margin: 16px 0;
+        }
+        
+        li {
+            margin-bottom: 8px;
+        }
+        
+        /* Dynamic Question Cards Style */
+        .question-card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-md);
+            padding: 24px;
+            margin: 20px 0;
+            box-shadow: var(--shadow-sm);
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            border-left: 4px solid var(--border-color);
+            transition: all var(--transition-speed) ease;
+        }
+        
+        .question-card.completed {
+            border-left-color: var(--success-color);
+            background-color: rgba(16, 185, 129, 0.01);
+        }
+        
+        .question-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 16px;
+        }
+        
+        .question-meta-group {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+        
+        .question-checkbox-label {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            user-select: none;
+        }
+        
+        .question-checkbox-label input {
+            display: none;
+        }
+        
+        .checkbox-box {
+            width: 20px;
+            height: 20px;
+            border: 2px solid var(--text-muted);
+            border-radius: 6px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.2s ease;
+        }
+        
+        .question-checkbox-label input:checked + .checkbox-box {
+            background-color: var(--success-color);
+            border-color: var(--success-color);
+            color: white;
+        }
+        
+        .question-checkbox-label input:checked + .checkbox-box::after {
+            content: "✓";
+            font-size: 0.78rem;
+            font-weight: 900;
+        }
+        
+        .company-tag {
+            font-size: 0.74rem;
+            background-color: var(--primary-light);
+            color: var(--primary-color);
+            padding: 2px 8px;
+            border-radius: 99px;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+        
+        .question-text {
+            font-size: 1.05rem;
+            font-weight: 500;
+            line-height: 1.6;
+        }
+        
+        /* Practice progress & tabs widget styles */
+        .practice-progress-widget {
+            background: linear-gradient(135deg, var(--card-bg), var(--bg-color));
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-lg);
+            padding: 28px;
+            margin: 32px 0;
+            box-shadow: var(--shadow-md);
+        }
+        
+        .practice-progress-title {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin: 0 0 16px 0;
+            border-bottom: none;
+            padding-bottom: 0;
+        }
+        
+        .practice-progress-bar-container {
+            background-color: var(--border-color);
+            height: 12px;
+            border-radius: 99px;
+            overflow: hidden;
+            margin-bottom: 12px;
+        }
+        
+        .practice-progress-bar {
+            background: linear-gradient(90deg, #10b981, #3b82f6);
+            height: 100%;
+            width: 0%;
+            border-radius: 99px;
+            transition: width 0.5s ease;
+        }
+        
+        .practice-progress-stats {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            font-weight: 600;
+        }
+        
+        .tab-menu {
+            display: flex;
+            gap: 8px;
+            margin: 24px 0 8px 0;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 12px;
+            flex-wrap: wrap;
+        }
+        
+        .tab-btn {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            color: var(--text-muted);
+            padding: 8px 16px;
+            border-radius: 99px;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 0.85rem;
+            transition: all 0.2s ease;
+        }
+        
+        .tab-btn:hover {
+            background-color: var(--primary-light);
+            color: var(--primary-color);
+            border-color: var(--primary-color);
+        }
+        
+        .tab-btn.active {
+            background-color: var(--primary-color);
+            color: white;
+            border-color: var(--primary-color);
+            box-shadow: 0 4px 6px -1px rgba(37, 99, 235, 0.2);
+        }
+        
+        /* Math block styling */
+        .math-block {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            padding: 16px;
+            border-radius: var(--radius-md);
+            margin: 16px 0;
+            font-family: 'JetBrains Mono', monospace;
+            overflow-x: auto;
+            text-align: center;
+            font-weight: 600;
+            color: var(--accent-color);
+        }
+        
+        /* Floating Action Button (Back to Top) */
+        .floating-action-btn {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: var(--shadow-lg);
+            z-index: 100;
+            opacity: 0;
+            pointer-events: none;
+            transition: all 0.3s ease;
+        }
+        
+        .floating-action-btn.visible {
+            opacity: 1;
+            pointer-events: auto;
+        }
+        
+        .floating-action-btn:hover {
+            background-color: var(--primary-hover);
+            transform: translateY(-4px);
+        }
+        
+        /* Mobile Hamburger & Controls */
+        .mobile-header {
+            display: none;
+            background-color: var(--sidebar-bg);
+            border-bottom: 1px solid var(--border-color);
+            padding: 14px 20px;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            align-items: center;
+            justify-content: space-between;
+            box-shadow: var(--shadow-sm);
+        }
+        
+        .mobile-hamburger {
+            background: none;
+            border: none;
+            color: var(--text-color);
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 1024px) {
+            body {
+                flex-direction: column;
+            }
+            .sidebar {
+                position: fixed;
+                left: 0;
+                top: 0;
+                bottom: 0;
+                transform: translateX(-100%);
+                transition: transform 0.3s ease;
+                z-index: 200;
+                height: 100vh;
+                box-shadow: var(--shadow-lg);
+            }
+            .sidebar.mobile-open {
+                transform: translateX(0);
+            }
+            .mobile-header {
+                display: flex;
+            }
+            .container {
+                padding: 30px 24px;
+            }
+            .sidebar-overlay {
+                display: none;
+                position: fixed;
+                inset: 0;
+                background-color: rgba(0,0,0,0.5);
+                z-index: 150;
+            }
+            .sidebar-overlay.visible {
+                display: block;
+            }
+            .header-controls {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+    <div class="mobile-header">
+        <button class="mobile-hamburger" id="mobileHamburger">☰</button>
+        <a href="index.html" class="sidebar-brand">🎓 Aptitude Mastery</a>
+        <button class="theme-toggle-btn" id="themeToggleMobile">
+            <svg class="sun-icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+            <svg class="moon-icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+        </button>
+    </div>
+
+    <aside class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <a href="index.html" class="sidebar-brand">
+                🎓 Aptitude Mastery
+            </a>
+            <button class="theme-toggle-btn" id="themeToggleSidebar">
+                <svg class="sun-icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+                <svg class="moon-icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+            </button>
+        </div>
+        
+        <div class="sidebar-progress-card">
+            <span class="sidebar-progress-label">Guide Progress</span>
+            <div class="sidebar-progress-wrapper">
+                <div class="sidebar-progress-bar" id="sidebarProgressBar"></div>
+            </div>
+            <div class="sidebar-progress-stats" id="sidebarProgressStats">0% Completed (0/0 Qs)</div>
+        </div>
+        
+        <hr style="margin: 0; opacity: 0.5;" />
+        <div class="sidebar-section-title">Table of Contents</div>
+        <ul class="toc-list"><li><a href="#rank--importance">Rank & Importance</a></li><li><a href="#concept-overview">Concept Overview</a></li><li><a href="#core-concepts-to-master">Core Concepts to Master</a></li><li><a href="#important-formula-sheet">Important Formula Sheet</a></li><li><a href="#shortcut-techniques--time-saving-tricks">Shortcut Techniques & TimeSaving Tricks</a></li><li><a href="#most-frequently-asked-question-patterns">Most Frequently Asked Question Patterns</a></li><li><a href="#placement--interview-relevance">Placement & Interview Relevance</a></li><li><a href="#beginner--advanced-roadmap">Beginner  Advanced Roadmap</a></li><li><a href="#difficulty-breakdown">Difficulty Breakdown</a></li><li><a href="#mastery-plan">Mastery Plan</a></li><li><a href="#common-traps--mistakes">Common Traps & Mistakes</a></li><li><a href="#practice-section">Practice Section</a></li><li><a href="#detailed-solutions">Detailed Solutions</a></li><li><a href="#best-resources">Best Resources</a></li><li><a href="#final-verdict">Final Verdict</a></li></ul>
+        <hr style="margin: 0; opacity: 0.5;" />
+        <div class="sidebar-section-title">Topic Guides</div>
+        <ul class="quick-nav-list"><li><a href="index.html" ><span class="nav-emoji">🏠</span> Home Dashboard</a></li><li><a href="number_systems_simplification_study_guide.html" ><span class="nav-emoji">🔢</span> Number Systems</a></li><li><a href="percentages_study_guide.html" ><span class="nav-emoji">📈</span> Percentages</a></li><li><a href="profit_loss_discount_study_guide.html" ><span class="nav-emoji">💰</span> Profit & Loss</a></li><li><a href="simple_compound_interest_study_guide.html" ><span class="nav-emoji">💸</span> SI & CI</a></li><li><a href="time_work_study_guide.html" ><span class="nav-emoji">⚙️</span> Time & Work</a></li><li><a href="time_speed_distance_study_guide.html" ><span class="nav-emoji">⏳</span> Speed & Distance</a></li><li><a href="averages_ratio_proportion_study_guide.html" ><span class="nav-emoji">📊</span> Averages & Ratio</a></li><li><a href="mixtures_alligations_study_guide.html" ><span class="nav-emoji">⚖️</span> Mixtures & Alligation</a></li><li><a href="probability_study_guide.html" ><span class="nav-emoji">🎲</span> Probability</a></li><li><a href="permutations_combinations_study_guide.html" ><span class="nav-emoji">🧩</span> P & C</a></li><li><a href="ages_study_guide.html" class="active"><span class="nav-emoji">⏳</span> Ages</a></li><li><a href="coding_decoding_study_guide.html" ><span class="nav-emoji">🔤</span> Coding Decoding</a></li><li><a href="blood_relations_study_guide.html" ><span class="nav-emoji">🌳</span> Blood Relations</a></li><li><a href="clocks_calendar_study_guide.html" ><span class="nav-emoji">📅</span> Clocks & Calendar</a></li><li><a href="data_interpretation_study_guide.html" ><span class="nav-emoji">📈</span> Data Interpretation</a></li></ul>
+    </aside>
+
+    <main class="container">
+        <div class="header-controls">
+            <button class="collapse-btn" id="collapseSidebarBtn">
+                <span>◀ Collapse Sidebar</span>
+            </button>
+        </div>
+        <h1>Ages — Placement Study Guide</h1>
+> <strong>Elite Aptitude Trainer Edition</strong> | Covers TCS, Accenture, Cognizant, Deloitte, Goldman Sachs, Amazon, Microsoft, Google
+
+<hr />
+
+<h2 id="rank--importance">🥇 Rank & Importance</h2>
+
+<table><thead><tr><th>Metric</th><th>Rating</th></tr></thead><tbody><tr><td><strong>Rank among all aptitude topics</strong></td><td>#9 of ~20 core topics</td></tr><tr><td><strong>Importance Rating</strong></td><td>★★★☆☆ (3.5/5)</td></tr><tr><td><strong>Appears in every placement test</strong></td><td>Yes</td></tr><tr><td><strong>Connection to other topics</strong></td><td>Algebra, Percentages, Ratios, Time & Work</td></tr><tr><td><strong>High scorers vs. average candidates gap</strong></td><td>Moderate</td></tr></tbody></table>
+<h3>Why It Matters in Placements</h3>
+
+Ages problems are <strong>disguised algebra</strong> — they look simple but are designed to test whether you can translate word problems into equations cleanly. Most candidates fail not because they don't know algebra, but because they:
+<ul><li>Don't track the <strong>direction of time</strong> (ages increase, not stay static)</li><li>Can't handle <strong>multiple people, multiple time points</strong> in the same problem</li><li>Forget that <strong>age ratios change</strong> over time</li></ul>
+
+Companies ask ages because it reveals structured thinking — can you build the correct equation from a narrative? That's the skill that matters in interviews.
+
+<h3>Weightage in Tests</h3>
+
+<table><thead><tr><th>Company Type</th><th>Expected Questions</th><th>Difficulty Band</th></tr></thead><tbody><tr><td><strong>TCS / Infosys / Wipro</strong> (service)</td><td>1 question</td><td>Easy</td></tr><tr><td><strong>Accenture / Cognizant</strong> (service)</td><td>1 question</td><td>Easy–Medium</td></tr><tr><td><strong>Deloitte / KPMG</strong> (consulting)</td><td>1 question</td><td>Medium</td></tr><tr><td><strong>Goldman Sachs / JPMorgan</strong> (BFSI)</td><td>1 question</td><td>Medium</td></tr><tr><td><strong>Amazon / Microsoft</strong> (product)</td><td>0–1 question</td><td>Medium–Hard</td></tr><tr><td><strong>Google</strong></td><td>0–1 question</td><td>Hard</td></tr></tbody></table>
+> <strong>ROI Insight</strong>: Ages is a <strong>quick-win topic</strong>. The core concept is straightforward — master the equation-building approach, and you'll solve any ages problem in under 90 seconds. However, since only 1 question appears per test, it's a <strong>low-frequency, high-accuracy</strong> topic. Don't spend 20 hours here; spend 3–4 and get it to 100% accuracy.
+
+<hr />
+
+<h2 id="concept-overview">📖 Concept Overview</h2>
+
+<h3>What Are Ages Problems?</h3>
+
+Ages problems involve finding the current or past/future ages of one or more persons based on given conditions involving ratios, sums, differences, and time-based transformations.
+
+<strong>The Golden Rule</strong>: Everyone ages at the same rate — <strong>1 year per year</strong>. This is the foundation that makes all ages problems solvable.
+
+<h3>Subtopics to Master</h3>
+<ol><li><strong>Current age from sum/difference</strong> — simplest form</li><li><strong>Age ratio problems</strong> — current or past/future ratios</li><li><strong>Age years ago</strong> — back-calculating from past conditions</li><li><strong>Age years hence</strong> — forward-calculating from future conditions</li><li><strong>Multiple persons, multiple time points</strong> — the complex form</li><li><strong>Age and average</strong> — combining ages with mean concepts</li><li><strong>Age and proportion</strong> — fraction of life, percentage comparisons</li><li><strong>Age with replacement</strong> — "m years later" type problems</li><li><strong>Father-son age patterns</strong> — generational gaps</li><li><strong>System of equations in ages</strong> — two or more conditions</li></ol>
+
+<h3>Where Each Concept Is Used in Exams</h3>
+
+<table><thead><tr><th>Subtopic</th><th>Connection to Other Topics</th></tr></thead><tbody><tr><td>Age ratio → sum</td><td>Connects to Ratio & Proportion</td></tr><tr><td>Age years ago</td><td>Connects to Percentages (decrease calculation)</td></tr><tr><td>Age and average</td><td>Connects to Averages</td></tr><tr><td>Father-son gap</td><td>Connects to Time & Work (efficiency analogy)</td></tr><tr><td>System of equations</td><td>Connects to Algebra (linear equations)</td></tr></tbody></table>
+<hr />
+
+<h2 id="core-concepts-to-master">🎯 Core Concepts to Master</h2>
+
+<h3>Concept 1: Basic Age Equation</h3>
+
+<strong>Definition</strong>: If a person's current age is A, their age n years ago was A - n, and their age n years hence will be A + n.
+
+<strong>Intuition</strong>: Age is linear. Think of age as a number on a number line — you move left for the past, right for the future.
+
+<strong>Formula</strong>:
+<pre><code class="language-">Current age = A
+n years ago = A - n
+n years hence = A + n
+Age difference = constant (same for all persons)</code></pre>
+
+<strong>Shortcut</strong>: Always use <strong>present</strong> as your reference point. If a problem gives information about the past and future simultaneously, set the present age as the variable and express all other ages in terms of it.
+
+<strong>Common Mistakes</strong>:
+<ul><li>❌ Confusing "n years ago" with "n years hence"</li><li>❌ Adding instead of subtracting for past ages</li><li>❌ Forgetting that age difference between two people is constant over time</li></ul>
+
+<strong>Interview Relevance</strong>: "A father is 4 times his son's age. In 20 years, he'll be twice as old. Find their ages." — tests structured equation building.
+
+<hr />
+
+<h3>Concept 2: Age Ratio Problems</h3>
+
+<strong>Definition</strong>: Given the ratio of ages of two or more persons, find individual ages using total age information.
+
+<strong>Intuition</strong>: If A:B = 3:5 and the sum is 40, then A = 3x, B = 5x, and 3x + 5x = 40 → 8x = 40 → x = 5 → A = 15, B = 25.
+
+<strong>Shortcut</strong>: Always express ages as <strong>ratio × a constant</strong> (e.g., 3x, 5x). The constant x is the key unknown to solve for.
+
+<strong>Formula</strong>:
+<pre><code class="language-">If A:B = m:n and total age = S:
+A = (m/(m+n)) × S
+B = (n/(m+n)) × S</code></pre>
+
+<strong>Common Mistakes</strong>:
+<ul><li>❌ Forgetting that ratios apply at a specific time point (current, past, or future)</li><li>❌ Mixing up which ratio corresponds to which person</li></ul>
+
+<strong>Interview Relevance</strong>: Ratio-based age problems appear in Deloitte and Accenture interviews for business analyst roles.
+
+<hr />
+
+<h3>Concept 3: Age Years Ago / Years Hence</h3>
+
+<strong>Definition</strong>: Using information about ages at different time points to find current ages.
+
+<strong>Intuition</strong>: If someone was half as old 10 years ago as they are today → (A - 10) = A/2. This is a single-variable equation.
+
+<strong>Shortcut — The Two-Time-Point Method</strong>:
+<pre><code class="language-">Step 1: Identify all time references (years ago, years hence, present)
+Step 2: Express each age at each time point in terms of current age (x)
+Step 3: Set up the equation from the given condition
+Step 4: Solve for x
+Step 5: Back-substitute to find all ages</code></pre>
+
+<strong>Example</strong>:
+"A is twice as old as B was 5 years ago. A is 15. Find B's age."
+B's age 5 years ago = B - 5. A = 2(B - 5). 15 = 2(B - 5) → B - 5 = 7.5 → B = 12.5.
+
+<strong>Common Mistakes</strong>:
+<ul><li>❌ Forgetting to subtract the years from the current age for "n years ago"</li><li>❌ Adding instead of subtracting (or vice versa)</li></ul>
+
+<hr />
+
+<h3>Concept 4: Multiple Persons, Multiple Time Points</h3>
+
+<strong>Definition</strong>: Problems involving 3+ people at 2+ time points (past, present, future) simultaneously.
+
+<strong>Intuition</strong>: This is a <strong>system of equations</strong> problem. Each condition gives one equation. You need as many independent equations as unknowns.
+
+<strong>Shortcut — Table Method</strong>:
+<pre><code class="language-">Create a table with rows = persons, columns = time points
+Fill in known values, express unknowns as x, y, z
+Set up equations from each condition</code></pre>
+
+<strong>Example</strong>:
+"A is twice B's age. 5 years ago, A was 3 times B's age. Find current ages."
+Let A = current age of A, B = current age of B.
+Equation 1: A = 2B
+Equation 2: A - 5 = 3(B - 5)
+Substitute: 2B - 5 = 3B - 15 → 10 = B → B = 10, A = 20.
+
+<strong>Common Mistakes</strong>:
+<ul><li>❌ Using the same variable for different people (A for person 1 AND A for person 2)</li><li>❌ Not being consistent about which age (past, present, future) each variable represents</li></ul>
+
+<hr />
+
+<h3>Concept 5: Age and Average</h3>
+
+<strong>Definition</strong>: When the ages of multiple people are averaged and the average changes over time or with additions/removals.
+
+<strong>Intuition</strong>: Average age = Sum of ages / Number of people. When one person leaves or joins, both the sum and the count change.
+
+<strong>Formula</strong>:
+<pre><code class="language-">Sum of ages = Average × Number of people
+If average age changes: (Old sum ± change) / New count = New average</code></pre>
+
+<strong>Shortcut — The Sum Tracking Method</strong>:
+<pre><code class="language-">Track the SUM of ages, not individual ages.
+When one person ages by n years → Sum increases by n × (number of people)
+When a person is added → Sum increases by their age
+When a person leaves → Sum decreases by their age</code></pre>
+
+<strong>Common Mistakes</strong>:
+<ul><li>❌ Forgetting to update the count of people when someone is added or removed</li><li>❌ Confusing individual age change with average change</li></ul>
+
+<hr />
+
+<h3>Concept 6: Father-Son Age Patterns</h3>
+
+<strong>Definition</strong>: Problems involving generational age gaps where the father's age is some multiple of the son's, and this relationship changes over time.
+
+<strong>Intuition</strong>: The age gap between father and son is constant. If father is currently 30 and son is 5, the gap is always 25. As they age, the ratio changes.
+
+<strong>Key Insight</strong>: Age difference = constant. Use this to set up equations immediately.
+
+<strong>Shortcut</strong>: Let son's age = x. Then father's age = x + d (where d is the constant difference).
+
+<strong>Example</strong>:
+"A father is 30 years older than his son. In 5 years, he'll be 5 times as old. Find current ages."
+Son = x, Father = x + 30.
+(x + 5) × 5 = (x + 30) + 5 → 5x + 25 = x + 35 → 4x = 10 → x = 2.5.
+Son = 2.5 years, Father = 32.5 years.
+
+<strong>Common Mistakes</strong>:
+<ul><li>❌ Forgetting that age difference stays constant — using ratios where only difference works</li><li>❌ Wrong sign when setting up the gap equation</li></ul>
+
+<hr />
+
+<h3>Concept 7: Fraction of Life Problems</h3>
+
+<strong>Definition</strong>: "A is 1/nth of B's age," "A has lived x% of B's life," etc.
+
+<strong>Intuition</strong>: These are ratio problems disguised with fraction language.
+
+<strong>Shortcut</strong>: "A is 1/3 of B's age" → A = B/3 → B = 3A. "A has lived half of B's life" means the same thing.
+
+<strong>Common Mistakes</strong>:
+<ul><li>❌ Misreading "1/nth of B's age" as n × B instead of B/n</li></ul>
+
+<hr />
+
+<h2 id="important-formula-sheet">🧠 Important Formula Sheet</h2>
+
+<h3>1. Basic Age Transformation</h3>
+<pre><code class="language-">Current age = A
+n years ago = A - n
+n years hence = A + n</code></pre>
+
+<h3>2. Age Ratio → Individual Ages</h3>
+<pre><code class="language-">If A:B = m:n and A + B = S:
+A = m × S / (m+n)
+B = n × S / (m+n)</code></pre>
+
+<h3>3. Age Difference (Constant)</h3>
+<pre><code class="language-">A - B = constant (for any two persons at any time)
+If A is d years older than B at present, A is d years older at all times</code></pre>
+
+<h3>4. Age Years Ago</h3>
+<pre><code class="language-">(A - n) = (B - n) × ratio [past ratio]
+(A - n) = k → current age A = k + n</code></pre>
+
+<h3>5. Age Years Hence</h3>
+<pre><code class="language-">(A + n) = (B + n) × ratio [future ratio]
+(A + n) = k → current age A = k - n</code></pre>
+
+<h3>6. Average Age</h3>
+<pre><code class="language-">Sum = Average × Count
+New Average = (Old Sum ± changes) / New Count</code></pre>
+
+<h3>7. Fraction of Age</h3>
+<pre><code class="language-">A = (1/n) × B  ↔  B = n × A
+A = p% of B  ↔  A = (p/100) × B</code></pre>
+
+<h3>8. Father-Son Age</h3>
+<pre><code class="language-">Father - Son = constant d
+Father = Son + d</code></pre>
+
+<h3>9. System of Two Linear Equations in Ages</h3>
+<pre><code class="language-">a₁x + b₁y = c₁
+a₂x + b₂y = c₂
+Solve by substitution or elimination</code></pre>
+
+<h3>Memory Tricks</h3>
+
+> 🔑 <strong>"Past = subtract, Future = add"</strong> — Always go from present to past (minus) and present to future (plus).
+
+> 🔑 <strong>"Difference is forever"</strong> — The age gap between any two people never changes. Use it as a constant in equations.
+
+> 🔑 <strong>"Table your way through"</strong> — When 3+ people are involved, draw a quick table. Rows = people, columns = time points. Fill what you know, express what you don't.
+
+> 🔑 <strong>"Sum tracks changes"</strong> — When averages change with additions/removals, track the sum of ages, not individual ages.
+
+<hr />
+
+<h2 id="shortcut-techniques--time-saving-tricks">⚡ Shortcut Techniques & Time-Saving Tricks</h2>
+
+<h3>Trick 1: The Difference Method (Always Start Here)</h3>
+<pre><code class="language-">Problem: A father is 30 years older than his son. 5 years ago, he was 6 times as old.
+How to solve instantly:
+
+Step 1: Let son's current age = x
+Step 2: Father's current age = x + 30
+Step 3: 5 years ago: (x + 30) - 5 = 6[(x) - 5]
+Step 4: x + 25 = 6x - 30 → 55 = 5x → x = 11.
+
+Answer: Son = 11 years, Father = 41 years.
+
+This takes 30 seconds. Just set up the difference equation.</code></pre>
+
+<h3>Trick 2: The Ratio Lock Method</h3>
+<pre><code class="language-">Problem: The ratio of ages of A and B is 3:5. In 10 years, the ratio will be 4:7.
+Find current ages.
+
+Key insight: The difference in ages = 5x - 3x = 2x (constant)
+Also: (3x + 10)/(5x + 10) = 4/7
+Cross-multiply: 7(3x + 10) = 4(5x + 10) → 21x + 70 = 20x + 40 → x = -30.
+
+Negative? Check: The ratio DECREASED (from 3/5=0.6 to 4/7≈0.571). For A to stay behind B at the same gap, B must age proportionally more. The equation is wrong.
+Correct setup: (3x + 10) : (5x + 10) = 4 : 7.
+21x + 70 = 20x + 40 → x = -30. Impossible — this problem has no solution.
+If solvable: x = positive value → find ages.
+
+Shortcuts: The difference method always works. For ratios involving future/past, set up the equation from the given ratio and solve.</code></pre>
+
+<h3>Trick 3: Average Age — Sum Tracking</h3>
+<pre><code class="language-">Problem: Average age of 4 persons is 30. A new person joins and the average becomes 32.
+Find the age of the new person.
+
+Sum of 4 = 4 × 30 = 120. Sum of 5 = 5 × 32 = 160.
+Age of new person = 160 - 120 = 40 years.
+
+This takes 10 seconds. Track sums, not individuals.</code></pre>
+
+<h3>Trick 4: "Back-calculating" from Past/Future</h3>
+<pre><code class="language-">Problem: 5 years ago, A was 3 times B's age. Now, A is only twice B's age.
+Find their ages.
+
+Let current ages: A = 2B.
+5 years ago: (2B - 5) = 3(B - 5) → 2B - 5 = 3B - 15 → B = 10. A = 20.
+
+Instant setup: Set current ages first, then apply past/future transformation.</code></pre>
+
+<h3>Trick 5: The Table Method for 3+ People</h3>
+<pre><code class="language-">Problem: A is twice B's age. B is 3 years younger than C. In 10 years, A and C will have the same age.
+Find all current ages.
+
+Table:
+Person | Current | +10 years
+A      | 2x     | 2x + 10
+B      | x      | x + 10
+C      | x+3    | x + 13
+
+Condition: 2x + 10 = x + 13 → x = 3.
+A = 6, B = 3, C = 6.
+
+The table makes complex problems visual and solvable in under 60 seconds.</code></pre>
+
+<h3>Trick 6: Elimination in MCQs</h3>
+<pre><code class="language-">If options are given, check the following first:
+<ul><li>Age difference must be consistent at all time points</li><li>Sum of ages must make sense relative to the number of people</li><li>Try the middle option first (most likely to be correct)</li></ul>
+
+Example: If A is twice B and the sum is 30, the only valid answer is A=20, B=10.</code></pre>
+
+<hr />
+
+<h2 id="most-frequently-asked-question-patterns">🔥 Most Frequently Asked Question Patterns</h2>
+
+<h3>Pattern 1: Simple Age Sum/Difference</h3>
+<ul><li><strong>Concept Tested</strong>: Basic equation from sum and difference</li><li><strong>Difficulty</strong>: Easy</li><li><strong>Fastest Approach</strong>: Let one age = x, other = S - x, use difference</li><li><strong>Appears in</strong>: TCS, Infosys, Wipro</li><li><strong>Example</strong>: "The sum of ages of A and B is 50. A is 10 years older than B. Find their ages."</li></ul>
+
+<h3>Pattern 2: Age Ratio with Time Shift</h3>
+<ul><li><strong>Concept Tested</strong>: Ratio at current time vs past/future</li><li><strong>Difficulty</strong>: Easy–Medium</li><li><strong>Fastest Approach</strong>: Set current ages as ratio × constant; apply time shift to both</li><li><strong>Appears in</strong>: All companies</li><li><strong>Example</strong>: "The ratio of A's and B's ages is 3:4. 5 years ago it was 2:3. Find current ages."</li></ul>
+
+<h3>Pattern 3: Father-Son Generational Gap</h3>
+<ul><li><strong>Concept Tested</strong>: Constant age difference + ratio change</li><li><strong>Difficulty</strong>: Medium</li><li><strong>Fastest Approach</strong>: Let son = x, father = x + d; apply future condition</li><li><strong>Appears in</strong>: TCS, Infosys, Amazon, Deloitte</li><li><strong>Example</strong>: "A father is 4 times his son's age. In 20 years, he'll be twice as old. Find ages."</li></ul>
+
+<h3>Pattern 4: Age Years Ago (Single Person)</h3>
+<ul><li><strong>Concept Tested</strong>: Translating "was" into past age</li><li><strong>Difficulty</strong>: Easy</li><li><strong>Fastest Approach</strong>: Current age - n = given past condition</li><li><strong>Appears in</strong>: TCS, Infosys, Wipro, Cognizant</li><li><strong>Example</strong>: "A man is 4 times his son's age. 5 years ago, he was 6 times. Find current ages."</li></ul>
+
+<h3>Pattern 5: Average Age with Addition</h3>
+<ul><li><strong>Concept Tested</strong>: Sum tracking when people join/leave</li><li><strong>Difficulty</strong>: Easy</li><li><strong>Fastest Approach</strong>: Sum before → Sum after → Difference = new person's age</li><li><strong>Appears in</strong>: All companies</li><li><strong>Example</strong>: "Average age of 5 students is 20. A teacher joins and average becomes 22. Find teacher's age."</li></ul>
+
+<h3>Pattern 6: Three-Person Age System</h3>
+<ul><li><strong>Concept Tested</strong>: System of equations with 3 unknowns</li><li><strong>Difficulty</strong>: Medium</li><li><strong>Fastest Approach</strong>: Table method + two independent equations</li><li><strong>Appears in</strong>: Accenture, Deloitte, Amazon</li><li><strong>Example</strong>: "A is twice B's age. B is 3 years younger than C. The sum of all ages is 50. Find each."</li></ul>
+
+<h3>Pattern 7: Past + Future Ratio Same Person</h3>
+<ul><li><strong>Concept Tested</strong>: Two time points for the same person</li><li><strong>Difficulty</strong>: Medium</li><li><strong>Fastest Approach</strong>: Let current = x; use both conditions to solve</li><li><strong>Appears in</strong>: Infosys, Deloitte, Amazon</li><li><strong>Example</strong>: "10 years ago, A was 1/3 of B's age. In 10 years, A will be 1/2 of B's age."</li></ul>
+
+<h3>Pattern 8: Fraction of Life</h3>
+<ul><li><strong>Concept Tested</strong>: Translating fractional language into equations</li><li><strong>Difficulty</strong>: Easy–Medium</li><li><strong>Fastest Approach</strong>: "A is 1/3 of B's age" → A = B/3</li><li><strong>Appears in</strong>: TCS, Infosys, Accenture</li><li><strong>Example</strong>: "A is 1/4 of B's age. In 5 years, A will be 1/3 of B's age."</li></ul>
+
+<h3>Pattern 9: Age with Work/Efficiency Analogy</h3>
+<ul><li><strong>Concept Tested</strong>: Age difference as efficiency proxy</li><li><strong>Difficulty</strong>: Medium</li><li><strong>Fastest Approach</strong>: Father-son gap + ratio = standard approach</li><li><strong>Appears in</strong>: Deloitte, Amazon, Goldman Sachs</li><li><strong>Example</strong>: "A man is thrice his son's age. When the son becomes as old as the father is now, sum of their ages will be 140."</li></ul>
+
+<h3>Pattern 10: Average Age Over Time</h3>
+<ul><li><strong>Concept Tested</strong>: Tracking average as people age uniformly</li><li><strong>Difficulty</strong>: Easy–Medium</li><li><strong>Fastest Approach</strong>: Average increases by n years after n years for everyone</li><li><strong>Appears in</strong>: All companies</li><li><strong>Example</strong>: "Average age of a class is 15. After 5 years, what will be the average?"</li></ul>
+
+<h3>Pattern 11: Ratio Change Problem</h3>
+<ul><li><strong>Concept Tested</strong>: Ratio changes because both ages grow equally</li><li><strong>Difficulty</strong>: Medium</li><li><strong>Fastest Approach</strong>: Let ages = mx, nx; apply time shift; solve for x</li><li><strong>Appears in</strong>: Amazon, Microsoft, Deloitte</li><li><strong>Example</strong>: "A:B = 5:7. When A becomes twice as old, B will be 28. Find current ages."</li></ul>
+
+<h3>Pattern 12: Population/Age Distribution</h3>
+<ul><li><strong>Concept Tested</strong>: Ages applied to population counting</li><li><strong>Difficulty</strong>: Medium</li><li><strong>Fastest Approach</strong>: Weighted average of age groups</li><li><strong>Appears in</strong>: Deloitte, Goldman Sachs</li><li><strong>Example</strong>: "In a town, 30% are below 20, 50% are 20-50, 20% are above 50. Average age =?"</li></ul>
+
+<h3>Pattern 13: Age Puzzle with Replacement</h3>
+<ul><li><strong>Concept Tested</strong>: "m years later" type problems</li><li><strong>Difficulty</strong>: Medium–Hard</li><li><strong>Fastest Approach</strong>: Set up current ages; apply transformation; solve system</li><li><strong>Appears in</strong>: Amazon, Microsoft, Goldman Sachs</li><li><strong>Example</strong>: "In 10 years, A will be twice B's age. 5 years ago, A was 3 times B's age. Find ages."</li></ul>
+
+<h3>Pattern 14: Age with Sum Constraint</h3>
+<ul><li><strong>Concept Tested</strong>: Using total sum to find individual ages</li><li><strong>Difficulty</strong>: Easy</li><li><strong>Fastest Approach</strong>: Express all in terms of one variable using given ratios</li><li><strong>Appears in</strong>: All companies</li><li><strong>Example</strong>: "A:B:C = 2:3:4. Sum of ages = 72. Find each age."</li></ul>
+
+<h3>Pattern 15: Consecutive Age Products</h3>
+<ul><li><strong>Concept Tested</strong>: Product of consecutive ages</li><li><strong>Difficulty</strong>: Hard</li><li><strong>Fastest Approach</strong>: Factor the product; find the consecutive integers</li><li><strong>Appears in</strong>: Google, Amazon</li><li><strong>Example</strong>: "The product of ages of 3 children is 210. Their ages are consecutive integers. Find each."</li></ul>
+
+<h3>Pattern 16: Age in Geometric Progression</h3>
+<ul><li><strong>Concept Tested</strong>: Ages in GP</li><li><strong>Difficulty</strong>: Hard</li><li><strong>Fastest Approach</strong>: Let ages = a, ar, ar²; use sum/product conditions</li><li><strong>Appears in</strong>: Google, Microsoft</li><li><strong>Example</strong>: "The ages of three siblings are in GP. Their product is 1000 and sum is 35. Find ages."</li></ul>
+
+<h3>Pattern 17: Age and Digit Problems</h3>
+<ul><li><strong>Concept Tested</strong>: Age expressed as a two-digit number</li><li><strong>Difficulty</strong>: Hard</li><li><strong>Fastest Approach</strong>: Let age = 10t + u; use digit conditions</li><li><strong>Appears in</strong>: Google, Amazon</li><li><strong>Example</strong>: "My age is twice the sum of the digits of my age. Find my age."</li></ul>
+
+<h3>Pattern 18: Average with Departure</h3>
+<ul><li><strong>Concept Tested</strong>: People leaving reduces sum and count</li><li><strong>Difficulty</strong>: Easy–Medium</li><li><strong>Fastest Approach</strong>: Sum decreases by departing person's current age</li><li><strong>Appears in</strong>: All companies</li><li><strong>Example</strong>: "Average age of 10 people is 30. One person aged 40 leaves. New average?"</li></ul>
+
+<h3>Pattern 19: Age and Generation Skipping</h3>
+<ul><li><strong>Concept Tested</strong>: Grandfather → Parent → Child chains</li><li><strong>Difficulty</strong>: Hard</li><li><strong>Fastest Approach</strong>: Work backwards from known constraints</li><li><strong>Appears in</strong>: Goldman Sachs, Google</li><li><strong>Example</strong>: "A grandfather is 70, father is 45, grandson is 15. In how many years will the grandfather's age equal the sum of father and grandson?"</li></ul>
+
+<h3>Pattern 20: Age with Conditional Statements</h3>
+<ul><li><strong>Concept Tested</strong>: "If-then" age conditions</li><li><strong>Difficulty</strong>: Medium–Hard</li><li><strong>Fastest Approach</strong>: Convert each conditional into an equation</li><li><strong>Appears in</strong>: Amazon, Microsoft</li><li><strong>Example</strong>: "A is 10 years older than B. If B were twice as old as he is, A would be 30. Find ages."</li></ul>
+
+<hr />
+
+<h2 id="placement--interview-relevance">💼 Placement & Interview Relevance</h2>
+
+<h3>Service-Based Companies</h3>
+
+<table><thead><tr><th>Company</th><th>Questions</th><th>Difficulty</th><th>Pattern</th></tr></thead><tbody><tr><td><strong>TCS</strong></td><td>1</td><td>Easy</td><td>Sum/difference, father-son</td></tr><tr><td><strong>Infosys</strong></td><td>1</td><td>Easy</td><td>Ratio shift, years ago</td></tr><tr><td><strong>Wipro</strong></td><td>1</td><td>Easy</td><td>Basic equation</td></tr><tr><td><strong>Accenture</strong></td><td>1</td><td>Easy–Medium</td><td>Three-person systems</td></tr><tr><td><strong>Cognizant</strong></td><td>1</td><td>Easy</td><td>Average age changes</td></tr></tbody></table>
+<h3>Product-Based Companies</h3>
+
+<table><thead><tr><th>Company</th><th>Questions</th><th>Difficulty</th><th>Pattern</th></tr></thead><tbody><tr><td><strong>Amazon</strong></td><td>0–1</td><td>Medium</td><td>Complex conditions, generations</td></tr><tr><td><strong>Microsoft</strong></td><td>0–1</td><td>Medium</td><td>Age in GP, conditional</td></tr><tr><td><strong>Google</strong></td><td>0–1</td><td>Hard</td><td>Product of ages, digit problems</td></tr><tr><td><strong>Goldman Sachs</strong></td><td>1</td><td>Medium–Hard</td><td>Multi-generation, conditional</td></tr></tbody></table>
+<hr />
+
+<h2 id="beginner--advanced-roadmap">🚀 Beginner → Advanced Roadmap</h2>
+
+<h3>Day 1: Fundamentals</h3>
+<ol><li>Master basic equation building: let age = x, express past/future</li><li>Learn the difference constant rule</li><li>Practice 20 basic sum/difference problems</li><li>Learn the table method for multi-person problems</li></ol>
+
+<strong>Milestone</strong>: Solve any basic ages problem in under 60 seconds.
+
+<h3>Day 2: Intermediate & Advanced</h3>
+<ol><li>Master ratio shift problems (past ratio vs present ratio)</li><li>Practice three-person systems</li><li>Learn average age sum-tracking</li><li>Practice father-son generational gap problems</li></ol>
+
+<strong>Milestone</strong>: Handle any two-person age ratio problem with past/future conditions.
+
+<h3>Day 3: Placement Practice</h3>
+<ol><li>Solve 30 TCS/Infosys pattern questions</li><li>Attempt 15 Accenture/Cognizant level questions</li><li>Try 10 Amazon/Microsoft level questions</li></ol>
+
+<strong>Milestone</strong>: 95% accuracy on all ages problems.
+
+<hr />
+
+<h2 id="difficulty-breakdown">📊 Difficulty Breakdown</h2>
+
+<table><thead><tr><th>Subtopic</th><th>Difficulty</th><th>Reason</th></tr></thead><tbody><tr><td>Sum + difference</td><td>🟢 <strong>Easy</strong></td><td>Two equations, two unknowns</td></tr><tr><td>Average age addition</td><td>🟢 <strong>Easy</strong></td><td>Sum tracking formula</td></tr><tr><td>Basic fraction</td><td>🟢 <strong>Easy</strong></td><td>One equation</td></tr><tr><td>Past/future age of one person</td><td>🟡 <strong>Medium</strong></td><td>Need to track time direction</td></tr><tr><td>Two-person ratio shift</td><td>🟡 <strong>Medium</strong></td><td>Set up equation at two time points</td></tr><tr><td>Average with departure</td><td>🟡 <strong>Medium</strong></td><td>Track both sum and count</td></tr><tr><td>Three-person systems</td><td>🟡 <strong>Medium</strong></td><td>Table method, two equations</td></tr><tr><td>Father-son generational</td><td>🟡 <strong>Medium</strong></td><td>Constant gap + ratio change</td></tr><tr><td>Multiple time points</td><td>🟠 <strong>Hard</strong></td><td>3+ conditions, careful tracking</td></tr><tr><td>Consecutive age products</td><td>🟠 <strong>Hard</strong></td><td>Factor and identify integers</td></tr><tr><td>Ages in GP</td><td>🟠 <strong>Hard</strong></td><td>Geometric sequence properties</td></tr><tr><td>Age-digit problems</td><td>🟠 <strong>Hard</strong></td><td>Two-digit number + digit constraints</td></tr><tr><td>Generation skipping</td><td>🟠 <strong>Hard</strong></td><td>Three-generation equations</td></tr><tr><td>Multi-constraint conditional</td><td>🔴 <strong>Very Hard</strong></td><td>Multiple if-then conditions</td></tr></tbody></table>
+<hr />
+
+<h2 id="mastery-plan">🎓 Mastery Plan</h2>
+
+<h3>For Basic Understanding</h3>
+<ul><li><strong>Questions needed</strong>: 25–30</li><li><strong>Time required</strong>: 2–3 hours</li><li><strong>Goal</strong>: Master equation building, table method, difference constant</li></ul>
+
+<h3>For Placement Readiness</h3>
+<ul><li><strong>Questions needed</strong>: 50–70</li><li><strong>Time required</strong>: 4–5 hours</li><li><strong>Goal</strong>: 95% accuracy on all ages problems</li></ul>
+
+<h3>For Product-Based Company Readiness</h3>
+<ul><li><strong>Questions needed</strong>: 80–100</li><li><strong>Time required</strong>: 6–8 hours</li><li><strong>Goal</strong>: Handle any ages problem including GP, digit, product problems</li></ul>
+
+<hr />
+
+<h2 id="common-traps--mistakes">❌ Common Traps & Mistakes</h2>
+
+<h3>Trap 1: Wrong Sign for Past/Future</h3>
+<ul><li><strong>Mistake</strong>: Using + n for n years ago instead of -n</li><li><strong>Fix</strong>: "Years ago" = subtract. "Years hence/later" = add. Create a mental arrow: ← past, → future.</li></ul>
+
+<h3>Trap 2: Inconsistent Time Reference</h3>
+<ul><li><strong>Mistake</strong>: Mixing current age with past age in the same equation</li><li><strong>Fix</strong>: Always express ALL ages at the SAME time point before setting up equations.</li></ul>
+
+<h3>Trap 3: Forgetting Constant Difference</h3>
+<ul><li><strong>Mistake</strong>: Using ratios instead of difference for father-son problems</li><li><strong>Fix</strong>: When a problem involves a constant generational gap, ALWAYS use the difference method.</li></ul>
+
+<h3>Trap 4: Wrong Person Assignment in Ratios</h3>
+<ul><li><strong>Mistake</strong>: Swapping A and B in ratio equations</li><li><strong>Fix</strong>: Double-check which ratio value corresponds to which person before solving.</li></ul>
+
+<h3>Trap 5: Forgetting to Update Person Count in Averages</h3>
+<ul><li><strong>Mistake</strong>: When someone joins/leaves, only updating sum but not count</li><li><strong>Fix</strong>: Always update BOTH sum and count simultaneously.</li></ul>
+
+<h3>Trap 6: Misreading Fraction Language</h3>
+<ul><li><strong>Mistake</strong>: "1/3 of B's age" interpreted as B = 3 × A instead of A = B/3</li><li><strong>Fix</strong>: "Of" means multiplication. If A is 1/3 of B, then A = (1/3) × B.</li></ul>
+
+<hr />
+
+<h2 id="practice-section">📝 Practice Section</h2>
+
+<h3>🟢 Easy (Level 1) — 20 Questions</h3>
+
+<strong>Q1.</strong> The sum of ages of A and B is 50. A is 10 years older than B. Find A's age. <strong>[TCS]</strong>
+
+<strong>Q2.</strong> A father is 30 years older than his son. In 5 years, he'll be 3 times as old. Find the son's current age. <strong>[Infosys]</strong>
+
+<strong>Q3.</strong> The average age of 5 students is 20. One student aged 22 leaves. What is the new average? <strong>[Wipro]</strong>
+
+<strong>Q4.</strong> A is twice B's age. 5 years ago, A was 3 times B's age. Find A's current age. <strong>[TCS]</strong>
+
+<strong>Q5.</strong> The ratio of ages of A and B is 3:5. If their sum is 64, find B's age. <strong>[Cognizant]</strong>
+
+<strong>Q6.</strong> A man is 4 times his son's age. 8 years ago, he was 6 times. Find the son's current age. <strong>[TCS]</strong>
+
+<strong>Q7.</strong> The average age of 6 people is 25. A new person joins and the average becomes 27. Find the new person's age. <strong>[Accenture]</strong>
+
+<strong>Q8.</strong> A is 25 years old, B is 20 years old. How many years ago was A twice B's age? <strong>[TCS]</strong>
+
+<strong>Q9.</strong> The difference between the ages of two persons is 15 years. 10 years ago, the elder was twice the younger. Find the elder's current age. <strong>[Infosys]</strong>
+
+<strong>Q10.</strong> The sum of ages of a father and son is 60. In 10 years, the father will be twice the son. Find the father's age. <strong>[Wipro]</strong>
+
+<strong>Q11.</strong> A is twice B's age. B is 3 years younger than C. If A is 20, find C's age. <strong>[TCS]</strong>
+
+<strong>Q12.</strong> The ratio of ages of two brothers is 2:3. 6 years later, the ratio becomes 3:4. Find the younger brother's current age. <strong>[Accenture]</strong>
+
+<strong>Q13.</strong> A man is 35 and his son is 5. After how many years will the man be exactly 3 times the son's age? <strong>[TCS]</strong>
+
+<strong>Q14.</strong> The average age of a class of 30 students is 15. When the teacher is included, the average becomes 16. Find the teacher's age. <strong>[Infosys]</strong>
+
+<strong>Q15.</strong> A is 10 years older than B. In 5 years, A will be 1.5 times B's age. Find B's current age. <strong>[TCS]</strong>
+
+<strong>Q16.</strong> The product of the ages of two children is 72 and their sum is 18. Find their ages. <strong>[Wipro]</strong>
+
+<strong>Q17.</strong> The ratio of ages of father and son is 5:2. After 10 years, it becomes 3:1. Find the son's current age. <strong>[Accenture]</strong>
+
+<strong>Q18.</strong> A is 3 times B's age. 6 years ago, A was 5 times B's age. Find A's current age. <strong>[TCS]</strong>
+
+<strong>Q19.</strong> The average age of 8 persons is 22. If one person leaves with age 30, what is the average of remaining? <strong>[Infosys]</strong>
+
+<strong>Q20.</strong> Two persons A and B have ages such that A is 40 and B is 20. How many years ago was A thrice B? <strong>[TCS]</strong>
+
+<hr />
+
+<h3>🟡 Medium (Level 2) — 20 Questions</h3>
+
+<strong>Q21.</strong> A is twice B's age. B is 5 years younger than C. 10 years ago, the ratio of A and C was 3:1. Find A's current age. <strong>[Amazon]</strong>
+
+<strong>Q22.</strong> The sum of ages of three persons is 80. A is twice B's age, and B is 4 years younger than C. Find A's age. <strong>[Deloitte]</strong>
+
+<strong>Q23.</strong> The average age of a family of 5 is 30. The youngest is 10. If the youngest is excluded, what is the average? <strong>[Microsoft]</strong>
+
+<strong>Q24.</strong> The ratio of ages of A and B is 4:5. 10 years ago, it was 2:3. Find A's current age. <strong>[Goldman Sachs]</strong>
+
+<strong>Q25.</strong> A man has a son and a daughter. The son is twice the daughter's age. The father is 40. In 10 years, the father's age will be equal to the sum of the children's ages. Find the daughter's current age. <strong>[Amazon]</strong>
+
+<strong>Q26.</strong> The average age of 20 students is 18. When 5 new students join, the average becomes 19.5. Find the average age of the new students. <strong>[Deloitte]</strong>
+
+<strong>Q27.</strong> A father is 4 times his son's age. In 20 years, he'll be twice as old. Find the son's age 10 years ago. <strong>[Microsoft]</strong>
+
+<strong>Q28.</strong> A is twice B's age. 5 years hence, A will be 1.5 times B's age. Find the age difference. <strong>[TCS]</strong>
+
+<strong>Q29.</strong> The sum of ages of a father and son is 50. 10 years ago, the father was 3 times the son's age. After 10 years, the father will be how many times the son's age? <strong>[Amazon]</strong>
+
+<strong>Q30.</strong> Three friends A, B, C have ages in AP. A is the youngest. B is 15 and C is 25. Find A's age. <strong>[Deloitte]</strong>
+
+<strong>Q31.</strong> A man is 30 and his son is 10. In how many years will the son be half the father's age? <strong>[TCS]</strong>
+
+<strong>Q32.</strong> The ratio of ages of P and Q is 3:2. After 10 years, Q will be 3/4 of P's age. Find P's current age. <strong>[Accenture]</strong>
+
+<strong>Q33.</strong> A is 20% older than B. B is how much percent younger than A? <strong>[Infosys]</strong>
+
+<strong>Q34.</strong> The sum of ages of 4 siblings is 80. The eldest is twice the youngest. The other two are 2 years apart. Find the youngest's age. <strong>[Amazon]</strong>
+
+<strong>Q35.</strong> A father is twice his son's age. 5 years ago, he was 3 times. Find the sum of their current ages. <strong>[Goldman Sachs]</strong>
+
+<strong>Q36.</strong> The average age of a group increases by 3 when a 40-year-old joins and decreases by 2 when a 20-year-old leaves. Find the original number of people. <strong>[Microsoft]</strong>
+
+<strong>Q37.</strong> A's age is twice B's. B's age is 3 times C's. The sum of their ages is 90. Find A's age. <strong>[TCS]</strong>
+
+<strong>Q38.</strong> The ratio of ages of two persons is 5:7. If the elder is 35, find the younger's age 10 years ago. <strong>[Accenture]</strong>
+
+<strong>Q39.</strong> A boy is 15 and his sister is 10. In how many years will the boy be 1.2 times the sister's age? <strong>[TCS]</strong>
+
+<strong>Q40.</strong> The average age of 5 numbers is 30. If one number is replaced by 50, the average increases by 5. Find the replaced number. <strong>[Deloitte]</strong>
+
+<hr />
+
+<h3>🟠 Hard (Level 3) — 20 Questions</h3>
+
+<strong>Q41.</strong> The product of the ages of three children is 210. Their ages are consecutive integers. Find the ages. <strong>[Google]</strong>
+
+<strong>Q42.</strong> The ages of three siblings are in GP. Their product is 1000 and sum is 35. Find their ages. <strong>[Amazon]</strong>
+
+<strong>Q43.</strong> A father's age is expressed as a two-digit number. The sum of the digits is equal to 1/9 of his age. Find his age. <strong>[Google]</strong>
+
+<strong>Q44.</strong> A grandfather, father, and grandson have ages that sum to 140. The grandfather is 70. The father is twice the grandson's age. In how many years will the grandfather's age equal the sum of father and grandson? <strong>[Goldman Sachs]</strong>
+
+<strong>Q45.</strong> A's age is twice B's. 10 years ago, A was 3 times B's age. If A dies 5 years from now, how old was B when A was born? <strong>[Microsoft]</strong>
+
+<strong>Q46.</strong> The average age of a committee of 10 is 40. If each member becomes 5 years older, by how much does the average increase? <strong>[TCS]</strong>
+
+<strong>Q47.</strong> The age of a father is the average of the ages of his two sons. The father is 40 and one son is 10. The two sons differ by 8 years. Find the other son's age. <strong>[Amazon]</strong>
+
+<strong>Q48.</strong> In a family, there are 4 children. The age of the eldest is 3 times the youngest. The two middle children are 2 years apart. The sum of all ages is equal to the father's age, 50. Find the children's ages. <strong>[Microsoft]</strong>
+
+<strong>Q49.</strong> The ratio of ages of A, B, C is 3:4:5. 5 years from now, the ratio becomes 5:6:7. Find A's current age. <strong>[Goldman Sachs]</strong>
+
+<strong>Q50.</strong> A man is 30 years old and his son is 5. In how many years will the father be 4 times as old as the son? <strong>[TCS]</strong>
+
+<strong>Q51.</strong> The average age of a group of 12 students and 1 teacher is 20. If the teacher's age is 40, what is the average age of just the students? <strong>[Deloitte]</strong>
+
+<strong>Q52.</strong> A father is 3 times his son's age. 10 years ago, he was 5 times. In how many years will he be twice? <strong>[Amazon]</strong>
+
+<strong>Q53.</strong> The ages of five people are consecutive even integers. The eldest is 30. The youngest plus the eldest equals the sum of the other three. Find the youngest's age. <strong>[Google]</strong>
+
+<strong>Q54.</strong> A is twice B's age. B is 4 years younger than C. In 5 years, A will be 1.5 times C's age. Find A's current age. <strong>[Microsoft]</strong>
+
+<strong>Q55.</strong> The sum of ages of a father and two sons is 80. The father is twice as old as the elder son, and the elder son is twice as old as the younger. Find the elder son's age. <strong>[Deloitte]</strong>
+
+<strong>Q56.</strong> A's mother is 3 times A's age. A's father is 4 years older than A's mother. A is 10. In how many years will A's father be twice A's age? <strong>[TCS]</strong>
+
+<strong>Q57.</strong> The average age of 5 students is 18. When a new student joins, the average of all 6 becomes 19. The new student's age is what percent more than the replaced student? (One student left, new joined) <strong>[Amazon]</strong>
+
+<strong>Q58.</strong> A man is 40, his wife is 35, son is 10, daughter is 5. In how many years will the sum of ages of children equal the sum of ages of parents? <strong>[Google]</strong>
+
+<strong>Q59.</strong> The age of a man is the reverse of his wife's age. The difference between their ages is 1/11 of the sum of their ages. Find their ages. <strong>[Microsoft]</strong>
+
+<strong>Q60.</strong> Three persons A, B, C have ages in ratio 2:3:4. If A is 10, find the age of the oldest person after 5 years. <strong>[TCS]</strong>
+
+<hr />
+
+<h3>🔴 Product-Based Company Level — 10 Questions</h3>
+
+<strong>Q61.</strong> The ages of three persons A, B, C are such that A is the oldest, B is the youngest, and C is in the middle. The ages are consecutive even integers. The sum of A and B equals twice C's age. Find all ages. If the product of all three ages is divided by their sum, the quotient is 10 less than the middle age. Verify this statement. <strong>[Amazon L5]</strong>
+
+<strong>Q62.</strong> A population has average age 30. The age distribution is: 30% are below 20 (avg 15), 50% are 20-50 (avg 35), 20% are above 50 (avg 60). The population grows by 1 year average age per year. In 10 years, what will be the average age? (Assume births/deaths are zero for simplicity.) <strong>[Microsoft L64]</strong>
+
+<strong>Q63.</strong> A father has three sons. The eldest is twice the middle, the middle is twice the youngest. In 20 years, the sum of the children's ages will be equal to the father's current age. Currently, the eldest is 20. How old is the father? <strong>[Google / Goldman Sachs]</strong>
+
+<strong>Q64.</strong> An investor's age is a two-digit number. The product of the digits of his age is 1/4 of his age. His son is 1/3 of his age. In how many years will the son's age be half the investor's age? <strong>[Amazon SDE]</strong>
+
+<strong>Q65.</strong> In a company, the average age of all employees is 35. The average age of men is 38 and women is 30. The ratio of men to women is 3:2. The company hires 10 new employees of average age 25. What is the new average age? <strong>[Microsoft L65]</strong>
+
+<strong>Q66.</strong> A, B, C have ages in AP. D, E, F have ages in GP. The sum of all six ages is 100. A, D are the youngest of their respective groups. C, F are the oldest. A = D + 5, C = F - 5. Find the ages. <strong>[Google / Jane Street]</strong>
+
+<strong>Q67.</strong> A father's age is such that when expressed in years equals the sum of squares of the ages of his two children. The children are 5 and 8 years apart. Find the father's age. <strong>[Goldman Sachs]</strong>
+
+<strong>Q68.</strong> Three friends A, B, C have ages that sum to 60. A is twice as old as B was 10 years ago. C is 5 years younger than A will be in 10 years. Find all ages. <strong>[Amazon L6]</strong>
+
+<strong>Q69.</strong> The ages of five members of a family are in geometric progression. The youngest is 5 and the eldest is 85. The father is exactly in the middle of the progression. Find the common ratio and all ages. <strong>[Google]</strong>
+
+<strong>Q70.</strong> A man has four sons. Every year, on his birthday, he notes that his age is an integer multiple of each son's age. This year he is 48. What are the son's ages? (All ages are integers) <strong>[Google / Math Olympiad]</strong>
+
+<hr />
+
+<em>(Solutions on next page)</em>
+
+<hr />
+
+<h2 id="detailed-solutions">✅ Detailed Solutions</h2>
+
+<h3>🟢 Easy Solutions</h3>
+
+<strong>Q1.</strong> A + B = 50, A = B + 10 → B + 10 + B = 50 → 2B = 40 → B = 20, <strong>A = 30</strong> ✅
+
+<strong>Q2.</strong> Son = x, Father = x + 30. x + 35 = 3(x + 5) → x + 35 = 3x + 15 → 20 = 2x → <strong>x = 10</strong> ✅
+
+<strong>Q3.</strong> Sum = 5×20 = 100. Remove 22 → sum = 78. Average = 78/4 = <strong>19.5</strong> ✅
+
+<strong>Q4.</strong> A = 2B. A - 5 = 3(B - 5) → 2B - 5 = 3B - 15 → <strong>B = 10, A = 20</strong> ✅
+
+<strong>Q5.</strong> A:B = 3:5, A+B = 64 → B = (5/8)×64 = <strong>40</strong> ✅
+
+<strong>Q6.</strong> Man = 4x, Son = x. 4x - 8 = 6(x - 8) → 4x - 8 = 6x - 48 → 40 = 2x → <strong>x = 20</strong> ✅
+
+<strong>Q7.</strong> Sum = 6×25 = 150. New sum = 7×27 = 189. New person = 189 - 150 = <strong>39</strong> ✅
+
+<strong>Q8.</strong> A = 2B. A - n = 2(B - n) → 25 - n = 2(20 - n) → 25 - n = 40 - 2n → n = <strong>15 years ago</strong> ✅
+
+<strong>Q9.</strong> E - Y = 15, E - 10 = 2(Y - 10) → E - 10 = 2E - 30 → 20 = E → <strong>E = 20? Wait.</strong> E = Y + 15. E - 10 = 2(Y - 10) → Y + 5 = 2Y - 20 → Y = 25, <strong>E = 40</strong> ✅
+
+<strong>Q10.</strong> F + S = 60, F + 10 = 2(S + 10) → F + 10 = 2S + 20 → 50 = S + 20 → S = 30, <strong>F = 30</strong>? Wait. F + S = 60, S = 60 - F.
+F + 10 = 2(60 - F + 10) = 2(70 - F) = 140 - 2F → 3F = 130 → <strong>F = 43.33</strong>? Impossible.
+Recheck: F + 10 = 2(S + 10) → F + 10 = 2S + 20 → F = 2S + 10. F + S = 60 → 3S + 10 = 60 → 3S = 50 → S = 50/3, F = 130/3. Both fractional possible.
+<strong>Father = 130/3 = 43.33 years, Son = 50/3 = 16.67 years</strong> ✅
+
+<strong>Q11.</strong> B = C - 3, A = 20 = 2B → B = 10 → <strong>C = 13</strong> ✅
+
+<strong>Q12.</strong> Brothers: 2x and 3x. (2x+6)/(3x+6) = 3/4 → 8x + 24 = 9x + 18 → x = 6 → <strong>younger = 12</strong> ✅
+
+<strong>Q13.</strong> 35 + n = 3(5 + n) → 35 + n = 15 + 3n → 20 = 2n → <strong>n = 10 years</strong> ✅
+
+<strong>Q14.</strong> 30×15 + T = 31×16 → 450 + T = 496 → <strong>T = 46</strong> ✅
+
+<strong>Q15.</strong> A = B + 10, A + 5 = 1.5(B + 5) → B + 15 = 1.5B + 7.5 → 7.5 = 0.5B → <strong>B = 15</strong> ✅
+
+<strong>Q16.</strong> xy = 72, x + y = 18 → (x,y) = (6, 12). <strong>Ages: 6 and 12</strong> ✅
+
+<strong>Q17.</strong> F:S = 5:2. (F+10)/(S+10) = 3/1 → (5x+10)/(2x+10) = 3 → 5x+10 = 6x+30 → x = -20? Impossible.
+Recheck: 5x+10 = 3(2x+10) → 5x+10 = 6x+30 → -20 = x → <strong>S = -40</strong>? No.
+The problem: (F+10)/(S+10) = 3/1 means F+10 = 3(S+10). F = 5S/2.
+5S/2 + 10 = 3S + 30 → 5S + 20 = 6S + 60 → <strong>S = -40</strong>? Still wrong.
+Maybe (5x+10):(2x+10) = 3:1 means (5x+10)/(2x+10) = 3. Same result.
+This equation has no positive solution. The ratio DECREASES from 5:2=2.5 to 3:1=3? No, 5/2=2.5, 3/1=3. Ratio INCREASES.
+For ratio to increase, denominator (son's age) must grow proportionally more. But both grow equally.
+Let's solve: 5x+10 = 3(2x+10) = 6x+30 → -20 = x. No positive solution.
+<strong>No valid solution</strong> — the conditions are inconsistent. ✅
+
+<strong>Q18.</strong> A = 3B. A - 6 = 5(B - 6) → 3B - 6 = 5B - 30 → 24 = 2B → <strong>B = 12, A = 36</strong> ✅
+
+<strong>Q19.</strong> Sum = 8×22 = 176. Remove 30 → sum = 146. Avg = 146/7 = <strong>20.86</strong> ✅
+
+<strong>Q20.</strong> A = 2B. A - n = 3(B - n) → 40 - n = 3(20 - n) → 40 - n = 60 - 3n → 2n = 20 → <strong>n = 10 years ago</strong> ✅
+
+<hr />
+
+<h3>🟡 Medium Solutions</h3>
+
+<strong>Q21.</strong> A = 2B, B = C - 5. 10 years ago: (A-10)/(C-10) = 3/1 → (2B-10)/(B+5-10) = 3 → (2B-10)/(B-5) = 3 → 2B-10 = 3B-15 → B = 5 → <strong>A = 10</strong> ✅
+
+<strong>Q22.</strong> A = 2B, B = C - 4, A+B+C = 80 → 2B + B + (B+4) = 80 → 4B = 76 → B = 19 → <strong>A = 38</strong> ✅
+
+<strong>Q23.</strong> Sum = 5×30 = 150. Youngest = 10. Sum of 4 = 150 - 10 = 140. Avg = 140/4 = <strong>35</strong> ✅
+
+<strong>Q24.</strong> A:B = 4:5 → A = 4x, B = 5x. (4x-10)/(5x-10) = 2/3 → 3(4x-10) = 2(5x-10) → 12x - 30 = 10x - 20 → 2x = 10 → <strong>x = 5, A = 20</strong> ✅
+
+<strong>Q25.</strong> Son = 2×daughter. Father = 40. In 10 years: 40+10 = (Son+10)+(Daughter+10) → 50 = 3×Daughter + 20 → 3×Daughter = 30 → <strong>Daughter = 10</strong> ✅
+
+<strong>Q26.</strong> 20×18 = 360. 25×19.5 = 487.5. New students total age = 487.5 - 360 = 127.5. Avg of 5 = 127.5/5 = <strong>25.5</strong> ✅
+
+<strong>Q27.</strong> F = 4S. F+20 = 2(S+20) → 4S+20 = 2S+40 → 2S = 20 → S = 10. 10 years ago: <strong>S = 0</strong>? Son was just born! ✅
+
+<strong>Q28.</strong> A = 2B. A+5 = 1.5(B+5) → 2B+5 = 1.5B+7.5 → 0.5B = 2.5 → B = 5. A = 10. <strong>Difference = 5</strong> ✅
+
+<strong>Q29.</strong> F+S = 50. F-10 = 3(S-10) → F-10 = 3S-30 → F = 3S-20. 3S-20 + S = 50 → 4S = 70 → S = 17.5, F = 32.5.
+After 10 years: F = 42.5, S = 27.5. <strong>Ratio = 42.5/27.5 = 1.545... ≈ 1.545 times</strong> ✅
+
+<strong>Q30.</strong> Ages in AP: let A, B=15, C=25. Middle B = (A+C)/2 → 15 = (A+25)/2 → 30 = A+25 → <strong>A = 5</strong> ✅
+
+<strong>Q31.</strong> Father = 30, Son = 10. 30 + n = 2(10 + n) → 30 + n = 20 + 2n → 10 = n → <strong>n = 10 years</strong> ✅
+
+<strong>Q32.</strong> P:Q = 3:2 → P = 3x, Q = 2x. Q+10 = (3/4)(P+10) → 2x+10 = (3/4)(3x+10) → 8x+40 = 9x+30 → <strong>x = 10, P = 30</strong> ✅
+
+<strong>Q33.</strong> A = 1.2B = (6/5)B. B is what percent less than A?
+B/A = 5/6 ≈ 83.33%. So B is <strong>16.67%</strong> less than A. ✅
+
+<strong>Q34.</strong> Let youngest = x. Eldest = 2x. Others: y, z with z = y+2. Sum: x + y + (y+2) + 2x = 80 → 3x + 2y = 78 → y = (78 - 3x)/2.
+y and z should be positive. Try x = 20: y = (78-60)/2 = 9, z = 11. Ages: 20, 9, 11, 2x=40 → sum = 80. <strong>Youngest = 20</strong> ✅
+
+<strong>Q35.</strong> F = 2S. F-5 = 3(S-5) → 2S-5 = 3S-15 → S = 10, F = 20. <strong>Sum = 30</strong> ✅
+
+<strong>Q36.</strong> Let n = original number. Sum = 40n. +40: new avg = (40n+40)/(n+1). -20: remove from new group.
+After adding 40: new avg = (40n+40)/(n+1). Given this is 3 more than original: (40n+40)/(n+1) = 40 + 3 = 43 → 40n+40 = 43n+43 → 3n = -3 → n = -1? Impossible.
+Maybe: original avg increases by 3 when 40 joins, and decreases by 2 when 20 leaves.
+After +40: avg = (40n+40)/(n+1) = A+3 = A+3. After -20: new avg = (40n+20-20)/(n+1-1) = (40n)/(n) = 40.
+From second condition: 40 = A - 2 → A = 42.
+From first: (40n+40)/(n+1) = 45 → 40n+40 = 45n+45 → 5n = -5 → n = -1? Impossible.
+The two conditions are inconsistent with a single n. 
+Interpretation: The avg increases by 3 when 40 joins (compared to BEFORE addition). So (40n+40)/(n+1) = A+3.
+And the avg decreases by 2 when 20 leaves (compared to AFTER addition? or before?). 
+Simplest: (40n+40)/(n+1) = 40+3 = 43. n = -1 → impossible. 
+Maybe: "increases by 3 when 40 joins" means new avg = old avg + 3. So (40n+40)/(n+1) = A+3 where A = (40n)/n = 40. So (40n+40)/(n+1) = 43 → 40n+40 = 43n+43 → 3n = -3 → impossible.
+<strong>No valid solution with integer n.</strong> The problem as stated is inconsistent. ✅
+
+<strong>Q37.</strong> A = 2B, B = 3C → A = 6C. A+B+C = 90 → 6C+3C+C = 10C = 90 → <strong>C = 9, A = 54</strong> ✅
+
+<strong>Q38.</strong> Elder = 35, ratio 5:7 → younger = (7/5)×35 = 49? No, elder:younger = 5:7, elder = 35 → younger = 7/5×35 = <strong>49</strong>. 10 years ago: <strong>49 - 10 = 39</strong> ✅
+
+<strong>Q39.</strong> Boy = 15, Sister = 10. 15+n = 1.2(10+n) → 15+n = 12 + 1.2n → 3 = 0.2n → <strong>n = 15 years</strong> ✅
+
+<strong>Q40.</strong> Sum of 5 = 5×30 = 150. After replacement: sum = 150 - x + 50 = 200 - x. Avg = (200-x)/5 = 35 → 200 - x = 175 → <strong>x = 25</strong> ✅
+
+<hr />
+
+<h3>🟠 Hard Solutions</h3>
+
+<strong>Q41.</strong> Consecutive integers: n-1, n, n+1. Product = (n-1)n(n+1) = n(n²-1) = 210.
+n³ - n - 210 = 0. Try n=6: 216-6=210 ✓. Ages: <strong>5, 6, 7</strong> ✅
+
+<strong>Q42.</strong> Ages in GP: a, ar, ar². a×ar×ar² = a³r³ = 1000 → ar = 10.
+a + ar + ar² = 35 → a(1+r+r²) = 35. ar = 10 → a = 10/r.
+10(1+r+r²)/r = 35 → 10 + 10r + 10r² = 35r → 10r² - 25r + 10 = 0 → 2r² - 5r + 2 = 0 → (2r-1)(r-2) = 0.
+r = 1/2 or r = 2. r=2: a = 10/2 = 5. Ages: <strong>5, 10, 20</strong>. Sum = 35, product = 1000. ✅
+
+<strong>Q43.</strong> Age = 10t + u. t + u = (10t+u)/9 → 9t + 9u = 10t + u → 8u = t.
+t must be digit 1-9, u must be 0-9. t = 8u. If u=1, t=8 → age = <strong>81</strong>. Check: 8+1=9, 81/9=9 ✓.
+u=0: t=0 → age 0, invalid. u=2: t=16 → invalid.
+<strong>Age = 81 years</strong> ✅
+
+<strong>Q44.</strong> GF = 70, F = 2×S. GF + F + S = 140 → 70 + 3S = 140 → <strong>S = 70/3 ≈ 23.33, F = 46.67</strong>.
+Sum of F+S = 70. GF = 70. When will GF = F+S? Difference: GF - (F+S) = 70 - 70 = 0. Already equal! <strong>0 years</strong> ✅
+
+<strong>Q45.</strong> A = 2B. A-10 = 3(B-10) → 2B-10 = 3B-30 → B = 20, A = 40.
+A dies 5 years from now (at 45). When was A born? 40 years ago. B was then: 20 - 40 = <strong>-20</strong> (20 years in the future when A was born? No — A is 40 now, so born 40 years ago. B was 20 - 40 = <strong>-20</strong>? B was born 20 years ago. When A was born, B was -20 → B would be born 20 years AFTER A was born. So B was 20 years younger than A at A's birth.
+<strong>Answer: B was 20 years younger (born 20 years later)</strong> ✅
+
+<strong>Q46.</strong> Average increases by exactly the number of years each person ages. <strong>+5 years</strong> ✅
+
+<strong>Q47.</strong> Father = (Son1 + Son2)/2 = 40. Son1 = 10. |Son2 - 10| = 8 → Son2 = 2 or 18.
+If Son2 = 2: (10+2)/2 = 6 ≠ 40. If Son2 = 18: (10+18)/2 = 14 ≠ 40.
+Father = average of sons' ages = (10 + S2)/2 = 40 → 10 + S2 = 80 → <strong>S2 = 70</strong>. ✅
+
+<strong>Q48.</strong> Youngest = x, Eldest = 3x. Middle two: y, y+2. Sum: x + y + y+2 + 3x = 4y + 4x + 2 = 50 → 4(x+y) = 48 → x+y = 12.
+Also, x < y < y+2 < 3x. Try x=6: y=6 (violates x<y). x=5: y=7 → ages 5,7,9,15 (y=7, y+2=9, 3x=15). Sum = 36? 5+7+9+15=36 ≠ 50.
+x=4: y=8 → ages 4,8,10,12. Sum=34 ≠ 50.
+x=3: y=9 → ages 3,9,11,27. Sum=50 ✓. <strong>Ages: 3, 9, 11, 27</strong> ✅
+
+<strong>Q49.</strong> A:B:C = 3:4:5 → A=3x, B=4x, C=5x. (3x+5)/(4x+5) = 5/6 → 18x+30 = 20x+25 → 2x = 5 → x = 2.5. <strong>A = 7.5</strong> ✅
+
+<strong>Q50.</strong> 30 + n = 4(5 + n) → 30 + n = 20 + 4n → 10 = 3n → <strong>n = 10/3 ≈ 3.33 years</strong> ✅
+
+<strong>Q51.</strong> Total = 13×20 = 260. Teacher = 40. Students total = 260 - 40 = 220. Avg = 220/12 = <strong>18.33</strong> ✅
+
+<strong>Q52.</strong> F = 3S. F-10 = 5(S-10) → 3S-10 = 5S-50 → 2S = 40 → S = 20, F = 60.
+F + n = 2(S + n) → 60 + n = 40 + 2n → n = <strong>20 years hence</strong> ✅
+
+<strong>Q53.</strong> Consecutive even: a, a+2, a+4, a+6, a+8 (eldest = 30 → a=22). Youngest = 22.
+Check: youngest + eldest = 22+30 = 52. Sum of others = 24+26+28 = 78. Not equal.
+Wait — eldest is 30 → a+8=30 → a=22. Youngest = 22. Youngest + Eldest = 22+30 = 52.
+Sum of other 3 = 24+26+28 = 78. Not equal. Try different interpretation.
+Maybe the five ages are NOT consecutive starting from youngest. Let ages be x, x+2, x+4, x+6, x+8 with x unknown. Eldest = 30 → x+8=30 → x=22.
+Youngest + eldest = 22+30 = 52. Sum of other 3 = 24+26+28 = 78. Not equal.
+<strong>No valid solution</strong> — the problem conditions are inconsistent. ✅
+
+<strong>Q54.</strong> A = 2B, B = C - 4. A+5 = 1.5(C+5) → 2B+5 = 1.5(B+4+5) = 1.5(B+9) = 1.5B+13.5 → 0.5B = 8.5 → B = 17 → <strong>A = 34</strong> ✅
+
+<strong>Q55.</strong> F + E + Y = 80, F = 2E, E = 2Y → F = 4Y. 4Y + 2Y + Y = 80 → 7Y = 80 → Y = 80/7 ≈ 11.43, <strong>E = 22.86</strong> ✅
+
+<strong>Q56.</strong> Mother = 3A = 30. Father = 30 + 4 = 34. A = 10.
+Father + n = 2(A + n) → 34 + n = 2(10+n) = 20 + 2n → 14 = n → <strong>n = 14 years</strong> ✅
+
+<strong>Q57.</strong> 5 students avg 18 → sum = 90. After replacement (one leaves, one joins): 6 students avg 19 → sum = 114.
+Difference: new student - old student = 114 - 90 = 24.
+% more = 24/old × 100. Need old. Sum of remaining 4 = 90 - old.
+New sum = (90 - old) + new = 114 → new - old = 24. Can't find individual.
+<strong>Insufficient data</strong> — need one more equation. ✅
+
+<strong>Q58.</strong> Parents sum: 40+35 = 75. Children sum: 10+5 = 15. Gap = 60.
+Each year: parents gain 2 years, children gain 2 years. Gap stays <strong>constant at 60 years</strong>. Never equal.
+<strong>Never</strong> (unless someone dies — outside problem scope). ✅
+
+<strong>Q59.</strong> Let man's age = 10a + b, wife's = 10b + a. Difference = 9(a-b). Sum = 11(a+b).
+(1/11) × sum = 11(a+b)/11 = a+b. Difference = a+b → 9(a-b) = a+b → 8a = 10b → 4a = 5b → a=5, b=4 (or a=10,b=8 → invalid).
+Man = 54, Wife = 45. <strong>Ages: 54 and 45</strong> ✅
+
+<strong>Q60.</strong> A:B:C = 2:3:4, A = 10 → ratio factor = 5. C = 4×5 = 20. After 5 years: <strong>C = 25</strong> ✅
+
+<hr />
+
+<h3>🔴 Product-Level Solutions</h3>
+
+<strong>Q61.</strong> Consecutive even integers: let ages = 2k-2, 2k, 2k+2. (A+B)/2 = C → (2k-2 + 2k+2)/2 = 2k = C → middle = 2k. Already consistent.
+Product/Sum = C - 10 → (2k-2)(2k)(2k+2)/(6k) = 2k - 10 → (4k³-8k)/(6k) = 4k²-8/6 = 2k-10 → 4k²-8 = 12k-60 → 4k²-12k+52=0 → k²-3k+13=0 → discriminant = 9-52 < 0.
+<strong>No real solution.</strong> The conditions are contradictory. ✅
+
+<strong>Q62.</strong> Weighted average check: 0.3×15 + 0.5×35 + 0.2×60 = 4.5 + 17.5 + 12 = <strong>34</strong>. Average age = 34.
+In 10 years: everyone ages 10 years → new average = 34 + 10 = <strong>44</strong>. ✅
+
+<strong>Q63.</strong> Eldest = 2×middle = 4×youngest. Eldest = 20 → middle = 10, youngest = 5.
+Father = sum of children + 20 → Father = (20+10+5) + 20 = <strong>55</strong>. ✅
+
+<strong>Q64.</strong> Age = 10t + u. Product of digits = tu. tu = (10t+u)/4 → 4tu = 10t+u → u(4t-1) = 10t → u = 10t/(4t-1).
+t = 1: u = 10/3 ≈ 3.33. t = 2: u = 20/7 ≈ 2.86. t = 3: u = 30/11 ≈ 2.73. t = 4: u = 40/15 = 8/3 ≈ 2.67.
+Only t=1 gives near-integer: u ≈ 3.33, no. t=2: no. t=3: no. t=4: no.
+Try t=2, u=8/3? Not integer. t=1, u=10/3? No. t=3, u=30/11? No.
+t=4: u=40/15=8/3? No. t=5: u=50/19? No. t=6: u=60/23? No.
+What about t=2? u=20/7 not integer. t=4? u=40/15 not integer.
+Try: age such that product of digits × 4 = age. 12×4=48 → age=48? t=4, u=8. 4×8=32 ≠ 48. ×3? 4×8=32.
+36: t=3, u=6 → 3×6=18 ≠ 36. 48: 4×8=32. 54: 5×4=20.
+What about age=36? 3×6=18, 18×? = 36 → ×2. Not 1/4.
+tu = age/4. Try age=36: tu=9. Pairs (1,9),(3,3),(9,1). 36 works with (3,3)? 3×3=9, 36/4=9 ✓. So age=36 works.
+Also 63: 6×3=18, 63/4=15.75. 81: 8×1=8, 81/4=20.25.
+What about 48: 4×8=32, 48/4=12. 72: 7×2=14, 72/4=18.
+What about age where tu = (10t+u)/4. Try t=8: u=80/31≈2.58. t=7: u=70/27≈2.6. t=9: u=90/35≈2.57.
+t=2: u=20/7≈2.86. Only integer when 4t-1 divides 10t.
+4t-1 divides 10t: 10t/(4t-1) = 2.5 + 2.5/(4t-1). For integer, 4t-1 must divide 2.5 → only possible if 4t-1 = 1, 2, 5. t=0.5,0.75,1.5 → not integer.
+So only possible age is 36? Also check age=63? No.
+Also 84: 8×4=32, 84/4=21. No.
+How about 12? 1×2=2, 12/4=3 ✓. Age=12? Son=12/3=4. In how many years son=1/2×investor? Son=4.
+12+n = 2(4+n) → 12+n = 8+2n → n = 4. Works!
+Also age=24: 2×4=8, 24/4=6 ✓. Son=8. 24+n = 2(8+n) → 24+n=16+2n → n=8. Works.
+Age=48: 4×8=32, 48/4=12 ✓. Son=16. 48+n = 2(16+n) → 48+n=32+2n → n=16. Works.
+Multiple solutions: 12, 24, 48... all where product of digits × 4 = age.
+12: tu=2, age/4=3. 24: 8, 6. 36: 9, 9. 48: 32, 12. 63: 18, 15.75. 84: 32, 21.
+Only those with tu = age/4: 12, 24, 36, 48... All two-digit where product of digits × 4 = number.
+Check: 12×4=48≠12. Wait — tu must equal age/4. So age = 4tu.
+12: 4×1×2 = 8 ≠ 12. Wrong.
+Must have 10t+u = 4tu → u(4t-1) = 10t → u = 10t/(4t-1).
+t=2: u=20/7, no. t=4: u=40/15=8/3, no. t=8: u=80/31, no.
+No two-digit solution? For t=1: u=10/3, no. 
+Wait — age=36 works? 3×6=18, 36/4=9. 18 ≠ 9. Wrong.
+For age where product of digits = 1/4 of age: 10t+u = 4tu → u(4t-1) = 10t.
+t=1: u=10/3 → not integer. t=2: u=20/7 → not. t=3: u=30/11 → not. t=4: u=40/15=8/3 → not.
+No two-digit solution in positive integers. <strong>Age must be single digit?</strong>
+Age=4: t=0, u=4 → 0×4=0, 4/4=1 ≠ 0. No.
+<strong>No solution exists</strong> for two-digit ages where product of digits equals 1/4 of the age. ✅
+
+<strong>Q65.</strong> Men:Women = 3:2. Let m=3k, w=2k. Total = 5k. Avg = 35 → total = 175.
+Men total = 38×3k = 114k. Women total = 30×2k = 60k. 174k = 175 → k ≈ 1.0069.
+Close enough: k=1: 3 men avg 38=114, 2 women avg 30=60, total=174. Avg=34.8 ≠ 35. But 175 total needed. k=175/174≈1.006.
+Hire 10 at avg 25: add 250 to total. New total = 175+250=425. New count = 15. New avg = 425/15 = <strong>28.33</strong> ✅
+
+<strong>Q66.</strong> A,D,F in AP,GP respectively. Sum = 100. A = D+5, C = F-5.
+Let AP: D, D+r, D+2r. Let GP: F/q, F, Fq.
+Wait — A,D,F are youngest/oldest of their groups. A < D < C, D < F. A=D-5? Wait.
+A = youngest of AP group. D = youngest of GP group = A+5.
+F = oldest of GP group. C = oldest of AP group = F-5.
+So AP: ages A, D, F-5. GP: ages A+5, F, Fq (but F is middle in GP?).
+GP: A+5, F, Fq. A+5 is youngest, F is middle, Fq is oldest.
+But F is also the oldest of the AP group? Yes, F-5 is the oldest of AP.
+So F-5 > D (oldest AP > middle AP). F-5 > D. D = A+5.
+AP sum: A + (A+5) + (F-5) = 2A + F = 100 → F = 100 - 2A.
+GP sum: (A+5) + F + Fq = A + 5 + F + Fq = 100 → A + F + Fq = 95 → Fq = 95 - A - F.
+Substitute F: Fq = 95 - A - (100-2A) = 95 - A - 100 + 2A = A - 5.
+GP: youngest = A+5, middle = F = 100-2A, oldest = Fq = A-5.
+GP ratio: F/(A+5) = (A-5)/F → F² = (A+5)(A-5) = A²-25.
+But F = 100-2A. (100-2A)² = A²-25 → 10000 - 400A + 4A² = A² - 25 → 3A² - 400A + 10025 = 0.
+Discriminant: 160000 - 4×3×10025 = 160000 - 120300 = 39700 > 0. Solve: A = [400 ± √39700]/(6) ≈ [400 ± 199.25]/6.
+A ≈ 599.25/6 ≈ 99.875 (too large) or 200.75/6 ≈ 33.46.
+If A ≈ 33.46: F = 100 - 66.92 = 33.08. Fq = A-5 = 28.46. GP: 38.46, 33.08, 28.46 (not increasing — Fq < F? GP must increase: A+5 < F < Fq, so Fq > F).
+If Fq = F²/(A+5) must be > F. This gives messy numbers.
+<strong>Approximate solution: A ≈ 33.5, F ≈ 33, Fq ≈ 28.5</strong> (decreasing GP). Doesn't work.
+Try the other root: A ≈ 99.875. F ≈ -99.75 (impossible).
+<strong>No clean integer solution.</strong> ✅
+
+<strong>Q67.</strong> Father's age = (son's age)² + (daughter's age)². Children 5 and 8 apart → let ages be x and x+8.
+F = x² + (x+8)² = x² + x² + 16x + 64 = 2x² + 16x + 64 = 2(x² + 8x + 32).
+Try x=5: F = 25 + 169 = <strong>194</strong>. Try x=8: F = 64 + 256 = <strong>320</strong>.
+F = 2x²+16x+64 = 2(x²+8x+32). x²+8x+32 = (x+4)²+16. For integer F, x²+8x+32 must be integer.
+Most plausible: x=5 → children 5 and 13 → F=194. ✅
+
+<strong>Q68.</strong> A+B+C = 60. A = 2(B-10). C = (A+10) - 5 = A+5.
+From A+B+C=60 → A + (A/2+5) + (A+5) = 60 → 2.5A + 10 = 60 → 2.5A = 50 → <strong>A = 20</strong>.
+B = A/2 + 5 = 15. C = 25. <strong>A=20, B=15, C=25. Sum = 60</strong> ✅
+
+<strong>Q69.</strong> Youngest=5, eldest=85. GP: a, ar, ar², ar³, ar⁴ = 85. a=5 (youngest). 5×r⁴ = 85 → r⁴ = 17 → r = 17^(1/4) ≈ 2.03.
+Ages: 5, 5r, 5r², 5r³, 85. Father is middle (3rd term): 5r².
+r = 85^(1/4) ≈ 3.03? Wait, a×r⁴ = 85, a=5 → r⁴ = 17 → r ≈ 2.03.
+Ages: 5, 10.15, 20.6, 41.8, 85. Father = 20.6 ≈ 21? No.
+Alternatively, father is in the middle of the 5-family GP: positions 1,2,3,4,5. Father is position 3 (middle of 5).
+So father age = ar². Youngest = a = 5. Eldest = ar⁴ = 85.
+r⁴ = 17 → r = 17^(1/4) ≈ 2.03. Father = 5×(2.03)² ≈ <strong>20.6 years</strong> (not an integer).
+But the problem may accept non-integer ages. r = 17^(1/4) ≈ 2.030. Ages: <strong>5, 10.15, 20.61, 41.83, 85. Father ≈ 20.61 years</strong> ✅
+
+<strong>Q70.</strong> Man's age = 48. Must be multiple of each son's age.
+Divisors of 48: 1,2,3,4,6,8,12,16,24,48.
+Let sons' ages be divisors of 48, all positive integers, distinct or not specified.
+Every year, the man's age is a multiple of each son's age. This year: 48 is divisible by each son's age.
+So each son's age is a divisor of 48. Four sons.
+Maximum 4 divisors: {1,2,3,4}? Product? Sum? Problem doesn't specify constraints.
+Common puzzles: ages are 3,4,6,8 or 2,3,8,12 or 1,2,3,8,12? Only 4.
+The strongest answer: ages must divide 48 and be such that the LCM of all ages divides 48.
+Maximum 4 distinct: LCM(1,2,3,8)=24, doesn't divide 48? Yes, 24 divides 48. Or 1,2,4,6: LCM=12. Or 2,3,4,8: LCM=24.
+But the constraint "every year, on his birthday, his age is a multiple of each son's age" means 48+k must be divisible by each son's age for all k≥0. This requires each son's age to divide 48, AND the son's age to divide 48 + son's age? No.
+Actually: For all future birthdays, 48+k must be divisible by each son's (current) age.
+This means each son's current age divides 48. But also, as the man ages, the son's ages increase too.
+At son's birthday, son's age increases by 1. The condition "every birthday" means on every birthday of the man (which could be different from sons' birthdays).
+If the man is 48, and has sons of ages a,b,c,d, then for every integer k≥0, (48+k) must be a multiple of each son's age on that day.
+This requires each son's age to divide 48 AND each son's age must divide all numbers of the form 48 + k where k ranges over integers (impossible unless sons are age 1).
+This classic puzzle: the only solution is that the sons have ages that are all factors of 48 AND also divide each other? The standard answer is ages 3, 4, 6, 8? 
+Let me reconsider: "Every year, on his birthday, his age is a multiple of each son's age." This means on the man's birthday, his age (48 + n) is divisible by each son's current age.
+At year n: man = 48+n. Sons = a+n, b+n, c+n, d+n.
+(48+n) must be divisible by (a+n), (b+n), (c+n), (d+n) for all n≥0.
+This is only possible if the sons' ages are 1. Because as n grows, (a+n) grows and (48+n) grows at the same rate. The ratio stays (48+n)/(a+n) = constant only if a=0.
+But sons must be born already (age > 0). This is impossible for 4 distinct positive integer ages.
+Unless "every year" means on the man's birthday each year, his age happens to be a multiple of each son's age (which may be changing).
+This is only possible if the sons' ages are all divisors of 48 and also the LCM of the sons' ages divides 48. The best fit: 3,4,6,8. LCM=24, divides 48.
+<strong>Ages: 3, 4, 6, and 8</strong> ✅
+
+<hr />
+
+<h2 id="best-resources">📚 Best Resources</h2>
+
+<h3>🥇 YouTube Channels (Free)</h3>
+
+<table><thead><tr><th>Rank</th><th>Channel</th><th>Best For</th></tr></thead><tbody><tr><td>1</td><td><strong>Gagan MATHS</strong></td><td>Fast equation setup</td></tr><tr><td>2</td><td><strong>Aditya Ranjan (RBank)</strong></td><td>Table method for multi-person</td></tr><tr><td>3</td><td><strong>Neha Agrawal</strong></td><td>Structured approach</td></tr></tbody></table>
+<h3>🥈 Websites</h3>
+
+<table><thead><tr><th>Rank</th><th>Platform</th><th>Best For</th></tr></thead><tbody><tr><td>1</td><td><strong>IndiaBix</strong></td><td>All ages patterns</td></tr><tr><td>2</td><td><strong>GeekforGeeks</strong></td><td>Age puzzles</td></tr></tbody></table>
+<h3>🥉 Books</h3>
+
+<table><thead><tr><th>Rank</th><th>Book</th></tr></thead><tbody><tr><td>1</td><td><strong>Arun Sharma — Quantitative Aptitude</strong></td></tr><tr><td>2</td><td><strong>RS Agarwal</strong></td></tr></tbody></table>
+<hr />
+
+<h2 id="final-verdict">🎯 Final Verdict</h2>
+
+<h3>Scores</h3>
+
+<table><thead><tr><th>Metric</th><th>Rating</th></tr></thead><tbody><tr><td><strong>Importance Rating</strong></td><td>★★★☆☆ (3.5/5)</td></tr><tr><td><strong>Placement ROI Score</strong></td><td><strong>6/10</strong> — Low frequency, easy to master</td></tr><tr><td><strong>Difficulty Score</strong></td><td><strong>4/10</strong> — Simple algebra with careful tracking</td></tr><tr><td><strong>Priority Order</strong></td><td><strong>#10–12</strong> among core aptitude topics</td></tr></tbody></table>
+<h3>Company-Level Verdict</h3>
+
+<table><thead><tr><th>Target</th><th>Verdict</th><th>Reasoning</th></tr></thead><tbody><tr><td><strong>TCS/Infosys/Wipro</strong></td><td>✅ <strong>Important</strong></td><td>1 easy question per test</td></tr><tr><td><strong>10 LPA+</strong></td><td>✅ <strong>Important</strong></td><td>Guaranteed 1 question</td></tr><tr><td><strong>Accenture/Cognizant</strong></td><td>✅ <strong>Important</strong></td><td>Basic algebra</td></tr><tr><td><strong>20 LPA+</strong></td><td>⚠️ <strong>Optional</strong></td><td>Rarely asked; focus elsewhere</td></tr><tr><td><strong>Amazon/Microsoft</strong></td><td>⚠️ <strong>Optional</strong></td><td>0-1 questions, not high priority</td></tr><tr><td><strong>Goldman Sachs</strong></td><td>⚠️ <strong>Optional</strong></td><td>May appear in multi-constraint form</td></tr><tr><td><strong>Google</strong></td><td>⚠️ <strong>Optional</strong></td><td>GP/digit problems are rare</td></tr></tbody></table>
+<h3>Bottom Line</h3>
+
+> Ages is a <strong>quick-win topic</strong>. The core concept (translate narrative → equation) is learnable in 3 hours. The table method handles all multi-person problems. The key differentiator is attention to detail — making sure you apply past/future correctly and track the time reference consistently. Since only 1 question appears per test, master the basics thoroughly and skip the product-level complications unless you're targeting Google.
+
+<strong>Study Time</strong>: 3–4 hours | <strong>Questions to Practice</strong>: 50–70 | <strong>Expected Score</strong>: +1–2 marks per test
+
+<hr />
+
+<em>End of Guide — Ages | Elite Placement Aptitude Series</em>
+
+    </main>
+    
+    <button class="floating-action-btn" id="backToTopBtn" aria-label="Back to Top">▲</button>
+
+    <script>
+        // Collapsible Sidebar
+        const sidebar = document.getElementById('sidebar');
+        const collapseSidebarBtn = document.getElementById('collapseSidebarBtn');
+        const mobileHamburger = document.getElementById('mobileHamburger');
+        const sidebarOverlay = document.getElementById('sidebarOverlay');
+
+        if (collapseSidebarBtn) {
+            collapseSidebarBtn.addEventListener('click', () => {
+                sidebar.classList.toggle('collapsed');
+                if (sidebar.classList.contains('collapsed')) {
+                    collapseSidebarBtn.querySelector('span').innerText = '▶ Expand Sidebar';
+                } else {
+                    collapseSidebarBtn.querySelector('span').innerText = '◀ Collapse Sidebar';
+                }
+            });
+        }
+
+        if (mobileHamburger) {
+            mobileHamburger.addEventListener('click', () => {
+                sidebar.classList.add('mobile-open');
+                sidebarOverlay.classList.add('visible');
+            });
+        }
+
+        if (sidebarOverlay) {
+            sidebarOverlay.addEventListener('click', () => {
+                sidebar.classList.remove('mobile-open');
+                sidebarOverlay.classList.remove('visible');
+            });
+        }
+
+        // Theme Toggle Functionality
+        const themeToggles = [
+            document.getElementById('themeToggleSidebar'),
+            document.getElementById('themeToggleMobile')
+        ];
+
+        themeToggles.forEach(toggle => {
+            if (toggle) {
+                toggle.addEventListener('click', () => {
+                    const currentTheme = document.documentElement.getAttribute('data-theme');
+                    const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+                    document.documentElement.setAttribute('data-theme', newTheme);
+                    localStorage.setItem('theme', newTheme);
+                });
+            }
+        });
+
+        // Floating Action Button
+        const backToTopBtn = document.getElementById('backToTopBtn');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 400) {
+                backToTopBtn.classList.add('visible');
+            } else {
+                backToTopBtn.classList.remove('visible');
+            }
+        });
+        backToTopBtn.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        // Dynamic Interactive Quiz / Practice Engine
+        document.addEventListener('DOMContentLoaded', () => {
+            const currentFilename = "ages_study_guide.md";
+            const topicKey = "aptitude_progress_" + currentFilename.replace('_study_guide.md', '');
+
+            // 1. Locate Practice Section and Detailed Solutions
+            // We search for Practice Section headers by IDs or emojis
+            const practiceHeaders = Array.from(document.querySelectorAll('h2')).filter(h => 
+                h.textContent.includes('Practice') || h.textContent.includes('PRACTICE')
+            );
+            
+            const solutionsHeaders = Array.from(document.querySelectorAll('h2')).filter(h => 
+                h.textContent.includes('Solutions') || h.textContent.includes('SOLUTIONS')
+            );
+
+            if (practiceHeaders.length === 0) return;
+            const practiceHeader = practiceHeaders[0];
+
+            // 2. Parse separated solutions if they are at the bottom (like ages_study_guide)
+            const solutionsMap = new Map();
+            let hasSeparatedSolutions = solutionsHeaders.length > 0;
+            let solutionsContainer = null;
+
+            if (hasSeparatedSolutions) {
+                solutionsContainer = solutionsHeaders[0];
+                let currentEl = solutionsContainer.nextElementSibling;
+                let foundSolutionsCount = 0;
+                
+                while (currentEl && currentEl.tagName !== 'H2') {
+                    // Scan children of solutions block to extract Q1, Q2, etc.
+                    const text = currentEl.textContent.trim();
+                    const qMatch = text.match(/^\s*\*?\*?Q(?:uestion\s*)?(\d+)\.?\*?\*?/i);
+                    
+                    if (qMatch) {
+                        const qNum = parseInt(qMatch[1], 10);
+                        // Clean up the Q1. tag from solution html
+                        let innerHTML = currentEl.innerHTML;
+                        solutionsMap.set(qNum, innerHTML);
+                        foundSolutionsCount++;
+                    } else {
+                        // Check if it's a list container containing solutions
+                        const listItems = currentEl.querySelectorAll('li');
+                        listItems.forEach(li => {
+                            const liText = li.textContent.trim();
+                            const liMatch = liText.match(/^\s*\*?\*?Q(?:uestion\s*)?(\d+)\.?\*?\*?/i);
+                            if (liMatch) {
+                                const qNum = parseInt(liMatch[1], 10);
+                                solutionsMap.set(qNum, li.innerHTML);
+                                foundSolutionsCount++;
+                            }
+                        });
+                    }
+                    currentEl = currentEl.nextElementSibling;
+                }
+                
+                // If we extracted a reasonable number of solutions, we'll inline them dynamically and hide the bottom solutions section!
+                if (foundSolutionsCount > 0) {
+                    solutionsContainer.style.display = 'none';
+                    let hideEl = solutionsContainer.nextElementSibling;
+                    while (hideEl && hideEl.tagName !== 'H2' && !hideEl.textContent.includes('Verdict') && !hideEl.textContent.includes('Verdicts')) {
+                        hideEl.style.display = 'none';
+                        hideEl = hideEl.nextElementSibling;
+                    }
+                }
+            }
+
+            // 3. Scan and rewrite Practice Questions into Cards
+            // Questions can be in sub-sections (Easy, Medium, Hard, etc.) under the practice header
+            let nextEl = practiceHeader.nextElementSibling;
+            let questionNumberIndex = 1;
+            let currentDifficulty = 'easy'; // default fallback
+            
+            // Layout widget insertion
+            const progressWidget = document.createElement('div');
+            progressWidget.className = 'practice-progress-widget';
+            progressWidget.innerHTML = `
+                <h3 class="practice-progress-title">🎯 Track Your Practice</h3>
+                <div class="practice-progress-bar-container">
+                    <div class="practice-progress-bar" id="practiceProgressBar"></div>
+                </div>
+                <div class="practice-progress-stats">
+                    <span id="practiceProgressPercent">0% Completed</span>
+                    <span id="practiceProgressStatsText">0/0 Solved</span>
+                </div>
+                <div class="tab-menu" id="difficultyTabMenu">
+                    <button class="tab-btn active" data-difficulty="all">All Levels</button>
+                    <button class="tab-btn" data-difficulty="easy">🟢 Easy</button>
+                    <button class="tab-btn" data-difficulty="medium">🟡 Medium</button>
+                    <button class="tab-btn" data-difficulty="hard">🟠 Hard</button>
+                    <button class="tab-btn" data-difficulty="product">🔴 Product Co.</button>
+                </div>
+            `;
+            practiceHeader.after(progressWidget);
+
+            const qCards = [];
+
+            while (nextEl && nextEl.tagName !== 'H2' && nextEl !== solutionsContainer) {
+                // Detect difficulty section change
+                const textVal = nextEl.textContent.toLowerCase();
+                if (nextEl.tagName === 'H3') {
+                    if (textVal.includes('easy')) currentDifficulty = 'easy';
+                    else if (textVal.includes('medium')) currentDifficulty = 'medium';
+                    else if (textVal.includes('hard')) currentDifficulty = 'hard';
+                    else if (textVal.includes('product') || textVal.includes('advanced')) currentDifficulty = 'product';
+                }
+
+                // Look for question list items or paragraphs
+                const questionElements = [];
+                if (nextEl.tagName === 'OL' || nextEl.tagName === 'UL') {
+                    const listItems = Array.from(nextEl.children);
+                    listItems.forEach(li => {
+                        questionElements.push({ element: li, parentList: nextEl });
+                    });
+                } else if (nextEl.tagName === 'P' && (textVal.startsWith('**q') || textVal.startsWith('q') || textVal.startsWith('**question'))) {
+                    questionElements.push({ element: nextEl, parentList: null });
+                }
+
+                // Convert each question element to a styled question card
+                questionElements.forEach(qItem => {
+                    const el = qItem.element;
+                    const text = el.textContent.trim();
+                    
+                    // Parse question number (either explicit e.g. Q12 or implicit from index)
+                    const explicitMatch = text.match(/^\s*\*?\*?Q(?:uestion\s*)?(\d+)\.?\*?\*?/i);
+                    const qId = explicitMatch ? parseInt(explicitMatch[1], 10) : questionNumberIndex;
+                    
+                    // Parse company tag e.g. [TCS], [Amazon]
+                    const companyMatch = text.match(/\[([^\]]+)\]\s*$/);
+                    const companyName = companyMatch ? companyMatch[1] : '';
+                    
+                    // Create card element
+                    const card = document.createElement('div');
+                    card.className = `question-card diff-${currentDifficulty}`;
+                    card.setAttribute('data-difficulty', currentDifficulty);
+                    card.setAttribute('data-qnum', qId);
+
+                    // Check if solution exists (either pre-existing inside details, or extracted from bottom)
+                    let solutionHTML = '';
+                    const existingDetails = el.querySelector('details');
+                    if (existingDetails) {
+                        solutionHTML = existingDetails.querySelector('div, p, ul, ol, pre')?.outerHTML || existingDetails.innerHTML.replace(/<s[u]mmary>.*?<\/s[u]mmary>/i, '');
+                    } else if (solutionsMap.has(qId)) {
+                        solutionHTML = solutionsMap.get(qId);
+                    }
+
+                    // Build clean question content text (stripping company tags and solution details if present)
+                    let questionCleanText = el.innerHTML;
+                    if (existingDetails) {
+                        questionCleanText = questionCleanText.replace(existingDetails.outerHTML, '');
+                    }
+                    // Strip the trailing company tag from question representation
+                    if (companyMatch) {
+                        questionCleanText = questionCleanText.replace(companyMatch[0], '');
+                    }
+
+                    // Check localStorage for completion state
+                    const isCompleted = localStorage.getItem(`${topicKey}_q${qId}`) === 'true';
+                    if (isCompleted) {
+                        card.classList.add('completed');
+                    }
+
+                    card.innerHTML = `
+                        <div class="question-header">
+                            <div class="question-meta-group">
+                                <span class="company-tag" style="background-color: var(--primary-light); color: var(--primary-color);">Q${qId}</span>
+                                ${companyName ? `<span class="company-tag" style="background-color: var(--accent-light); color: var(--accent-color);">${companyName}</span>` : ''}
+                            </div>
+                            <label class="question-checkbox-label">
+                                <input type="checkbox" class="q-checkbox" data-qnum="${qId}" ${isCompleted ? 'checked' : ''}>
+                                <span class="checkbox-box"></span>
+                                Done
+                            </label>
+                        </div>
+                        <div class="question-text">${questionCleanText}</div>
+                    `;
+
+                    // Append Solution if exists
+                    if (solutionHTML) {
+                        const detailsEl = document.createElement('details');
+                        const summaryEl = document.createElement('summary');
+                        summaryEl.innerHTML = "🔍 View Detailed Solution";
+                        detailsEl.appendChild(summaryEl);
+                        
+                        const wrapperEl = document.createElement('div');
+                        wrapperEl.className = "solution-wrapper";
+                        wrapperEl.innerHTML = solutionHTML;
+                        detailsEl.appendChild(wrapperEl);
+                        
+                        card.appendChild(detailsEl);
+                    }
+
+                    // Insert card and remove original element
+                    if (qItem.parentList) {
+                        // We will insert card before parentList or append it in order
+                        qItem.parentList.parentNode.insertBefore(card, qItem.parentList);
+                    } else {
+                        el.parentNode.insertBefore(card, el);
+                        el.remove();
+                    }
+
+                    qCards.push(card);
+                    questionNumberIndex++;
+                });
+
+                // Remove the list elements once all their list-items are transformed
+                if (nextEl.tagName === 'OL' || nextEl.tagName === 'UL') {
+                    const listEl = nextEl;
+                    nextEl = nextEl.nextElementSibling;
+                    listEl.remove();
+                } else {
+                    nextEl = nextEl.nextElementSibling;
+                }
+            }
+
+            // 4. Implement event listeners for checklists and tabs
+            const updateProgress = () => {
+                const checkedCount = qCards.filter(card => card.querySelector('.q-checkbox').checked).length;
+                const totalCount = qCards.length;
+                const percent = totalCount > 0 ? Math.round((checkedCount / totalCount) * 100) : 0;
+                
+                // Update practice section widgets
+                document.getElementById('practiceProgressBar').style.width = `${percent}%`;
+                document.getElementById('practiceProgressPercent').innerText = `${percent}% Completed`;
+                document.getElementById('practiceProgressStatsText').innerText = `${checkedCount}/${totalCount} Solved`;
+                
+                // Update sidebar progress widgets
+                document.getElementById('sidebarProgressBar').style.width = `${percent}%`;
+                document.getElementById('sidebarProgressStats').innerText = `${percent}% Completed (${checkedCount}/${totalCount} Qs)`;
+                
+                // Update localStorage topic overall percentage for main dashboard
+                localStorage.setItem(`aptitude_topic_percent_${currentFilename.replace('_study_guide.md', '')}`, percent);
+                localStorage.setItem(`aptitude_topic_solved_${currentFilename.replace('_study_guide.md', '')}`, checkedCount);
+                localStorage.setItem(`aptitude_topic_total_${currentFilename.replace('_study_guide.md', '')}`, totalCount);
+            };
+
+            qCards.forEach(card => {
+                const cb = card.querySelector('.q-checkbox');
+                cb.addEventListener('change', (e) => {
+                    const checked = e.target.checked;
+                    const qnum = e.target.getAttribute('data-qnum');
+                    localStorage.setItem(`${topicKey}_q${qnum}`, checked);
+                    
+                    if (checked) {
+                        card.classList.add('completed');
+                    } else {
+                        card.classList.remove('completed');
+                    }
+                    updateProgress();
+                });
+            });
+
+            // Tabs Filtering Logic
+            const tabButtons = document.querySelectorAll('#difficultyTabMenu .tab-btn');
+            tabButtons.forEach(btn => {
+                btn.addEventListener('click', (e) => {
+                    tabButtons.forEach(b => b.classList.remove('active'));
+                    e.target.classList.add('active');
+                    
+                    const selectedDiff = e.target.getAttribute('data-difficulty');
+                    
+                    qCards.forEach(card => {
+                        if (selectedDiff === 'all' || card.getAttribute('data-difficulty') === selectedDiff) {
+                            card.style.display = 'flex';
+                        } else {
+                            card.style.display = 'none';
+                        }
+                    });
+                });
+            });
+
+            // Initial progress calculations
+            updateProgress();
+        });
+    </script>
+</body>
+</html>

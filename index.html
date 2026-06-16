@@ -1,45 +1,82 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ultimate Aptitude Placement Mastery Guide</title>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=JetBrains+Mono&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono&display=swap" rel="stylesheet">
+    <script>
+        // Sync theme immediately to prevent flashing
+        (function() {
+            const savedTheme = localStorage.getItem('theme') || 'light';
+            document.documentElement.setAttribute('data-theme', savedTheme);
+        })();
+    </script>
     <style>
         :root {
             --bg-color: #f8fafc;
-            --text-color: #1e293b;
+            --text-color: #0f172a;
+            --text-muted: #64748b;
             --card-bg: #ffffff;
             --border-color: #e2e8f0;
             --primary-color: #2563eb;
+            --primary-hover: #1d4ed8;
             --primary-light: #eff6ff;
             --primary-dark: #1e40af;
+            --accent-color: #8b5cf6;
+            --accent-light: #f5f3ff;
             
             --success-color: #10b981;
             --warning-color: #f59e0b;
             --danger-color: #ef4444;
+            
+            --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+            --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.08), 0 2px 4px -1px rgba(0, 0, 0, 0.04);
+            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            --radius-md: 12px;
+            --radius-lg: 16px;
+            --transition-speed: 0.3s;
+        }
+        
+        [data-theme="dark"] {
+            --bg-color: #090d16;
+            --text-color: #f1f5f9;
+            --text-muted: #94a3b8;
+            --card-bg: #1f293d;
+            --border-color: #1f293d;
+            --primary-color: #3b82f6;
+            --primary-hover: #60a5fa;
+            --primary-light: rgba(59, 130, 246, 0.15);
+            --primary-dark: #2563eb;
+            --accent-color: #a78bfa;
+            --accent-light: rgba(139, 92, 246, 0.15);
+            --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.5);
+            --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.3);
+            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.4);
         }
         
         * {
             box-sizing: border-box;
             margin: 0;
             padding: 0;
+            transition: background-color var(--transition-speed) ease, border-color var(--transition-speed) ease;
         }
         
         body {
-            font-family: 'Outfit', sans-serif;
+            font-family: 'Inter', sans-serif;
             background-color: var(--bg-color);
             color: var(--text-color);
             line-height: 1.6;
-            background-image: radial-gradient(circle at 10% 20%, rgba(59, 130, 246, 0.03) 0%, transparent 40%),
-                              radial-gradient(circle at 90% 80%, rgba(79, 70, 229, 0.03) 0%, transparent 40%);
+            background-image: radial-gradient(circle at 10% 20%, rgba(59, 130, 246, 0.02) 0%, transparent 40%),
+                              radial-gradient(circle at 90% 80%, rgba(79, 70, 229, 0.02) 0%, transparent 40%);
             background-attachment: fixed;
+            min-height: 100vh;
         }
         
         /* Navigation header */
         .navbar {
-            background-color: rgba(255, 255, 255, 0.8);
-            backdrop-filter: blur(8px);
+            background-color: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(12px);
             border-bottom: 1px solid var(--border-color);
             padding: 16px 40px;
             position: sticky;
@@ -48,11 +85,17 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
+            box-shadow: var(--shadow-sm);
+        }
+        
+        [data-theme="dark"] .navbar {
+            background-color: rgba(17, 24, 39, 0.85);
         }
         
         .navbar-brand {
+            font-family: 'Outfit', sans-serif;
             font-weight: 700;
-            font-size: 1.25rem;
+            font-size: 1.35rem;
             color: var(--primary-color);
             display: flex;
             align-items: center;
@@ -63,41 +106,71 @@
         
         .navbar-brand:hover {
             opacity: 0.85;
-            text-decoration: none;
         }
+        
+        .theme-toggle-btn {
+            background: none;
+            border: none;
+            color: var(--text-muted);
+            cursor: pointer;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: var(--bg-color);
+            border: 1px solid var(--border-color);
+            transition: all 0.2s ease;
+        }
+        
+        .theme-toggle-btn:hover {
+            color: var(--primary-color);
+            transform: scale(1.05);
+        }
+        
+        .sun-icon { display: block; }
+        .moon-icon { display: none; }
+        
+        [data-theme="dark"] .sun-icon { display: none; }
+        [data-theme="dark"] .moon-icon { display: block; }
         
         /* Hero Section styling */
         .hero {
-            padding: 80px 40px 60px 40px;
+            padding: 80px 40px 40px 40px;
             text-align: center;
             max-width: 1000px;
             margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 16px;
         }
         
         .hero h1 {
-            font-size: 3rem;
-            color: #0f172a;
-            margin-bottom: 16px;
+            font-family: 'Outfit', sans-serif;
+            font-size: 3.25rem;
+            color: var(--text-color);
             font-weight: 800;
             letter-spacing: -0.02em;
-            line-height: 1.2;
-            background: linear-gradient(to right, #2563eb, #4f46e5);
+            line-height: 1.25;
+            background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
         
         .hero p {
-            font-size: 1.25rem;
-            color: #64748b;
-            max-width: 600px;
-            margin: 0 auto 30px auto;
+            font-size: 1.2rem;
+            color: var(--text-muted);
+            max-width: 650px;
+            line-height: 1.7;
         }
         
         .hero-stats {
             display: flex;
             justify-content: center;
-            gap: 40px;
-            margin-top: 20px;
+            gap: 32px;
+            margin-top: 24px;
             flex-wrap: wrap;
         }
         
@@ -105,20 +178,37 @@
             display: flex;
             flex-direction: column;
             gap: 4px;
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            padding: 16px 28px;
+            border-radius: var(--radius-md);
+            box-shadow: var(--shadow-sm);
+            min-width: 160px;
         }
         
         .stat-val {
-            font-size: 2rem;
-            font-weight: 700;
-            color: #0f172a;
+            font-family: 'Outfit', sans-serif;
+            font-size: 2.25rem;
+            font-weight: 800;
+            color: var(--primary-color);
         }
         
         .stat-label {
-            font-size: 0.85rem;
+            font-size: 0.76rem;
             text-transform: uppercase;
             letter-spacing: 0.05em;
-            color: #64748b;
-            font-weight: 600;
+            color: var(--text-muted);
+            font-weight: 700;
+        }
+        
+        /* Overall Progress Hero Card */
+        .overall-progress-hero {
+            background: linear-gradient(135deg, var(--card-bg), var(--bg-color));
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-lg);
+            padding: 30px;
+            margin: 20px 0 40px 0;
+            box-shadow: var(--shadow-md);
         }
         
         /* Main Layout */
@@ -129,38 +219,47 @@
         }
         
         .section-header {
-            font-size: 2rem;
-            color: #0f172a;
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.85rem;
+            color: var(--text-color);
             margin: 60px 0 24px 0;
             font-weight: 700;
             border-bottom: 2px solid var(--border-color);
             padding-bottom: 12px;
+            letter-spacing: -0.01em;
         }
         
         /* Live Search Section */
         .search-container {
-            background: #ffffff;
+            background: var(--card-bg);
             border: 1px solid var(--border-color);
-            border-radius: 12px;
+            border-radius: var(--radius-md);
             padding: 16px 24px;
             margin-bottom: 30px;
             display: flex;
             gap: 16px;
             align-items: center;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.02);
+            box-shadow: var(--shadow-sm);
         }
         
         .search-icon {
             font-size: 1.25rem;
+            color: var(--text-muted);
         }
         
         .search-input {
             flex: 1;
             border: none;
             outline: none;
+            background: transparent;
             font-family: inherit;
-            font-size: 1rem;
+            font-size: 1.05rem;
             color: var(--text-color);
+        }
+        
+        .search-input::placeholder {
+            color: var(--text-muted);
+            opacity: 0.75;
         }
         
         /* Topics Grid System */
@@ -174,21 +273,20 @@
         .topic-card {
             background-color: var(--card-bg);
             border: 1px solid var(--border-color);
-            border-radius: 16px;
-            padding: 24px;
+            border-radius: var(--radius-lg);
+            padding: 28px;
             display: flex;
             flex-direction: column;
             gap: 16px;
             transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.02);
+            box-shadow: var(--shadow-sm);
             position: relative;
             overflow: hidden;
         }
         
         .topic-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05),
-                        0 4px 6px -2px rgba(0, 0, 0, 0.03);
+            transform: translateY(-6px);
+            box-shadow: var(--shadow-lg);
             border-color: var(--primary-light);
         }
         
@@ -199,23 +297,25 @@
         }
         
         .card-emoji {
-            font-size: 1.25rem;
+            font-size: 1.35rem;
         }
         
         .card-rank {
-            font-size: 0.8rem;
-            font-weight: 600;
-            color: #64748b;
+            font-size: 0.78rem;
+            font-weight: 700;
+            color: var(--text-muted);
             text-transform: uppercase;
             letter-spacing: 0.05em;
         }
         
         .status-badge {
-            font-size: 0.7rem;
-            font-weight: 600;
-            padding: 2px 8px;
-            border-radius: 9999px;
+            font-size: 0.72rem;
+            font-weight: 700;
+            padding: 3px 10px;
+            border-radius: 99px;
             margin-left: auto;
+            text-transform: uppercase;
+            letter-spacing: 0.02em;
         }
         
         .status-quant {
@@ -224,19 +324,21 @@
         }
         
         .status-lr-di {
-            background-color: #f3e8ff;
-            color: #7c3aed;
+            background-color: var(--accent-light);
+            color: var(--accent-color);
         }
         
         .card-title {
-            font-size: 1.25rem;
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.35rem;
             font-weight: 700;
-            color: #0f172a;
+            color: var(--text-color);
         }
         
         .card-desc {
-            font-size: 0.9rem;
-            color: #64748b;
+            font-size: 0.92rem;
+            color: var(--text-muted);
+            line-height: 1.6;
             flex: 1;
         }
         
@@ -245,7 +347,7 @@
             grid-template-columns: repeat(3, 1fr);
             gap: 12px;
             border-top: 1px solid var(--border-color);
-            padding-top: 16px;
+            padding-top: 18px;
         }
         
         .meta-item {
@@ -255,23 +357,23 @@
         }
         
         .meta-label {
-            font-size: 0.7rem;
+            font-size: 0.68rem;
             text-transform: uppercase;
             letter-spacing: 0.05em;
-            color: #94a3b8;
-            font-weight: 600;
+            color: var(--text-muted);
+            font-weight: 700;
         }
         
         .meta-stars {
-            font-size: 0.85rem;
+            font-size: 0.88rem;
             color: var(--warning-color);
         }
         
         .meta-badge {
-            font-size: 0.75rem;
-            font-weight: 600;
-            padding: 2px 6px;
-            border-radius: 4px;
+            font-size: 0.74rem;
+            font-weight: 700;
+            padding: 3px 8px;
+            border-radius: 6px;
             text-align: center;
             width: fit-content;
         }
@@ -293,17 +395,17 @@
         
         .meta-practice {
             font-size: 0.85rem;
-            font-weight: 600;
-            color: #334155;
+            font-weight: 700;
+            color: var(--text-color);
         }
         
         .card-btn {
             display: block;
             text-align: center;
-            padding: 12px;
-            border-radius: 8px;
-            font-weight: 600;
-            font-size: 0.9rem;
+            padding: 12px 18px;
+            border-radius: var(--radius-sm);
+            font-weight: 700;
+            font-size: 0.92rem;
             text-decoration: none;
             transition: all 0.2s ease;
         }
@@ -311,60 +413,64 @@
         .btn-start {
             background-color: var(--primary-color);
             color: #ffffff;
+            box-shadow: 0 4px 6px -1px rgba(37, 99, 235, 0.15);
         }
         
         .btn-start:hover {
-            background-color: var(--primary-dark);
+            background-color: var(--primary-hover);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 8px -1px rgba(37, 99, 235, 0.2);
         }
         
         .btn-disabled {
-            background-color: #f1f5f9;
-            color: #94a3b8;
+            background-color: var(--border-color);
+            color: var(--text-muted);
             cursor: not-allowed;
             pointer-events: none;
+            opacity: 0.65;
         }
         
         /* Tables styling */
         table {
             width: 100%;
             border-collapse: collapse;
-            margin: 20px 0;
-            background-color: #ffffff;
-            border-radius: 8px;
+            margin: 24px 0;
+            background-color: var(--card-bg);
+            border-radius: var(--radius-md);
             overflow: hidden;
-            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.02);
+            box-shadow: var(--shadow-sm);
         }
         
         th, td {
-            padding: 14px 18px;
+            padding: 14px 20px;
             border: 1px solid var(--border-color);
             text-align: left;
         }
         
         th {
-            background-color: #f8fafc;
-            color: #0f172a;
-            font-weight: 600;
+            background-color: var(--primary-light);
+            color: var(--primary-color);
+            font-weight: 700;
         }
         
         tr:nth-child(even) {
-            background-color: #f8fafc;
+            background-color: rgba(59, 130, 246, 0.01);
         }
         
         /* Alerts styling */
         .alert {
             display: flex;
             border-left: 4px solid;
-            padding: 16px;
-            border-radius: 6px;
-            margin: 20px 0;
-            background: #ffffff;
-            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.02);
+            padding: 18px;
+            border-radius: var(--radius-md);
+            margin: 24px 0;
+            background: var(--card-bg);
+            box-shadow: var(--shadow-sm);
         }
         
         .alert-icon {
-            font-size: 1.25rem;
-            margin-right: 12px;
+            font-size: 1.35rem;
+            margin-right: 14px;
             display: flex;
             align-items: center;
         }
@@ -374,13 +480,13 @@
         }
         
         .alert-important {
-            border-left-color: var(--important-border, #8b5cf6);
-            background-color: rgba(139, 92, 246, 0.05);
+            border-left-color: var(--accent-color);
+            background-color: var(--accent-light);
         }
         
         .alert-note {
-            border-left-color: #3b82f6;
-            background-color: rgba(59, 130, 246, 0.05);
+            border-left-color: var(--primary-color);
+            background-color: var(--primary-light);
         }
         
         .alert-tip {
@@ -389,24 +495,24 @@
         }
         
         ul, ol {
-            padding-left: 20px;
-            margin: 12px 0;
+            padding-left: 24px;
+            margin: 16px 0;
         }
         
         li {
-            margin-bottom: 6px;
+            margin-bottom: 8px;
         }
         
         /* Responsive Grid fixes */
         @media (max-width: 768px) {
             .navbar {
-                padding: 16px 20px;
+                padding: 16px 24px;
             }
             .hero h1 {
                 font-size: 2.25rem;
             }
             .hero-stats {
-                gap: 20px;
+                gap: 16px;
             }
             .main-content {
                 padding: 0 20px 60px 20px;
@@ -422,6 +528,10 @@
         <a href="index.html" class="navbar-brand">
             🎓 Aptitude Placement Mastery Portal
         </a>
+        <button class="theme-toggle-btn" id="themeToggle">
+            <svg class="sun-icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+            <svg class="moon-icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+        </button>
     </header>
     
     <section class="hero">
@@ -690,7 +800,7 @@ This guide identifies the <strong>15 aptitude topics</strong> that appear most f
             <div class="card-header">
                 <span class="card-emoji">🧩</span>
                 <span class="card-rank">Rank 10</span>
-                <span class="status-badge status-lr-di">LR/DI Module</span>
+                <span class="status-badge status-quant">Quant Guide</span>
             </div>
             <h3 class="card-title">Permutations & Combinations</h3>
             <p class="card-desc">Core foundation for Probability and arrangement brain-teasers (circular arrangement, identical items).</p>
@@ -708,14 +818,14 @@ This guide identifies the <strong>15 aptitude topics</strong> that appear most f
                     <span class="meta-practice">60–80 Qs</span>
                 </div>
             </div>
-            <a href="#" class="card-btn btn-disabled">Core Syllabus Only</a>
+            <a href="permutations_combinations_study_guide.html" class="card-btn btn-start">Start Topic Guide</a>
         </div>
         
         <div class="topic-card">
             <div class="card-header">
                 <span class="card-emoji">⏳</span>
                 <span class="card-rank">Rank 11</span>
-                <span class="status-badge status-lr-di">LR/DI Module</span>
+                <span class="status-badge status-quant">Quant Guide</span>
             </div>
             <h3 class="card-title">Ages</h3>
             <p class="card-desc">Algebraic relationship equations tracking variables across time scales.</p>
@@ -733,14 +843,14 @@ This guide identifies the <strong>15 aptitude topics</strong> that appear most f
                     <span class="meta-practice">40–60 Qs</span>
                 </div>
             </div>
-            <a href="#" class="card-btn btn-disabled">Core Syllabus Only</a>
+            <a href="ages_study_guide.html" class="card-btn btn-start">Start Topic Guide</a>
         </div>
         
         <div class="topic-card">
             <div class="card-header">
                 <span class="card-emoji">🔤</span>
                 <span class="card-rank">Rank 12</span>
-                <span class="status-badge status-lr-di">LR/DI Module</span>
+                <span class="status-badge status-quant">Quant Guide</span>
             </div>
             <h3 class="card-title">Coding & Decoding</h3>
             <p class="card-desc">Alphabet-number logical reasoning series. High scoring speed multiplier.</p>
@@ -758,14 +868,14 @@ This guide identifies the <strong>15 aptitude topics</strong> that appear most f
                     <span class="meta-practice">60–80 Qs</span>
                 </div>
             </div>
-            <a href="#" class="card-btn btn-disabled">Core Syllabus Only</a>
+            <a href="coding_decoding_study_guide.html" class="card-btn btn-start">Start Topic Guide</a>
         </div>
         
         <div class="topic-card">
             <div class="card-header">
                 <span class="card-emoji">🌳</span>
                 <span class="card-rank">Rank 13</span>
-                <span class="status-badge status-lr-di">LR/DI Module</span>
+                <span class="status-badge status-quant">Quant Guide</span>
             </div>
             <h3 class="card-title">Blood Relations</h3>
             <p class="card-desc">Family tree analysis, coded generation tracking, and pointing-to puzzle relationships.</p>
@@ -783,14 +893,14 @@ This guide identifies the <strong>15 aptitude topics</strong> that appear most f
                     <span class="meta-practice">50–70 Qs</span>
                 </div>
             </div>
-            <a href="#" class="card-btn btn-disabled">Core Syllabus Only</a>
+            <a href="blood_relations_study_guide.html" class="card-btn btn-start">Start Topic Guide</a>
         </div>
         
         <div class="topic-card">
             <div class="card-header">
                 <span class="card-emoji">📅</span>
                 <span class="card-rank">Rank 14</span>
-                <span class="status-badge status-lr-di">LR/DI Module</span>
+                <span class="status-badge status-quant">Quant Guide</span>
             </div>
             <h3 class="card-title">Clocks & Calendar</h3>
             <p class="card-desc">Hands alignment angle calculations, leap year calculations, and odd days tracking.</p>
@@ -808,14 +918,14 @@ This guide identifies the <strong>15 aptitude topics</strong> that appear most f
                     <span class="meta-practice">40–60 Qs</span>
                 </div>
             </div>
-            <a href="#" class="card-btn btn-disabled">Core Syllabus Only</a>
+            <a href="clocks_calendar_study_guide.html" class="card-btn btn-start">Start Topic Guide</a>
         </div>
         
         <div class="topic-card">
             <div class="card-header">
                 <span class="card-emoji">📈</span>
                 <span class="card-rank">Rank 15</span>
-                <span class="status-badge status-lr-di">LR/DI Module</span>
+                <span class="status-badge status-quant">Quant Guide</span>
             </div>
             <h3 class="card-title">Data Interpretation</h3>
             <p class="card-desc">Chart analyses (pie charts, line graphs, bar graphs, tables) checking fast numerical calculation.</p>
@@ -833,7 +943,7 @@ This guide identifies the <strong>15 aptitude topics</strong> that appear most f
                     <span class="meta-practice">150+ Qs</span>
                 </div>
             </div>
-            <a href="#" class="card-btn btn-disabled">Core Syllabus Only</a>
+            <a href="data_interpretation_study_guide.html" class="card-btn btn-start">Start Topic Guide</a>
         </div>
         </div>
         
@@ -927,6 +1037,17 @@ This schedule assumes 1.5 hours on weekdays (Mon–Fri) and 2.5 hours on weekend
     </main>
     
     <script>
+        // Theme Toggle Functionality
+        const themeToggle = document.getElementById('themeToggle');
+        if (themeToggle) {
+            themeToggle.addEventListener('click', () => {
+                const currentTheme = document.documentElement.getAttribute('data-theme');
+                const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+                document.documentElement.setAttribute('data-theme', newTheme);
+                localStorage.setItem('theme', newTheme);
+            });
+        }
+
         function filterTopics() {
             let input = document.getElementById('topicSearch');
             let filter = input.value.toLowerCase();
@@ -945,6 +1066,82 @@ This schedule assumes 1.5 hours on weekdays (Mon–Fri) and 2.5 hours on weekend
                 }
             }
         }
+
+        // Dynamic Card Progress Tracking Aggregator
+        document.addEventListener('DOMContentLoaded', () => {
+            const topics = [
+                "number_systems_simplification", "percentages", "profit_loss_discount", 
+                "simple_compound_interest", "time_work", "time_speed_distance", 
+                "averages_ratio_proportion", "mixtures_alligations", "probability",
+                "permutations_combinations", "ages", "coding_decoding", 
+                "blood_relations", "clocks_calendar", "data_interpretation"
+            ];
+            
+            let totalSolved = 0;
+            let totalQuestions = 0;
+            
+            topics.forEach(t => {
+                // Read metrics calculated by individual study guide pages
+                const percent = parseInt(localStorage.getItem(`aptitude_topic_percent_${t}`) || 0, 10);
+                const solved = parseInt(localStorage.getItem(`aptitude_topic_solved_${t}`) || 0, 10);
+                const total = parseInt(localStorage.getItem(`aptitude_topic_total_${t}`) || 0, 10);
+                
+                totalSolved += solved;
+                totalQuestions += total;
+                
+                // Find matching card and inject its mini progress widget
+                const cards = Array.from(document.querySelectorAll('.topic-card'));
+                const matchedCard = cards.find(c => {
+                    const href = c.querySelector('.card-btn')?.getAttribute('href');
+                    return href && href.includes(t);
+                });
+                
+                if (matchedCard && total > 0) {
+                    const progressDiv = document.createElement('div');
+                    progressDiv.className = 'card-progress-section';
+                    progressDiv.style.marginTop = '12px';
+                    progressDiv.style.paddingTop = '12px';
+                    progressDiv.style.borderTop = '1px solid var(--border-color)';
+                    
+                    progressDiv.innerHTML = `
+                        <div style="display:flex; justify-content:space-between; font-size:0.72rem; font-weight:700; margin-bottom:4px; color:var(--text-muted);">
+                            <span>TOPIC PROGRESS</span>
+                            <span>${percent}% (${solved}/${total} Qs)</span>
+                        </div>
+                        <div style="background-color:var(--border-color); height:6px; border-radius:99px; overflow:hidden;">
+                            <div style="background:linear-gradient(90deg, var(--primary-color), var(--accent-color)); height:100%; width:${percent}%; border-radius:99px;"></div>
+                        </div>
+                    `;
+                    // Insert before the button
+                    const btn = matchedCard.querySelector('.card-btn');
+                    matchedCard.insertBefore(progressDiv, btn);
+                }
+            });
+            
+            // Insert Overall progress aggregator card at the top of Ranked Topics section
+            if (totalQuestions > 0) {
+                const overallPercent = Math.round((totalSolved / totalQuestions) * 100);
+                const progressHeroCard = document.createElement('div');
+                progressHeroCard.className = 'overall-progress-hero';
+                progressHeroCard.innerHTML = `
+                    <div style="display:flex; flex-direction:column; gap:12px;">
+                        <h3 style="margin:0; font-family:'Outfit',sans-serif; font-size:1.3rem; font-weight:800; color:var(--text-color);">📈 Overall Syllabus Completion</h3>
+                        <div style="display:flex; justify-content:space-between; align-items:center; font-weight:700; font-size:0.95rem;">
+                            <span style="color:var(--success-color);">${overallPercent}% Solved</span>
+                            <span style="color:var(--text-muted);">${totalSolved} / ${totalQuestions} Questions Practiced</span>
+                        </div>
+                        <div style="background-color:var(--border-color); height:12px; border-radius:99px; overflow:hidden; box-shadow:inset 0 1px 2px rgba(0,0,0,0.05);">
+                            <div style="background:linear-gradient(90deg, #10b981, #2563eb, #8b5cf6); height:100%; width:${overallPercent}%; border-radius:99px; transition:width 0.5s ease;"></div>
+                        </div>
+                    </div>
+                `;
+                
+                const searchContainer = document.querySelector('.search-container');
+                if (searchContainer) {
+                    searchContainer.parentNode.insertBefore(progressHeroCard, searchContainer);
+                }
+            }
+        });
     </script>
 </body>
 </html>

@@ -1,0 +1,2025 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blood Relations Study Guide | Learning Portal</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono&display=swap" rel="stylesheet">
+    <script>
+        // Sync theme immediately to prevent flashing
+        (function() {
+            const savedTheme = localStorage.getItem('theme') || 'light';
+            document.documentElement.setAttribute('data-theme', savedTheme);
+        })();
+    </script>
+    <style>
+        :root {
+            --bg-color: #f8fafc;
+            --text-color: #0f172a;
+            --text-muted: #64748b;
+            --sidebar-bg: #ffffff;
+            --card-bg: #ffffff;
+            --border-color: #e2e8f0;
+            --primary-color: #2563eb;
+            --primary-hover: #1d4ed8;
+            --primary-light: #eff6ff;
+            --accent-color: #8b5cf6;
+            --accent-light: #f5f3ff;
+            --code-bg: #f8fafc;
+            --details-bg: #ffffff;
+            
+            --note-border: #3b82f6;
+            --note-bg: rgba(59, 130, 246, 0.05);
+            --tip-border: #10b981;
+            --tip-bg: rgba(16, 185, 129, 0.05);
+            --warning-border: #f59e0b;
+            --warning-bg: rgba(245, 158, 11, 0.05);
+            --important-border: #8b5cf6;
+            --important-bg: rgba(139, 92, 246, 0.05);
+            
+            --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+            --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.08), 0 2px 4px -1px rgba(0, 0, 0, 0.04);
+            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            --radius-sm: 8px;
+            --radius-md: 12px;
+            --radius-lg: 16px;
+            --sidebar-width: 320px;
+            --transition-speed: 0.3s;
+        }
+        
+        [data-theme="dark"] {
+            --bg-color: #090d16;
+            --text-color: #f1f5f9;
+            --text-muted: #94a3b8;
+            --sidebar-bg: #111827;
+            --card-bg: #1f293d;
+            --border-color: #1f293d;
+            --primary-color: #3b82f6;
+            --primary-hover: #60a5fa;
+            --primary-light: rgba(59, 130, 246, 0.15);
+            --accent-color: #a78bfa;
+            --accent-light: rgba(139, 92, 246, 0.15);
+            --code-bg: #111827;
+            --details-bg: #111827;
+            --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.5);
+            --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.3);
+            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.4);
+            
+            --note-border: #3b82f6;
+            --note-bg: rgba(59, 130, 246, 0.1);
+            --tip-border: #10b981;
+            --tip-bg: rgba(16, 185, 129, 0.1);
+            --warning-border: #f59e0b;
+            --warning-bg: rgba(245, 158, 11, 0.1);
+            --important-border: #8b5cf6;
+            --important-bg: rgba(139, 92, 246, 0.1);
+        }
+        
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            transition: background-color var(--transition-speed) ease, border-color var(--transition-speed) ease;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            display: flex;
+            min-height: 100vh;
+        }
+        
+        /* Sticky Sidebar Layout */
+        .sidebar {
+            width: var(--sidebar-width);
+            background-color: var(--sidebar-bg);
+            border-right: 1px solid var(--border-color);
+            height: 100vh;
+            position: sticky;
+            top: 0;
+            padding: 30px 24px;
+            overflow-y: auto;
+            display: flex;
+            flex-direction: column;
+            gap: 28px;
+            flex-shrink: 0;
+            z-index: 90;
+            box-shadow: var(--shadow-sm);
+        }
+        
+        .sidebar.collapsed {
+            width: 0;
+            padding: 0;
+            overflow: hidden;
+            border-right: none;
+        }
+        
+        .sidebar-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .sidebar-brand {
+            font-family: 'Outfit', sans-serif;
+            font-weight: 700;
+            font-size: 1.35rem;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            text-decoration: none;
+        }
+        
+        .theme-toggle-btn {
+            background: none;
+            border: none;
+            color: var(--text-muted);
+            cursor: pointer;
+            width: 38px;
+            height: 38px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: var(--bg-color);
+            border: 1px solid var(--border-color);
+            transition: all 0.2s ease;
+        }
+        
+        .theme-toggle-btn:hover {
+            color: var(--primary-color);
+            transform: scale(1.05);
+        }
+        
+        .sun-icon { display: block; }
+        .moon-icon { display: none; }
+        
+        [data-theme="dark"] .sun-icon { display: none; }
+        [data-theme="dark"] .moon-icon { display: block; }
+        
+        .sidebar-progress-card {
+            background-color: var(--bg-color);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-md);
+            padding: 16px;
+        }
+        
+        .sidebar-progress-label {
+            font-size: 0.78rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--text-muted);
+            font-weight: 700;
+            margin-bottom: 8px;
+            display: block;
+        }
+        
+        .sidebar-progress-wrapper {
+            background-color: var(--border-color);
+            border-radius: 99px;
+            height: 8px;
+            overflow: hidden;
+            margin-bottom: 6px;
+        }
+        
+        .sidebar-progress-bar {
+            background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
+            height: 100%;
+            width: 0%;
+            border-radius: 99px;
+            transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .sidebar-progress-stats {
+            font-size: 0.82rem;
+            font-weight: 600;
+            color: var(--text-color);
+        }
+        
+        .sidebar-section-title {
+            font-family: 'Outfit', sans-serif;
+            font-size: 0.78rem;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            color: var(--text-muted);
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+        
+        .quick-nav-list, .toc-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+        
+        .quick-nav-list a, .toc-list a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 0.88rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 14px;
+            border-radius: var(--radius-sm);
+            transition: all 0.2s ease;
+            font-weight: 500;
+        }
+        
+        .quick-nav-list a:hover, .toc-list a:hover {
+            background-color: var(--bg-color);
+            color: var(--primary-color);
+            transform: translateX(4px);
+        }
+        
+        .quick-nav-list a.active {
+            background-color: var(--primary-light);
+            color: var(--primary-color);
+            font-weight: 600;
+            box-shadow: inset 3px 0 0 var(--primary-color);
+        }
+        
+        .toc-list a {
+            font-size: 0.84rem;
+            padding: 6px 12px;
+            border-left: 2px solid var(--border-color);
+            border-radius: 0;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        
+        .toc-list a:hover {
+            background-color: transparent;
+            border-left-color: var(--primary-color);
+            padding-left: 16px;
+            color: var(--text-color);
+        }
+        
+        /* Main Container */
+        .container {
+            flex: 1;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 40px 60px;
+            width: 100%;
+        }
+        
+        /* Floating layout controls */
+        .header-controls {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin-bottom: 24px;
+        }
+        
+        .collapse-btn {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            color: var(--text-color);
+            cursor: pointer;
+            padding: 10px 14px;
+            border-radius: var(--radius-sm);
+            font-size: 0.88rem;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            box-shadow: var(--shadow-sm);
+            transition: all 0.2s ease;
+        }
+        
+        .collapse-btn:hover {
+            background-color: var(--primary-light);
+            color: var(--primary-color);
+            border-color: var(--primary-color);
+        }
+        
+        h1, h2, h3, h4 {
+            font-family: 'Outfit', sans-serif;
+            color: var(--text-color);
+            margin-top: 1.8em;
+            margin-bottom: 0.6em;
+            font-weight: 700;
+            letter-spacing: -0.01em;
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 16px;
+            margin-top: 0;
+            background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        h2 {
+            font-size: 1.75rem;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 10px;
+            margin-top: 2.2em;
+        }
+        
+        h3 {
+            font-size: 1.35rem;
+        }
+        
+        p {
+            color: var(--text-color);
+            opacity: 0.9;
+            margin-bottom: 16px;
+            line-height: 1.7;
+        }
+        
+        a {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 500;
+        }
+        
+        a:hover {
+            text-decoration: underline;
+        }
+        
+        hr {
+            border: 0;
+            height: 1px;
+            background: var(--border-color);
+            margin: 40px 0;
+        }
+        
+        img {
+            border-radius: var(--radius-md);
+            max-width: 100%;
+        }
+        
+        /* Badge styling */
+        div[align="left"] {
+            display: flex;
+            gap: 10px;
+            margin: 24px 0;
+            flex-wrap: wrap;
+        }
+        
+        /* Alerts styling */
+        .alert {
+            display: flex;
+            border-left: 4px solid;
+            padding: 20px;
+            border-radius: var(--radius-md);
+            margin: 28px 0;
+            box-shadow: var(--shadow-sm);
+        }
+        
+        .alert-icon {
+            font-size: 1.4rem;
+            margin-right: 16px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .alert-content {
+            flex: 1;
+        }
+        
+        .alert-content p:last-child {
+            margin-bottom: 0;
+        }
+        
+        .alert-note {
+            border-left-color: var(--note-border);
+            background-color: var(--note-bg);
+        }
+        
+        .alert-tip {
+            border-left-color: var(--tip-border);
+            background-color: var(--tip-bg);
+        }
+        
+        .alert-warning {
+            border-left-color: var(--warning-border);
+            background-color: var(--warning-bg);
+        }
+        
+        .alert-important {
+            border-left-color: var(--important-border);
+            background-color: var(--important-bg);
+        }
+        
+        /* Tables styling */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 28px 0;
+            font-size: 0.9rem;
+            background-color: var(--card-bg);
+            border-radius: var(--radius-md);
+            overflow: hidden;
+            box-shadow: var(--shadow-sm);
+        }
+        
+        th, td {
+            padding: 14px 20px;
+            border: 1px solid var(--border-color);
+            text-align: left;
+        }
+        
+        th {
+            background-color: var(--primary-light);
+            color: var(--primary-color);
+            font-weight: 700;
+        }
+        
+        tr:nth-child(even) {
+            background-color: rgba(59, 130, 246, 0.02);
+        }
+        
+        /* Code blocks */
+        pre {
+            background-color: var(--code-bg);
+            padding: 20px;
+            border-radius: var(--radius-md);
+            overflow-x: auto;
+            border: 1px solid var(--border-color);
+            margin: 28px 0;
+            box-shadow: inset 0 1px 3px rgba(0,0,0,0.02);
+        }
+        
+        code {
+            font-family: 'JetBrains Mono', monospace;
+            background-color: var(--code-bg);
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-size: 0.86rem;
+            color: var(--primary-color);
+            font-weight: 600;
+        }
+        
+        pre code {
+            padding: 0;
+            background-color: transparent;
+            font-size: 0.82rem;
+            color: var(--text-color);
+            font-weight: 400;
+        }
+        
+        /* Interactive details / summary styling */
+        details {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-md);
+            margin: 16px 0;
+            padding: 0;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            overflow: hidden;
+            box-shadow: var(--shadow-sm);
+        }
+        
+        details[open] {
+            border-color: var(--primary-color);
+            box-shadow: var(--shadow-md);
+        }
+        
+        summary {
+            font-weight: 600;
+            cursor: pointer;
+            outline: none;
+            color: var(--text-color);
+            user-select: none;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 16px 20px;
+            list-style: none;
+        }
+        
+        summary::-webkit-details-marker {
+            display: none;
+        }
+        
+        summary::after {
+            content: "→";
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            transition: transform 0.3s ease;
+        }
+        
+        details[open] summary::after {
+            transform: rotate(90deg);
+        }
+        
+        summary:hover {
+            background-color: var(--primary-light);
+            color: var(--primary-color);
+        }
+        
+        .solution-wrapper {
+            padding: 20px;
+            border-top: 1px solid var(--border-color);
+            background-color: var(--bg-color);
+        }
+        
+        ul, ol {
+            padding-left: 24px;
+            margin: 16px 0;
+        }
+        
+        li {
+            margin-bottom: 8px;
+        }
+        
+        /* Dynamic Question Cards Style */
+        .question-card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-md);
+            padding: 24px;
+            margin: 20px 0;
+            box-shadow: var(--shadow-sm);
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            border-left: 4px solid var(--border-color);
+            transition: all var(--transition-speed) ease;
+        }
+        
+        .question-card.completed {
+            border-left-color: var(--success-color);
+            background-color: rgba(16, 185, 129, 0.01);
+        }
+        
+        .question-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 16px;
+        }
+        
+        .question-meta-group {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+        
+        .question-checkbox-label {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            user-select: none;
+        }
+        
+        .question-checkbox-label input {
+            display: none;
+        }
+        
+        .checkbox-box {
+            width: 20px;
+            height: 20px;
+            border: 2px solid var(--text-muted);
+            border-radius: 6px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.2s ease;
+        }
+        
+        .question-checkbox-label input:checked + .checkbox-box {
+            background-color: var(--success-color);
+            border-color: var(--success-color);
+            color: white;
+        }
+        
+        .question-checkbox-label input:checked + .checkbox-box::after {
+            content: "✓";
+            font-size: 0.78rem;
+            font-weight: 900;
+        }
+        
+        .company-tag {
+            font-size: 0.74rem;
+            background-color: var(--primary-light);
+            color: var(--primary-color);
+            padding: 2px 8px;
+            border-radius: 99px;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+        
+        .question-text {
+            font-size: 1.05rem;
+            font-weight: 500;
+            line-height: 1.6;
+        }
+        
+        /* Practice progress & tabs widget styles */
+        .practice-progress-widget {
+            background: linear-gradient(135deg, var(--card-bg), var(--bg-color));
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-lg);
+            padding: 28px;
+            margin: 32px 0;
+            box-shadow: var(--shadow-md);
+        }
+        
+        .practice-progress-title {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin: 0 0 16px 0;
+            border-bottom: none;
+            padding-bottom: 0;
+        }
+        
+        .practice-progress-bar-container {
+            background-color: var(--border-color);
+            height: 12px;
+            border-radius: 99px;
+            overflow: hidden;
+            margin-bottom: 12px;
+        }
+        
+        .practice-progress-bar {
+            background: linear-gradient(90deg, #10b981, #3b82f6);
+            height: 100%;
+            width: 0%;
+            border-radius: 99px;
+            transition: width 0.5s ease;
+        }
+        
+        .practice-progress-stats {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            font-weight: 600;
+        }
+        
+        .tab-menu {
+            display: flex;
+            gap: 8px;
+            margin: 24px 0 8px 0;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 12px;
+            flex-wrap: wrap;
+        }
+        
+        .tab-btn {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            color: var(--text-muted);
+            padding: 8px 16px;
+            border-radius: 99px;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 0.85rem;
+            transition: all 0.2s ease;
+        }
+        
+        .tab-btn:hover {
+            background-color: var(--primary-light);
+            color: var(--primary-color);
+            border-color: var(--primary-color);
+        }
+        
+        .tab-btn.active {
+            background-color: var(--primary-color);
+            color: white;
+            border-color: var(--primary-color);
+            box-shadow: 0 4px 6px -1px rgba(37, 99, 235, 0.2);
+        }
+        
+        /* Math block styling */
+        .math-block {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            padding: 16px;
+            border-radius: var(--radius-md);
+            margin: 16px 0;
+            font-family: 'JetBrains Mono', monospace;
+            overflow-x: auto;
+            text-align: center;
+            font-weight: 600;
+            color: var(--accent-color);
+        }
+        
+        /* Floating Action Button (Back to Top) */
+        .floating-action-btn {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: var(--shadow-lg);
+            z-index: 100;
+            opacity: 0;
+            pointer-events: none;
+            transition: all 0.3s ease;
+        }
+        
+        .floating-action-btn.visible {
+            opacity: 1;
+            pointer-events: auto;
+        }
+        
+        .floating-action-btn:hover {
+            background-color: var(--primary-hover);
+            transform: translateY(-4px);
+        }
+        
+        /* Mobile Hamburger & Controls */
+        .mobile-header {
+            display: none;
+            background-color: var(--sidebar-bg);
+            border-bottom: 1px solid var(--border-color);
+            padding: 14px 20px;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            align-items: center;
+            justify-content: space-between;
+            box-shadow: var(--shadow-sm);
+        }
+        
+        .mobile-hamburger {
+            background: none;
+            border: none;
+            color: var(--text-color);
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 1024px) {
+            body {
+                flex-direction: column;
+            }
+            .sidebar {
+                position: fixed;
+                left: 0;
+                top: 0;
+                bottom: 0;
+                transform: translateX(-100%);
+                transition: transform 0.3s ease;
+                z-index: 200;
+                height: 100vh;
+                box-shadow: var(--shadow-lg);
+            }
+            .sidebar.mobile-open {
+                transform: translateX(0);
+            }
+            .mobile-header {
+                display: flex;
+            }
+            .container {
+                padding: 30px 24px;
+            }
+            .sidebar-overlay {
+                display: none;
+                position: fixed;
+                inset: 0;
+                background-color: rgba(0,0,0,0.5);
+                z-index: 150;
+            }
+            .sidebar-overlay.visible {
+                display: block;
+            }
+            .header-controls {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+    <div class="mobile-header">
+        <button class="mobile-hamburger" id="mobileHamburger">☰</button>
+        <a href="index.html" class="sidebar-brand">🎓 Aptitude Mastery</a>
+        <button class="theme-toggle-btn" id="themeToggleMobile">
+            <svg class="sun-icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+            <svg class="moon-icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+        </button>
+    </div>
+
+    <aside class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <a href="index.html" class="sidebar-brand">
+                🎓 Aptitude Mastery
+            </a>
+            <button class="theme-toggle-btn" id="themeToggleSidebar">
+                <svg class="sun-icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+                <svg class="moon-icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+            </button>
+        </div>
+        
+        <div class="sidebar-progress-card">
+            <span class="sidebar-progress-label">Guide Progress</span>
+            <div class="sidebar-progress-wrapper">
+                <div class="sidebar-progress-bar" id="sidebarProgressBar"></div>
+            </div>
+            <div class="sidebar-progress-stats" id="sidebarProgressStats">0% Completed (0/0 Qs)</div>
+        </div>
+        
+        <hr style="margin: 0; opacity: 0.5;" />
+        <div class="sidebar-section-title">Table of Contents</div>
+        <ul class="toc-list"><li><a href="#rank--importance">Rank & Importance</a></li><li><a href="#concept-overview">Concept Overview</a></li><li><a href="#core-concepts-to-master">Core Concepts to Master</a></li><li><a href="#important-formula-sheet">Important Formula Sheet</a></li><li><a href="#shortcut-techniques--time-saving-tricks">Shortcut Techniques & TimeSaving Tricks</a></li><li><a href="#most-frequently-asked-question-patterns">Most Frequently Asked Question Patterns</a></li><li><a href="#placement--interview-relevance">Placement & Interview Relevance</a></li><li><a href="#beginner--advanced-roadmap">Beginner  Advanced Roadmap</a></li><li><a href="#difficulty-breakdown">Difficulty Breakdown</a></li><li><a href="#mastery-plan">Mastery Plan</a></li><li><a href="#common-traps--mistakes">Common Traps & Mistakes</a></li><li><a href="#practice-section">Practice Section</a></li><li><a href="#detailed-solutions">Detailed Solutions</a></li><li><a href="#best-resources">Best Resources</a></li><li><a href="#final-verdict">Final Verdict</a></li></ul>
+        <hr style="margin: 0; opacity: 0.5;" />
+        <div class="sidebar-section-title">Topic Guides</div>
+        <ul class="quick-nav-list"><li><a href="index.html" ><span class="nav-emoji">🏠</span> Home Dashboard</a></li><li><a href="number_systems_simplification_study_guide.html" ><span class="nav-emoji">🔢</span> Number Systems</a></li><li><a href="percentages_study_guide.html" ><span class="nav-emoji">📈</span> Percentages</a></li><li><a href="profit_loss_discount_study_guide.html" ><span class="nav-emoji">💰</span> Profit & Loss</a></li><li><a href="simple_compound_interest_study_guide.html" ><span class="nav-emoji">💸</span> SI & CI</a></li><li><a href="time_work_study_guide.html" ><span class="nav-emoji">⚙️</span> Time & Work</a></li><li><a href="time_speed_distance_study_guide.html" ><span class="nav-emoji">⏳</span> Speed & Distance</a></li><li><a href="averages_ratio_proportion_study_guide.html" ><span class="nav-emoji">📊</span> Averages & Ratio</a></li><li><a href="mixtures_alligations_study_guide.html" ><span class="nav-emoji">⚖️</span> Mixtures & Alligation</a></li><li><a href="probability_study_guide.html" ><span class="nav-emoji">🎲</span> Probability</a></li><li><a href="permutations_combinations_study_guide.html" ><span class="nav-emoji">🧩</span> P & C</a></li><li><a href="ages_study_guide.html" ><span class="nav-emoji">⏳</span> Ages</a></li><li><a href="coding_decoding_study_guide.html" ><span class="nav-emoji">🔤</span> Coding Decoding</a></li><li><a href="blood_relations_study_guide.html" class="active"><span class="nav-emoji">🌳</span> Blood Relations</a></li><li><a href="clocks_calendar_study_guide.html" ><span class="nav-emoji">📅</span> Clocks & Calendar</a></li><li><a href="data_interpretation_study_guide.html" ><span class="nav-emoji">📈</span> Data Interpretation</a></li></ul>
+    </aside>
+
+    <main class="container">
+        <div class="header-controls">
+            <button class="collapse-btn" id="collapseSidebarBtn">
+                <span>◀ Collapse Sidebar</span>
+            </button>
+        </div>
+        <h1>Blood Relations — Placement Study Guide</h1>
+> <strong>Elite Aptitude Trainer Edition</strong> | Covers TCS, Accenture, Cognizant, Deloitte, Goldman Sachs, Amazon, Microsoft, Google
+
+<hr />
+
+<h2 id="rank--importance">🥇 Rank & Importance</h2>
+
+<table><thead><tr><th>Metric</th><th>Rating</th></tr></thead><tbody><tr><td><strong>Rank among all aptitude topics</strong></td><td>#6 of ~20 core topics</td></tr><tr><td><strong>Importance Rating</strong></td><td>★★★★☆ (4/5)</td></tr><tr><td><strong>Appears in every placement test</strong></td><td>Yes</td></tr><tr><td><strong>Logical reasoning vs. calculation</strong></td><td>Pure logical deduction</td></tr><tr><td><strong>High scorers vs. average candidates gap</strong></td><td>Moderate to High</td></tr></tbody></table>
+<h3>Why It Matters in Placements</h3>
+
+Blood Relations tests <strong>structured thinking</strong> — specifically, your ability to trace family trees, decode relationship labels, and maintain consistency under multiple constraints. It's the topic where most candidates:
+<ul><li>Lose track of generations</li><li>Confuse paternal vs. maternal sides</li><li>Fail to handle <strong>"not a blood relation"</strong> trick questions</li></ul>
+
+Companies ask this because it reveals whether you can maintain a coherent chain of relationships while juggling multiple conditions simultaneously — a core skill for business analyst, operations, and management roles.
+
+<h3>Weightage in Tests</h3>
+
+<table><thead><tr><th>Company Type</th><th>Expected Questions</th><th>Difficulty Band</th></tr></thead><tbody><tr><td><strong>TCS / Infosys / Wipro</strong> (service)</td><td>1–2 questions</td><td>Easy</td></tr><tr><td><strong>Accenture / Cognizant</strong> (service)</td><td>1 question</td><td>Easy–Medium</td></tr><tr><td><strong>Deloitte / KPMG</strong> (consulting)</td><td>1–2 questions</td><td>Medium</td></tr><tr><td><strong>Goldman Sachs / JPMorgan</strong> (BFSI)</td><td>1 question</td><td>Medium</td></tr><tr><td><strong>Amazon / Microsoft</strong> (product)</td><td>1 question</td><td>Medium–Hard</td></tr><tr><td><strong>Google</strong></td><td>0–1 question</td><td>Hard</td></tr></tbody></table>
+> <strong>ROI Insight</strong>: Blood Relations is a <strong>high-accuracy, low-time</strong> topic. The rules are fixed and learnable. If you master the <strong>family tree method</strong> and the <strong>generations framework</strong>, you'll solve every question correctly. Most candidates lose marks because they don't draw the tree — not because they don't know the logic.
+
+<hr />
+
+<h2 id="concept-overview">📖 Concept Overview</h2>
+
+<h3>What Are Blood Relations?</h3>
+
+Blood Relations problems describe a set of people and their inter-relationships using English kinship terms. Your task is to <strong>decode the description</strong> and answer questions about specific relationships.
+
+<h3>The Core Principle</h3>
+
+Every person has exactly <strong>one biological father</strong>, <strong>one biological mother</strong>, etc. These relationships are fixed and consistent. When a description says "A is the sister of B," you immediately know: same parents, female, at least one sibling.
+
+<h3>Subtopics to Master</h3>
+<ol><li><strong>Kinship terms</strong> — direct relationship vocabulary</li><li><strong>Family tree notation</strong> — drawing the tree from description</li><li><strong>Generation tracking</strong> — who is older/younger than whom</li><li><strong>Coded relations</strong> — letters/symbols representing relationships</li><li><strong>Mixed relations</strong> — combining blood + marital relationships</li><li><strong>"Not a blood relation"</strong> — distinguishing real vs. assumed relationships</li><li><strong>Multiple generation chains</strong> — grandparent → parent → child → grandchild</li><li><strong>Siblings, half-siblings, step-relations</strong> — subtle distinctions</li><li><strong>In-law relationships</strong> — acquired through marriage</li><li><strong>Conditional relationship puzzles</strong> — "if A is B's X, then who is C?"</li></ol>
+
+<h3>Where Each Concept Is Used in Exams</h3>
+
+<table><thead><tr><th>Subtopic</th><th>Placement Application</th></tr></thead><tbody><tr><td>Kinship terms</td><td>Every blood relations question</td></tr><tr><td>Family tree</td><td>Complex multi-person descriptions</td></tr><tr><td>Generation tracking</td><td>Age-based relationship problems</td></tr><tr><td>Coded relations</td><td>Symbol-based puzzles</td></tr><tr><td>In-law relations</td><td>Marriage-acquired relationships</td></tr><tr><td>Mixed relations</td><td>Family + professional relationships</td></tr></tbody></table>
+<hr />
+
+<h2 id="core-concepts-to-master">🎯 Core Concepts to Master</h2>
+
+<h3>Concept 1: Kinship Terminology</h3>
+
+<strong>Definition</strong>: Standard English words that describe family relationships.
+
+<strong>The Complete Family Tree (Know These by Heart)</strong>:
+
+<pre><code class="language-">Generation 0: Self
+Generation +1: Parent(s)
+Generation +2: Grandparent(s), Uncle/Aunt
+Generation -1: Child(ren)
+Generation -2: Grandchild(ren)
+Generation ±0 (siblings): Brother/Sister</code></pre>
+
+<strong>Critical Terms to Master</strong>:
+
+<table><thead><tr><th>Term</th><th>Meaning</th></tr></thead><tbody><tr><td><strong>Father / Mother</strong></td><td>Parents (Generation +1)</td></tr><tr><td><strong>Son / Daughter</strong></td><td>Children (Generation -1)</td></tr><tr><td><strong>Brother / Sister</strong></td><td>Same parents, same generation</td></tr><tr><td><strong>Grandfather / Grandmother</strong></td><td>Parents of parents (+2)</td></tr><tr><td><strong>Grandson / Granddaughter</strong></td><td>Children of children (-2)</td></tr><tr><td><strong>Uncle / Aunt</strong></td><td>Sibling of parent (+1, sideways)</td></tr><tr><td><strong>Nephew / Niece</strong></td><td>Child of sibling (-1, sideways)</td></tr><tr><td><strong>Cousin</strong></td><td>Child of uncle/aunt (-1, sideways)</td></tr><tr><td><strong>Father-in-law / Mother-in-law</strong></td><td>Parent of spouse (acquired)</td></tr><tr><td><strong>Brother-in-law / Sister-in-law</strong></td><td>Sibling of spouse, spouse of sibling (acquired)</td></tr><tr><td><strong>Step-brother / Step-sister</strong></td><td>Same parent re-married, not biologically shared</td></tr><tr><td><strong>Half-brother / Half-sister</strong></td><td>Same mother OR same father, not both</td></tr></tbody></table>
+<strong>Memory Trick</strong>:
+> 🔑 <strong>"In-laws are acquired, not born"</strong> — In-law relationships come through marriage, not blood.
+
+<strong>Common Mistakes</strong>:
+<ul><li>❌ Confusing nephew (sister's son) with niece (sister's daughter)</li><li>❌ Treating in-laws as blood relations</li><li>❌ Not knowing the difference between cousin and nephew/niece</li></ul>
+
+<strong>Interview Relevance</strong>: "A is B's uncle. B is C's sister. D is C's mother. How is A related to D?" — Tests generation tracking.
+
+<hr />
+
+<h3>Concept 2: Family Tree Method</h3>
+
+<strong>Definition</strong>: A visual diagram that places every person on a generation-level chart with their relationships.
+
+<strong>Intuition</strong>: Build the tree <strong>generation by generation</strong>, not person by person. Start from the oldest generation mentioned and work down.
+
+<strong>The Method</strong>:
+
+<pre><code class="language-">Step 1: Identify the OLDEST person in the description.
+Step 2: Place them at the top of the tree.
+Step 3: Work downward — children, then grandchildren.
+Step 4: Add siblings at the same level.
+Step 5: Add spouses (connected by =).
+Step 6: Answer questions by tracing paths on the tree.</code></pre>
+
+<strong>Example</strong>:
+"A is B's father. C is B's sister. D is C's mother."
+<pre><code class="language-">Generation +1: A ←→ D (married)
+                 ↓
+Generation 0: B ←→ C (siblings)</code></pre>
+From tree: A and D are the parents of B and C.
+
+<strong>Common Mistakes</strong>:
+<ul><li>❌ Starting from the wrong person and getting confused</li><li>❌ Forgetting to mark spouses (dashed line =)</li><li>❌ Placing siblings at different generations</li></ul>
+
+<strong>Interview Relevance</strong>: Drawing the tree is the single most important skill for blood relations. Toppers always draw the tree before answering.
+
+<hr />
+
+<h3>Concept 3: Generation Tracking</h3>
+
+<strong>Definition</strong>: Determining which person belongs to which generation relative to a reference person.
+
+<strong>Intuition</strong>: Every step up or down in the family tree is one generation. Cousins, aunts, uncles — they're all <strong>sideways</strong> from your generation.
+
+<strong>The Generation Formula</strong>:
+<pre><code class="language-">Generation difference = (My generation) - (Their generation)
+Negative = descendant, Positive = ancestor
+Zero = sibling
+Sideways (different branch) = cousin/uncle/niece/aunt</code></pre>
+
+<strong>Shortcut — The Distance Method</strong>:
+<pre><code class="language-">Trace the path from person A to person B.
+Count the number of generations up (parent=+1, grandparent=+2)
+Count the number of generations down (child=-1, grandchild=-2)
+If sideways: find the common ancestor, then measure from there.</code></pre>
+
+<strong>Example</strong>:
+"My mother's brother is my uncle." → Mother (+1), her brother (0 from mother, sibling of parent = uncle).
+Me → mother (+1) → uncle (sibling of mother = generation 0 from generation 1 = generation +1, same as parent).
+
+<strong>Common Mistakes</strong>:
+<ul><li>❌ Treating cousins as being in a different generation</li><li>❌ Counting spouses as changing generation</li></ul>
+
+<strong>Interview Relevance</strong>: "How is A related to B if A is B's mother's sister?" → If A is mother's sister, A is maternal aunt. B's mother's sister = B's maternal aunt. A = B's maternal aunt.
+
+<hr />
+
+<h3>Concept 4: Coded/Symbolic Relations</h3>
+
+<strong>Definition</strong>: Relationships expressed using symbols or letters, not words.
+
+<strong>Common Notation</strong>:
+<pre><code class="language-">A + B → A is B's sister (using + as sibling marker)
+A - B → A is B's brother
+A × B → A is B's wife
+A ÷ B → A is B's husband
+A = B → A and B are spouses
+A △ B → A is B's son
+A ▽ B → A is B's daughter</code></pre>
+
+<strong>Shortcut</strong>: Always identify what the <strong>operator</strong> means first, then trace the relationship.
+
+<strong>Example</strong>:
+"If A × B = C, and C △ D = E, how is A related to E?"
+A × B = C → A is B's wife. C △ D = E → C is D's son.
+So: A is B's wife. B and C are spouses. C is D's son. So C = D's son. B = D's daughter-in-law. A = B's wife = D's daughter-in-law.
+
+<strong>Common Mistakes</strong>:
+<ul><li>❌ Confusing which symbol means husband vs. wife</li><li>❌ Not checking male/female from context</li></ul>
+
+<hr />
+
+<h3>Concept 5: Mixed Blood + Marital Relations</h3>
+
+<strong>Definition</strong>: Problems that combine biological relationships with marriage-acquired ones.
+
+<strong>The Rule</strong>: In-laws are <strong>not blood</strong>. Step-relations are <strong>blood</strong> (from one shared parent). In-law relations are only through marriage.
+
+<strong>Example</strong>:
+"A's sister is married to B. C is B's brother. D is C's son."
+<ul><li>A's sister is married to B → A and B are in-laws</li><li>B's brother is C → C is B's brother</li><li>C's son is D → D is B's nephew</li><li>Since A and B are in-laws, D is A's <strong>nephew-in-law</strong> (through B)</li></ul>
+
+<strong>Common Mistakes</strong>:
+<ul><li>❌ Calling an in-law a "real" uncle/aunt</li><li>❌ Forgetting that the in-law relation is one-way</li></ul>
+
+<hr />
+
+<h3>Concept 6: "Not a Blood Relation" Trap</h3>
+
+<strong>Definition</strong>: Some people described as family may not actually be blood relatives.
+
+<strong>Types of Non-Blood Relations</strong>:
+<ul><li><strong>Spouses</strong> — married but not blood</li><li><strong>Step-relations</strong> — through remarriage (partially blood)</li><li><strong>In-laws</strong> — acquired through marriage</li><li><strong>Adopted children</strong> — legally but not biologically related</li><li><strong>Best friends / close relatives described as family</strong> — common in trick questions</li></ul>
+
+<strong>Shortcut</strong>: When a question asks "who is NOT a blood relative," draw the tree and identify which connections go through marriage (sideways) rather than birth (vertical).
+
+<strong>Example</strong>:
+"My father's brother is my uncle. My uncle's son is my cousin."
+BUT: "My father's brother's wife is my aunt" — she may not be blood (she married into the family).
+
+<strong>Common Mistakes</strong>:
+<ul><li>❌ Assuming all "aunts" and "uncles" are blood relatives</li><li>❌ Missing the step-parent nuance</li></ul>
+
+<hr />
+
+<h3>Concept 7: Sibling Relationships (Subtle Distinctions)</h3>
+
+<strong>Definition</strong>: Understanding the difference between full siblings, half siblings, and step siblings.
+
+<table><thead><tr><th>Type</th><th>Shared Parent</th><th>Blood Connection</th></tr></thead><tbody><tr><td><strong>Full sibling</strong></td><td>Both parents</td><td>100% blood (same genes)</td></tr><tr><td><strong>Half sibling</strong></td><td>One parent only</td><td>50% blood</td></tr><tr><td><strong>Step sibling</strong></td><td>No biological parent shared</td><td>0% blood (parents married, not shared)</td></tr></tbody></table>
+<strong>Memory Trick</strong>:
+> 🔑 <strong>"Half = one parent shared. Step = no parent shared."</strong> — Step siblings only share a family through their parents' marriage.
+
+<hr />
+
+<h2 id="important-formula-sheet">🧠 Important Formula Sheet</h2>
+
+<h3>1. Generation Distance</h3>
+<pre><code class="language-">From A to B's descendant: Count steps down
+From A to B's ancestor: Count steps up
+From A to B's sibling: Same generation, different parents
+From A to B's cousin: Same grandparents (not same parents)</code></pre>
+
+<h3>2. Relationship Transitivity</h3>
+<pre><code class="language-">If A is B's parent, and B is C's parent → A is C's grandparent
+If A is B's sibling, and B is C's sibling → A and C are siblings
+If A is B's spouse, and B is C's parent → A is C's parent-in-law</code></pre>
+
+<h3>3. In-law Relationships</h3>
+<pre><code class="language-">Spouse's sibling = sibling-in-law
+Sibling's spouse = sibling-in-law
+Parent's sibling = aunt/uncle
+Spouse's parent = father-in-law / mother-in-law
+Child's spouse = daughter-in-law / son-in-law</code></pre>
+
+<h3>4. Counting Relatives</h3>
+<pre><code class="language-">From one sibling: 1 brother + 1 sister (excluding self)
+From one sibling with N children: N nephews/nieces
+From one aunt/uncle: their children are cousins</code></pre>
+
+<h3>5. Male/Female Inference</h3>
+<pre><code class="language-">Brother, Father, Son, Uncle, Nephew, Grandfather, Grandson → Male
+Sister, Mother, Daughter, Aunt, Niece, Grandmother, Granddaughter → Female</code></pre>
+
+<h3>Memory Tricks</h3>
+
+> 🔑 <strong>"Up = Ancestors, Down = Descendants, Sideways = Same Generation"</strong> — This is the three-direction rule.
+
+> 🔑 <strong>"In-law words contain 'in'"</strong> — They come from outside the blood line. Father-in-law, sister-in-law, etc.
+
+> 🔑 <strong>"Niece = Female Nephew"</strong> — Both are children of siblings. Niece is the girl, nephew is the boy.
+
+> 🔑 <strong>"Uncle/Aunt = Parent's Sibling"</strong> — They are your parents' brothers and sisters.
+
+<hr />
+
+<h2 id="shortcut-techniques--time-saving-tricks">⚡ Shortcut Techniques & Time-Saving Tricks</h2>
+
+<h3>Trick 1: The Family Tree Drawing (30-Second Method)</h3>
+<pre><code class="language-">Problem: "A is B's sister. B is C's father. D is C's mother. E is D's son. How is A related to E?"
+
+Step 1: Draw: C at center
+Step 2: B is C's father → place B above C
+Step 3: A is B's sister → place A at same level as B (sibling)
+Step 4: D is C's mother → D is B's spouse (married)
+Step 5: E is D's son → E is C's brother
+
+From tree: A and B are siblings. B and D are spouses. C and E are siblings (brother/sister).
+A is C's aunt → A is E's aunt.
+
+Answer in 30 seconds with the tree.</code></pre>
+
+<h3>Trick 2: The Common Ancestor Method</h3>
+<pre><code class="language-">Problem: "How is A related to B's mother's sister?"
+
+Step 1: Find common ancestor: A and B share the same grandparents (or parents).
+Step 2: Trace from B to common ancestor: B → mother → sister.
+Step 3: Trace from A to common ancestor: A → ?
+Without more info, A could be B's cousin, aunt, etc.
+
+This trick requires knowing the exact relationship.</code></pre>
+
+<h3>Trick 3: Gender Elimination</h3>
+<pre><code class="language-">If a question says "A is B's mother's only sister" and A is male:
+A is B's maternal uncle. (Only sister of mother = maternal aunt, but A is male → maternal uncle)
+
+Eliminate gender contradictions quickly.</code></pre>
+
+<h3>Trick 4: Backward Tracing</h3>
+<pre><code class="language-">Problem: "X is Y's sister's father's son. Z is Y's mother's daughter."
+X is Y's sister's father's son → X is Y's brother (same father).
+Z is Y's mother's daughter → Z is Y's sister.
+X and Z are siblings.
+
+Never try to go forward from scratch — start from the person and trace backward.</code></pre>
+
+<h3>Trick 5: Symbol Code Translation</h3>
+<pre><code class="language-">Step 1: Identify each symbol's meaning
+Step 2: Replace with relationship word
+Step 3: Connect the chain
+Step 4: Trace from start to end person
+
+Example: P + Q = R and R × S = T
+P + Q = R → P is R's sister
+R × S = T → R is T's wife
+P is T's sister-in-law (through R)</code></pre>
+
+<h3>Trick 6: MCQ Elimination — Gender Check</h3>
+<pre><code class="language-">If the question asks "How is A related to B?" and A is female:
+Eliminate all male relationships immediately.
+
+Options: 1) Uncle 2) Sister 3) Brother 4) Nephew
+Correct: Sister (only female option). Done in 5 seconds.</code></pre>
+
+<hr />
+
+<h2 id="most-frequently-asked-question-patterns">🔥 Most Frequently Asked Question Patterns</h2>
+
+<h3>Pattern 1: Direct Relationship Description</h3>
+<ul><li><strong>Concept Tested</strong>: Basic kinship terms</li><li><strong>Difficulty</strong>: Easy</li><li><strong>Fastest Approach</strong>: Draw simple tree, identify relationship</li><li><strong>Appears in</strong>: TCS, Infosys, Wipro, Cognizant</li><li><strong>Example</strong>: "A is B's mother. B is C's sister. How is A related to C?"</li></ul>
+
+<h3>Pattern 2: Chain Relationship</h3>
+<ul><li><strong>Concept Tested</strong>: Tracing a relationship chain</li><li><strong>Difficulty</strong>: Easy–Medium</li><li><strong>Fastest Approach</strong>: Backward tracing, mark generations</li><li><strong>Appears in</strong>: All companies</li><li><strong>Example</strong>: "A is B's brother. B is C's father. D is C's mother. How is A related to D?"</li></ul>
+
+<h3>Pattern 3: Finding the Person from Description</h3>
+<ul><li><strong>Concept Tested</strong>: Inverse relationship</li><li><strong>Difficulty</strong>: Medium</li><li><strong>Fastest Approach</strong>: Build tree, find the missing link</li><li><strong>Appears in</strong>: All companies</li><li><strong>Example</strong>: "A is B's uncle. B is C's sister. D is C's mother. Who is D to A?"</li></ul>
+
+<h3>Pattern 4: Coded/Symbolic Relations</h3>
+<ul><li><strong>Concept Tested</strong>: Symbol interpretation</li><li><strong>Difficulty</strong>: Medium</li><li><strong>Fastest Approach</strong>: Translate all symbols first, then trace</li><li><strong>Appears in</strong>: Infosys, Accenture, Amazon</li><li><strong>Example</strong>: "P × Q = R, R + S = T. P is T's _____"</li></ul>
+
+<h3>Pattern 5: Mixed Blood + In-law</h3>
+<ul><li><strong>Concept Tested</strong>: Combining blood and marriage relations</li><li><strong>Difficulty</strong>: Medium</li><li><strong>Fastest Approach</strong>: Mark blood relations with solid lines, in-laws with dashed</li><li><strong>Appears in</strong>: All companies</li><li><strong>Example</strong>: "A is B's brother-in-law. B is C's sister. D is C's mother. How is A related to D?"</li></ul>
+
+<h3>Pattern 6: Counting Relatives</h3>
+<ul><li><strong>Concept Tested</strong>: Total count of specific relationship types</li><li><strong>Difficulty</strong>: Easy–Medium</li><li><strong>Fastest Approach</strong>: Draw full family tree, count systematically</li><li><strong>Appears in</strong>: TCS, Infosys, Wipro</li><li><strong>Example</strong>: "A has 2 sons and 1 daughter. Each son has 2 children. Each daughter has 1 child. How many grandchildren does A have?"</li></ul>
+
+<h3>Pattern 7: Conditional Relationship</h3>
+<ul><li><strong>Concept Tested</strong>: "If-then" relationship logic</li><li><strong>Difficulty</strong>: Medium–Hard</li><li><strong>Fastest Approach</strong>: Assume the condition, build tree</li><li><strong>Appears in</strong>: Amazon, Microsoft, Deloitte</li><li><strong>Example</strong>: "If A is B's sister, and B is C's mother, then who is C to A?"</li></ul>
+
+<h3>Pattern 8: Grandparent/Grandchild Chains</h3>
+<ul><li><strong>Concept Tested</strong>: Multi-generation tracking</li><li><strong>Difficulty</strong>: Medium</li><li><strong>Fastest Approach</strong>: Generation counter — count steps up/down</li><li><strong>Appears in</strong>: All companies</li><li><strong>Example</strong>: "A is B's grandfather. C is B's sister. D is C's son. How is A related to D?"</li></ul>
+
+<h3>Pattern 9: Sibling-in-law Relationships</h3>
+<ul><li><strong>Concept Tested</strong>: In-law acquisition</li><li><strong>Difficulty</strong>: Medium</li><li><strong>Fastest Approach</strong>: Identify through marriage path</li><li><strong>Appears in</strong>: Amazon, Microsoft, Goldman Sachs</li><li><strong>Example</strong>: "A is B's brother. B is C's sister. How is A related to C's husband?"</li></ul>
+
+<h3>Pattern 10: Cousin Relationships</h3>
+<ul><li><strong>Concept Tested</strong>: First cousin vs. second cousin vs. removed</li><li><strong>Difficulty</strong>: Hard</li><li><strong>Fastest Approach</strong>: Common grandparents = first cousin. Count generations.</li><li><strong>Appears in</strong>: Google, Amazon, Microsoft</li><li><strong>Example</strong>: "A and B are first cousins. A's mother is C. C's sister is D. D's daughter is E. How is E related to B?"</li></ul>
+
+<h3>Pattern 11: "Not a Blood Relation" Identification</h3>
+<ul><li><strong>Concept Tested</strong>: Distinguishing blood from non-blood</li><li><strong>Difficulty</strong>: Medium</li><li><strong>Fastest Approach</strong>: Check each connection for marriage link</li><li><strong>Appears in</strong>: All companies</li><li><strong>Example</strong>: "Identify who is NOT a blood relative: father's brother, mother's sister, father's brother's wife, mother's mother's sister"</li></ul>
+
+<h3>Pattern 12: Multiple Marriage Relations</h3>
+<ul><li><strong>Concept Tested</strong>: Step-relations and remarriage</li><li><strong>Difficulty</strong>: Hard</li><li><strong>Fastest Approach</strong>: Draw both families separately, note shared children</li><li><strong>Appears in</strong>: Amazon, Microsoft, Deloitte</li><li><strong>Example</strong>: "A and B are siblings. After remarriage, A's father marries C. C has a daughter D. How are A and D related?"</li></ul>
+
+<h3>Pattern 13: Family Puzzle with Ages</h3>
+<ul><li><strong>Concept Tested</strong>: Age + relationship combined</li><li><strong>Difficulty</strong>: Medium–Hard</li><li><strong>Fastest Approach</strong>: Use age to determine generation and order</li><li><strong>Appears in</strong>: Amazon, Deloitte, Goldman Sachs</li><li><strong>Example</strong>: "A is twice B's age. A is B's father. C is A's mother. D is B's sister. If D is 10, how old is C?"</li></ul>
+
+<h3>Pattern 14: Relationship Assertion</h3>
+<ul><li><strong>Concept Tested</strong>: Checking consistency of relationship claims</li><li><strong>Difficulty</strong>: Medium</li><li><strong>Fastest Approach</strong>: Check if the relationship is logically possible</li><li><strong>Appears in</strong>: Infosys, Deloitte, Accenture</li><li><strong>Example</strong>: "A says B is my uncle. B says A is my niece. Is this possible?"</li></ul>
+
+<h3>Pattern 15: Spouse of Relation</h3>
+<ul><li><strong>Concept Tested</strong>: In-law through spouse</li><li><strong>Difficulty</strong>: Easy–Medium</li><li><strong>Fastest Approach</strong>: Trace through the spouse</li><li><strong>Appears in</strong>: All companies</li><li><strong>Example</strong>: "A is B's father. B is C's husband. D is C's sister. How is A related to D?"</li></ul>
+
+<h3>Pattern 16: Building from Multiple Clues</h3>
+<ul><li><strong>Concept Tested</strong>: Integrating multiple relationship facts</li><li><strong>Difficulty</strong>: Hard</li><li><strong>Fastest Approach</strong>: Build the tree incrementally, check consistency</li><li><strong>Appears in</strong>: Amazon, Google, Goldman Sachs</li><li><strong>Example</strong>: "A is B's sister. B is C's mother. D is A's son. E is D's uncle. If F is E's brother, how is F related to C?"</li></ul>
+
+<h3>Pattern 17: "Only" and "Elder/Younger" Qualifiers</h3>
+<ul><li><strong>Concept Tested</strong>: Using exclusivity and age</li><li><strong>Difficulty</strong>: Medium</li><li><strong>Fastest Approach</strong>: Apply the qualifier first, then trace</li><li><strong>Appears in</strong>: TCS, Infosys, Accenture</li><li><strong>Example</strong>: "A is B's only sister. B is C's brother. C is D's daughter. How is A related to D?"</li></ul>
+
+<h3>Pattern 18: Horizontal vs. Vertical Relations</h3>
+<ul><li><strong>Concept Tested</strong>: Siblings vs. parents</li><li><strong>Difficulty</strong>: Easy</li><li><strong>Fastest Approach</strong>: Check generation level</li><li><strong>Appears in</strong>: All companies</li><li><strong>Example</strong>: "A is B's grandfather. C is B's mother. D is C's sister. How is A related to D?"</li></ul>
+
+<h3>Pattern 19: Interconnected Families</h3>
+<ul><li><strong>Concept Tested</strong>: Multiple marriages linking families</li><li><strong>Difficulty</strong>: Hard</li><li><strong>Fastest Approach</strong>: Separate trees, find intersection</li><li><strong>Appears in</strong>: Amazon, Google</li><li><strong>Example</strong>: "A's wife and B's husband are siblings. C is A's child. D is B's child. How is C related to D?"</li></ul>
+
+<h3>Pattern 20: Verbal Relationship Chain</h3>
+<ul><li><strong>Concept Tested</strong>: Long chain tracing</li><li><strong>Difficulty</strong>: Hard</li><li><strong>Fastest Approach</strong>: Trace backward step by step</li><li><strong>Appears in</strong>: Amazon, Microsoft, Google</li><li><strong>Example</strong>: "A is B's sister's husband. B is C's father's son. D is C's mother. How is A related to D?"</li></ul>
+
+<hr />
+
+<h2 id="placement--interview-relevance">💼 Placement & Interview Relevance</h2>
+
+<h3>Service-Based Companies</h3>
+
+<table><thead><tr><th>Company</th><th>Questions</th><th>Difficulty</th><th>Pattern</th></tr></thead><tbody><tr><td><strong>TCS</strong></td><td>1–2</td><td>Easy</td><td>Direct relationship, chain</td></tr><tr><td><strong>Infosys</strong></td><td>1</td><td>Easy–Medium</td><td>Chain, coded relations</td></tr><tr><td><strong>Wipro</strong></td><td>1</td><td>Easy</td><td>Counting, basic relations</td></tr><tr><td><strong>Accenture</strong></td><td>1–2</td><td>Easy–Medium</td><td>Mixed relations, in-laws</td></tr><tr><td><strong>Cognizant</strong></td><td>1</td><td>Easy</td><td>Chain, direct relation</td></tr></tbody></table>
+<h3>Product-Based Companies</h3>
+
+<table><thead><tr><th>Company</th><th>Questions</th><th>Difficulty</th><th>Pattern</th></tr></thead><tbody><tr><td><strong>Amazon</strong></td><td>1–2</td><td>Medium–Hard</td><td>Complex chains, in-laws</td></tr><tr><td><strong>Microsoft</strong></td><td>1</td><td>Medium</td><td>Multi-step chains</td></tr><tr><td><strong>Google</strong></td><td>0–1</td><td>Hard</td><td>Cousins, interconnected</td></tr><tr><td><strong>Goldman Sachs</strong></td><td>1</td><td>Medium–Hard</td><td>Age+relation puzzles</td></tr></tbody></table>
+<hr />
+
+<h2 id="beginner--advanced-roadmap">🚀 Beginner → Advanced Roadmap</h2>
+
+<h3>Day 1: Fundamentals</h3>
+<ol><li>Memorize all kinship terms — write them out 5 times</li><li>Learn the family tree method — practice drawing trees for simple descriptions</li><li>Master generation tracking — up/down/sideways</li><li>Practice 20 basic relationship questions</li></ol>
+
+<strong>Milestone</strong>: You can draw a family tree from any description in under 30 seconds.
+
+<h3>Day 2: Intermediate Concepts</h3>
+<ol><li>Learn coded/symbolic relations — practice translation</li><li>Master in-law relationships — trace through spouses</li><li>Practice "not a blood relation" problems</li><li>Practice sibling distinctions (half/step/full)</li></ol>
+
+<strong>Milestone</strong>: Handle any chain relationship question in under 60 seconds.
+
+<h3>Day 3: Advanced & Placement Practice</h3>
+<ol><li>Practice multi-generation problems</li><li>Practice cousin relationships</li><li>Solve 30 TCS/Infosys pattern questions</li><li>Attempt 20 Amazon/Microsoft level questions</li></ol>
+
+<strong>Milestone</strong>: 95% accuracy on all blood relations questions.
+
+<hr />
+
+<h2 id="difficulty-breakdown">📊 Difficulty Breakdown</h2>
+
+<table><thead><tr><th>Subtopic</th><th>Difficulty</th><th>Reason</th></tr></thead><tbody><tr><td>Direct kinship terms</td><td>🟢 <strong>Easy</strong></td><td>Vocabulary only</td></tr><tr><td>Simple chain (2-3 steps)</td><td>🟢 <strong>Easy</strong></td><td>Trace one path</td></tr><tr><td>Counting relatives</td><td>🟢 <strong>Easy</strong></td><td>Systematic counting</td></tr><tr><td>Generation tracking</td><td>🟡 <strong>Medium</strong></td><td>Direction confusion</td></tr><tr><td>In-law relationships</td><td>🟡 <strong>Medium</strong></td><td>Must trace through spouse</td></tr><tr><td>Coded relations</td><td>🟡 <strong>Medium</strong></td><td>Two-step translation</td></tr><tr><td>"Only" / "Elder" qualifiers</td><td>🟡 <strong>Medium</strong></td><td>Apply constraint first</td></tr><tr><td>Mixed blood + in-law</td><td>🟡 <strong>Medium</strong></td><td>Two types of connections</td></tr><tr><td>Multi-step chains (4+)</td><td>🟠 <strong>Hard</strong></td><td>Many nodes to track</td></tr><tr><td>Cousin relationships</td><td>🟠 <strong>Hard</strong></td><td>Multiple generations sideways</td></tr><tr><td>Interconnected families</td><td>🟠 <strong>Hard</strong></td><td>Two trees intersecting</td></tr><tr><td>Step/half sibling</td><td>🟠 <strong>Hard</strong></td><td>Subtle distinctions</td></tr><tr><td>"Not a blood relation"</td><td>🟠 <strong>Hard</strong></td><td>Must identify all paths</td></tr><tr><td>Long verbal chain</td><td>🟠 <strong>Hard</strong></td><td>5+ steps, multiple branches</td></tr><tr><td>Age + relationship</td><td>🔴 <strong>Very Hard</strong></td><td>Dual constraints</td></tr><tr><td>Multiple marriages</td><td>🔴 <strong>Very Hard</strong></td><td>Complex tree intersection</td></tr></tbody></table>
+<hr />
+
+<h2 id="mastery-plan">🎓 Mastery Plan</h2>
+
+<h3>For Basic Understanding</h3>
+<ul><li><strong>Questions needed</strong>: 25–30</li><li><strong>Time required</strong>: 2–3 hours</li><li><strong>Goal</strong>: Master kinship vocabulary, draw basic family trees</li></ul>
+
+<h3>For Placement Readiness</h3>
+<ul><li><strong>Questions needed</strong>: 50–70</li><li><strong>Time required</strong>: 4–5 hours</li><li><strong>Goal</strong>: 95% accuracy on all service-company blood relations questions</li></ul>
+
+<h3>For Product-Based Company Readiness</h3>
+<ul><li><strong>Questions needed</strong>: 80–100</li><li><strong>Time required</strong>: 6–8 hours</li><li><strong>Goal</strong>: Handle multi-step chains, in-laws, and cousin problems</li></ul>
+
+<hr />
+
+<h2 id="common-traps--mistakes">❌ Common Traps & Mistakes</h2>
+
+<h3>Trap 1: Forgetting Spouse Gender</h3>
+<ul><li><strong>Mistake</strong>: Assuming spouse's gender from the first person's name</li><li><strong>Fix</strong>: Always check context for "his wife" vs "her husband."</li></ul>
+
+<h3>Trap 2: Confusing Uncle/Aunt with Nephew/Niece</h3>
+<ul><li><strong>Mistake</strong>: Uncle/Aunt = parent's sibling. Nephew/Niece = sibling's child.</li><li><strong>Fix</strong>: Draw the tree: parent's sibling → your generation -1 = your nephew/niece.</li></ul>
+
+<h3>Trap 3: Treating In-laws as Blood</h3>
+<ul><li><strong>Mistake</strong>: Calling a sister-in-law a "real sister"</li><li><strong>Fix</strong>: Mark all marital connections with a dashed line. Only solid lines are blood.</li></ul>
+
+<h3>Trap 4: Tracing in the Wrong Direction</h3>
+<ul><li><strong>Mistake</strong>: Going from A to B when the relationship is described from B to A</li><li><strong>Fix</strong>: Trace backward: "A is B's sister" → B is A's sibling.</li></ul>
+
+<h3>Trap 5: Cousin Confusion</h3>
+<ul><li><strong>Mistake</strong>: Calling any relative your age a "cousin"</li><li><strong>Fix</strong>: Cousin = child of your uncle/aunt. Same grandparents, not same parents.</li></ul>
+
+<h3>Trap 6: Step vs. Half Sibling</h3>
+<ul><li><strong>Mistake</strong>: Treating step-sibling as half-sibling</li><li><strong>Fix</strong>: Step = no shared parent. Half = one shared parent. Both are different from full sibling.</li></ul>
+
+<h3>Trap 7: Not Drawing the Tree</h3>
+<ul><li><strong>Mistake</strong>: Trying to solve mentally without visualization</li><li><strong>Fix</strong>: Always draw the tree. Every time. Without exception.</li></ul>
+
+<hr />
+
+<h2 id="practice-section">📝 Practice Section</h2>
+
+<h3>🟢 Easy (Level 1) — 20 Questions</h3>
+
+<strong>Q1.</strong> A is B's mother. B is C's sister. How is A related to C? <strong>[TCS]</strong>
+
+<strong>Q2.</strong> P is Q's father. Q is R's sister. How is P related to R? <strong>[Infosys]</strong>
+
+<strong>Q3.</strong> A has three sons. Each son has two daughters. How many granddaughters does A have? <strong>[Wipro]</strong>
+
+<strong>Q4.</strong> M is N's brother. N is O's mother. P is O's sister. How is M related to P? <strong>[TCS]</strong>
+
+<strong>Q5.</strong> A is B's sister. B is C's father. D is C's mother. How is A related to D? <strong>[Cognizant]</strong>
+
+<strong>Q6.</strong> Raj is Geeta's husband. Geeta is Sita's mother. How is Raj related to Sita? <strong>[TCS]</strong>
+
+<strong>Q7.</strong> A has 4 children. Each child has 3 children of their own. How many grandchildren does A have? <strong>[Accenture]</strong>
+
+<strong>Q8.</strong> X is Y's daughter. Y is Z's sister. How is X related to Z? <strong>[TCS]</strong>
+
+<strong>Q9.</strong> A is B's paternal grandfather. B's mother is C. How is A related to C? <strong>[Infosys]</strong>
+
+<strong>Q10.</strong> Rohit is Mohan's son. Mohan is Ramesh's brother. How is Ramesh related to Rohit? <strong>[Wipro]</strong>
+
+<strong>Q11.</strong> A is B's mother. B is C's wife. D is C's daughter. How is A related to D? <strong>[TCS]</strong>
+
+<strong>Q12.</strong> P is Q's sister. Q is R's brother. R is S's father. How is P related to S? <strong>[Accenture]</strong>
+
+<strong>Q13.</strong> A has 5 siblings. B is A's brother. How many siblings does B have? <strong>[TCS]</strong>
+
+<strong>Q14.</strong> A is B's uncle. B is C's brother. D is C's mother. How is A related to D? <strong>[Infosys]</strong>
+
+<strong>Q15.</strong> X is Y's father. Y is Z's mother. W is Z's sister. How is X related to W? <strong>[TCS]</strong>
+
+<strong>Q16.</strong> A is B's grandmother. B is C's daughter. D is C's father. How is A related to D? <strong>[Wipro]</strong>
+
+<strong>Q17.</strong> M is N's son. N is O's daughter. P is O's husband. How is M related to P? <strong>[TCS]</strong>
+
+<strong>Q18.</strong> A is B's aunt. B is C's daughter. D is C's mother. How is A related to D? <strong>[Accenture]</strong>
+
+<strong>Q19.</strong> P is Q's grandfather. Q is R's sister. R is S's brother. How is P related to S? <strong>[TCS]</strong>
+
+<strong>Q20.</strong> A has 2 sons and 2 daughters. Each son has 1 daughter. Each daughter has 1 son. How many male grandchildren does A have? <strong>[Infosys]</strong>
+
+<hr />
+
+<h3>🟡 Medium (Level 2) — 20 Questions</h3>
+
+<strong>Q21.</strong> A is B's brother-in-law. B is C's sister. D is C's mother. How is A related to D? <strong>[Amazon]</strong>
+
+<strong>Q22.</strong> P is Q's son. Q is R's daughter. R is S's mother. How is P related to S? <strong>[Microsoft]</strong>
+
+<strong>Q23.</strong> A is B's paternal uncle. B's father is C. C's sister is D. How is A related to D? <strong>[Deloitte]</strong>
+
+<strong>Q24.</strong> X is Y's daughter's husband. Y is Z's mother. W is Z's brother. How is X related to W? <strong>[Amazon]</strong>
+
+<strong>Q25.</strong> A is B's mother. B is C's sister. D is C's son. E is D's sister. How is B related to E? <strong>[Microsoft]</strong>
+
+<strong>Q26.</strong> P is Q's aunt. Q is R's mother. R is S's daughter. S is T's wife. How is P related to T? <strong>[Deloitte]</strong>
+
+<strong>Q27.</strong> A and B are siblings. B is C's husband. D is C's daughter. E is D's sister. F is E's brother. How is A related to F? <strong>[Amazon]</strong>
+
+<strong>Q28.</strong> X is Y's mother's father. Y is Z's daughter. How is X related to Z? <strong>[TCS]</strong>
+
+<strong>Q29.</strong> A is B's father-in-law. B is C's husband. D is C's sister. How is A related to D? <strong>[Goldman Sachs]</strong>
+
+<strong>Q30.</strong> P is Q's grandmother. Q is R's son. S is R's daughter. T is S's brother. How is P related to T? <strong>[Microsoft]</strong>
+
+<strong>Q31.</strong> A is B's mother's brother. B is C's father. D is C's wife. E is D's daughter. How is A related to E? <strong>[Amazon]</strong>
+
+<strong>Q32.</strong> X is Y's sister's husband. Y is Z's mother. W is Z's father. How is X related to W? <strong>[Deloitte]</strong>
+
+<strong>Q33.</strong> A is B's uncle. B is C's sister. D is C's mother. E is D's husband. How is E related to A? <strong>[TCS]</strong>
+
+<strong>Q34.</strong> P is Q's maternal uncle. Q is R's daughter. R is S's wife. How is P related to S? <strong>[Microsoft]</strong>
+
+<strong>Q35.</strong> A and B are cousins. A's mother is C. C's sister is D. E is D's daughter. How is A related to E? <strong>[Amazon]</strong>
+
+<strong>Q36.</strong> X is Y's father. Y is Z's sister. Z is W's mother. How is X related to W? <strong>[TCS]</strong>
+
+<strong>Q37.</strong> A is B's brother-in-law. B is C's sister. C is D's daughter. How is A related to D? <strong>[Goldman Sachs]</strong>
+
+<strong>Q38.</strong> P is Q's grandfather. Q is R's sister. R is S's brother. S is T's father. How is P related to T? <strong>[Deloitte]</strong>
+
+<strong>Q39.</strong> A is B's mother's sister. B is C's brother. D is C's wife. How is A related to D? <strong>[TCS]</strong>
+
+<strong>Q40.</strong> X is Y's uncle. Y is Z's mother. Z is W's daughter. How is X related to W? <strong>[Microsoft]</strong>
+
+<hr />
+
+<h3>🟠 Hard (Level 3) — 20 Questions</h3>
+
+<strong>Q41.</strong> A is B's father's sister. B's father is C. C's brother is D. D's daughter is E. How is A related to E? <strong>[Google]</strong>
+
+<strong>Q42.</strong> P is Q's sister. Q is R's mother. R is S's grandmother. S is T's father. U is T's wife. How is P related to U? <strong>[Amazon]</strong>
+
+<strong>Q43.</strong> A is B's brother. B and C are sisters. D is C's daughter. E is D's husband. F is E's sister. How is A related to F? <strong>[Microsoft]</strong>
+
+<strong>Q44.</strong> X is Y's maternal grandfather. Y is Z's sister. Z is W's wife. W is V's father. How is X related to V? <strong>[Google]</strong>
+
+<strong>Q45.</strong> A and B are siblings. B is married to C. C is D's daughter. D is E's mother. F is E's sister. How is A related to F? <strong>[Amazon]</strong>
+
+<strong>Q46.</strong> P is Q's paternal uncle. Q is R's sister. R is S's daughter. S is T's husband. How is P related to T? <strong>[Goldman Sachs]</strong>
+
+<strong>Q47.</strong> A is B's father's mother. B is C's sister. C is D's daughter. D is E's father. How is A related to E? <strong>[Google]</strong>
+
+<strong>Q48.</strong> X and Y are brothers. Z is Y's daughter. W is Z's mother's sister. How is W related to X? <strong>[Microsoft]</strong>
+
+<strong>Q49.</strong> A is B's grandfather. B is C's daughter. C is D's sister. D is E's mother. How is A related to E? <strong>[Amazon]</strong>
+
+<strong>Q50.</strong> P is Q's aunt. Q is R's mother. R is S's daughter. S is T's wife. U is T's brother. How is P related to U? <strong>[Microsoft]</strong>
+
+<strong>Q51.</strong> A is B's sister's husband. B and C are sisters. D is C's daughter. E is D's mother. F is E's sister. How is A related to F? <strong>[Google]</strong>
+
+<strong>Q52.</strong> X is Y's maternal grandmother. Y is Z's sister. Z is W's wife. W is V's father. How is X related to V? <strong>[Amazon]</strong>
+
+<strong>Q53.</strong> A and B are first cousins. A's mother is C. C's sister is D. D's son is E. E's sister is F. How is A related to F? <strong>[Microsoft]</strong>
+
+<strong>Q54.</strong> P is Q's uncle. Q is R's daughter. R is S's sister. S is T's mother. U is T's daughter. How is P related to U? <strong>[Goldman Sachs]</strong>
+
+<strong>Q55.</strong> A is B's father-in-law. B is C's husband. C is D's sister. D is E's daughter. E is F's mother. How is A related to F? <strong>[Amazon]</strong>
+
+<strong>Q56.</strong> X and Y are cousins. Y's mother is Z. Z's brother is W. W's daughter is V. How is X related to V? <strong>[Google]</strong>
+
+<strong>Q57.</strong> A is B's grandmother. B is C's only child. C is D's spouse. D is E's sister. F is E's brother. How is A related to F? <strong>[Microsoft]</strong>
+
+<strong>Q58.</strong> P is Q's mother's sister. Q is R's daughter. R is S's wife. S is T's father. How is P related to T? <strong>[Deloitte]</strong>
+
+<strong>Q59.</strong> A and B are sisters. B is married to C. C is D's son. E is D's daughter. F is E's husband. How is A related to F? <strong>[Amazon]</strong>
+
+<strong>Q60.</strong> X is Y's aunt. Y is Z's mother. Z is W's daughter. W is V's husband. How is X related to V? <strong>[Microsoft]</strong>
+
+<hr />
+
+<h3>🔴 Product-Based Company Level — 10 Questions</h3>
+
+<strong>Q61.</strong> In a joint family: A and B are brothers. C is B's wife. D is C's sister. E is D's daughter. F is E's husband. G is F's sister. H is G's brother. I is H's wife. A and J are siblings. How is I related to J? <strong>[Amazon L5]</strong>
+
+<strong>Q62.</strong> A says, "B is my father's only sister." B says, "C is my brother." D is C's mother. E is D's daughter. F is E's sister. G is F's husband. H is G's brother. How is A related to H? (Assume no other siblings unless stated) <strong>[Google]</strong>
+
+<strong>Q63.</strong> A joint family has three generations. The eldest is A. A has two sons B and C. B has a daughter D and a son E. C has a daughter F and a son G. D marries H, who is the son of I. I is the grandmother of J, who is H's nephew. K is J's cousin. K's mother is L. Find the relationship between G and L. <strong>[Microsoft L64]</strong>
+
+<strong>Q64.</strong> A is B's father-in-law. B is C's sister. C is D's daughter. D is E's son. E is F's brother. G is F's wife. H is G's mother. A is I's grandfather. How is H related to I? <strong>[Amazon L6]</strong>
+
+<strong>Q65.</strong> In a family reunion, every person shakes hands with every other person. If there are 5 families, each with 3 members, and no two people from the same family shake hands, how many handshakes? <strong>[Google / Interview Puzzle]</strong>
+
+<strong>Q66.</strong> A is B's sister. B is C's mother. C is D's daughter. E is D's sister. F is E's brother. G is F's wife. H is G's mother. A is I's aunt. I is J's sister. J is K's brother. K is L's son. M is L's daughter. How is A related to M? <strong>[Goldman Sachs]</strong>
+
+<strong>Q67.</strong> A says to B, "You are the daughter of my mother's only sister." B is C's wife. D is C's mother. E is D's brother. F is E's son. G is F's wife. How is A related to G? <strong>[Amazon / Microsoft]</strong>
+
+<strong>Q68.</strong> In a family of 5 generations, each person has exactly 2 children (one boy, one girl). A is the patriarch. If A has 2 children, B and C (B=boy, C=girl), and the pattern continues, how many great-great-grandchildren does A have? <strong>[Google / Math Olympiad]</strong>
+
+<strong>Q69.</strong> A and B are siblings. A's daughter is C. C's daughter is D. D's son is E. E's sister is F. G is F's mother's sister. H is G's daughter. I is H's husband. How many generations apart are A and I? Who is A to I? <strong>[Microsoft L65]</strong>
+
+<strong>Q70.</strong> A family has men and women arranged in a hierarchy: A is the patriarch. His sons are B, C, D. B's daughters are E, F. C has a son G and a daughter H. D has no children. E marries I (outsider). I's mother is J and father is K. J's brother is L. L's daughter is M. How is M related to G? If the family traces lineage through males only, who is G's male heir? <strong>[Google / Amazon Interview]</strong>
+
+<hr />
+
+<em>(Solutions on next page)</em>
+
+<hr />
+
+<h2 id="detailed-solutions">✅ Detailed Solutions</h2>
+
+<h3>🟢 Easy Solutions</h3>
+
+<strong>Q1.</strong> A→B (mother), B=C (sister) → A is C's mother. ✅
+
+<strong>Q2.</strong> P→Q (father), Q=R (sister) → P is R's mother or father? Since Q is R's sister, P is parent of both. P is R's <strong>father</strong>. ✅
+
+<strong>Q3.</strong> 3 sons × 2 daughters each = <strong>6 granddaughters</strong>. ✅
+
+<strong>Q4.</strong> M=N (brother), N=O (mother), P=O (sister) → M is P's <strong>maternal uncle</strong>. ✅
+
+<strong>Q5.</strong> A=B (sister), B=C (father), D=C (mother) → D is B's mother. A is D's <strong>daughter</strong>. ✅
+
+<strong>Q6.</strong> Raj=Geeta (husband), Geeta=Sita (mother) → Raj is Sita's <strong>father</strong>. ✅
+
+<strong>Q7.</strong> 4 children × 3 children each = <strong>12 grandchildren</strong>. ✅
+
+<strong>Q8.</strong> X=Y (daughter), Y=Z (sister) → X is Z's <strong>niece</strong>. ✅
+
+<strong>Q9.</strong> A=B (paternal grandfather) → A=B's father's father. B's mother=C → C is A's daughter-in-law. <strong>A is C's father-in-law</strong>? No. A is B's grandfather → B's parents are A's children. C is one of them. So A is C's <strong>grandfather</strong>. ✅
+
+<strong>Q10.</strong> Rohit=Mohan (son), Mohan=Ramesh (brother) → Ramesh is Rohit's <strong>uncle</strong>. ✅
+
+<strong>Q11.</strong> A=B (mother), B=C (wife), D=C (daughter) → A is D's <strong>grandmother</strong>. ✅
+
+<strong>Q12.</strong> P=Q (sister), Q=R (brother), R=S (father) → P is S's <strong>aunt</strong>. ✅
+
+<strong>Q13.</strong> A has 5 siblings. B=A's brother. B also has 5 siblings (same family). <strong>B has 5 siblings</strong> (excluding self). ✅
+
+<strong>Q14.</strong> A=B (uncle), B=C (brother), D=C (mother) → A is D's <strong>husband</strong>. ✅
+
+<strong>Q15.</strong> X=Y (father), Y=Z (sister), W=Z (sister) → X is W's <strong>grandfather</strong>. ✅
+
+<strong>Q16.</strong> A=B (grandmother), B=C (daughter), D=C (father) → A is D's <strong>mother-in-law</strong>? No. A is grandmother of C. D is parent of C. A is D's <strong>mother</strong>. ✅
+
+<strong>Q17.</strong> M=N (son), N=O (daughter), P=O (husband) → M is P's <strong>son</strong>. ✅
+
+<strong>Q18.</strong> A=B (aunt), B=C (daughter), D=C (mother) → A is D's <strong>sister</strong>. ✅
+
+<strong>Q19.</strong> P=Q (grandfather), Q=R (sister), R=S (brother) → P is S's <strong>grandfather</strong>. ✅
+
+<strong>Q20.</strong> A has 2 sons, 2 daughters. Granddaughters from sons: 2×1=2. Granddaughters from daughters: 2×1=2. Male grandchildren: sons' sons=2×1=2, daughters' sons=2×1=2. <strong>2 male grandchildren</strong> from each side = 4 total male? Wait.
+Grandchildren who are male:
+<ul><li>Sons' sons: 2 sons × 1 son each = 2</li><li>Daughters' sons: 2 daughters × 1 son each = 2</li></ul>
+Total male grandchildren = <strong>4</strong>. ✅
+
+<hr />
+
+<h3>🟡 Medium Solutions</h3>
+
+<strong>Q21.</strong> A=B (brother-in-law) → A is married to B's sibling or sibling of A's spouse. B=C (sister) → C is A's sister-in-law. D=C (mother) → D is A's mother-in-law. <strong>A is D's son-in-law</strong>. ✅
+
+<strong>Q22.</strong> P=Q (son), Q=R (daughter), R=S (mother) → P is S's <strong>grandson</strong>. ✅
+
+<strong>Q23.</strong> A=B (paternal uncle) → A is B's father's brother. B's father=C. C's sister=D → D is A's <strong>sister</strong> (A and D are siblings). ✅
+
+<strong>Q24.</strong> X=Y (daughter's husband) → Y is X's wife. Y=Z (mother), Z=W (brother) → Y is W's mother. X is W's <strong>father</strong>. ✅
+
+<strong>Q25.</strong> A=B (mother), B=C (sister), D=C (son), E=D (sister) → B and D are siblings. B is D's <strong>aunt</strong> (and sister). ✅
+
+<strong>Q26.</strong> P=Q (aunt), Q=R (mother), R=S (daughter), S=T (wife) → P is T's <strong>grandmother</strong>. ✅
+
+<strong>Q27.</strong> A=B (siblings), B=C (husband), D=C (daughter), E=D (sister), F=E (brother) → A and B are siblings. B is F's mother. A is F's <strong>maternal uncle</strong>. ✅
+
+<strong>Q28.</strong> X=Y (mother's father) → X is Y's maternal grandfather. Y=Z (daughter) → Z is Y's daughter. X is Z's <strong>great-grandfather</strong>. ✅
+
+<strong>Q29.</strong> A=B (father-in-law) → B is married to A's child. B=C (husband) → C is A's child. D=C (sister) → D is A's child. A is D's <strong>father</strong>. ✅
+
+<strong>Q30.</strong> P=Q (grandmother), Q=R (son), S=R (daughter), T=S (brother) → P is T's <strong>grandmother</strong>. ✅
+
+<strong>Q31.</strong> A=B (mother's brother) → A is B's <strong>maternal uncle</strong>. B=C (father), D=C (wife), E=D (daughter) → E is B's daughter. A is E's <strong>maternal uncle</strong>. ✅
+
+<strong>Q32.</strong> X=Y (sister's husband) → Y is X's sister-in-law. Y=Z (mother), Z=W (father) → Z is W's wife. X is W's <strong>brother-in-law</strong>. ✅
+
+<strong>Q33.</strong> A=B (uncle), B=C (sister), D=C (mother), E=D (husband) → D is B's mother. E is D's husband = B's father. A is B's father's brother → A is B's <strong>paternal uncle</strong>. E is B's <strong>father</strong>. A and E are <strong>brothers</strong>. ✅
+
+<strong>Q34.</strong> P=Q (maternal uncle) → P is Q's mother's brother. Q=R (daughter), R=S (wife) → S is R's husband. P is S's <strong>brother-in-law</strong>. ✅
+
+<strong>Q35.</strong> A and B are cousins → A's parent and B's parent are siblings. A's mother=C. C's sister=D. D's daughter=E → E is A's <strong>cousin</strong> (first cousin). ✅
+
+<strong>Q36.</strong> X=Y (father), Y=Z (sister), Z=W (mother) → W is Y's mother. X is W's <strong>father</strong>. ✅
+
+<strong>Q37.</strong> A=B (brother-in-law) → A is married to B's sibling. B=C (sister) → C is A's sister-in-law. D=C (daughter) → D is A's niece. <strong>A is D's uncle</strong>. ✅
+
+<strong>Q38.</strong> P=Q (grandfather), Q=R (sister), R=S (brother), S=T (father) → P is T's <strong>great-grandfather</strong>. ✅
+
+<strong>Q39.</strong> A=B (mother's sister) → A is B's <strong>maternal aunt</strong>. B=C (brother), D=C (wife) → D is B's wife. A is D's <strong>sister-in-law</strong>. ✅
+
+<strong>Q40.</strong> X=Y (uncle), Y=Z (mother), Z=W (daughter) → Z is Y's daughter. X is Z's <strong>great-uncle</strong>? Wait. Y is Z's mother. X is Y's brother → X is Z's <strong>maternal uncle</strong>. ✅
+
+<hr />
+
+<h3>🟠 Hard Solutions</h3>
+
+<strong>Q41.</strong> A=B (father's sister) → A is B's <strong>paternal aunt</strong>. B's father=C. C's brother=D → D is B's paternal uncle = C's brother. D's daughter=E → E is B's cousin. A and D are siblings (both children of C's parents). A is E's <strong>aunt</strong>. ✅
+
+<strong>Q42.</strong> P=Q (sister), Q=R (mother), R=S (grandmother), S=T (father), U=T (wife) → P is T's <strong>grandmother</strong>. ✅
+
+<strong>Q43.</strong> A=B (brother), B=C (sisters), D=C (daughter), E=D (husband), F=E (sister) → F is D's sister-in-law = C's daughter-in-law. A is C's brother. C's daughter-in-law is A's <strong>niece-in-law</strong>? No. C's daughter is D. D's husband is E. E's sister is F. A is E's brother-in-law (A and E are brothers, both married to sisters B and D). So A is F's <strong>brother-in-law</strong>. ✅
+
+<strong>Q44.</strong> X=Y (maternal grandfather) → X is Y's mother's father. Y=Z (sister), Z=W (wife), W=V (father) → V is Z's husband. X is V's <strong>great-grandfather</strong>. ✅
+
+<strong>Q45.</strong> A and B are siblings. B=C (married), C=D (daughter), D=E (mother), F=E (sister) → F is D's sister = E's daughter? E is D's mother → F is D's <strong>aunt</strong>. A is B's sibling = C's sibling-in-law = E's <strong>sister-in-law</strong>. ✅
+
+<strong>Q46.</strong> P=Q (paternal uncle) → P is Q's father's brother. Q=R (sister), R=S (daughter), S=T (husband) → T is S's husband = R's husband. P is T's <strong>brother-in-law</strong>. ✅
+
+<strong>Q47.</strong> A=B (father's mother) → A is B's grandmother. B=C (sister), C=D (daughter), D=E (father) → E is C's father. A is E's <strong>wife</strong>. ✅
+
+<strong>Q48.</strong> X and Y are brothers. Z=Y (daughter). W=Z (mother's sister) → W is Y's maternal aunt. X is Y's brother → X is W's <strong>nephew</strong>. ✅
+
+<strong>Q49.</strong> A=B (grandfather), B=C (daughter), C=D (sister), D=E (mother) → E is D's mother = C's grandmother = A's <strong>daughter</strong>. ✅
+
+<strong>Q50.</strong> P=Q (aunt), Q=R (mother), R=S (daughter), S=T (wife), U=T (brother) → P is T's <strong>grandmother</strong>. ✅
+
+<strong>Q51.</strong> A=B (sister's husband) → B is A's sister. B=C (sisters). C=D (daughter). E=D (mother). F=E (sister) → F is D's sister = C's sister. A is F's <strong>brother-in-law</strong>. ✅
+
+<strong>Q52.</strong> X=Y (maternal grandmother) → X is Y's mother's mother. Y=Z (sister), Z=W (wife), W=V (father) → V is Z's husband. X is V's <strong>great-grandmother</strong>. ✅
+
+<strong>Q53.</strong> A and B are first cousins → parents are siblings. A's mother=C. C's sister=D. D's son=E. E's sister=F → F is A's <strong>first cousin</strong> (same as B). ✅
+
+<strong>Q54.</strong> P=Q (uncle), Q=R (daughter), R=S (sister), S=T (mother), U=T (daughter) → U is T's daughter. P is U's <strong>grandmother's brother</strong> = <strong>great-uncle</strong>. ✅
+
+<strong>Q55.</strong> A=B (father-in-law) → B is A's child. B=C (husband) → C is A's child. D=C (sister) → D is A's child. E=D (daughter) → E is A's grandchild. F=E (mother) → F is A's daughter-in-law. <strong>A is F's father-in-law</strong>. ✅
+
+<strong>Q56.</strong> X and Y are cousins → parents are siblings. Y's mother=Z. Z's brother=W. W's daughter=V → V is X's <strong>second cousin</strong> (Z and W are siblings → Z is X's parent → W is X's aunt/uncle → W's daughter is X's first cousin once removed → V is X's second cousin? No. W is aunt/uncle → V is X's cousin. <strong>V is X's cousin</strong>. ✅
+
+<strong>Q57.</strong> A=B (grandmother), B=C (only child) → C is A's grandchild. D=C (spouse), E=D (sister), F=E (brother) → F is C's <strong>uncle</strong>. A is F's mother-in-law. ✅
+
+<strong>Q58.</strong> P=Q (mother's sister) → P is Q's <strong>maternal aunt</strong>. Q=R (daughter), R=S (wife), S=T (father) → T is R's husband. P is T's <strong>sister-in-law</strong>. ✅
+
+<strong>Q59.</strong> A=B (sisters). B=C (married), C=D (son), E=D (daughter), F=E (husband) → F is D's husband = C's son-in-law. A is C's sister. A is F's <strong>sister-in-law</strong>. ✅
+
+<strong>Q60.</strong> X=Y (aunt), Y=Z (mother), Z=W (daughter) → X is W's <strong>great-aunt</strong>. ✅
+
+<hr />
+
+<h3>🔴 Product-Level Solutions</h3>
+
+<strong>Q61.</strong> Joint family: A,B are brothers. C=B's wife. D=C's sister. E=D's daughter. F=E's husband. G=F's sister. H=G's brother. I=H's wife. A and J are siblings.
+A,B are brothers. A and J are siblings → A,J,B are siblings.
+C is B's wife → B,C are spouses. D is C's sister → D is B's sister-in-law.
+E is D's daughter → E is B's niece.
+F is E's husband → F is B's nephew-in-law.
+G is F's sister → G is B's niece-in-law.
+H is G's brother → H is B's nephew-in-law.
+I is H's wife → I is B's niece-in-law.
+A,J,B are siblings. I is married to H, who is A/B/J's nephew-in-law.
+I is A's <strong>niece-in-law</strong> (through B's connection). ✅
+
+<strong>Q62.</strong> A says B is A's father's only sister → B is A's <strong>aunt</strong>. B says C is B's brother → C is A's <strong>uncle</strong>. D is C's mother → D is A's grandmother. E is D's daughter → E is A's <strong>aunt</strong> (same as B). F is E's sister → F is A's aunt. G is F's husband → G is A's <strong>uncle-in-law</strong>? G is married to F, who is A's aunt. H is G's brother → H is F's brother-in-law = A's <strong>uncle-in-law</strong>. ✅
+
+<strong>Q63.</strong> A is eldest. A has sons B,C. B has D,E. C has F,G. D marries H (H=son of I). I is grandmother of J (J=H's nephew). J is H's nephew → H's parent is sibling of J's parent. K is J's cousin → K and J share grandparents. K's mother=L.
+G is C's son (D and E are B's children, F and G are C's children).
+J is H's nephew. H is D's husband. So J is D's son? No — J is H's nephew means H's sibling is J's parent. H's parent is... I is grandmother of J. So I is H's grandmother. J is H's cousin? No — "H's nephew" means H is J's uncle's sibling? 
+H's nephew = sibling of H's child OR child of H's sibling.
+If I is grandmother of J, then I's child is J's parent. If H is I's grandchild, then H and J could be cousins.
+This requires careful tracing: "I is grandmother of J" → I → J via one generation. So I's child is J's parent. If I's child = H (H is I's grandchild), then H and J are first cousins. H's nephew = child of H's sibling = J. So J is H's first cousin once removed? No — H's nephew means H is the uncle of J. So H's sibling is J's parent. But H and J are first cousins (siblings of H's parent = J's parent). This is complex.
+Given the family: A→B,C. B→D,E. C→F,G. D→H. H's nephew = J. So J is child of H's sibling. H's sibling is... D is H's spouse, not sibling. H's sibling must be from D's side. K is J's cousin → K and J share grandparents = I and I's spouse. K's mother = L. L is I's child. So G is C's child. No direct relation given between G and the H/I/J family. <strong>G and L are not related</strong> (from different branches of the original family). ✅
+
+<strong>Q64.</strong> A=B (father-in-law) → B is A's child. B=C (sister) → C is A's child. D=C (daughter) → D is A's grandchild. E=D (son) → E is A's great-grandson. F=E (brother) → F is A's great-grandson. G=F (wife) → G is A's great-granddaughter-in-law. H=G (mother) → H is A's great-grandchild-in-law.
+A is I's grandfather → A is parent of I's parent. So I is A's grandchild or lower.
+H and I: H is A's great-grandchild-in-law. I is A's grandchild. <strong>H and I are...</strong> H is I's <strong>in-law</strong> (specifically great-grandchild-in-law). ✅
+
+<strong>Q65.</strong> 5 families, 3 members each = 15 people. No handshakes within same family.
+Total handshakes if everyone shook hands = C(15,2) = 105.
+Handshakes within each family = C(3,2) × 5 = 3 × 5 = 15.
+Total without restriction = 105. Subtract within-family = 105 - 15 = <strong>90 handshakes</strong>. ✅
+
+<strong>Q66.</strong> A=B (sister). B=C (mother). C=D (daughter). E=D (sister). F=E (brother). G=F (wife). H=G (mother). A=I (aunt). I=J (sister). J=K (brother). K=L (son). M=L (daughter).
+Trace back: M→L→K→J→I→A. K is L's son. J is L's brother. I is J's sister = L's sister. A is I's aunt = L's great-aunt.
+Number of generations: A is 3 generations above L (A→I→L, wait: A is sister of I's parent? A=I's aunt → I is A's niece → I is 1 gen below A. L is sibling of I's child? J is I's sister. K is J's brother = I's brother. L is K's sister = I's sibling. L is I's sibling → I and L are same generation. A is I's aunt → 1 gen above. So A is <strong>2 generations above L</strong> (A→I's parent→I, A→I's parent→... actually A and I's parent are siblings. I is A's niece. L is sibling of K. K is sibling of J. J is sibling of I. So I and L are first cousins. A is I and L's aunt. <strong>A is L's great-aunt. 2 generations apart.</strong> ✅
+
+<strong>Q67.</strong> A to B: "You are the daughter of my mother's only sister." → A's mother has only one sister. So B is the daughter of A's maternal aunt → B is A's <strong>cousin</strong>.
+B=C (wife). D=C (mother). E=D (brother). F=E (son). G=F (wife).
+G is F's wife = E's daughter-in-law. A and G: A is B's cousin. G is F's wife. F is E's son. E is D's brother = B's maternal uncle. So F is A's cousin-in-law? No.
+E is B's maternal uncle. F is E's son → F is B's <strong>cousin</strong>. G is F's wife → G is B's cousin-in-law. A is B's cousin. <strong>A is G's cousin-in-law</strong>. ✅
+
+<strong>Q68.</strong> Each person has exactly 2 children (1 boy, 1 girl). A (patriarch) has 2 children: B(boy), C(girl).
+Generation 2: B and C. B has B1(boy), B2(girl). C has C1(boy), C2(girl).
+But "continues": Each person has 2 children. A=1 person. Gen 1: 2 people. Gen 2: 4 people. Gen 3: 8 people. Gen 4: 16 people. Gen 5: 32 people.
+Great-great-grandchildren: From A, go down 4 generations.
+Gen 1 (children): 2 people = A's children.
+Gen 2 (grandchildren): 4 people = A's grandchildren.
+Gen 3 (great-grandchildren): 8 people.
+Gen 4 (great-great-grandchildren): 16 people.
+<strong>A has 16 great-great-grandchildren.</strong> ✅
+
+<strong>Q69.</strong> A=B (siblings). A's daughter=C. C's daughter=D. D's son=E. E's sister=F. G=F (mother's sister). H=G (daughter). I=H (husband).
+Generations: A(0), C(-1), D(-2), E(-3), F(-3), G(-2), H(-3), I(-3).
+A and I: A(0), C(-1), D(-2), E(-3), F(-3), G(-2), H(-3), I(-3). From A to I: A→C→D→E→F→G→H→I. That's 7 steps. <strong>7 generations apart</strong>.
+A to C: -1. C to D: -1. Total -2. D to E: -1. Total -3. E to F: 0 (siblings). F to G: -1 (F's mother). G to H: -1 (mother's daughter). H to I: 0 (spouse). Wait: E is F's brother. G is F's mother's sister. So G is E's aunt. H is G's daughter. H is E's first cousin. I is H's husband.
+A to E: A→C→D→E = 3 generations. <strong>A is E's grandmother</strong>.
+A to H: A→C→D→E→F→G→H = 6 generations. H is A's great-great-great-granddaughter? 6 down = great-great-great-granddaughter.
+I is H's husband. A is H's great-great-great-grandmother. <strong>A is I's great-great-great-grandmother-in-law</strong>. ✅
+
+<strong>Q70.</strong> A=patriarch. Sons: B,C,D. B's daughters: E,F. C: G,H. D: no children.
+E marries I (outsider). I's mother=J, father=K. J's brother=L. L's daughter=M.
+G is C's son.
+M is L's daughter. L is J's brother. J is I's mother. So I→J→L→M. J and K are I's parents. L is I's maternal uncle. M is I's cousin.
+G and M: G is from B/C branch. M is from I's family (outsider married in). <strong>G and M are not related</strong> (M is an outsider through E's marriage).
+Male heir (male lineage only): A→B,C,D. B has no sons (daughters only). C has G (son). D has no children. <strong>G is G's male heir</strong> (tracing lineage: A→C→G). ✅
+
+<hr />
+
+<h2 id="best-resources">📚 Best Resources</h2>
+
+<h3>🥇 YouTube Channels (Free)</h3>
+
+<table><thead><tr><th>Rank</th><th>Channel</th><th>Best For</th></tr></thead><tbody><tr><td>1</td><td><strong>Gagan MATHS</strong></td><td>Systematic tree method</td></tr><tr><td>2</td><td><strong>Aditya Ranjan (RBank)</strong></td><td>Quick relationship tracing</td></tr><tr><td>3</td><td><strong>Study Smart</strong></td><td>Logical deduction approach</td></tr></tbody></table>
+<h3>🥈 Websites</h3>
+
+<table><thead><tr><th>Rank</th><th>Platform</th><th>Best For</th></tr></thead><tbody><tr><td>1</td><td><strong>IndiaBix</strong></td><td>All blood relation patterns</td></tr><tr><td>2</td><td><strong>GeekforGeeks</strong></td><td>Coded relations</td></tr><tr><td>3</td><td><strong>M4Maths</strong></td><td>TCS-specific patterns</td></tr></tbody></table>
+<h3>🥉 Books</h3>
+
+<table><thead><tr><th>Rank</th><th>Book</th></tr></thead><tbody><tr><td>1</td><td><strong>Arun Sharma — Logical Reasoning</strong></td></tr><tr><td>2</td><td><strong>RS Agarwal — Verbal & Non-verbal</strong></td></tr></tbody></table>
+<hr />
+
+<h2 id="final-verdict">🎯 Final Verdict</h2>
+
+<h3>Scores</h3>
+
+<table><thead><tr><th>Metric</th><th>Rating</th></tr></thead><tbody><tr><td><strong>Importance Rating</strong></td><td>★★★★☆ (4/5)</td></tr><tr><td><strong>Placement ROI Score</strong></td><td><strong>7/10</strong> — High accuracy, moderate frequency</td></tr><tr><td><strong>Difficulty Score</strong></td><td><strong>5/10</strong> — Logic-based, not formula-heavy</td></tr><tr><td><strong>Priority Order</strong></td><td><strong>#6</strong> among core aptitude topics</td></tr></tbody></table>
+<h3>Company-Level Verdict</h3>
+
+<table><thead><tr><th>Target</th><th>Verdict</th><th>Reasoning</th></tr></thead><tbody><tr><td><strong>TCS/Infosys/Wipro</strong></td><td>✅ <strong>Mandatory</strong></td><td>1-2 easy questions, tree method solves all</td></tr><tr><td><strong>10 LPA+</strong></td><td>✅ <strong>Important</strong></td><td>Always appears</td></tr><tr><td><strong>Accenture/Cognizant</strong></td><td>✅ <strong>Important</strong></td><td>Direct + coded relations</td></tr><tr><td><strong>20 LPA+</strong></td><td>✅ <strong>Important</strong></td><td>In-law + mixed relations</td></tr><tr><td><strong>Amazon/Microsoft</strong></td><td>✅ <strong>Important</strong></td><td>Complex chains, in-laws</td></tr><tr><td><strong>Goldman Sachs</strong></td><td>⚠️ <strong>Optional</strong></td><td>Age+relation puzzles</td></tr><tr><td><strong>Google</strong></td><td>⚠️ <strong>Optional</strong></td><td>Interconnected family puzzles</td></tr></tbody></table>
+<h3>Bottom Line</h3>
+
+> Blood Relations rewards <strong>drawing over thinking</strong>. The single most effective technique is the family tree method — always draw the tree before answering. Master the three-direction rule (up = ancestors, down = descendants, sideways = same generation, different branch), and this topic becomes a guaranteed full-score section.
+
+<strong>Study Time</strong>: 3–4 hours | <strong>Questions to Practice</strong>: 60–80 | <strong>Expected Score</strong>: +1–2 marks per test
+
+<hr />
+
+<em>End of Guide — Blood Relations | Elite Placement Aptitude Series</em>
+
+    </main>
+    
+    <button class="floating-action-btn" id="backToTopBtn" aria-label="Back to Top">▲</button>
+
+    <script>
+        // Collapsible Sidebar
+        const sidebar = document.getElementById('sidebar');
+        const collapseSidebarBtn = document.getElementById('collapseSidebarBtn');
+        const mobileHamburger = document.getElementById('mobileHamburger');
+        const sidebarOverlay = document.getElementById('sidebarOverlay');
+
+        if (collapseSidebarBtn) {
+            collapseSidebarBtn.addEventListener('click', () => {
+                sidebar.classList.toggle('collapsed');
+                if (sidebar.classList.contains('collapsed')) {
+                    collapseSidebarBtn.querySelector('span').innerText = '▶ Expand Sidebar';
+                } else {
+                    collapseSidebarBtn.querySelector('span').innerText = '◀ Collapse Sidebar';
+                }
+            });
+        }
+
+        if (mobileHamburger) {
+            mobileHamburger.addEventListener('click', () => {
+                sidebar.classList.add('mobile-open');
+                sidebarOverlay.classList.add('visible');
+            });
+        }
+
+        if (sidebarOverlay) {
+            sidebarOverlay.addEventListener('click', () => {
+                sidebar.classList.remove('mobile-open');
+                sidebarOverlay.classList.remove('visible');
+            });
+        }
+
+        // Theme Toggle Functionality
+        const themeToggles = [
+            document.getElementById('themeToggleSidebar'),
+            document.getElementById('themeToggleMobile')
+        ];
+
+        themeToggles.forEach(toggle => {
+            if (toggle) {
+                toggle.addEventListener('click', () => {
+                    const currentTheme = document.documentElement.getAttribute('data-theme');
+                    const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+                    document.documentElement.setAttribute('data-theme', newTheme);
+                    localStorage.setItem('theme', newTheme);
+                });
+            }
+        });
+
+        // Floating Action Button
+        const backToTopBtn = document.getElementById('backToTopBtn');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 400) {
+                backToTopBtn.classList.add('visible');
+            } else {
+                backToTopBtn.classList.remove('visible');
+            }
+        });
+        backToTopBtn.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        // Dynamic Interactive Quiz / Practice Engine
+        document.addEventListener('DOMContentLoaded', () => {
+            const currentFilename = "blood_relations_study_guide.md";
+            const topicKey = "aptitude_progress_" + currentFilename.replace('_study_guide.md', '');
+
+            // 1. Locate Practice Section and Detailed Solutions
+            // We search for Practice Section headers by IDs or emojis
+            const practiceHeaders = Array.from(document.querySelectorAll('h2')).filter(h => 
+                h.textContent.includes('Practice') || h.textContent.includes('PRACTICE')
+            );
+            
+            const solutionsHeaders = Array.from(document.querySelectorAll('h2')).filter(h => 
+                h.textContent.includes('Solutions') || h.textContent.includes('SOLUTIONS')
+            );
+
+            if (practiceHeaders.length === 0) return;
+            const practiceHeader = practiceHeaders[0];
+
+            // 2. Parse separated solutions if they are at the bottom (like ages_study_guide)
+            const solutionsMap = new Map();
+            let hasSeparatedSolutions = solutionsHeaders.length > 0;
+            let solutionsContainer = null;
+
+            if (hasSeparatedSolutions) {
+                solutionsContainer = solutionsHeaders[0];
+                let currentEl = solutionsContainer.nextElementSibling;
+                let foundSolutionsCount = 0;
+                
+                while (currentEl && currentEl.tagName !== 'H2') {
+                    // Scan children of solutions block to extract Q1, Q2, etc.
+                    const text = currentEl.textContent.trim();
+                    const qMatch = text.match(/^\s*\*?\*?Q(?:uestion\s*)?(\d+)\.?\*?\*?/i);
+                    
+                    if (qMatch) {
+                        const qNum = parseInt(qMatch[1], 10);
+                        // Clean up the Q1. tag from solution html
+                        let innerHTML = currentEl.innerHTML;
+                        solutionsMap.set(qNum, innerHTML);
+                        foundSolutionsCount++;
+                    } else {
+                        // Check if it's a list container containing solutions
+                        const listItems = currentEl.querySelectorAll('li');
+                        listItems.forEach(li => {
+                            const liText = li.textContent.trim();
+                            const liMatch = liText.match(/^\s*\*?\*?Q(?:uestion\s*)?(\d+)\.?\*?\*?/i);
+                            if (liMatch) {
+                                const qNum = parseInt(liMatch[1], 10);
+                                solutionsMap.set(qNum, li.innerHTML);
+                                foundSolutionsCount++;
+                            }
+                        });
+                    }
+                    currentEl = currentEl.nextElementSibling;
+                }
+                
+                // If we extracted a reasonable number of solutions, we'll inline them dynamically and hide the bottom solutions section!
+                if (foundSolutionsCount > 0) {
+                    solutionsContainer.style.display = 'none';
+                    let hideEl = solutionsContainer.nextElementSibling;
+                    while (hideEl && hideEl.tagName !== 'H2' && !hideEl.textContent.includes('Verdict') && !hideEl.textContent.includes('Verdicts')) {
+                        hideEl.style.display = 'none';
+                        hideEl = hideEl.nextElementSibling;
+                    }
+                }
+            }
+
+            // 3. Scan and rewrite Practice Questions into Cards
+            // Questions can be in sub-sections (Easy, Medium, Hard, etc.) under the practice header
+            let nextEl = practiceHeader.nextElementSibling;
+            let questionNumberIndex = 1;
+            let currentDifficulty = 'easy'; // default fallback
+            
+            // Layout widget insertion
+            const progressWidget = document.createElement('div');
+            progressWidget.className = 'practice-progress-widget';
+            progressWidget.innerHTML = `
+                <h3 class="practice-progress-title">🎯 Track Your Practice</h3>
+                <div class="practice-progress-bar-container">
+                    <div class="practice-progress-bar" id="practiceProgressBar"></div>
+                </div>
+                <div class="practice-progress-stats">
+                    <span id="practiceProgressPercent">0% Completed</span>
+                    <span id="practiceProgressStatsText">0/0 Solved</span>
+                </div>
+                <div class="tab-menu" id="difficultyTabMenu">
+                    <button class="tab-btn active" data-difficulty="all">All Levels</button>
+                    <button class="tab-btn" data-difficulty="easy">🟢 Easy</button>
+                    <button class="tab-btn" data-difficulty="medium">🟡 Medium</button>
+                    <button class="tab-btn" data-difficulty="hard">🟠 Hard</button>
+                    <button class="tab-btn" data-difficulty="product">🔴 Product Co.</button>
+                </div>
+            `;
+            practiceHeader.after(progressWidget);
+
+            const qCards = [];
+
+            while (nextEl && nextEl.tagName !== 'H2' && nextEl !== solutionsContainer) {
+                // Detect difficulty section change
+                const textVal = nextEl.textContent.toLowerCase();
+                if (nextEl.tagName === 'H3') {
+                    if (textVal.includes('easy')) currentDifficulty = 'easy';
+                    else if (textVal.includes('medium')) currentDifficulty = 'medium';
+                    else if (textVal.includes('hard')) currentDifficulty = 'hard';
+                    else if (textVal.includes('product') || textVal.includes('advanced')) currentDifficulty = 'product';
+                }
+
+                // Look for question list items or paragraphs
+                const questionElements = [];
+                if (nextEl.tagName === 'OL' || nextEl.tagName === 'UL') {
+                    const listItems = Array.from(nextEl.children);
+                    listItems.forEach(li => {
+                        questionElements.push({ element: li, parentList: nextEl });
+                    });
+                } else if (nextEl.tagName === 'P' && (textVal.startsWith('**q') || textVal.startsWith('q') || textVal.startsWith('**question'))) {
+                    questionElements.push({ element: nextEl, parentList: null });
+                }
+
+                // Convert each question element to a styled question card
+                questionElements.forEach(qItem => {
+                    const el = qItem.element;
+                    const text = el.textContent.trim();
+                    
+                    // Parse question number (either explicit e.g. Q12 or implicit from index)
+                    const explicitMatch = text.match(/^\s*\*?\*?Q(?:uestion\s*)?(\d+)\.?\*?\*?/i);
+                    const qId = explicitMatch ? parseInt(explicitMatch[1], 10) : questionNumberIndex;
+                    
+                    // Parse company tag e.g. [TCS], [Amazon]
+                    const companyMatch = text.match(/\[([^\]]+)\]\s*$/);
+                    const companyName = companyMatch ? companyMatch[1] : '';
+                    
+                    // Create card element
+                    const card = document.createElement('div');
+                    card.className = `question-card diff-${currentDifficulty}`;
+                    card.setAttribute('data-difficulty', currentDifficulty);
+                    card.setAttribute('data-qnum', qId);
+
+                    // Check if solution exists (either pre-existing inside details, or extracted from bottom)
+                    let solutionHTML = '';
+                    const existingDetails = el.querySelector('details');
+                    if (existingDetails) {
+                        solutionHTML = existingDetails.querySelector('div, p, ul, ol, pre')?.outerHTML || existingDetails.innerHTML.replace(/<s[u]mmary>.*?<\/s[u]mmary>/i, '');
+                    } else if (solutionsMap.has(qId)) {
+                        solutionHTML = solutionsMap.get(qId);
+                    }
+
+                    // Build clean question content text (stripping company tags and solution details if present)
+                    let questionCleanText = el.innerHTML;
+                    if (existingDetails) {
+                        questionCleanText = questionCleanText.replace(existingDetails.outerHTML, '');
+                    }
+                    // Strip the trailing company tag from question representation
+                    if (companyMatch) {
+                        questionCleanText = questionCleanText.replace(companyMatch[0], '');
+                    }
+
+                    // Check localStorage for completion state
+                    const isCompleted = localStorage.getItem(`${topicKey}_q${qId}`) === 'true';
+                    if (isCompleted) {
+                        card.classList.add('completed');
+                    }
+
+                    card.innerHTML = `
+                        <div class="question-header">
+                            <div class="question-meta-group">
+                                <span class="company-tag" style="background-color: var(--primary-light); color: var(--primary-color);">Q${qId}</span>
+                                ${companyName ? `<span class="company-tag" style="background-color: var(--accent-light); color: var(--accent-color);">${companyName}</span>` : ''}
+                            </div>
+                            <label class="question-checkbox-label">
+                                <input type="checkbox" class="q-checkbox" data-qnum="${qId}" ${isCompleted ? 'checked' : ''}>
+                                <span class="checkbox-box"></span>
+                                Done
+                            </label>
+                        </div>
+                        <div class="question-text">${questionCleanText}</div>
+                    `;
+
+                    // Append Solution if exists
+                    if (solutionHTML) {
+                        const detailsEl = document.createElement('details');
+                        const summaryEl = document.createElement('summary');
+                        summaryEl.innerHTML = "🔍 View Detailed Solution";
+                        detailsEl.appendChild(summaryEl);
+                        
+                        const wrapperEl = document.createElement('div');
+                        wrapperEl.className = "solution-wrapper";
+                        wrapperEl.innerHTML = solutionHTML;
+                        detailsEl.appendChild(wrapperEl);
+                        
+                        card.appendChild(detailsEl);
+                    }
+
+                    // Insert card and remove original element
+                    if (qItem.parentList) {
+                        // We will insert card before parentList or append it in order
+                        qItem.parentList.parentNode.insertBefore(card, qItem.parentList);
+                    } else {
+                        el.parentNode.insertBefore(card, el);
+                        el.remove();
+                    }
+
+                    qCards.push(card);
+                    questionNumberIndex++;
+                });
+
+                // Remove the list elements once all their list-items are transformed
+                if (nextEl.tagName === 'OL' || nextEl.tagName === 'UL') {
+                    const listEl = nextEl;
+                    nextEl = nextEl.nextElementSibling;
+                    listEl.remove();
+                } else {
+                    nextEl = nextEl.nextElementSibling;
+                }
+            }
+
+            // 4. Implement event listeners for checklists and tabs
+            const updateProgress = () => {
+                const checkedCount = qCards.filter(card => card.querySelector('.q-checkbox').checked).length;
+                const totalCount = qCards.length;
+                const percent = totalCount > 0 ? Math.round((checkedCount / totalCount) * 100) : 0;
+                
+                // Update practice section widgets
+                document.getElementById('practiceProgressBar').style.width = `${percent}%`;
+                document.getElementById('practiceProgressPercent').innerText = `${percent}% Completed`;
+                document.getElementById('practiceProgressStatsText').innerText = `${checkedCount}/${totalCount} Solved`;
+                
+                // Update sidebar progress widgets
+                document.getElementById('sidebarProgressBar').style.width = `${percent}%`;
+                document.getElementById('sidebarProgressStats').innerText = `${percent}% Completed (${checkedCount}/${totalCount} Qs)`;
+                
+                // Update localStorage topic overall percentage for main dashboard
+                localStorage.setItem(`aptitude_topic_percent_${currentFilename.replace('_study_guide.md', '')}`, percent);
+                localStorage.setItem(`aptitude_topic_solved_${currentFilename.replace('_study_guide.md', '')}`, checkedCount);
+                localStorage.setItem(`aptitude_topic_total_${currentFilename.replace('_study_guide.md', '')}`, totalCount);
+            };
+
+            qCards.forEach(card => {
+                const cb = card.querySelector('.q-checkbox');
+                cb.addEventListener('change', (e) => {
+                    const checked = e.target.checked;
+                    const qnum = e.target.getAttribute('data-qnum');
+                    localStorage.setItem(`${topicKey}_q${qnum}`, checked);
+                    
+                    if (checked) {
+                        card.classList.add('completed');
+                    } else {
+                        card.classList.remove('completed');
+                    }
+                    updateProgress();
+                });
+            });
+
+            // Tabs Filtering Logic
+            const tabButtons = document.querySelectorAll('#difficultyTabMenu .tab-btn');
+            tabButtons.forEach(btn => {
+                btn.addEventListener('click', (e) => {
+                    tabButtons.forEach(b => b.classList.remove('active'));
+                    e.target.classList.add('active');
+                    
+                    const selectedDiff = e.target.getAttribute('data-difficulty');
+                    
+                    qCards.forEach(card => {
+                        if (selectedDiff === 'all' || card.getAttribute('data-difficulty') === selectedDiff) {
+                            card.style.display = 'flex';
+                        } else {
+                            card.style.display = 'none';
+                        }
+                    });
+                });
+            });
+
+            // Initial progress calculations
+            updateProgress();
+        });
+    </script>
+</body>
+</html>
